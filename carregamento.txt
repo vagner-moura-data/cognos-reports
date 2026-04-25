@@ -729,6 +729,7 @@ WHERE
         #sq(prompt(&apos;p_CD&apos;, &apos;token&apos;, &apos;TODOS&apos;))# = &apos;TODOS&apos;
         OR RG.OPERACAO = #sq(prompt(&apos;p_CD&apos;, &apos;token&apos;, &apos;TODOS&apos;))#
     )
+    AND RG.OPERACAO IN (&apos;07801&apos;, &apos;1942&apos;, &apos;930&apos;)
 GROUP BY
     RG.OPERACAO,
     RG.DATA_CRIACAO,
@@ -1038,6 +1039,7 @@ CTE_FILTRADO AS (
             #sq(prompt(&apos;p_CD&apos;, &apos;token&apos;, &apos;TODOS&apos;))# = &apos;TODOS&apos;
             OR UPPER(OPERACAO) = UPPER(#sq(prompt(&apos;p_CD&apos;, &apos;token&apos;, &apos;TODOS&apos;))#)
         )
+        AND OPERACAO IN (&apos;07801&apos;, &apos;1942&apos;, &apos;930&apos;)
     GROUP BY TURNO, CARREGADOR, NOME
 ),
 
