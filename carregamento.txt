@@ -65,7 +65,12 @@
 														<contents>
 															<selectValue name="p_TipoData" parameter="p_TipoData" required="false">
 																<style><CSS value="padding:4px;font-size:9pt;border-radius:4px;background-color:#1E293B;color:silver;width:150px;border:1px solid #334155"/></style>
-															<defaultSelections><defaultSimpleSelection>EXPEDICAO</defaultSimpleSelection></defaultSelections><selectOptions><selectOption useValue="CRIACAO"><displayValue>CRIACAO</displayValue></selectOption><selectOption useValue="EXPEDICAO"><displayValue>EXPEDICAO</displayValue></selectOption></selectOptions></selectValue>
+																<defaultSelections><defaultSimpleSelection>EXPEDICAO</defaultSimpleSelection></defaultSelections>
+																<selectOptions>
+																	<selectOption useValue="CRIACAO"><displayValue>CRIACAO</displayValue></selectOption>
+																	<selectOption useValue="EXPEDICAO"><displayValue>EXPEDICAO</displayValue></selectOption>
+																</selectOptions>
+															</selectValue>
 														</contents>
 													</tableCell>
 
