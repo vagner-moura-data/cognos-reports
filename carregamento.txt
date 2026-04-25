@@ -50,12 +50,7 @@
 															<selectValue name="p_CD" parameter="p_CD" required="false">
 																<style><CSS value="padding:4px;font-size:9pt;border-radius:4px;background-color:#1E293B;color:silver;width:140px;border:1px solid #334155"/></style>
 																<defaultSelections><defaultSimpleSelection>TODOS</defaultSimpleSelection></defaultSelections>
-																<selectOptions>
-																	<selectOption useValue="TODOS"><displayValue>-- TODOS --</displayValue></selectOption>
-																	<selectOption useValue="07801"><displayValue>07801</displayValue></selectOption>
-																	<selectOption useValue="1942"><displayValue>1942</displayValue></selectOption>
-																	<selectOption useValue="930"><displayValue>930</displayValue></selectOption>
-																</selectOptions>
+																<useItem refQuery="Lista_CD" value="OPERACAO" label="OPERACAO"/>
 															</selectValue>
 														</contents>
 													</tableCell>
@@ -1178,6 +1173,36 @@ END</expression>
 				<dataItem name="T_H"><expression>[Base Carregamento].[T_H]</expression></dataItem>
 			</selection>
 			<detailFilters><detailFilter><filterExpression>[Base Carregamento].[RANK]&gt;38 AND [Base Carregamento].[RANK] &lt;=100</filterExpression></detailFilter></detailFilters>
+			<queryHints><localCache value="false"/></queryHints>
+		</query>
+		<query name="Lista_CD">
+			<source>
+				<sqlQuery name="SQL_CD" dataSource="WMOS" type="passThrough">
+					<sqlText>SELECT &apos;TODOS&apos; AS OPERACAO FROM DUAL
+UNION ALL
+SELECT DISTINCT
+    CASE WHEN INV.SHORT_DESC = &apos;ENCAIXE&apos; THEN &apos;930&apos;
+         WHEN INV.SHORT_DESC IS NULL THEN SH.O_FACILITY_ID
+         ELSE INV.SHORT_DESC
+    END AS OPERACAO
+FROM SHIPMENT SH
+LEFT JOIN (
+    SELECT L.TC_SHIPMENT_ID, MAX(SC.SHORT_DESC) AS SHORT_DESC
+    FROM LPN L
+    JOIN LPN_DETAIL LD ON L.LPN_ID = LD.LPN_ID
+    LEFT JOIN SYS_CODE SC ON LD.INVENTORY_TYPE = SC.CODE_ID AND SC.CODE_TYPE = &apos;064&apos;
+    WHERE L.INBOUND_OUTBOUND_INDICATOR = &apos;O&apos; AND L.TC_SHIPMENT_ID IS NOT NULL
+    GROUP BY L.TC_SHIPMENT_ID
+    HAVING COUNT(DISTINCT LD.INVENTORY_TYPE) = 1
+) INV ON INV.TC_SHIPMENT_ID = SH.TC_SHIPMENT_ID
+WHERE SH.O_FACILITY_ID IS NOT NULL
+ORDER BY CASE WHEN OPERACAO = &apos;TODOS&apos; THEN 0 ELSE 1 END, OPERACAO</sqlText>
+					<mdProjectedItems><mdProjectedItem name="OPERACAO"/></mdProjectedItems>
+				</sqlQuery>
+			</source>
+			<selection>
+				<dataItem name="OPERACAO"><expression>[SQL_CD].[OPERACAO]</expression></dataItem>
+			</selection>
 			<queryHints><localCache value="false"/></queryHints>
 		</query>
 	</queries>
