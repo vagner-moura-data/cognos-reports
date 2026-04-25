@@ -50,12 +50,14 @@
 															<selectValue name="p_CD" parameter="p_CD" required="false">
 																<style><CSS value="padding:4px;font-size:9pt;border-radius:4px;background-color:#1E293B;color:silver;width:140px;border:1px solid #334155"/></style>
 																<defaultSelections><defaultSimpleSelection>TODOS</defaultSimpleSelection></defaultSelections>
-																<selectOptions>
+																<staticChoices>
 																	<selectOption useValue="TODOS"><displayValue>-- TODOS --</displayValue></selectOption>
-																	<selectOption useValue="07801"><displayValue>07801</displayValue></selectOption>
-																	<selectOption useValue="1942"><displayValue>1942</displayValue></selectOption>
-																	<selectOption useValue="930"><displayValue>930</displayValue></selectOption>
-																</selectOptions>
+																</staticChoices>
+																<choices>
+																	<queryRef refQuery="Lista Operacoes"/>
+																	<useItem refDataItem="OPERACAO"/>
+																	<displayItem refDataItem="OPERACAO"/>
+																</choices>
 															</selectValue>
 														</contents>
 													</tableCell>
@@ -1179,6 +1181,39 @@ END</expression>
 			</selection>
 			<detailFilters><detailFilter><filterExpression>[Base Carregamento].[RANK]&gt;38 AND [Base Carregamento].[RANK] &lt;=100</filterExpression></detailFilter></detailFilters>
 			<queryHints><localCache value="false"/></queryHints>
+		</query>
+		<query name="Lista Operacoes">
+			<source>
+				<sqlQuery name="SQL_OPERACOES" dataSource="WMOS" type="passThrough">
+					<sqlText>SELECT DISTINCT
+    CASE 
+        WHEN SH_INV_TYPE.SHORT_DESC IS NULL THEN SH.O_FACILITY_ID 
+        ELSE SH_INV_TYPE.SHORT_DESC 
+    END AS OPERACAO
+FROM 
+    SHIPMENT SH
+LEFT JOIN
+((SELECT
+    SHIPMENT.TC_SHIPMENT_ID,
+    SHIPMENT.QTY_INV_TYPE,
+    SHIPMENT_INVENTORY_TYPE.INVENTORY_TYPE,
+    SC.SHORT_DESC
+ FROM 
+((SELECT L.TC_SHIPMENT_ID, COUNT(DISTINCT LD.INVENTORY_TYPE) AS QTY_INV_TYPE FROM LPN_DETAIL LD JOIN LPN L ON L.LPN_ID=LD.LPN_ID AND L.INBOUND_OUTBOUND_INDICATOR=&apos;O&apos; WHERE L.TC_SHIPMENT_ID IS NOT NULL GROUP BY L.TC_SHIPMENT_ID) SHIPMENT)
+JOIN ((SELECT L.TC_SHIPMENT_ID, LD.INVENTORY_TYPE FROM LPN_DETAIL LD JOIN LPN L ON L.LPN_ID=LD.LPN_ID AND L.INBOUND_OUTBOUND_INDICATOR=&apos;O&apos; WHERE L.TC_SHIPMENT_ID IS NOT NULL GROUP BY L.TC_SHIPMENT_ID, LD.INVENTORY_TYPE) SHIPMENT_INVENTORY_TYPE) ON SHIPMENT.TC_SHIPMENT_ID=SHIPMENT_INVENTORY_TYPE.TC_SHIPMENT_ID
+LEFT JOIN SYS_CODE SC ON SHIPMENT_INVENTORY_TYPE.INVENTORY_TYPE=SC.CODE_ID AND SC.CODE_TYPE=&apos;064&apos;
+WHERE SHIPMENT.QTY_INV_TYPE=1
+)SH_INV_TYPE) ON SH_INV_TYPE.TC_SHIPMENT_ID=SH.TC_SHIPMENT_ID
+WHERE 
+    SH.SHIPMENT_STATUS NOT IN (120)
+ORDER BY OPERACAO</sqlText>
+					<mdProjectedItems><mdProjectedItem name="OPERACAO"/></mdProjectedItems>
+				</sqlQuery>
+			</source>
+			<selection>
+				<dataItem name="OPERACAO"><expression>[SQL_OPERACOES].[OPERACAO]</expression></dataItem>
+			</selection>
+			<queryHints><localCache value="false"/><queryProcessing value="databaseOnly"/></queryHints>
 		</query>
 	</queries>
 
