@@ -50,12 +50,12 @@
 															<selectValue name="p_CD" parameter="p_CD" required="false">
 																<style><CSS value="padding:4px;font-size:9pt;border-radius:4px;background-color:#1E293B;color:silver;width:140px;border:1px solid #334155"/></style>
 																<defaultSelections><defaultSimpleSelection>TODOS</defaultSimpleSelection></defaultSelections>
-																<selectOptions>
-																	<selectOption><useValue>TODOS</useValue><displayValue>-- TODOS --</displayValue></selectOption>
-																	<selectOption><useValue>07801</useValue><displayValue>07801</displayValue></selectOption>
-																	<selectOption><useValue>1942</useValue><displayValue>1942</displayValue></selectOption>
-																	<selectOption><useValue>930</useValue><displayValue>930</displayValue></selectOption>
-																</selectOptions>
+																<staticChoices>
+																	<choice useValue="TODOS"><displayValue>-- TODOS --</displayValue></choice>
+																	<choice useValue="07801"><displayValue>07801</displayValue></choice>
+																	<choice useValue="1942"><displayValue>1942</displayValue></choice>
+																	<choice useValue="930"><displayValue>930</displayValue></choice>
+																</staticChoices>
 															</selectValue>
 														</contents>
 													</tableCell>
@@ -66,10 +66,10 @@
 															<selectValue name="p_TipoData" parameter="p_TipoData" required="false">
 																<style><CSS value="padding:4px;font-size:9pt;border-radius:4px;background-color:#1E293B;color:silver;width:150px;border:1px solid #334155"/></style>
 																<defaultSelections><defaultSimpleSelection>EXPEDICAO</defaultSimpleSelection></defaultSelections>
-																<selectOptions>
-																	<selectOption><useValue>CRIACAO</useValue><displayValue>CRIACAO</displayValue></selectOption>
-																	<selectOption><useValue>EXPEDICAO</useValue><displayValue>EXPEDICAO</displayValue></selectOption>
-																</selectOptions>
+																<staticChoices>
+																	<choice useValue="CRIACAO"><displayValue>CRIACAO</displayValue></choice>
+																	<choice useValue="EXPEDICAO"><displayValue>EXPEDICAO</displayValue></choice>
+																</staticChoices>
 															</selectValue>
 														</contents>
 													</tableCell>
