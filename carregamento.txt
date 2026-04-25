@@ -1,4 +1,4 @@
-<report xmlns="http://developer.cognos.com/schemas/report/14.3/"           useStyleVersion="11.4" expressionLocale="en" viewPagesAsTabs="topLeft">
+<report xmlns="http://developer.cognos.com/schemas/report/14.1/"           useStyleVersion="10" expressionLocale="en">
 	<drillBehavior/>
 	<layouts>
 		<layout>
@@ -47,7 +47,7 @@
 																<dataSource><staticValue>CD / OPERAÇÃO:</staticValue></dataSource>
 																<style><CSS value="font-size:7pt;font-weight:700;color:#94A3B8;display:block;margin-bottom:2px;white-space:nowrap"/></style>
 															</textItem>
-															<selectValue name="p_CD" parameter="p_CD" required="false">
+															<selectValue name="p_CD" required="false">
 																<style><CSS value="padding:4px;font-size:9pt;border-radius:4px;background-color:#1E293B;color:silver;width:140px;border:1px solid #334155"/></style>
 																<defaultSelections><defaultSimpleSelection>TODOS</defaultSimpleSelection></defaultSelections>
 																<selectOptions>
@@ -63,7 +63,7 @@
 													<tableCell>
 														<style><CSS value="padding:3px 8px 3px 8px;vertical-align:middle;text-align:right;width:20%"/></style>
 														<contents>
-															<selectValue name="p_TipoData" parameter="p_TipoData" required="false">
+															<selectValue name="p_TipoData" required="false">
 																<style><CSS value="padding:4px;font-size:9pt;border-radius:4px;background-color:#1E293B;color:silver;width:150px;border:1px solid #334155"/></style>
 															<defaultSelections><defaultSimpleSelection>EXPEDICAO</defaultSimpleSelection></defaultSelections><selectOptions><selectOption useValue="CRIACAO"><displayValue>CRIACAO</displayValue></selectOption><selectOption useValue="EXPEDICAO"><displayValue>EXPEDICAO</displayValue></selectOption></selectOptions></selectValue>
 														</contents>
