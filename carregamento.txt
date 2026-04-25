@@ -51,10 +51,10 @@
 																<style><CSS value="padding:4px;font-size:9pt;border-radius:4px;background-color:#1E293B;color:silver;width:140px;border:1px solid #334155"/></style>
 																<defaultSelections><defaultSimpleSelection>TODOS</defaultSimpleSelection></defaultSelections>
 																<selectOptions>
-																	<selectOption useValue="TODOS"><displayValue>-- TODOS --</displayValue></selectOption>
-																	<selectOption useValue="07801"><displayValue>07801</displayValue></selectOption>
-																	<selectOption useValue="1942"><displayValue>1942</displayValue></selectOption>
-																	<selectOption useValue="930"><displayValue>930</displayValue></selectOption>
+																	<selectOption><useValue>TODOS</useValue><displayValue>-- TODOS --</displayValue></selectOption>
+																	<selectOption><useValue>07801</useValue><displayValue>07801</displayValue></selectOption>
+																	<selectOption><useValue>1942</useValue><displayValue>1942</displayValue></selectOption>
+																	<selectOption><useValue>930</useValue><displayValue>930</displayValue></selectOption>
 																</selectOptions>
 															</selectValue>
 														</contents>
@@ -67,8 +67,8 @@
 																<style><CSS value="padding:4px;font-size:9pt;border-radius:4px;background-color:#1E293B;color:silver;width:150px;border:1px solid #334155"/></style>
 																<defaultSelections><defaultSimpleSelection>EXPEDICAO</defaultSimpleSelection></defaultSelections>
 																<selectOptions>
-																	<selectOption useValue="CRIACAO"><displayValue>CRIACAO</displayValue></selectOption>
-																	<selectOption useValue="EXPEDICAO"><displayValue>EXPEDICAO</displayValue></selectOption>
+																	<selectOption><useValue>CRIACAO</useValue><displayValue>CRIACAO</displayValue></selectOption>
+																	<selectOption><useValue>EXPEDICAO</useValue><displayValue>EXPEDICAO</displayValue></selectOption>
 																</selectOptions>
 															</selectValue>
 														</contents>
