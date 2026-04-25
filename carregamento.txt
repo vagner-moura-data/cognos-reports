@@ -29,7 +29,7 @@
 											<tableRow>
 												<tableCells>
 													<tableCell>
-														<style><CSS value="padding:3px 15px 3px 15px;width:50%"/></style>
+														<style><CSS value="padding:3px 15px 3px 15px;width:30%"/></style>
 														<contents>
 															<textItem>
 																<dataSource><staticValue>TORRE DE CONTROLE: CARREGAMENTO &amp; EXPEDIÇÃO</staticValue></dataSource>
@@ -39,7 +39,27 @@
 															</textItem>
 														</contents>
 													</tableCell>
-													
+
+													<tableCell>
+														<style><CSS value="padding:3px 8px 3px 8px;vertical-align:middle;text-align:right;width:15%"/></style>
+														<contents>
+															<textItem>
+																<dataSource><staticValue>CD / OPERAÇÃO:</staticValue></dataSource>
+																<style><CSS value="font-size:7pt;font-weight:700;color:#94A3B8;display:block;margin-bottom:2px;white-space:nowrap"/></style>
+															</textItem>
+															<selectValue name="p_CD" parameter="p_CD" required="false">
+																<style><CSS value="padding:4px;font-size:9pt;border-radius:4px;background-color:#1E293B;color:silver;width:140px;border:1px solid #334155"/></style>
+																<defaultSelections><defaultSimpleSelection>TODOS</defaultSimpleSelection></defaultSelections>
+																<selectOptions>
+																	<selectOption useValue="TODOS"><displayValue>-- TODOS --</displayValue></selectOption>
+																	<selectOption useValue="07801"><displayValue>07801</displayValue></selectOption>
+																	<selectOption useValue="1942"><displayValue>1942</displayValue></selectOption>
+																	<selectOption useValue="930"><displayValue>930</displayValue></selectOption>
+																</selectOptions>
+															</selectValue>
+														</contents>
+													</tableCell>
+
 													<tableCell>
 														<style><CSS value="padding:3px 8px 3px 8px;vertical-align:middle;text-align:right;width:20%"/></style>
 														<contents>
@@ -59,7 +79,7 @@
 													</tableCell>
 
 													<tableCell>
-														<style><CSS value="padding:5px 15px 5px 8px;vertical-align:middle;text-align:right;width:10%"/></style>
+														<style><CSS value="padding:5px 15px 5px 8px;vertical-align:middle;text-align:right;width:15%"/></style>
 														<contents>
 															<promptButton type="finish">
 																<contents><textItem><dataSource><staticValue>🔎 Filtrar</staticValue></dataSource></textItem></contents>
@@ -74,6 +94,17 @@
 									</table>
 								</contents>
 							<style><CSS value="margin-bottom:8px"/></style></block>
+
+							<block>
+								<style><CSS value="margin-bottom:4px;"/></style>
+								<contents>
+									<HTMLItem>
+										<dataSource>
+											<staticValue>&lt;div style=&quot;background:linear-gradient(135deg,#0F172A 0%,#1E293B 100%);border-left:4px solid #38BDF8;border-top:1px solid #1E293B;padding:4px 12px;border-radius:0 4px 4px 0;display:flex;align-items:center;gap:16px;&quot;&gt;&lt;span style=&quot;font-size:7pt;color:#94A3B8;font-weight:600;&quot;&gt;&#9679; FILTROS ATIVOS:&lt;/span&gt;&lt;span style=&quot;font-size:7pt;color:#38BDF8;background:#0F172A;border:1px solid #334155;border-radius:3px;padding:2px 8px;&quot;&gt;DATA SELECIONADA&lt;/span&gt;&lt;span style=&quot;font-size:7pt;color:#38BDF8;background:#0F172A;border:1px solid #334155;border-radius:3px;padding:2px 8px;margin-left:6px;&quot;&gt;CD/OP: TODOS&lt;/span&gt;&lt;/div&gt;</staticValue>
+										</dataSource>
+									</HTMLItem>
+								</contents>
+							</block>
 
 							<block>
 								<style>
@@ -92,7 +123,7 @@
 														<style><CSS value="padding-right:8px; width:20%;"/></style>
 														<contents>
 															<block>
-																<style><CSS value="background-color:#1E293B; border-radius:6px; padding:10px; box-shadow: 0 2px 4px rgba(0,0,0,0.3); color:#FFFFFF; border-top: 3px solid #3B82F6;"/></style>
+																<style><CSS value="background:linear-gradient(135deg,#1E293B 0%,#0F172A 100%); border-radius:8px; padding:12px; box-shadow: 0 2px 4px rgba(0,0,0,0.3); color:#FFFFFF; border-top: 3px solid #3B82F6; transition:box-shadow 0.2s;"/></style>
 																<contents>
 																	<textItem><dataSource><staticValue>VEÍCULOS EXP.</staticValue></dataSource><style><CSS value="font-size:7.5pt;font-weight:700;color:#94A3B8;display:block;white-space:nowrap"/></style></textItem><table><style><CSS value="width:100%; border-collapse:collapse;"/></style>
 																		<tableRows><tableRow><tableCells>
@@ -115,7 +146,7 @@
 														<style><CSS value="padding-right:8px; width:20%;"/></style>
 														<contents>
 															<block>
-																<style><CSS value="background-color:#1E293B; border-radius:6px; padding:10px; box-shadow: 0 2px 4px rgba(0,0,0,0.3); color:#FFFFFF; border-top: 3px solid #F59E0B;"/></style>
+																<style><CSS value="background:linear-gradient(135deg,#1E293B 0%,#0F172A 100%); border-radius:8px; padding:12px; box-shadow: 0 2px 4px rgba(0,0,0,0.3); color:#FFFFFF; border-top: 3px solid #F59E0B; transition:box-shadow 0.2s;"/></style>
 																<contents>
 																	<textItem><dataSource><staticValue>BACKLOG PENDENTE</staticValue></dataSource><style><CSS value="font-size:7.5pt;font-weight:700;color:#94A3B8;display:block;white-space:nowrap"/></style></textItem><table><style><CSS value="width:100%; border-collapse:collapse;"/></style>
 																		<tableRows><tableRow><tableCells>
@@ -138,7 +169,7 @@
 														<style><CSS value="padding-right:8px; width:20%;"/></style>
 														<contents>
 															<block>
-																<style><CSS value="background-color:#1E293B; border-radius:6px; padding:10px; box-shadow: 0 2px 4px rgba(0,0,0,0.3); color:#FFFFFF; border-top: 3px solid #EF4444;"/></style>
+																<style><CSS value="background:linear-gradient(135deg,#1E293B 0%,#0F172A 100%); border-radius:8px; padding:12px; box-shadow: 0 2px 4px rgba(0,0,0,0.3); color:#FFFFFF; border-top: 3px solid #EF4444; transition:box-shadow 0.2s;"/></style>
 																<contents>
 																	<textItem><dataSource><staticValue>VEÍCULOS ATRASO</staticValue></dataSource><style><CSS value="font-size:7.5pt;font-weight:700;color:#94A3B8;display:block;white-space:nowrap"/></style></textItem><table><style><CSS value="width:100%; border-collapse:collapse;"/></style>
 																		<tableRows><tableRow><tableCells>
@@ -161,7 +192,7 @@
 														<style><CSS value="padding-right:8px; width:20%;"/></style>
 														<contents>
 															<block>
-																<style><CSS value="background-color:#1E293B; border-radius:6px; padding:10px; box-shadow: 0 2px 4px rgba(0,0,0,0.3); color:#FFFFFF; border-top: 3px solid #8B5CF6;"/></style>
+																<style><CSS value="background:linear-gradient(135deg,#1E293B 0%,#0F172A 100%); border-radius:8px; padding:12px; box-shadow: 0 2px 4px rgba(0,0,0,0.3); color:#FFFFFF; border-top: 3px solid #8B5CF6; transition:box-shadow 0.2s;"/></style>
 																<contents>
 																	<textItem><dataSource><staticValue>LOJAS EXPEDIDAS</staticValue></dataSource><style><CSS value="font-size:7.5pt;font-weight:700;color:#94A3B8;display:block;white-space:nowrap"/></style></textItem><table><style><CSS value="width:100%; border-collapse:collapse;"/></style>
 																		<tableRows><tableRow><tableCells>
@@ -184,7 +215,7 @@
 														<style><CSS value="width:20%;"/></style>
 														<contents>
 															<block>
-																<style><CSS value="background-color:#1E293B; border-radius:6px; padding:10px; box-shadow: 0 2px 4px rgba(0,0,0,0.3); color:#FFFFFF; border-top: 3px solid #10B981;"/></style>
+																<style><CSS value="background:linear-gradient(135deg,#1E293B 0%,#0F172A 100%); border-radius:8px; padding:12px; box-shadow: 0 2px 4px rgba(0,0,0,0.3); color:#FFFFFF; border-top: 3px solid #10B981; transition:box-shadow 0.2s;"/></style>
 																<contents>
 																	<textItem><dataSource><staticValue>MÉDIA PLT / H</staticValue></dataSource><style><CSS value="font-size:7.5pt;font-weight:700;color:#94A3B8;display:block;white-space:nowrap"/></style></textItem><table><style><CSS value="width:100%; border-collapse:collapse;"/></style>
 																		<tableRows><tableRow><tableCells>
@@ -212,14 +243,14 @@
 
 							<block>
 								<style>
-									<CSS value="background-color:#1E293B; border-radius:6px; padding:10px 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.3); margin-bottom: 8px;"/>
+									<CSS value="background-color:#1E293B; border-radius:6px; padding:10px 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.3); margin-bottom: 8px; border-top: 1px solid #1E293B;"/>
 								</style>
 								<contents>
 									<textItem><dataSource><staticValue>Progresso da Operação de Expedição</staticValue></dataSource><style><CSS value="font-size:9pt; font-weight:bold; color:#F8FAFC; display:block; margin-bottom:5px;"/></style></textItem>
 									
 									<singleton name="progress_singleton" refQuery="Veiculos data">
 										<contents>
-											<HTMLItem><dataSource><staticValue>&lt;div style=&quot;width: 100%; background-color: #0F172A; border-radius: 15px; height: 22px; border: 1px solid #334155; overflow: hidden; box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);&quot;&gt;&lt;div style=&quot;height: 100%; background-color: #10B981; display: flex; align-items: center; justify-content: center; color: white; font-weight: 800; font-size: 9pt; white-space: nowrap; box-shadow: 0 0 10px rgba(16, 185, 129, 0.8); transition: width 1.5s ease-in-out; width: </staticValue></dataSource></HTMLItem>
+											<HTMLItem><dataSource><staticValue>&lt;div style=&quot;width: 100%; background-color: #0F172A; border-radius: 15px; height: 28px; border: 1px solid #334155; overflow: hidden; box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);&quot;&gt;&lt;div style=&quot;height: 100%; background: linear-gradient(90deg, #059669, #10B981, #34D399); display: flex; align-items: center; justify-content: center; color: white; font-weight: 800; font-size: 9pt; white-space: nowrap; box-shadow: 0 0 10px rgba(16, 185, 129, 0.8); transition: width 1.5s ease-in-out; width: </staticValue></dataSource></HTMLItem>
 											<HTMLItem><dataSource><dataItemValue refDataItem="PERCENTUAL"/></dataSource></HTMLItem>
 											<HTMLItem><dataSource><staticValue>%;&quot;&gt;</staticValue></dataSource></HTMLItem>
 											<HTMLItem><dataSource><dataItemValue refDataItem="PERCENTUAL"/></dataSource></HTMLItem>
@@ -301,7 +332,7 @@
 
 							<block>
 								<style>
-									<CSS value="background-color:#1E293B; border-radius:6px; padding:10px 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"/>
+									<CSS value="background-color:#1E293B; border-radius:6px; padding:10px 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.3); border-top: 1px solid #1E293B;"/>
 								</style>
 								<contents>
 									<textItem><dataSource><staticValue>Ranking Operacional</staticValue></dataSource><style><CSS value="font-size:10pt; font-weight:bold; color:#F8FAFC; display:block; margin-bottom:8px; border-bottom: 1px solid #334155; padding-bottom: 4px;"/></style></textItem>
@@ -317,12 +348,12 @@
 																<noDataHandler><contents><textItem><dataSource><staticValue>Sem dados.</staticValue></dataSource></textItem></contents></noDataHandler>
 																<style><CSS value="border-collapse:collapse; width:100%; font-size: 7.5pt;"/><defaultStyles><defaultStyle refStyle="ls"/></defaultStyles></style>
 																<listColumns>
-																	<listColumn><listColumnTitle><style><CSS value="background-color:#020617; color:#38BDF8; padding:4px; text-align:center; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="TURNO"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px;text-align:center;color:white;font-weight:600;font-size:9pt;border-bottom:1px solid #334155"/></style><contents><textItem><dataSource><dataItemValue refDataItem="TURNO"/></dataSource></textItem></contents></listColumnBody></listColumn>
-																	<listColumn><listColumnTitle><style><CSS value="background-color:#020617; color:#38BDF8; padding:4px; text-align:left; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="NOME"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px;text-align:left;color:white;font-weight:600;font-size:9pt;border-bottom:1px solid #334155"/></style><contents><textItem><dataSource><dataItemValue refDataItem="NOME"/></dataSource></textItem></contents></listColumnBody></listColumn>
-																	<listColumn><listColumnTitle><style><CSS value="background-color:#020617; color:#38BDF8; padding:4px; text-align:center; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="Vei_Exp"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px;text-align:center;color:white;font-weight:600;font-size:9pt;border-bottom:1px solid #334155"/><dataFormat><numberFormat decimalDelimiter="," decimalSize="2"/></dataFormat></style><contents><textItem><dataSource><dataItemValue refDataItem="Vei_Exp"/></dataSource></textItem></contents></listColumnBody></listColumn>
-																	<listColumn><listColumnTitle><style><CSS value="background-color:#020617; color:#38BDF8; padding:4px; text-align:center; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="QTD_LOJAS"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px;text-align:center;color:white;font-weight:600;font-size:9pt;border-bottom:1px solid #334155"/><dataFormat><numberFormat decimalSize="2" decimalDelimiter=","/></dataFormat></style><contents><textItem><dataSource><dataItemValue refDataItem="QTD_LOJAS"/></dataSource><style><dataFormat><numberFormat decimalSize="0" useGrouping="true"/></dataFormat></style></textItem></contents></listColumnBody></listColumn>
-																	<listColumn><listColumnTitle><style><CSS value="background-color:#020617; color:#38BDF8; padding:4px; text-align:center; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="QTD_PLT"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px; border-bottom:1px solid #334155; text-align:center; font-size:8pt;"/></style><contents><textItem><dataSource><dataItemValue refDataItem="QTD_PLT"/></dataSource></textItem></contents><conditionalStyleRefs><conditionalStyleRef refConditionalStyle="Estilo Condicional Premium 1"/></conditionalStyleRefs></listColumnBody></listColumn>
-																	<listColumn><listColumnTitle><style><CSS value="background-color:#020617; color:#38BDF8; padding:4px; text-align:center; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="M_H"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px; border-bottom:1px solid #334155; text-align:center; font-size:8pt;"/></style><contents><textItem><dataSource><dataItemValue refDataItem="M_H"/></dataSource></textItem></contents><conditionalStyleRefs><conditionalStyleRef refConditionalStyle="M_H_P_Premium 1"/></conditionalStyleRefs></listColumnBody></listColumn>
+																	<listColumn><listColumnTitle><style><CSS value="background:linear-gradient(135deg,#020617,#0F172A); color:#38BDF8; padding:4px; text-align:center; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="TURNO"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px;text-align:center;color:white;font-weight:600;font-size:9pt;border-bottom:1px solid #334155"/></style><contents><textItem><dataSource><dataItemValue refDataItem="TURNO"/></dataSource></textItem></contents></listColumnBody></listColumn>
+																	<listColumn><listColumnTitle><style><CSS value="background:linear-gradient(135deg,#020617,#0F172A); color:#38BDF8; padding:4px; text-align:left; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="NOME"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px;text-align:left;color:white;font-weight:600;font-size:9pt;border-bottom:1px solid #334155"/></style><contents><textItem><dataSource><dataItemValue refDataItem="NOME"/></dataSource></textItem></contents></listColumnBody></listColumn>
+																	<listColumn><listColumnTitle><style><CSS value="background:linear-gradient(135deg,#020617,#0F172A); color:#38BDF8; padding:4px; text-align:center; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="Vei_Exp"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px;text-align:center;color:white;font-weight:600;font-size:9pt;border-bottom:1px solid #334155"/><dataFormat><numberFormat decimalDelimiter="," decimalSize="2"/></dataFormat></style><contents><textItem><dataSource><dataItemValue refDataItem="Vei_Exp"/></dataSource></textItem></contents></listColumnBody></listColumn>
+																	<listColumn><listColumnTitle><style><CSS value="background:linear-gradient(135deg,#020617,#0F172A); color:#38BDF8; padding:4px; text-align:center; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="QTD_LOJAS"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px;text-align:center;color:white;font-weight:600;font-size:9pt;border-bottom:1px solid #334155"/><dataFormat><numberFormat decimalSize="2" decimalDelimiter=","/></dataFormat></style><contents><textItem><dataSource><dataItemValue refDataItem="QTD_LOJAS"/></dataSource><style><dataFormat><numberFormat decimalSize="0" useGrouping="true"/></dataFormat></style></textItem></contents></listColumnBody></listColumn>
+																	<listColumn><listColumnTitle><style><CSS value="background:linear-gradient(135deg,#020617,#0F172A); color:#38BDF8; padding:4px; text-align:center; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="QTD_PLT"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px; border-bottom:1px solid #334155; text-align:center; font-size:8pt;"/></style><contents><textItem><dataSource><dataItemValue refDataItem="QTD_PLT"/></dataSource></textItem></contents><conditionalStyleRefs><conditionalStyleRef refConditionalStyle="Estilo Condicional Premium 1"/></conditionalStyleRefs></listColumnBody></listColumn>
+																	<listColumn><listColumnTitle><style><CSS value="background:linear-gradient(135deg,#020617,#0F172A); color:#38BDF8; padding:4px; text-align:center; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="M_H"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px; border-bottom:1px solid #334155; text-align:center; font-size:8pt;"/></style><contents><textItem><dataSource><dataItemValue refDataItem="M_H"/></dataSource></textItem></contents><conditionalStyleRefs><conditionalStyleRef refConditionalStyle="M_H_P_Premium 1"/></conditionalStyleRefs></listColumnBody></listColumn>
 																</listColumns>
 																<sortList><sortItem refDataItem="QTD_PLT" sortOrder="descending"/></sortList>
 															</list>
@@ -336,12 +367,12 @@
 																<noDataHandler><contents><textItem><dataSource><staticValue>Sem dados.</staticValue></dataSource></textItem></contents></noDataHandler>
 																<style><CSS value="border-collapse:collapse; width:100%; font-size: 7.5pt;"/><defaultStyles><defaultStyle refStyle="ls"/></defaultStyles></style>
 																<listColumns>
-																	<listColumn><listColumnTitle><style><CSS value="background-color:#020617; color:#38BDF8; padding:4px; text-align:center; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="TURNO"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px;text-align:center;color:white;font-weight:600;font-size:9pt;border-bottom:1px solid #334155"/></style><contents><textItem><dataSource><dataItemValue refDataItem="TURNO"/></dataSource></textItem></contents></listColumnBody></listColumn>
-																	<listColumn><listColumnTitle><style><CSS value="background-color:#020617; color:#38BDF8; padding:4px; text-align:left; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="NOME"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px;text-align:left;color:white;font-weight:600;font-size:9pt;border-bottom:1px solid #334155"/></style><contents><textItem><dataSource><dataItemValue refDataItem="NOME"/></dataSource></textItem></contents></listColumnBody></listColumn>
-																	<listColumn><listColumnTitle><style><CSS value="background-color:#020617; color:#38BDF8; padding:4px; text-align:center; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="Vei_Exp"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px;text-align:center;color:white;font-weight:600;font-size:9pt;border-bottom:1px solid #334155"/><dataFormat><numberFormat decimalDelimiter="," decimalSize="2"/></dataFormat></style><contents><textItem><dataSource><dataItemValue refDataItem="Vei_Exp"/></dataSource></textItem></contents></listColumnBody></listColumn>
-																	<listColumn><listColumnTitle><style><CSS value="background-color:#020617; color:#38BDF8; padding:4px; text-align:center; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="QTD_LOJAS"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px;text-align:center;color:white;font-weight:600;font-size:9pt;border-bottom:1px solid #334155"/><dataFormat><numberFormat decimalDelimiter="," decimalSize="2"/></dataFormat></style><contents><textItem><dataSource><dataItemValue refDataItem="QTD_LOJAS"/></dataSource><style><dataFormat><numberFormat decimalSize="0" useGrouping="true"/></dataFormat></style></textItem></contents></listColumnBody></listColumn>
-																	<listColumn><listColumnTitle><style><CSS value="background-color:#020617; color:#38BDF8; padding:4px; text-align:center; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="QTD_PLT"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px; border-bottom:1px solid #334155; text-align:center; font-size:8pt;"/></style><contents><textItem><dataSource><dataItemValue refDataItem="QTD_PLT"/></dataSource></textItem></contents><conditionalStyleRefs><conditionalStyleRef refConditionalStyle="Estilo Condicional Premium 2"/></conditionalStyleRefs></listColumnBody></listColumn>
-																	<listColumn><listColumnTitle><style><CSS value="background-color:#020617; color:#38BDF8; padding:4px; text-align:center; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="M_H"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px; border-bottom:1px solid #334155; text-align:center; font-size:8pt;"/></style><contents><textItem><dataSource><dataItemValue refDataItem="M_H"/></dataSource></textItem></contents><conditionalStyleRefs><conditionalStyleRef refConditionalStyle="M_H_P_Premium 2"/></conditionalStyleRefs></listColumnBody></listColumn>
+																	<listColumn><listColumnTitle><style><CSS value="background:linear-gradient(135deg,#020617,#0F172A); color:#38BDF8; padding:4px; text-align:center; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="TURNO"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px;text-align:center;color:white;font-weight:600;font-size:9pt;border-bottom:1px solid #334155"/></style><contents><textItem><dataSource><dataItemValue refDataItem="TURNO"/></dataSource></textItem></contents></listColumnBody></listColumn>
+																	<listColumn><listColumnTitle><style><CSS value="background:linear-gradient(135deg,#020617,#0F172A); color:#38BDF8; padding:4px; text-align:left; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="NOME"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px;text-align:left;color:white;font-weight:600;font-size:9pt;border-bottom:1px solid #334155"/></style><contents><textItem><dataSource><dataItemValue refDataItem="NOME"/></dataSource></textItem></contents></listColumnBody></listColumn>
+																	<listColumn><listColumnTitle><style><CSS value="background:linear-gradient(135deg,#020617,#0F172A); color:#38BDF8; padding:4px; text-align:center; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="Vei_Exp"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px;text-align:center;color:white;font-weight:600;font-size:9pt;border-bottom:1px solid #334155"/><dataFormat><numberFormat decimalDelimiter="," decimalSize="2"/></dataFormat></style><contents><textItem><dataSource><dataItemValue refDataItem="Vei_Exp"/></dataSource></textItem></contents></listColumnBody></listColumn>
+																	<listColumn><listColumnTitle><style><CSS value="background:linear-gradient(135deg,#020617,#0F172A); color:#38BDF8; padding:4px; text-align:center; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="QTD_LOJAS"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px;text-align:center;color:white;font-weight:600;font-size:9pt;border-bottom:1px solid #334155"/><dataFormat><numberFormat decimalDelimiter="," decimalSize="2"/></dataFormat></style><contents><textItem><dataSource><dataItemValue refDataItem="QTD_LOJAS"/></dataSource><style><dataFormat><numberFormat decimalSize="0" useGrouping="true"/></dataFormat></style></textItem></contents></listColumnBody></listColumn>
+																	<listColumn><listColumnTitle><style><CSS value="background:linear-gradient(135deg,#020617,#0F172A); color:#38BDF8; padding:4px; text-align:center; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="QTD_PLT"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px; border-bottom:1px solid #334155; text-align:center; font-size:8pt;"/></style><contents><textItem><dataSource><dataItemValue refDataItem="QTD_PLT"/></dataSource></textItem></contents><conditionalStyleRefs><conditionalStyleRef refConditionalStyle="Estilo Condicional Premium 2"/></conditionalStyleRefs></listColumnBody></listColumn>
+																	<listColumn><listColumnTitle><style><CSS value="background:linear-gradient(135deg,#020617,#0F172A); color:#38BDF8; padding:4px; text-align:center; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="M_H"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px; border-bottom:1px solid #334155; text-align:center; font-size:8pt;"/></style><contents><textItem><dataSource><dataItemValue refDataItem="M_H"/></dataSource></textItem></contents><conditionalStyleRefs><conditionalStyleRef refConditionalStyle="M_H_P_Premium 2"/></conditionalStyleRefs></listColumnBody></listColumn>
 																</listColumns>
 																<sortList><sortItem refDataItem="QTD_PLT" sortOrder="descending"/></sortList>
 															</list>
@@ -355,12 +386,12 @@
 																<noDataHandler><contents><textItem><dataSource><staticValue>Sem dados.</staticValue></dataSource></textItem></contents></noDataHandler>
 																<style><CSS value="border-collapse:collapse; width:100%; font-size: 7.5pt;"/><defaultStyles><defaultStyle refStyle="ls"/></defaultStyles></style>
 																<listColumns>
-																	<listColumn><listColumnTitle><style><CSS value="background-color:#020617; color:#38BDF8; padding:4px; text-align:center; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="TURNO"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px;text-align:center;color:white;font-weight:600;font-size:9pt;border-bottom:1px solid #334155"/></style><contents><textItem><dataSource><dataItemValue refDataItem="TURNO"/></dataSource></textItem></contents></listColumnBody></listColumn>
-																	<listColumn><listColumnTitle><style><CSS value="background-color:#020617; color:#38BDF8; padding:4px; text-align:left; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="NOME"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px;text-align:left;color:white;font-weight:600;font-size:9pt;border-bottom:1px solid #334155"/></style><contents><textItem><dataSource><dataItemValue refDataItem="NOME"/></dataSource></textItem></contents></listColumnBody></listColumn>
-																	<listColumn><listColumnTitle><style><CSS value="background-color:#020617; color:#38BDF8; padding:4px; text-align:center; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="Vei_Exp"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px;text-align:center;color:white;font-weight:600;font-size:9pt;border-bottom:1px solid #334155"/><dataFormat><numberFormat decimalDelimiter="," decimalSize="2"/></dataFormat></style><contents><textItem><dataSource><dataItemValue refDataItem="Vei_Exp"/></dataSource></textItem></contents></listColumnBody></listColumn>
-																	<listColumn><listColumnTitle><style><CSS value="background-color:#020617; color:#38BDF8; padding:4px; text-align:center; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="QTD_LOJAS"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px;text-align:center;color:white;font-weight:600;font-size:9pt;border-bottom:1px solid #334155"/><dataFormat><numberFormat decimalDelimiter="," decimalSize="2"/></dataFormat></style><contents><textItem><dataSource><dataItemValue refDataItem="QTD_LOJAS"/></dataSource><style><dataFormat><numberFormat decimalSize="0" useGrouping="true"/></dataFormat></style></textItem></contents></listColumnBody></listColumn>
-																	<listColumn><listColumnTitle><style><CSS value="background-color:#020617; color:#38BDF8; padding:4px; text-align:center; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="QTD_PLT"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px; border-bottom:1px solid #334155; text-align:center; font-size:8pt;"/></style><contents><textItem><dataSource><dataItemValue refDataItem="QTD_PLT"/></dataSource></textItem></contents><conditionalStyleRefs><conditionalStyleRef refConditionalStyle="Estilo Condicional Premium 3"/></conditionalStyleRefs></listColumnBody></listColumn>
-																	<listColumn><listColumnTitle><style><CSS value="background-color:#020617; color:#38BDF8; padding:4px; text-align:center; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="M_H"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px; border-bottom:1px solid #334155; text-align:center; font-size:8pt;"/></style><contents><textItem><dataSource><dataItemValue refDataItem="M_H"/></dataSource></textItem></contents><conditionalStyleRefs><conditionalStyleRef refConditionalStyle="M_H_P_Premium 3"/></conditionalStyleRefs></listColumnBody></listColumn>
+																	<listColumn><listColumnTitle><style><CSS value="background:linear-gradient(135deg,#020617,#0F172A); color:#38BDF8; padding:4px; text-align:center; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="TURNO"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px;text-align:center;color:white;font-weight:600;font-size:9pt;border-bottom:1px solid #334155"/></style><contents><textItem><dataSource><dataItemValue refDataItem="TURNO"/></dataSource></textItem></contents></listColumnBody></listColumn>
+																	<listColumn><listColumnTitle><style><CSS value="background:linear-gradient(135deg,#020617,#0F172A); color:#38BDF8; padding:4px; text-align:left; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="NOME"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px;text-align:left;color:white;font-weight:600;font-size:9pt;border-bottom:1px solid #334155"/></style><contents><textItem><dataSource><dataItemValue refDataItem="NOME"/></dataSource></textItem></contents></listColumnBody></listColumn>
+																	<listColumn><listColumnTitle><style><CSS value="background:linear-gradient(135deg,#020617,#0F172A); color:#38BDF8; padding:4px; text-align:center; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="Vei_Exp"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px;text-align:center;color:white;font-weight:600;font-size:9pt;border-bottom:1px solid #334155"/><dataFormat><numberFormat decimalDelimiter="," decimalSize="2"/></dataFormat></style><contents><textItem><dataSource><dataItemValue refDataItem="Vei_Exp"/></dataSource></textItem></contents></listColumnBody></listColumn>
+																	<listColumn><listColumnTitle><style><CSS value="background:linear-gradient(135deg,#020617,#0F172A); color:#38BDF8; padding:4px; text-align:center; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="QTD_LOJAS"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px;text-align:center;color:white;font-weight:600;font-size:9pt;border-bottom:1px solid #334155"/><dataFormat><numberFormat decimalDelimiter="," decimalSize="2"/></dataFormat></style><contents><textItem><dataSource><dataItemValue refDataItem="QTD_LOJAS"/></dataSource><style><dataFormat><numberFormat decimalSize="0" useGrouping="true"/></dataFormat></style></textItem></contents></listColumnBody></listColumn>
+																	<listColumn><listColumnTitle><style><CSS value="background:linear-gradient(135deg,#020617,#0F172A); color:#38BDF8; padding:4px; text-align:center; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="QTD_PLT"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px; border-bottom:1px solid #334155; text-align:center; font-size:8pt;"/></style><contents><textItem><dataSource><dataItemValue refDataItem="QTD_PLT"/></dataSource></textItem></contents><conditionalStyleRefs><conditionalStyleRef refConditionalStyle="Estilo Condicional Premium 3"/></conditionalStyleRefs></listColumnBody></listColumn>
+																	<listColumn><listColumnTitle><style><CSS value="background:linear-gradient(135deg,#020617,#0F172A); color:#38BDF8; padding:4px; text-align:center; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="M_H"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px; border-bottom:1px solid #334155; text-align:center; font-size:8pt;"/></style><contents><textItem><dataSource><dataItemValue refDataItem="M_H"/></dataSource></textItem></contents><conditionalStyleRefs><conditionalStyleRef refConditionalStyle="M_H_P_Premium 3"/></conditionalStyleRefs></listColumnBody></listColumn>
 																</listColumns>
 																<sortList><sortItem refDataItem="QTD_PLT" sortOrder="descending"/></sortList>
 															</list>
@@ -673,25 +704,31 @@ GROUP BY
 )RG)
 WHERE 
     (
-        RG.SHIPMENT_STATUS_ID = 80 AND
         (
+            RG.SHIPMENT_STATUS_ID = 80 AND
             (
-                #sq(prompt(&apos;p_TipoData&apos;, &apos;token&apos;, &apos;EXPEDICAO&apos;))# = &apos;EXPEDICAO&apos; AND
-                RG.DATA_EXP = CASE WHEN #sq(prompt(&apos;p_Data&apos;, &apos;date&apos;, &apos;1900-01-01&apos;))# = &apos;1900-01-01&apos;
-                                   THEN (CASE WHEN CAST(TO_CHAR(SYSDATE,&apos;HH24&apos;) AS FLOAT) &lt; 6 THEN TRUNC(SYSDATE)-1 ELSE TRUNC(SYSDATE) END)
-                                   ELSE TO_DATE(SUBSTR(#sq(prompt(&apos;p_Data&apos;, &apos;date&apos;, &apos;1900-01-01&apos;))#,1,10), &apos;YYYY-MM-DD&apos;) END
-            )
-            OR
-            (
-                #sq(prompt(&apos;p_TipoData&apos;, &apos;token&apos;, &apos;EXPEDICAO&apos;))# = &apos;CRIACAO&apos; AND
-                RG.DATA_CRIACAO = CASE WHEN #sq(prompt(&apos;p_Data&apos;, &apos;date&apos;, &apos;1900-01-01&apos;))# = &apos;1900-01-01&apos;
-                                   THEN (CASE WHEN CAST(TO_CHAR(SYSDATE,&apos;HH24&apos;) AS FLOAT) &lt; 6 THEN TRUNC(SYSDATE)-1 ELSE TRUNC(SYSDATE) END)
-                                   ELSE TO_DATE(SUBSTR(#sq(prompt(&apos;p_Data&apos;, &apos;date&apos;, &apos;1900-01-01&apos;))#,1,10), &apos;YYYY-MM-DD&apos;) END
+                (
+                    #sq(prompt(&apos;p_TipoData&apos;, &apos;token&apos;, &apos;EXPEDICAO&apos;))# = &apos;EXPEDICAO&apos; AND
+                    RG.DATA_EXP = CASE WHEN #sq(prompt(&apos;p_Data&apos;, &apos;date&apos;, &apos;1900-01-01&apos;))# = &apos;1900-01-01&apos;
+                                       THEN (CASE WHEN CAST(TO_CHAR(SYSDATE,&apos;HH24&apos;) AS FLOAT) &lt; 6 THEN TRUNC(SYSDATE)-1 ELSE TRUNC(SYSDATE) END)
+                                       ELSE TO_DATE(SUBSTR(#sq(prompt(&apos;p_Data&apos;, &apos;date&apos;, &apos;1900-01-01&apos;))#,1,10), &apos;YYYY-MM-DD&apos;) END
+                )
+                OR
+                (
+                    #sq(prompt(&apos;p_TipoData&apos;, &apos;token&apos;, &apos;EXPEDICAO&apos;))# = &apos;CRIACAO&apos; AND
+                    RG.DATA_CRIACAO = CASE WHEN #sq(prompt(&apos;p_Data&apos;, &apos;date&apos;, &apos;1900-01-01&apos;))# = &apos;1900-01-01&apos;
+                                       THEN (CASE WHEN CAST(TO_CHAR(SYSDATE,&apos;HH24&apos;) AS FLOAT) &lt; 6 THEN TRUNC(SYSDATE)-1 ELSE TRUNC(SYSDATE) END)
+                                       ELSE TO_DATE(SUBSTR(#sq(prompt(&apos;p_Data&apos;, &apos;date&apos;, &apos;1900-01-01&apos;))#,1,10), &apos;YYYY-MM-DD&apos;) END
+                )
             )
         )
+        OR
+        (RG.SHIPMENT_STATUS_ID &lt; 80)
     )
-    OR
-    (RG.SHIPMENT_STATUS_ID &lt; 80)
+    AND (
+        #sq(prompt(&apos;p_CD&apos;, &apos;token&apos;, &apos;TODOS&apos;))# = &apos;TODOS&apos;
+        OR RG.OPERACAO = #sq(prompt(&apos;p_CD&apos;, &apos;token&apos;, &apos;TODOS&apos;))#
+    )
 GROUP BY
     RG.OPERACAO,
     RG.DATA_CRIACAO,
@@ -983,17 +1020,23 @@ CTE_FILTRADO AS (
     FROM CTE_DADOS_AGREGADOS
     WHERE 
         (
-            #sq(prompt(&apos;p_TipoData&apos;, &apos;token&apos;, &apos;EXPEDICAO&apos;))# = &apos;EXPEDICAO&apos; AND
-            DATA_CICLO = CASE WHEN #sq(prompt(&apos;p_Data&apos;, &apos;date&apos;, &apos;1900-01-01&apos;))# = &apos;1900-01-01&apos;
-                               THEN (CASE WHEN CAST(TO_CHAR(SYSDATE,&apos;HH24&apos;) AS FLOAT) &lt; 6 THEN TRUNC(SYSDATE)-1 ELSE TRUNC(SYSDATE) END)
-                               ELSE TO_DATE(SUBSTR(#sq(prompt(&apos;p_Data&apos;, &apos;date&apos;, &apos;1900-01-01&apos;))#,1,10), &apos;YYYY-MM-DD&apos;) END
+            (
+                #sq(prompt(&apos;p_TipoData&apos;, &apos;token&apos;, &apos;EXPEDICAO&apos;))# = &apos;EXPEDICAO&apos; AND
+                DATA_CICLO = CASE WHEN #sq(prompt(&apos;p_Data&apos;, &apos;date&apos;, &apos;1900-01-01&apos;))# = &apos;1900-01-01&apos;
+                                   THEN (CASE WHEN CAST(TO_CHAR(SYSDATE,&apos;HH24&apos;) AS FLOAT) &lt; 6 THEN TRUNC(SYSDATE)-1 ELSE TRUNC(SYSDATE) END)
+                                   ELSE TO_DATE(SUBSTR(#sq(prompt(&apos;p_Data&apos;, &apos;date&apos;, &apos;1900-01-01&apos;))#,1,10), &apos;YYYY-MM-DD&apos;) END
+            )
+            OR
+            (
+                #sq(prompt(&apos;p_TipoData&apos;, &apos;token&apos;, &apos;EXPEDICAO&apos;))# = &apos;CRIACAO&apos; AND
+                DATA_CRIACAO = CASE WHEN #sq(prompt(&apos;p_Data&apos;, &apos;date&apos;, &apos;1900-01-01&apos;))# = &apos;1900-01-01&apos;
+                                   THEN (CASE WHEN CAST(TO_CHAR(SYSDATE,&apos;HH24&apos;) AS FLOAT) &lt; 6 THEN TRUNC(SYSDATE)-1 ELSE TRUNC(SYSDATE) END)
+                                   ELSE TO_DATE(SUBSTR(#sq(prompt(&apos;p_Data&apos;, &apos;date&apos;, &apos;1900-01-01&apos;))#,1,10), &apos;YYYY-MM-DD&apos;) END
+            )
         )
-        OR
-        (
-            #sq(prompt(&apos;p_TipoData&apos;, &apos;token&apos;, &apos;EXPEDICAO&apos;))# = &apos;CRIACAO&apos; AND
-            DATA_CRIACAO = CASE WHEN #sq(prompt(&apos;p_Data&apos;, &apos;date&apos;, &apos;1900-01-01&apos;))# = &apos;1900-01-01&apos;
-                               THEN (CASE WHEN CAST(TO_CHAR(SYSDATE,&apos;HH24&apos;) AS FLOAT) &lt; 6 THEN TRUNC(SYSDATE)-1 ELSE TRUNC(SYSDATE) END)
-                               ELSE TO_DATE(SUBSTR(#sq(prompt(&apos;p_Data&apos;, &apos;date&apos;, &apos;1900-01-01&apos;))#,1,10), &apos;YYYY-MM-DD&apos;) END
+        AND (
+            #sq(prompt(&apos;p_CD&apos;, &apos;token&apos;, &apos;TODOS&apos;))# = &apos;TODOS&apos;
+            OR UPPER(OPERACAO) = UPPER(#sq(prompt(&apos;p_CD&apos;, &apos;token&apos;, &apos;TODOS&apos;))#)
         )
     GROUP BY TURNO, CARREGADOR, NOME
 ),
@@ -1142,47 +1185,47 @@ END</expression>
 	<namedConditionalStyles>
 		<advancedConditionalStyle name="Estilo Condicional Premium 1">
 			<styleCases>
-				<styleCase><style><CSS value="background-color:#064E3B; color:#34D399; font-weight:bold;"/></style><reportCondition>[Pt_1].[QTD_PLT] &gt; 80</reportCondition></styleCase>
-				<styleCase><style><CSS value="background-color:#713F12; color:#FDE047; font-weight:bold;"/></style><reportCondition>[Pt_1].[QTD_PLT] &gt; 50</reportCondition></styleCase>
+				<styleCase><style><CSS value="background-color:#064E3B; color:#34D399; font-weight:bold; border-radius:4px; padding:3px 6px;"/></style><reportCondition>[Pt_1].[QTD_PLT] &gt; 80</reportCondition></styleCase>
+				<styleCase><style><CSS value="background-color:#713F12; color:#FDE047; font-weight:bold; border-radius:4px; padding:3px 6px;"/></style><reportCondition>[Pt_1].[QTD_PLT] &gt; 50</reportCondition></styleCase>
 			</styleCases>
-			<styleDefault><style><CSS value="background-color:#7F1D1D; color:#FCA5A5; font-weight:bold;"/></style></styleDefault>
+			<styleDefault><style><CSS value="background-color:#7F1D1D; color:#FCA5A5; font-weight:bold; border-radius:4px; padding:3px 6px;"/></style></styleDefault>
 		</advancedConditionalStyle>
 		<advancedConditionalStyle name="M_H_P_Premium 1">
 			<styleCases>
-				<styleCase><style><CSS value="background-color:#064E3B; color:#34D399; font-weight:bold;"/></style><reportCondition>[Pt_1].[M_H] &gt; 10</reportCondition></styleCase>
-				<styleCase><style><CSS value="background-color:#713F12; color:#FDE047; font-weight:bold;"/></style><reportCondition>[Pt_1].[M_H] &gt; 5</reportCondition></styleCase>
+				<styleCase><style><CSS value="background-color:#064E3B; color:#34D399; font-weight:bold; border-radius:4px; padding:3px 6px;"/></style><reportCondition>[Pt_1].[M_H] &gt; 10</reportCondition></styleCase>
+				<styleCase><style><CSS value="background-color:#713F12; color:#FDE047; font-weight:bold; border-radius:4px; padding:3px 6px;"/></style><reportCondition>[Pt_1].[M_H] &gt; 5</reportCondition></styleCase>
 			</styleCases>
-			<styleDefault><style><CSS value="background-color:#7F1D1D; color:#FCA5A5; font-weight:bold;"/></style></styleDefault>
+			<styleDefault><style><CSS value="background-color:#7F1D1D; color:#FCA5A5; font-weight:bold; border-radius:4px; padding:3px 6px;"/></style></styleDefault>
 		</advancedConditionalStyle>
 
 		<advancedConditionalStyle name="Estilo Condicional Premium 2">
 			<styleCases>
-				<styleCase><style><CSS value="background-color:#064E3B; color:#34D399; font-weight:bold;"/></style><reportCondition>[Pt_2].[QTD_PLT] &gt; 80</reportCondition></styleCase>
-				<styleCase><style><CSS value="background-color:#713F12; color:#FDE047; font-weight:bold;"/></style><reportCondition>[Pt_2].[QTD_PLT] &gt; 50</reportCondition></styleCase>
+				<styleCase><style><CSS value="background-color:#064E3B; color:#34D399; font-weight:bold; border-radius:4px; padding:3px 6px;"/></style><reportCondition>[Pt_2].[QTD_PLT] &gt; 80</reportCondition></styleCase>
+				<styleCase><style><CSS value="background-color:#713F12; color:#FDE047; font-weight:bold; border-radius:4px; padding:3px 6px;"/></style><reportCondition>[Pt_2].[QTD_PLT] &gt; 50</reportCondition></styleCase>
 			</styleCases>
-			<styleDefault><style><CSS value="background-color:#7F1D1D; color:#FCA5A5; font-weight:bold;"/></style></styleDefault>
+			<styleDefault><style><CSS value="background-color:#7F1D1D; color:#FCA5A5; font-weight:bold; border-radius:4px; padding:3px 6px;"/></style></styleDefault>
 		</advancedConditionalStyle>
 		<advancedConditionalStyle name="M_H_P_Premium 2">
 			<styleCases>
-				<styleCase><style><CSS value="background-color:#064E3B; color:#34D399; font-weight:bold;"/></style><reportCondition>[Pt_2].[M_H] &gt; 10</reportCondition></styleCase>
-				<styleCase><style><CSS value="background-color:#713F12; color:#FDE047; font-weight:bold;"/></style><reportCondition>[Pt_2].[M_H] &gt; 5</reportCondition></styleCase>
+				<styleCase><style><CSS value="background-color:#064E3B; color:#34D399; font-weight:bold; border-radius:4px; padding:3px 6px;"/></style><reportCondition>[Pt_2].[M_H] &gt; 10</reportCondition></styleCase>
+				<styleCase><style><CSS value="background-color:#713F12; color:#FDE047; font-weight:bold; border-radius:4px; padding:3px 6px;"/></style><reportCondition>[Pt_2].[M_H] &gt; 5</reportCondition></styleCase>
 			</styleCases>
-			<styleDefault><style><CSS value="background-color:#7F1D1D; color:#FCA5A5; font-weight:bold;"/></style></styleDefault>
+			<styleDefault><style><CSS value="background-color:#7F1D1D; color:#FCA5A5; font-weight:bold; border-radius:4px; padding:3px 6px;"/></style></styleDefault>
 		</advancedConditionalStyle>
 
 		<advancedConditionalStyle name="Estilo Condicional Premium 3">
 			<styleCases>
-				<styleCase><style><CSS value="background-color:#064E3B; color:#34D399; font-weight:bold;"/></style><reportCondition>[Pt_3].[QTD_PLT] &gt; 80</reportCondition></styleCase>
-				<styleCase><style><CSS value="background-color:#713F12; color:#FDE047; font-weight:bold;"/></style><reportCondition>[Pt_3].[QTD_PLT] &gt; 50</reportCondition></styleCase>
+				<styleCase><style><CSS value="background-color:#064E3B; color:#34D399; font-weight:bold; border-radius:4px; padding:3px 6px;"/></style><reportCondition>[Pt_3].[QTD_PLT] &gt; 80</reportCondition></styleCase>
+				<styleCase><style><CSS value="background-color:#713F12; color:#FDE047; font-weight:bold; border-radius:4px; padding:3px 6px;"/></style><reportCondition>[Pt_3].[QTD_PLT] &gt; 50</reportCondition></styleCase>
 			</styleCases>
-			<styleDefault><style><CSS value="background-color:#7F1D1D; color:#FCA5A5; font-weight:bold;"/></style></styleDefault>
+			<styleDefault><style><CSS value="background-color:#7F1D1D; color:#FCA5A5; font-weight:bold; border-radius:4px; padding:3px 6px;"/></style></styleDefault>
 		</advancedConditionalStyle>
 		<advancedConditionalStyle name="M_H_P_Premium 3">
 			<styleCases>
-				<styleCase><style><CSS value="background-color:#064E3B; color:#34D399; font-weight:bold;"/></style><reportCondition>[Pt_3].[M_H] &gt; 10</reportCondition></styleCase>
-				<styleCase><style><CSS value="background-color:#713F12; color:#FDE047; font-weight:bold;"/></style><reportCondition>[Pt_3].[M_H] &gt; 5</reportCondition></styleCase>
+				<styleCase><style><CSS value="background-color:#064E3B; color:#34D399; font-weight:bold; border-radius:4px; padding:3px 6px;"/></style><reportCondition>[Pt_3].[M_H] &gt; 10</reportCondition></styleCase>
+				<styleCase><style><CSS value="background-color:#713F12; color:#FDE047; font-weight:bold; border-radius:4px; padding:3px 6px;"/></style><reportCondition>[Pt_3].[M_H] &gt; 5</reportCondition></styleCase>
 			</styleCases>
-			<styleDefault><style><CSS value="background-color:#7F1D1D; color:#FCA5A5; font-weight:bold;"/></style></styleDefault>
+			<styleDefault><style><CSS value="background-color:#7F1D1D; color:#FCA5A5; font-weight:bold; border-radius:4px; padding:3px 6px;"/></style></styleDefault>
 		</advancedConditionalStyle>
 	</namedConditionalStyles>
 </report>
