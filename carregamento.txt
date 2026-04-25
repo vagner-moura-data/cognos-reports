@@ -1,0 +1,1188 @@
+<report xmlns="http://developer.cognos.com/schemas/report/14.3/"           useStyleVersion="11.4" expressionLocale="en" viewPagesAsTabs="topLeft">
+	<drillBehavior/>
+	<layouts>
+		<layout>
+			<reportPages>
+				<page name="KPIs - Veiculos Expedidos">
+					<style>
+						<defaultStyles>
+							<defaultStyle refStyle="pg"/>
+						</defaultStyles>
+						<CSS value="background-color:#0F172A; font-family: &apos;Segoe UI&apos;, Roboto, Helvetica, sans-serif;"/>
+					</style>
+					<pageBody>
+						<style>
+							<defaultStyles>
+								<defaultStyle refStyle="pb"/>
+							</defaultStyles>
+						</style>
+						<contents>
+
+							<block>
+								
+								<contents>
+									<table>
+										<style>
+											<CSS value="width:100%; border-collapse:collapse; box-shadow: 0 2px 4px rgba(0,0,0,0.3); background-color:#020617; border-radius:6px; border: 1px solid #1E293B;"/>
+										</style>
+										<tableRows>
+											<tableRow>
+												<tableCells>
+													<tableCell>
+														<style><CSS value="padding:3px 15px 3px 15px;width:50%"/></style>
+														<contents>
+															<textItem>
+																<dataSource><staticValue>TORRE DE CONTROLE: CARREGAMENTO &amp; EXPEDIÇÃO</staticValue></dataSource>
+																<style>
+																	<CSS value="color:#38BDF8; font-size:14pt; font-weight:800; text-align:left; display:block; letter-spacing: 1px;"/>
+																</style>
+															</textItem>
+														</contents>
+													</tableCell>
+													
+													<tableCell>
+														<style><CSS value="padding:3px 8px 3px 8px;vertical-align:middle;text-align:right;width:20%"/></style>
+														<contents>
+															<selectValue name="p_TipoData" parameter="p_TipoData" required="false">
+																<style><CSS value="padding:4px;font-size:9pt;border-radius:4px;background-color:#1E293B;color:silver;width:150px;border:1px solid #334155"/></style>
+															<defaultSelections><defaultSimpleSelection>EXPEDICAO</defaultSimpleSelection></defaultSelections><selectOptions><selectOption useValue="CRIACAO"><displayValue>CRIACAO</displayValue></selectOption><selectOption useValue="EXPEDICAO"><displayValue>EXPEDICAO</displayValue></selectOption></selectOptions></selectValue>
+														</contents>
+													</tableCell>
+
+													<tableCell>
+														<style><CSS value="padding:5px 8px 5px 8px;vertical-align:middle;text-align:right;width:20%"/></style>
+														<contents>
+															<selectDate name="p_Data" parameter="p_Data" required="false" selectDateUI="editBox">
+																<style><CSS value="font-size:9pt; padding:4px; border-radius:4px; background-color:#1E293B; color:#F8FAFC; border:1px solid #334155; width:140px;"/></style>
+															</selectDate>
+														</contents>
+													</tableCell>
+
+													<tableCell>
+														<style><CSS value="padding:5px 15px 5px 8px;vertical-align:middle;text-align:right;width:10%"/></style>
+														<contents>
+															<promptButton type="finish">
+																<contents><textItem><dataSource><staticValue>🔎 Filtrar</staticValue></dataSource></textItem></contents>
+																<style><CSS value="background-color:#3B82F6;color:white;font-weight:bold;border-top-width:none;border-bottom-width:none;border-left-width:none;border-right-width:none;padding-left:10px;padding-right:10px;border-radius:4px;cursor:pointer;box-shadow:0 2px 4px rgba(0,0,0,0.5)"/></style>
+															</promptButton>
+														</contents>
+													</tableCell>
+
+												</tableCells>
+											</tableRow>
+										</tableRows>
+									</table>
+								</contents>
+							<style><CSS value="margin-bottom:8px"/></style></block>
+
+							<block>
+								<style>
+									<CSS value="margin-bottom:8px;"/>
+								</style>
+								<contents>
+									<table>
+										<style>
+											<CSS value="width:100%; border-collapse:collapse; table-layout:fixed;"/>
+										</style>
+										<tableRows>
+											<tableRow>
+												<tableCells>
+													
+													<tableCell>
+														<style><CSS value="padding-right:8px; width:20%;"/></style>
+														<contents>
+															<block>
+																<style><CSS value="background-color:#1E293B; border-radius:6px; padding:10px; box-shadow: 0 2px 4px rgba(0,0,0,0.3); color:#FFFFFF; border-top: 3px solid #3B82F6;"/></style>
+																<contents>
+																	<textItem><dataSource><staticValue>VEÍCULOS EXP.</staticValue></dataSource><style><CSS value="font-size:7.5pt;font-weight:700;color:#94A3B8;display:block;white-space:nowrap"/></style></textItem><table><style><CSS value="width:100%; border-collapse:collapse;"/></style>
+																		<tableRows><tableRow><tableCells>
+																			<tableCell><style><CSS value="text-align:left;font-weight:bold"/></style><contents>
+																				<singleton name="kpi1" refQuery="Veiculos data">
+																					<contents><textItem><dataSource><dataItemValue refDataItem="QTY_VEIC_EXP"/></dataSource><style><CSS value="font-size:28pt;font-weight:bold;color:#60A5FA;display:block;line-height:1;margin-top:2px"/></style></textItem></contents>
+																				</singleton>
+																			</contents></tableCell>
+																			<tableCell><style><CSS value="vertical-align:middle; text-align:right; width:40px;"/></style><contents>
+																				<textItem><dataSource><staticValue>🚛</staticValue></dataSource><style><CSS value="font-size:24pt; opacity:0.2;"/></style></textItem>
+																			</contents></tableCell>
+																		</tableCells></tableRow></tableRows>
+																	</table>
+																</contents>
+															</block>
+														</contents>
+													</tableCell>
+
+													<tableCell>
+														<style><CSS value="padding-right:8px; width:20%;"/></style>
+														<contents>
+															<block>
+																<style><CSS value="background-color:#1E293B; border-radius:6px; padding:10px; box-shadow: 0 2px 4px rgba(0,0,0,0.3); color:#FFFFFF; border-top: 3px solid #F59E0B;"/></style>
+																<contents>
+																	<textItem><dataSource><staticValue>BACKLOG PENDENTE</staticValue></dataSource><style><CSS value="font-size:7.5pt;font-weight:700;color:#94A3B8;display:block;white-space:nowrap"/></style></textItem><table><style><CSS value="width:100%; border-collapse:collapse;"/></style>
+																		<tableRows><tableRow><tableCells>
+																			<tableCell><style><CSS value="text-align:left"/></style><contents>
+																				<singleton name="kpi_backlog" refQuery="Veiculos data">
+																					<contents><textItem><dataSource><dataItemValue refDataItem="QTY_VEIC_PEND"/></dataSource><style><CSS value="font-size:28pt;font-weight:bold;color:#FCD34D;display:block;line-height:1;margin-top:2px"/></style></textItem></contents>
+																				</singleton>
+																			</contents></tableCell>
+																			<tableCell><style><CSS value="vertical-align:middle; text-align:right; width:40px;"/></style><contents>
+																				<textItem><dataSource><staticValue>⏳</staticValue></dataSource><style><CSS value="font-size:24pt; opacity:0.2;"/></style></textItem>
+																			</contents></tableCell>
+																		</tableCells></tableRow></tableRows>
+																	</table>
+																</contents>
+															</block>
+														</contents>
+													</tableCell>
+
+													<tableCell>
+														<style><CSS value="padding-right:8px; width:20%;"/></style>
+														<contents>
+															<block>
+																<style><CSS value="background-color:#1E293B; border-radius:6px; padding:10px; box-shadow: 0 2px 4px rgba(0,0,0,0.3); color:#FFFFFF; border-top: 3px solid #EF4444;"/></style>
+																<contents>
+																	<textItem><dataSource><staticValue>VEÍCULOS ATRASO</staticValue></dataSource><style><CSS value="font-size:7.5pt;font-weight:700;color:#94A3B8;display:block;white-space:nowrap"/></style></textItem><table><style><CSS value="width:100%; border-collapse:collapse;"/></style>
+																		<tableRows><tableRow><tableCells>
+																			<tableCell><style><CSS value="text-align:left"/></style><contents>
+																				<singleton name="kpi2" refQuery="Veiculos data">
+																					<contents><textItem><dataSource><dataItemValue refDataItem="QTY_VEIC_EXP_ATR"/></dataSource><style><CSS value="font-size:28pt;font-weight:bold;color:#F87171;display:block;line-height:1;margin-top:2px"/></style></textItem></contents>
+																				</singleton>
+																			</contents></tableCell>
+																			<tableCell><style><CSS value="vertical-align:middle; text-align:right; width:40px;"/></style><contents>
+																				<textItem><dataSource><staticValue>🚨</staticValue></dataSource><style><CSS value="font-size:24pt; opacity:0.2;"/></style></textItem>
+																			</contents></tableCell>
+																		</tableCells></tableRow></tableRows>
+																	</table>
+																</contents>
+															</block>
+														</contents>
+													</tableCell>
+
+													<tableCell>
+														<style><CSS value="padding-right:8px; width:20%;"/></style>
+														<contents>
+															<block>
+																<style><CSS value="background-color:#1E293B; border-radius:6px; padding:10px; box-shadow: 0 2px 4px rgba(0,0,0,0.3); color:#FFFFFF; border-top: 3px solid #8B5CF6;"/></style>
+																<contents>
+																	<textItem><dataSource><staticValue>LOJAS EXPEDIDAS</staticValue></dataSource><style><CSS value="font-size:7.5pt;font-weight:700;color:#94A3B8;display:block;white-space:nowrap"/></style></textItem><table><style><CSS value="width:100%; border-collapse:collapse;"/></style>
+																		<tableRows><tableRow><tableCells>
+																			<tableCell><style><CSS value="text-align:left"/></style><contents>
+																				<singleton name="kpi3" refQuery="Veiculos data">
+																					<contents><textItem><dataSource><dataItemValue refDataItem="QTY_LOJAS_EXP"/></dataSource><style><CSS value="font-size:28pt;font-weight:bold;color:#A78BFA;display:block;line-height:1;margin-top:2px"/></style></textItem></contents>
+																				</singleton>
+																			</contents></tableCell>
+																			<tableCell><style><CSS value="vertical-align:middle; text-align:right; width:40px;"/></style><contents>
+																				<textItem><dataSource><staticValue>🏪</staticValue></dataSource><style><CSS value="font-size:24pt; opacity:0.2;"/></style></textItem>
+																			</contents></tableCell>
+																		</tableCells></tableRow></tableRows>
+																	</table>
+																</contents>
+															</block>
+														</contents>
+													</tableCell>
+
+													<tableCell>
+														<style><CSS value="width:20%;"/></style>
+														<contents>
+															<block>
+																<style><CSS value="background-color:#1E293B; border-radius:6px; padding:10px; box-shadow: 0 2px 4px rgba(0,0,0,0.3); color:#FFFFFF; border-top: 3px solid #10B981;"/></style>
+																<contents>
+																	<textItem><dataSource><staticValue>MÉDIA PLT / H</staticValue></dataSource><style><CSS value="font-size:7.5pt;font-weight:700;color:#94A3B8;display:block;white-space:nowrap"/></style></textItem><table><style><CSS value="width:100%; border-collapse:collapse;"/></style>
+																		<tableRows><tableRow><tableCells>
+																			<tableCell><style><CSS value="text-align:left"/></style><contents>
+																				<singleton name="kpi5" refQuery="Base Carregamento">
+																					<contents><textItem><dataSource><dataItemValue refDataItem="MED_H"/></dataSource><style><dataFormat><numberFormat decimalDelimiter="," decimalSize="2" groupDelimiter="."/></dataFormat><CSS value="font-size:28pt;font-weight:bold;color:#34D399;display:block;line-height:1;margin-top:2px"/></style></textItem></contents>
+																				</singleton>
+																			</contents></tableCell>
+																			<tableCell><style><CSS value="vertical-align:middle; text-align:right; width:40px;"/></style><contents>
+																				<textItem><dataSource><staticValue>📈</staticValue></dataSource><style><CSS value="font-size:24pt; opacity:0.2;"/></style></textItem>
+																			</contents></tableCell>
+																		</tableCells></tableRow></tableRows>
+																	</table>
+																</contents>
+															</block>
+														</contents>
+													</tableCell>
+													
+												</tableCells>
+											</tableRow>
+										</tableRows>
+									</table>
+								</contents>
+							</block>
+
+							<block>
+								<style>
+									<CSS value="background-color:#1E293B; border-radius:6px; padding:10px 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.3); margin-bottom: 8px;"/>
+								</style>
+								<contents>
+									<textItem><dataSource><staticValue>Progresso da Operação de Expedição</staticValue></dataSource><style><CSS value="font-size:9pt; font-weight:bold; color:#F8FAFC; display:block; margin-bottom:5px;"/></style></textItem>
+									
+									<singleton name="progress_singleton" refQuery="Veiculos data">
+										<contents>
+											<HTMLItem><dataSource><staticValue>&lt;div style=&quot;width: 100%; background-color: #0F172A; border-radius: 15px; height: 22px; border: 1px solid #334155; overflow: hidden; box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);&quot;&gt;&lt;div style=&quot;height: 100%; background-color: #10B981; display: flex; align-items: center; justify-content: center; color: white; font-weight: 800; font-size: 9pt; white-space: nowrap; box-shadow: 0 0 10px rgba(16, 185, 129, 0.8); transition: width 1.5s ease-in-out; width: </staticValue></dataSource></HTMLItem>
+											<HTMLItem><dataSource><dataItemValue refDataItem="PERCENTUAL"/></dataSource></HTMLItem>
+											<HTMLItem><dataSource><staticValue>%;&quot;&gt;</staticValue></dataSource></HTMLItem>
+											<HTMLItem><dataSource><dataItemValue refDataItem="PERCENTUAL"/></dataSource></HTMLItem>
+											<HTMLItem><dataSource><staticValue>% CONCLUÍDO&lt;/div&gt;&lt;/div&gt;</staticValue></dataSource></HTMLItem>
+										</contents>
+									</singleton>
+								</contents>
+							</block>
+
+							<block>
+								<style>
+									<CSS value="background-color:#1E293B; border-radius:6px; padding:10px 40px 10px 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.3); margin-bottom: 8px; overflow-x:auto;"/>
+								</style>
+								<contents>
+									<textItem><dataSource><staticValue>Comparativo de Veículos por Turno</staticValue></dataSource><style><CSS value="font-size:10pt; font-weight:bold; color:#F8FAFC; display:block; margin-bottom:2px;"/></style></textItem>
+									
+									<v2_combinationChart matchSeriesColor="true" maxHotspots="10000" name="Gráfico de combinações7" refQuery="Veiculos data">
+										<v2_combinationTypeTooltips/>
+										<v2_legend>
+											<style><defaultStyles><defaultStyle refStyle="lg"/></defaultStyles><CSS value="color:#94A3B8; font-weight:bold; font-size:8pt;"/></style>
+											<v2_legendPosition><v2_legendPreset legendPositionPreset="bottom"/></v2_legendPosition>
+											<v2_legendTitle refQuery="Veiculos data"><v2_chartTextContents><v2_automaticText/></v2_chartTextContents><style><defaultStyles><defaultStyle refStyle="lx"/></defaultStyles><CSS value="font-size:8pt; font-weight:bold; display:none;"/></style></v2_legendTitle>
+										</v2_legend>
+										<v2_commonAxis>
+											<v2_ordinalAxis>
+												<v2_axisLine lineColor="#334155" lineWeight="1"/>
+												<v2_axisLabels><style><defaultStyles><defaultStyle refStyle="al"/></defaultStyles><CSS value="font-size:9pt;font-weight:bold;color:white"/></style></v2_axisLabels>
+												<v2_axisTitle refQuery="Veiculos data"><v2_chartTextContents><v2_chartTextItems><v2_chartTextItem><dataSource><staticValue/></dataSource></v2_chartTextItem></v2_chartTextItems></v2_chartTextContents><style><defaultStyles><defaultStyle refStyle="at"/></defaultStyles><CSS value="display:none;"/></style></v2_axisTitle>
+											</v2_ordinalAxis>
+											<chartNodes><chartNode><chartNodeMembers><chartNodeMember refDataItem="TURNO"><chartContents><chartTextItem><dataSource><memberCaption/></dataSource></chartTextItem></chartContents><sortList><sortItem refDataItem="TURNO"/></sortList></chartNodeMember></chartNodeMembers></chartNode></chartNodes>
+										</v2_commonAxis>
+										<v2_topLeftAxis>
+											<v2_combinationChartTypes>
+												<v2_bar borderColor="transparent" borders="show">
+													<v2_solidPalette>
+														<v2_solidPaletteEntries>
+															<v2_solidPaletteEntry><v2_fillEffect defaultColor="#3B82F6"><v2_solidColor color="#3B82F6"/></v2_fillEffect></v2_solidPaletteEntry>
+															<v2_solidPaletteEntry><v2_fillEffect defaultColor="#10B981"><v2_solidColor color="#10B981"/></v2_fillEffect></v2_solidPaletteEntry>
+															<v2_solidPaletteEntry><v2_fillEffect defaultColor="#EF4444"><v2_solidColor color="#EF4444"/></v2_fillEffect></v2_solidPaletteEntry>
+														</v2_solidPaletteEntries>
+													</v2_solidPalette>
+													<chartNodes>
+														
+														<chartNode><chartNodeMembers><chartNodeMember refDataItem="QTY_VEIC_GER"><chartContents><chartTextItem><dataSource><memberCaption/></dataSource></chartTextItem></chartContents></chartNodeMember></chartNodeMembers></chartNode><chartNode><chartNodeMembers><chartNodeMember refDataItem="QTY_VEIC_EXP"><chartContents><chartTextItem><dataSource><dataItemValue refDataItem="QTY_VEIC_EXP"/></dataSource></chartTextItem></chartContents></chartNodeMember></chartNodeMembers></chartNode>
+														<chartNode><chartNodeMembers><chartNodeMember refDataItem="QTY_VEIC_EXP_ATR"><chartContents><chartTextItem><dataSource><dataItemValue refDataItem="QTY_VEIC_EXP_ATR"/></dataSource></chartTextItem></chartContents></chartNodeMember></chartNodeMembers></chartNode>
+													</chartNodes>
+													<v2_chartDataLabels labelCollisionMode="fine_stagger"/>
+												</v2_bar>
+											</v2_combinationChartTypes>
+											<v2_axis>
+												<v2_axisLine lineWeight="0"/>
+												<v2_axisRange><v2_automaticRange/></v2_axisRange>
+												<v2_axisLabels><style><defaultStyles><defaultStyle refStyle="al"/></defaultStyles><CSS value="font-size:7pt;color:white"/></style></v2_axisLabels>
+												<v2_majorGridlines lineColor="#334155" lineWeight="1"/>
+											</v2_axis>
+										</v2_topLeftAxis>
+										<style>
+											<CSS value="width:1000px;min-width:800px;height:140px;font-size:8pt;color:white"/>
+											<defaultStyles><defaultStyle refStyle="ch"/></defaultStyles>
+										</style>
+										<noDataHandler><contents><block><contents><textItem><dataSource><staticValue>Não há dados disponíveis</staticValue></dataSource><style><CSS value="padding:5px; color:#94A3B8;"/></style></textItem></contents></block></contents></noDataHandler>
+										<v2_topRightAxis>
+											<v2_axis>
+												<v2_axisLine lineColor="#0868C8" lineWeight="0"/>
+												<v2_axisRange><v2_automaticRange/></v2_axisRange>
+												<v2_axisTitle refQuery="Veiculos data"><style><defaultStyles><defaultStyle refStyle="at"/></defaultStyles><CSS value="display:none;"/></style><v2_chartTextContents><v2_chartTextItems><v2_chartTextItem><dataSource><staticValue/></dataSource></v2_chartTextItem></v2_chartTextItems></v2_chartTextContents></v2_axisTitle>
+											</v2_axis>
+											<v2_combinationChartTypes>
+												<v2_bar borders="show"><v2_solidPalette><v2_solidPaletteEntries><v2_solidPaletteEntry><v2_fillEffect defaultColor="#8599D3"><v2_solidColor color="#8599D3"/></v2_fillEffect></v2_solidPaletteEntry></v2_solidPaletteEntries></v2_solidPalette></v2_bar>
+											</v2_combinationChartTypes>
+										</v2_topRightAxis>
+										<v2_chartTitle refQuery="Veiculos data">
+											<style><defaultStyles><defaultStyle refStyle="ct"/></defaultStyles><CSS value="display:none;"/></style>
+											<v2_chartTextItems><v2_chartTextItem><dataSource><staticValue/></dataSource></v2_chartTextItem></v2_chartTextItems>
+										</v2_chartTitle>
+									</v2_combinationChart>
+								</contents>
+							</block>
+
+							<block>
+								<style>
+									<CSS value="background-color:#1E293B; border-radius:6px; padding:10px 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"/>
+								</style>
+								<contents>
+									<textItem><dataSource><staticValue>Ranking Operacional</staticValue></dataSource><style><CSS value="font-size:10pt; font-weight:bold; color:#F8FAFC; display:block; margin-bottom:8px; border-bottom: 1px solid #334155; padding-bottom: 4px;"/></style></textItem>
+									<table>
+										<style><CSS value="width:100%; table-layout: fixed; border-spacing: 10px 0;"/></style>
+										<tableRows>
+											<tableRow>
+												<tableCells>
+													<tableCell>
+														<style><CSS value="vertical-align:top;"/></style>
+														<contents>
+															<list horizontalPagination="true" name="Lista1" refQuery="Pt_1" rowsPerPage="30">
+																<noDataHandler><contents><textItem><dataSource><staticValue>Sem dados.</staticValue></dataSource></textItem></contents></noDataHandler>
+																<style><CSS value="border-collapse:collapse; width:100%; font-size: 7.5pt;"/><defaultStyles><defaultStyle refStyle="ls"/></defaultStyles></style>
+																<listColumns>
+																	<listColumn><listColumnTitle><style><CSS value="background-color:#020617; color:#38BDF8; padding:4px; text-align:center; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="TURNO"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px;text-align:center;color:white;font-weight:600;font-size:9pt;border-bottom:1px solid #334155"/></style><contents><textItem><dataSource><dataItemValue refDataItem="TURNO"/></dataSource></textItem></contents></listColumnBody></listColumn>
+																	<listColumn><listColumnTitle><style><CSS value="background-color:#020617; color:#38BDF8; padding:4px; text-align:left; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="NOME"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px;text-align:left;color:white;font-weight:600;font-size:9pt;border-bottom:1px solid #334155"/></style><contents><textItem><dataSource><dataItemValue refDataItem="NOME"/></dataSource></textItem></contents></listColumnBody></listColumn>
+																	<listColumn><listColumnTitle><style><CSS value="background-color:#020617; color:#38BDF8; padding:4px; text-align:center; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="Vei_Exp"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px;text-align:center;color:white;font-weight:600;font-size:9pt;border-bottom:1px solid #334155"/><dataFormat><numberFormat decimalDelimiter="," decimalSize="2"/></dataFormat></style><contents><textItem><dataSource><dataItemValue refDataItem="Vei_Exp"/></dataSource></textItem></contents></listColumnBody></listColumn>
+																	<listColumn><listColumnTitle><style><CSS value="background-color:#020617; color:#38BDF8; padding:4px; text-align:center; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="QTD_LOJAS"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px;text-align:center;color:white;font-weight:600;font-size:9pt;border-bottom:1px solid #334155"/><dataFormat><numberFormat decimalSize="2" decimalDelimiter=","/></dataFormat></style><contents><textItem><dataSource><dataItemValue refDataItem="QTD_LOJAS"/></dataSource><style><dataFormat><numberFormat decimalSize="0" useGrouping="true"/></dataFormat></style></textItem></contents></listColumnBody></listColumn>
+																	<listColumn><listColumnTitle><style><CSS value="background-color:#020617; color:#38BDF8; padding:4px; text-align:center; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="QTD_PLT"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px; border-bottom:1px solid #334155; text-align:center; font-size:8pt;"/></style><contents><textItem><dataSource><dataItemValue refDataItem="QTD_PLT"/></dataSource></textItem></contents><conditionalStyleRefs><conditionalStyleRef refConditionalStyle="Estilo Condicional Premium 1"/></conditionalStyleRefs></listColumnBody></listColumn>
+																	<listColumn><listColumnTitle><style><CSS value="background-color:#020617; color:#38BDF8; padding:4px; text-align:center; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="M_H"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px; border-bottom:1px solid #334155; text-align:center; font-size:8pt;"/></style><contents><textItem><dataSource><dataItemValue refDataItem="M_H"/></dataSource></textItem></contents><conditionalStyleRefs><conditionalStyleRef refConditionalStyle="M_H_P_Premium 1"/></conditionalStyleRefs></listColumnBody></listColumn>
+																</listColumns>
+																<sortList><sortItem refDataItem="QTD_PLT" sortOrder="descending"/></sortList>
+															</list>
+														</contents>
+													</tableCell>
+
+													<tableCell>
+														<style><CSS value="vertical-align:top; border-left: 2px dashed #334155; padding-left:10px;"/></style>
+														<contents>
+															<list horizontalPagination="true" name="Lista2" refQuery="Pt_2" rowsPerPage="30">
+																<noDataHandler><contents><textItem><dataSource><staticValue>Sem dados.</staticValue></dataSource></textItem></contents></noDataHandler>
+																<style><CSS value="border-collapse:collapse; width:100%; font-size: 7.5pt;"/><defaultStyles><defaultStyle refStyle="ls"/></defaultStyles></style>
+																<listColumns>
+																	<listColumn><listColumnTitle><style><CSS value="background-color:#020617; color:#38BDF8; padding:4px; text-align:center; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="TURNO"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px;text-align:center;color:white;font-weight:600;font-size:9pt;border-bottom:1px solid #334155"/></style><contents><textItem><dataSource><dataItemValue refDataItem="TURNO"/></dataSource></textItem></contents></listColumnBody></listColumn>
+																	<listColumn><listColumnTitle><style><CSS value="background-color:#020617; color:#38BDF8; padding:4px; text-align:left; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="NOME"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px;text-align:left;color:white;font-weight:600;font-size:9pt;border-bottom:1px solid #334155"/></style><contents><textItem><dataSource><dataItemValue refDataItem="NOME"/></dataSource></textItem></contents></listColumnBody></listColumn>
+																	<listColumn><listColumnTitle><style><CSS value="background-color:#020617; color:#38BDF8; padding:4px; text-align:center; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="Vei_Exp"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px;text-align:center;color:white;font-weight:600;font-size:9pt;border-bottom:1px solid #334155"/><dataFormat><numberFormat decimalDelimiter="," decimalSize="2"/></dataFormat></style><contents><textItem><dataSource><dataItemValue refDataItem="Vei_Exp"/></dataSource></textItem></contents></listColumnBody></listColumn>
+																	<listColumn><listColumnTitle><style><CSS value="background-color:#020617; color:#38BDF8; padding:4px; text-align:center; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="QTD_LOJAS"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px;text-align:center;color:white;font-weight:600;font-size:9pt;border-bottom:1px solid #334155"/><dataFormat><numberFormat decimalDelimiter="," decimalSize="2"/></dataFormat></style><contents><textItem><dataSource><dataItemValue refDataItem="QTD_LOJAS"/></dataSource><style><dataFormat><numberFormat decimalSize="0" useGrouping="true"/></dataFormat></style></textItem></contents></listColumnBody></listColumn>
+																	<listColumn><listColumnTitle><style><CSS value="background-color:#020617; color:#38BDF8; padding:4px; text-align:center; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="QTD_PLT"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px; border-bottom:1px solid #334155; text-align:center; font-size:8pt;"/></style><contents><textItem><dataSource><dataItemValue refDataItem="QTD_PLT"/></dataSource></textItem></contents><conditionalStyleRefs><conditionalStyleRef refConditionalStyle="Estilo Condicional Premium 2"/></conditionalStyleRefs></listColumnBody></listColumn>
+																	<listColumn><listColumnTitle><style><CSS value="background-color:#020617; color:#38BDF8; padding:4px; text-align:center; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="M_H"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px; border-bottom:1px solid #334155; text-align:center; font-size:8pt;"/></style><contents><textItem><dataSource><dataItemValue refDataItem="M_H"/></dataSource></textItem></contents><conditionalStyleRefs><conditionalStyleRef refConditionalStyle="M_H_P_Premium 2"/></conditionalStyleRefs></listColumnBody></listColumn>
+																</listColumns>
+																<sortList><sortItem refDataItem="QTD_PLT" sortOrder="descending"/></sortList>
+															</list>
+														</contents>
+													</tableCell>
+
+													<tableCell>
+														<style><CSS value="vertical-align:top; border-left: 2px dashed #334155; padding-left:10px;"/></style>
+														<contents>
+															<list horizontalPagination="true" name="Lista3" refQuery="Pt_3" rowsPerPage="30">
+																<noDataHandler><contents><textItem><dataSource><staticValue>Sem dados.</staticValue></dataSource></textItem></contents></noDataHandler>
+																<style><CSS value="border-collapse:collapse; width:100%; font-size: 7.5pt;"/><defaultStyles><defaultStyle refStyle="ls"/></defaultStyles></style>
+																<listColumns>
+																	<listColumn><listColumnTitle><style><CSS value="background-color:#020617; color:#38BDF8; padding:4px; text-align:center; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="TURNO"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px;text-align:center;color:white;font-weight:600;font-size:9pt;border-bottom:1px solid #334155"/></style><contents><textItem><dataSource><dataItemValue refDataItem="TURNO"/></dataSource></textItem></contents></listColumnBody></listColumn>
+																	<listColumn><listColumnTitle><style><CSS value="background-color:#020617; color:#38BDF8; padding:4px; text-align:left; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="NOME"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px;text-align:left;color:white;font-weight:600;font-size:9pt;border-bottom:1px solid #334155"/></style><contents><textItem><dataSource><dataItemValue refDataItem="NOME"/></dataSource></textItem></contents></listColumnBody></listColumn>
+																	<listColumn><listColumnTitle><style><CSS value="background-color:#020617; color:#38BDF8; padding:4px; text-align:center; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="Vei_Exp"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px;text-align:center;color:white;font-weight:600;font-size:9pt;border-bottom:1px solid #334155"/><dataFormat><numberFormat decimalDelimiter="," decimalSize="2"/></dataFormat></style><contents><textItem><dataSource><dataItemValue refDataItem="Vei_Exp"/></dataSource></textItem></contents></listColumnBody></listColumn>
+																	<listColumn><listColumnTitle><style><CSS value="background-color:#020617; color:#38BDF8; padding:4px; text-align:center; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="QTD_LOJAS"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px;text-align:center;color:white;font-weight:600;font-size:9pt;border-bottom:1px solid #334155"/><dataFormat><numberFormat decimalDelimiter="," decimalSize="2"/></dataFormat></style><contents><textItem><dataSource><dataItemValue refDataItem="QTD_LOJAS"/></dataSource><style><dataFormat><numberFormat decimalSize="0" useGrouping="true"/></dataFormat></style></textItem></contents></listColumnBody></listColumn>
+																	<listColumn><listColumnTitle><style><CSS value="background-color:#020617; color:#38BDF8; padding:4px; text-align:center; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="QTD_PLT"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px; border-bottom:1px solid #334155; text-align:center; font-size:8pt;"/></style><contents><textItem><dataSource><dataItemValue refDataItem="QTD_PLT"/></dataSource></textItem></contents><conditionalStyleRefs><conditionalStyleRef refConditionalStyle="Estilo Condicional Premium 3"/></conditionalStyleRefs></listColumnBody></listColumn>
+																	<listColumn><listColumnTitle><style><CSS value="background-color:#020617; color:#38BDF8; padding:4px; text-align:center; font-weight:bold; border-bottom:2px solid #334155; font-size:7pt;"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="M_H"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:2px; border-bottom:1px solid #334155; text-align:center; font-size:8pt;"/></style><contents><textItem><dataSource><dataItemValue refDataItem="M_H"/></dataSource></textItem></contents><conditionalStyleRefs><conditionalStyleRef refConditionalStyle="M_H_P_Premium 3"/></conditionalStyleRefs></listColumnBody></listColumn>
+																</listColumns>
+																<sortList><sortItem refDataItem="QTD_PLT" sortOrder="descending"/></sortList>
+															</list>
+														</contents>
+													</tableCell>
+												</tableCells>
+											</tableRow>
+										</tableRows>
+									</table>
+								</contents>
+							</block>
+						</contents>
+					</pageBody>
+				</page>
+			</reportPages>
+		</layout>
+	</layouts>
+
+	<XMLAttributes><XMLAttribute output="no" name="RS_CreateExtendedDataItems" value="false"/><XMLAttribute output="no" name="listSeparator" value=","/></XMLAttributes>
+	
+	<modelPath>/content/folder[@name=&apos;SCI Data Packages&apos;]/folder[@name=&apos;Operational Packages&apos;]/folder[@name=&apos;Warehouse Management OS&apos;]/package[@name=&apos;Team Funcionals&apos;]/model[@name=&apos;model&apos;]</modelPath>
+	<reportName>Painel - Expedição de Veículos</reportName>
+	
+	<queries>
+		<query name="Veiculos por data nova">
+			<source>
+				<sqlQuery name="SQL1" dataSource="WMOS" type="passThrough">
+					<sqlText>SELECT
+    RG.OPERACAO,
+    RG.DATA_CRIACAO AS DATA,
+    RG.DATA_EXP,
+    RG.BANDEIRA,
+    RG.TURNO,    
+    -- Correção: Agora o &quot;Gerados&quot; conta TUDO (Expedidos + Pendentes) sem filtrar o status 80
+    COUNT(DISTINCT RG.TC_SHIPMENT_ID) AS QTY_VEIC_GER,
+    COUNT(DISTINCT CASE WHEN RG.SHIPMENT_STATUS_ID = 80 THEN RG.TC_SHIPMENT_ID ELSE NULL END) AS QTY_VEIC_EXP,
+    COUNT(DISTINCT CASE WHEN RG.SHIPMENT_STATUS_ID = 80 AND RG.EXP_ATRASADO = 1 THEN RG.TC_SHIPMENT_ID ELSE NULL END) AS QTY_VEIC_EXP_ATR,
+	COUNT(DISTINCT CASE WHEN RG.SHIPMENT_STATUS_ID &lt; 80 THEN RG.TC_SHIPMENT_ID ELSE NULL END) AS QTY_VEIC_PEND,
+	COUNT(DISTINCT CASE WHEN RG.QTY_EXP = 1 THEN RG.LOJA_ID ELSE NULL END) AS QTY_LOJAS_EXP
+FROM ((SELECT 
+    TRUNC(SH.CREATED_DTTM) AS DATA_CRIACAO,
+    CASE
+         WHEN SH.SHIPMENT_STATUS=80 THEN
+         CASE   
+            WHEN SHIP_CONFIRM.SHIP_CONF IS NOT NULL THEN 
+                CASE WHEN CAST(TO_CHAR(SHIP_CONFIRM.SHIP_CONF,&apos;HH24&apos;) AS FLOAT)&lt;6 THEN TRUNC(SHIP_CONFIRM.SHIP_CONF)-1 ELSE TRUNC(SHIP_CONFIRM.SHIP_CONF) END
+            ELSE    
+                CASE WHEN CAST(TO_CHAR(SH.LAST_UPDATED_DTTM,&apos;HH24&apos;) AS FLOAT)&lt;6 THEN TRUNC(SH.LAST_UPDATED_DTTM)-1 ELSE TRUNC(SH.LAST_UPDATED_DTTM) END
+            END     	       
+    ELSE NULL
+    END AS DATA_EXP,
+    
+    -- INÍCIO DA LÓGICA DE TURNOS 
+    CASE
+        -- 1º REGRA: OPERAÇÃO 07801 (4 TURNOS)
+        WHEN (CASE WHEN SH_INV_TYPE.SHORT_DESC IS NULL THEN SH.O_FACILITY_ID ELSE SH_INV_TYPE.SHORT_DESC END) = &apos;07801&apos; THEN
+            CASE
+                WHEN SH.SHIPMENT_STATUS=80 AND SHIP_CONFIRM.SHIP_CONF IS NOT NULL THEN
+                    CASE
+                        WHEN CAST(TO_CHAR(SHIP_CONFIRM.SHIP_CONF,&apos;HH24&apos;) AS FLOAT) &lt; 6  THEN &apos;3º - turno&apos;
+                        WHEN CAST(TO_CHAR(SHIP_CONFIRM.SHIP_CONF,&apos;HH24&apos;) AS FLOAT) &gt;= 22 THEN &apos;3º - turno&apos;
+                        WHEN CAST(TO_CHAR(SHIP_CONFIRM.SHIP_CONF,&apos;HH24&apos;) AS FLOAT) &gt;= 8 AND CAST(TO_CHAR(SHIP_CONFIRM.SHIP_CONF,&apos;HH24&apos;) AS FLOAT) &lt; 18 THEN &apos;4º - turno&apos;
+                        WHEN CAST(TO_CHAR(SHIP_CONFIRM.SHIP_CONF,&apos;HH24&apos;) AS FLOAT) &gt;= 6 AND CAST(TO_CHAR(SHIP_CONFIRM.SHIP_CONF,&apos;HH24&apos;) AS FLOAT) &lt; 8 THEN &apos;1º - turno&apos;
+                        ELSE &apos;2º - turno&apos;
+                    END
+                WHEN SH.SHIPMENT_STATUS=80 AND SHIP_CONFIRM.SHIP_CONF IS NULL THEN
+                    CASE
+                        WHEN CAST(TO_CHAR(SH.LAST_UPDATED_DTTM,&apos;HH24&apos;) AS FLOAT) &lt; 6  THEN &apos;3º - turno&apos;
+                        WHEN CAST(TO_CHAR(SH.LAST_UPDATED_DTTM,&apos;HH24&apos;) AS FLOAT) &gt;= 22 THEN &apos;3º - turno&apos;
+                        WHEN CAST(TO_CHAR(SH.LAST_UPDATED_DTTM,&apos;HH24&apos;) AS FLOAT) &gt;= 8 AND CAST(TO_CHAR(SH.LAST_UPDATED_DTTM,&apos;HH24&apos;) AS FLOAT) &lt; 18 THEN &apos;4º - turno&apos;
+                        WHEN CAST(TO_CHAR(SH.LAST_UPDATED_DTTM,&apos;HH24&apos;) AS FLOAT) &gt;= 6 AND CAST(TO_CHAR(SH.LAST_UPDATED_DTTM,&apos;HH24&apos;) AS FLOAT) &lt; 8 THEN &apos;1º - turno&apos;
+                        ELSE &apos;2º - turno&apos;
+                    END
+                ELSE 
+                    CASE
+                        WHEN CAST(TO_CHAR(SH.CREATED_DTTM,&apos;HH24&apos;) AS FLOAT) &lt; 6  THEN &apos;3º - turno&apos;
+                        WHEN CAST(TO_CHAR(SH.CREATED_DTTM,&apos;HH24&apos;) AS FLOAT) &gt;= 22 THEN &apos;3º - turno&apos;
+                        WHEN CAST(TO_CHAR(SH.CREATED_DTTM,&apos;HH24&apos;) AS FLOAT) &gt;= 8 AND CAST(TO_CHAR(SH.CREATED_DTTM,&apos;HH24&apos;) AS FLOAT) &lt; 18 THEN &apos;4º - turno&apos;
+                        WHEN CAST(TO_CHAR(SH.CREATED_DTTM,&apos;HH24&apos;) AS FLOAT) &gt;= 6 AND CAST(TO_CHAR(SH.CREATED_DTTM,&apos;HH24&apos;) AS FLOAT) &lt; 8 THEN &apos;1º - turno&apos;
+                        ELSE &apos;2º - turno&apos;
+                    END
+            END
+        
+        -- 2º REGRA: FACILITY 1942 (HORA E MINUTO ESPECÍFICOS)
+        WHEN SH.O_FACILITY_ID = &apos;1942&apos; THEN
+            CASE
+                WHEN SH.SHIPMENT_STATUS=80 AND SHIP_CONFIRM.SHIP_CONF IS NOT NULL THEN
+                    CASE 
+                        WHEN TO_CHAR(SHIP_CONFIRM.SHIP_CONF, &apos;HH24:MI&apos;) BETWEEN &apos;06:00&apos; AND &apos;12:44&apos; THEN &apos;1º - turno&apos;
+                        WHEN TO_CHAR(SHIP_CONFIRM.SHIP_CONF, &apos;HH24:MI&apos;) BETWEEN &apos;12:45&apos; AND &apos;22:20&apos; THEN &apos;2º - turno&apos;
+                        ELSE &apos;3º - turno&apos;
+                    END
+                WHEN SH.SHIPMENT_STATUS=80 AND SHIP_CONFIRM.SHIP_CONF IS NULL THEN
+                    CASE 
+                        WHEN TO_CHAR(SH.LAST_UPDATED_DTTM, &apos;HH24:MI&apos;) BETWEEN &apos;06:00&apos; AND &apos;12:44&apos; THEN &apos;1º - turno&apos;
+                        WHEN TO_CHAR(SH.LAST_UPDATED_DTTM, &apos;HH24:MI&apos;) BETWEEN &apos;12:45&apos; AND &apos;22:20&apos; THEN &apos;2º - turno&apos;
+                        ELSE &apos;3º - turno&apos;
+                    END
+                ELSE 
+                    CASE 
+                        WHEN TO_CHAR(SH.CREATED_DTTM, &apos;HH24:MI&apos;) BETWEEN &apos;06:00&apos; AND &apos;12:44&apos; THEN &apos;1º - turno&apos;
+                        WHEN TO_CHAR(SH.CREATED_DTTM, &apos;HH24:MI&apos;) BETWEEN &apos;12:45&apos; AND &apos;22:20&apos; THEN &apos;2º - turno&apos;
+                        ELSE &apos;3º - turno&apos;
+                    END
+            END
+        
+        -- 3º REGRA: DEFAULT (PADRÃO PARA AS DEMAIS)
+        ELSE
+            CASE
+                WHEN SH.SHIPMENT_STATUS=80 AND SHIP_CONFIRM.SHIP_CONF IS NOT NULL THEN
+                    CASE
+                        WHEN CAST(TO_CHAR(SHIP_CONFIRM.SHIP_CONF,&apos;HH24&apos;) AS FLOAT) &lt; 6  THEN &apos;3º - turno&apos;
+                        WHEN CAST(TO_CHAR(SHIP_CONFIRM.SHIP_CONF,&apos;HH24&apos;) AS FLOAT) &gt; 21 THEN &apos;3º - turno&apos;
+                        WHEN CAST(TO_CHAR(SHIP_CONFIRM.SHIP_CONF,&apos;HH24&apos;) AS FLOAT) &lt; 14 THEN &apos;1º - turno&apos;
+                        ELSE &apos;2º - turno&apos;
+                    END
+                WHEN SH.SHIPMENT_STATUS=80 AND SHIP_CONFIRM.SHIP_CONF IS NULL THEN
+                    CASE
+                        WHEN CAST(TO_CHAR(SH.LAST_UPDATED_DTTM,&apos;HH24&apos;) AS FLOAT) &lt; 6  THEN &apos;3º - turno&apos;
+                        WHEN CAST(TO_CHAR(SH.LAST_UPDATED_DTTM,&apos;HH24&apos;) AS FLOAT) &gt; 21 THEN &apos;3º - turno&apos;
+                        WHEN CAST(TO_CHAR(SH.LAST_UPDATED_DTTM,&apos;HH24&apos;) AS FLOAT) &lt; 14 THEN &apos;1º - turno&apos;
+                        ELSE &apos;2º - turno&apos;
+                    END
+                ELSE 
+                    CASE 
+                        WHEN CAST(TO_CHAR(SH.CREATED_DTTM,&apos;HH24&apos;) AS FLOAT) &lt; 6  THEN &apos;3º - turno&apos;
+                        WHEN CAST(TO_CHAR(SH.CREATED_DTTM,&apos;HH24&apos;) AS FLOAT) &gt; 21 THEN &apos;3º - turno&apos;
+                        WHEN CAST(TO_CHAR(SH.CREATED_DTTM,&apos;HH24&apos;) AS FLOAT) &lt; 14 THEN &apos;1º - turno&apos;
+                        ELSE &apos;2º - turno&apos;
+                    END 
+            END
+    END AS TURNO,    
+    -- FIM DA LÓGICA DE TURNOS    
+    
+    S.DEPARTURE_END_DTTM,
+    SH.SHIPMENT_STATUS AS SHIPMENT_STATUS_ID,
+    SS.DESCRIPTION AS SHIPMENT_STATUS_DESC,
+    T.QTY_BAND,
+	CASE 
+		WHEN T.QTY_BAND &gt; 1 THEN &apos;MISTA&apos;
+		WHEN T.QTY_BAND = 0 THEN &apos;TR ENTRE CD&apos;
+		ELSE F.GRP
+	END AS BANDEIRA,
+	SH.TC_SHIPMENT_ID,
+    -- NOVO: PUXANDO A LOJA DA TABELA LPN
+	LPN_LOJAS.D_FACILITY_ALIAS_ID AS LOJA_ID,
+    1 AS QTY_EMBAR,
+    CASE
+        WHEN SH.SHIPMENT_STATUS=80 THEN 1
+        ELSE 0
+    END AS QTY_EXP,
+    CASE
+        WHEN SH.SHIPMENT_STATUS=80 AND SHIP_CONFIRM.SHIP_CONF &gt;S.DEPARTURE_END_DTTM THEN 1
+        ELSE 0
+    END AS EXP_ATRASADO,
+    CASE 
+        WHEN SH_INV_TYPE.SHORT_DESC IS NULL THEN SH.O_FACILITY_ID 
+        ELSE SH_INV_TYPE.SHORT_DESC 
+    END AS OPERACAO    
+FROM 
+	SHIPMENT SH
+LEFT JOIN
+	EQUIPMENT_INSTANCE ES
+ON
+	SH.TRAILER_NUMBER=ES.EQUIP_INST_REF_CARRIER
+LEFT JOIN
+	  EQUIPMENT E 
+ON
+	ES.EQUIPMENT_ID=E.EQUIPMENT_ID
+JOIN
+	FACILITY_ALIAS FA
+ON
+	SH.D_FACILITY_ID=FA.FACILITY_ALIAS_ID
+JOIN 
+	FACILITY F
+ON
+	FA.FACILITY_ID=F.FACILITY_ID
+LEFT JOIN
+	   (SELECT 
+			SH.TC_SHIPMENT_ID,            
+			COUNT(DISTINCT F.GRP) AS QTY_BAND            
+		FROM
+			SHIPMENT SH
+		LEFT JOIN EQUIPMENT_INSTANCE ES ON SH.TRAILER_NUMBER=ES.EQUIP_INST_REF_CARRIER
+		LEFT JOIN EQUIPMENT E ON ES.EQUIPMENT_ID=E.EQUIPMENT_ID
+		LEFT JOIN FACILITY_ALIAS FA ON SH.D_FACILITY_ID=FA.FACILITY_ALIAS_ID
+		LEFT JOIN FACILITY F ON FA.FACILITY_ID=F.FACILITY_ID              
+		GROUP BY SH.TC_SHIPMENT_ID) T
+ON SH.TC_SHIPMENT_ID=T.TC_SHIPMENT_ID
+JOIN SHIPMENT_STATUS SS ON SH.SHIPMENT_STATUS=SS.SHIPMENT_STATUS
+LEFT JOIN STOP S ON SH.SHIPMENT_ID=S.SHIPMENT_ID AND S.STOP_SEQ=1
+LEFT JOIN (SELECT PTT.REF_FIELD_1 AS TC_SHIPMENT_ID, MAX(PTT.MOD_DATE_TIME) AS SHIP_CONF FROM PROD_TRKG_TRAN PTT WHERE PTT.TRAN_TYPE=&apos;800&apos; AND PTT.TRAN_CODE=&apos;003&apos; GROUP BY PTT.REF_FIELD_1) SHIP_CONFIRM ON SH.TC_SHIPMENT_ID=SHIP_CONFIRM.TC_SHIPMENT_ID
+LEFT JOIN
+((SELECT
+    SHIPMENT.TC_SHIPMENT_ID,
+    SHIPMENT.QTY_INV_TYPE,
+    SHIPMENT_INVENTORY_TYPE.INVENTORY_TYPE,
+    SC.SHORT_DESC
+ FROM 
+((SELECT L.TC_SHIPMENT_ID, COUNT(DISTINCT LD.INVENTORY_TYPE) AS QTY_INV_TYPE FROM LPN_DETAIL LD JOIN LPN L ON L.LPN_ID=LD.LPN_ID AND L.INBOUND_OUTBOUND_INDICATOR=&apos;O&apos; WHERE L.TC_SHIPMENT_ID IS NOT NULL GROUP BY L.TC_SHIPMENT_ID) SHIPMENT)
+JOIN ((SELECT L.TC_SHIPMENT_ID, LD.INVENTORY_TYPE FROM LPN_DETAIL LD JOIN LPN L ON L.LPN_ID=LD.LPN_ID AND L.INBOUND_OUTBOUND_INDICATOR=&apos;O&apos; WHERE L.TC_SHIPMENT_ID IS NOT NULL GROUP BY L.TC_SHIPMENT_ID, LD.INVENTORY_TYPE) SHIPMENT_INVENTORY_TYPE) ON SHIPMENT.TC_SHIPMENT_ID=SHIPMENT_INVENTORY_TYPE.TC_SHIPMENT_ID
+LEFT JOIN SYS_CODE SC ON SHIPMENT_INVENTORY_TYPE.INVENTORY_TYPE=SC.CODE_ID AND SC.CODE_TYPE=&apos;064&apos;
+WHERE SHIPMENT.QTY_INV_TYPE=1
+)SH_INV_TYPE) ON SH_INV_TYPE.TC_SHIPMENT_ID=SH.TC_SHIPMENT_ID
+
+-- NOVO: SUBCONSULTA PARA GARANTIR TODAS AS LOJAS DO LPN
+LEFT JOIN (
+    SELECT TC_SHIPMENT_ID, D_FACILITY_ALIAS_ID
+    FROM LPN
+    WHERE TC_SHIPMENT_ID IS NOT NULL
+    GROUP BY TC_SHIPMENT_ID, D_FACILITY_ALIAS_ID
+) LPN_LOJAS ON SH.TC_SHIPMENT_ID = LPN_LOJAS.TC_SHIPMENT_ID
+
+WHERE 
+    SH.SHIPMENT_STATUS NOT IN (120)
+GROUP BY
+	TRUNC(SH.CREATED_DTTM),    
+    CASE WHEN SH.SHIPMENT_STATUS=80 THEN CASE WHEN SHIP_CONFIRM.SHIP_CONF IS NOT NULL THEN CASE WHEN CAST(TO_CHAR(SHIP_CONFIRM.SHIP_CONF,&apos;HH24&apos;) AS FLOAT)&lt;6 THEN TRUNC(SHIP_CONFIRM.SHIP_CONF)-1 ELSE TRUNC(SHIP_CONFIRM.SHIP_CONF) END ELSE CASE WHEN CAST(TO_CHAR(SH.LAST_UPDATED_DTTM,&apos;HH24&apos;) AS FLOAT)&lt;6 THEN TRUNC(SH.LAST_UPDATED_DTTM)-1 ELSE TRUNC(SH.LAST_UPDATED_DTTM) END END ELSE NULL END,
+    
+   CASE
+        -- 1º REGRA: OPERAÇÃO 07801 (4 TURNOS)
+        WHEN (CASE WHEN SH_INV_TYPE.SHORT_DESC IS NULL THEN SH.O_FACILITY_ID ELSE SH_INV_TYPE.SHORT_DESC END) = &apos;07801&apos; THEN
+            CASE
+                WHEN SH.SHIPMENT_STATUS=80 AND SHIP_CONFIRM.SHIP_CONF IS NOT NULL THEN
+                    CASE
+                        WHEN CAST(TO_CHAR(SHIP_CONFIRM.SHIP_CONF,&apos;HH24&apos;) AS FLOAT) &lt; 6  THEN &apos;3º - turno&apos;
+                        WHEN CAST(TO_CHAR(SHIP_CONFIRM.SHIP_CONF,&apos;HH24&apos;) AS FLOAT) &gt;= 22 THEN &apos;3º - turno&apos;
+                        WHEN CAST(TO_CHAR(SHIP_CONFIRM.SHIP_CONF,&apos;HH24&apos;) AS FLOAT) &gt;= 8 AND CAST(TO_CHAR(SHIP_CONFIRM.SHIP_CONF,&apos;HH24&apos;) AS FLOAT) &lt; 18 THEN &apos;4º - turno&apos;
+                        WHEN CAST(TO_CHAR(SHIP_CONFIRM.SHIP_CONF,&apos;HH24&apos;) AS FLOAT) &gt;= 6 AND CAST(TO_CHAR(SHIP_CONFIRM.SHIP_CONF,&apos;HH24&apos;) AS FLOAT) &lt; 8 THEN &apos;1º - turno&apos;
+                        ELSE &apos;2º - turno&apos;
+                    END
+                WHEN SH.SHIPMENT_STATUS=80 AND SHIP_CONFIRM.SHIP_CONF IS NULL THEN
+                    CASE
+                        WHEN CAST(TO_CHAR(SH.LAST_UPDATED_DTTM,&apos;HH24&apos;) AS FLOAT) &lt; 6  THEN &apos;3º - turno&apos;
+                        WHEN CAST(TO_CHAR(SH.LAST_UPDATED_DTTM,&apos;HH24&apos;) AS FLOAT) &gt;= 22 THEN &apos;3º - turno&apos;
+                        WHEN CAST(TO_CHAR(SH.LAST_UPDATED_DTTM,&apos;HH24&apos;) AS FLOAT) &gt;= 8 AND CAST(TO_CHAR(SH.LAST_UPDATED_DTTM,&apos;HH24&apos;) AS FLOAT) &lt; 18 THEN &apos;4º - turno&apos;
+                        WHEN CAST(TO_CHAR(SH.LAST_UPDATED_DTTM,&apos;HH24&apos;) AS FLOAT) &gt;= 6 AND CAST(TO_CHAR(SH.LAST_UPDATED_DTTM,&apos;HH24&apos;) AS FLOAT) &lt; 8 THEN &apos;1º - turno&apos;
+                        ELSE &apos;2º - turno&apos;
+                    END
+                ELSE 
+                    CASE
+                        WHEN CAST(TO_CHAR(SH.CREATED_DTTM,&apos;HH24&apos;) AS FLOAT) &lt; 6  THEN &apos;3º - turno&apos;
+                        WHEN CAST(TO_CHAR(SH.CREATED_DTTM,&apos;HH24&apos;) AS FLOAT) &gt;= 22 THEN &apos;3º - turno&apos;
+                        WHEN CAST(TO_CHAR(SH.CREATED_DTTM,&apos;HH24&apos;) AS FLOAT) &gt;= 8 AND CAST(TO_CHAR(SH.CREATED_DTTM,&apos;HH24&apos;) AS FLOAT) &lt; 18 THEN &apos;4º - turno&apos;
+                        WHEN CAST(TO_CHAR(SH.CREATED_DTTM,&apos;HH24&apos;) AS FLOAT) &gt;= 6 AND CAST(TO_CHAR(SH.CREATED_DTTM,&apos;HH24&apos;) AS FLOAT) &lt; 8 THEN &apos;1º - turno&apos;
+                        ELSE &apos;2º - turno&apos;
+                    END
+            END
+        
+        -- 2º REGRA: FACILITY 1942 (HORA E MINUTO ESPECÍFICOS)
+        WHEN SH.O_FACILITY_ID = &apos;1942&apos; THEN
+            CASE
+                WHEN SH.SHIPMENT_STATUS=80 AND SHIP_CONFIRM.SHIP_CONF IS NOT NULL THEN
+                    CASE 
+                        WHEN TO_CHAR(SHIP_CONFIRM.SHIP_CONF, &apos;HH24:MI&apos;) BETWEEN &apos;06:00&apos; AND &apos;12:44&apos; THEN &apos;1º - turno&apos;
+                        WHEN TO_CHAR(SHIP_CONFIRM.SHIP_CONF, &apos;HH24:MI&apos;) BETWEEN &apos;12:45&apos; AND &apos;22:20&apos; THEN &apos;2º - turno&apos;
+                        ELSE &apos;3º - turno&apos;
+                    END
+                WHEN SH.SHIPMENT_STATUS=80 AND SHIP_CONFIRM.SHIP_CONF IS NULL THEN
+                    CASE 
+                        WHEN TO_CHAR(SH.LAST_UPDATED_DTTM, &apos;HH24:MI&apos;) BETWEEN &apos;06:00&apos; AND &apos;12:44&apos; THEN &apos;1º - turno&apos;
+                        WHEN TO_CHAR(SH.LAST_UPDATED_DTTM, &apos;HH24:MI&apos;) BETWEEN &apos;12:45&apos; AND &apos;22:20&apos; THEN &apos;2º - turno&apos;
+                        ELSE &apos;3º - turno&apos;
+                    END
+                ELSE 
+                    CASE 
+                        WHEN TO_CHAR(SH.CREATED_DTTM, &apos;HH24:MI&apos;) BETWEEN &apos;06:00&apos; AND &apos;12:44&apos; THEN &apos;1º - turno&apos;
+                        WHEN TO_CHAR(SH.CREATED_DTTM, &apos;HH24:MI&apos;) BETWEEN &apos;12:45&apos; AND &apos;22:20&apos; THEN &apos;2º - turno&apos;
+                        ELSE &apos;3º - turno&apos;
+                    END
+            END
+        
+        -- 3º REGRA: DEFAULT (PADRÃO PARA AS DEMAIS)
+        ELSE
+            CASE
+                WHEN SH.SHIPMENT_STATUS=80 AND SHIP_CONFIRM.SHIP_CONF IS NOT NULL THEN
+                    CASE
+                        WHEN CAST(TO_CHAR(SHIP_CONFIRM.SHIP_CONF,&apos;HH24&apos;) AS FLOAT) &lt; 6  THEN &apos;3º - turno&apos;
+                        WHEN CAST(TO_CHAR(SHIP_CONFIRM.SHIP_CONF,&apos;HH24&apos;) AS FLOAT) &gt; 21 THEN &apos;3º - turno&apos;
+                        WHEN CAST(TO_CHAR(SHIP_CONFIRM.SHIP_CONF,&apos;HH24&apos;) AS FLOAT) &lt; 14 THEN &apos;1º - turno&apos;
+                        ELSE &apos;2º - turno&apos;
+                    END
+                WHEN SH.SHIPMENT_STATUS=80 AND SHIP_CONFIRM.SHIP_CONF IS NULL THEN
+                    CASE
+                        WHEN CAST(TO_CHAR(SH.LAST_UPDATED_DTTM,&apos;HH24&apos;) AS FLOAT) &lt; 6  THEN &apos;3º - turno&apos;
+                        WHEN CAST(TO_CHAR(SH.LAST_UPDATED_DTTM,&apos;HH24&apos;) AS FLOAT) &gt; 21 THEN &apos;3º - turno&apos;
+                        WHEN CAST(TO_CHAR(SH.LAST_UPDATED_DTTM,&apos;HH24&apos;) AS FLOAT) &lt; 14 THEN &apos;1º - turno&apos;
+                        ELSE &apos;2º - turno&apos;
+                    END
+                ELSE 
+                    CASE 
+                        WHEN CAST(TO_CHAR(SH.CREATED_DTTM,&apos;HH24&apos;) AS FLOAT) &lt; 6  THEN &apos;3º - turno&apos;
+                        WHEN CAST(TO_CHAR(SH.CREATED_DTTM,&apos;HH24&apos;) AS FLOAT) &gt; 21 THEN &apos;3º - turno&apos;
+                        WHEN CAST(TO_CHAR(SH.CREATED_DTTM,&apos;HH24&apos;) AS FLOAT) &lt; 14 THEN &apos;1º - turno&apos;
+                        ELSE &apos;2º - turno&apos;
+                    END 
+            END
+    END,  
+    
+    S.DEPARTURE_END_DTTM,
+    SH.SHIPMENT_STATUS,
+    SS.DESCRIPTION,
+    SH.TC_SHIPMENT_ID,
+    T.QTY_BAND,
+	CASE WHEN T.QTY_BAND &gt; 1 THEN &apos;MISTA&apos; WHEN T.QTY_BAND = 0 THEN &apos;TR ENTRE CD&apos; ELSE F.GRP END,
+    LPN_LOJAS.D_FACILITY_ALIAS_ID,
+    CASE WHEN SH.SHIPMENT_STATUS=80 THEN 1 ELSE 0 END,
+    CASE WHEN SH.SHIPMENT_STATUS=80 AND SHIP_CONFIRM.SHIP_CONF &gt;S.DEPARTURE_END_DTTM THEN 1 ELSE 0 END,
+    CASE WHEN SH_INV_TYPE.SHORT_DESC IS NULL THEN SH.O_FACILITY_ID ELSE SH_INV_TYPE.SHORT_DESC END
+)RG)
+WHERE 
+    (
+        RG.SHIPMENT_STATUS_ID = 80 AND
+        (
+            (
+                #sq(prompt(&apos;p_TipoData&apos;, &apos;token&apos;, &apos;EXPEDICAO&apos;))# = &apos;EXPEDICAO&apos; AND
+                RG.DATA_EXP = CASE WHEN #sq(prompt(&apos;p_Data&apos;, &apos;date&apos;, &apos;1900-01-01&apos;))# = &apos;1900-01-01&apos;
+                                   THEN (CASE WHEN CAST(TO_CHAR(SYSDATE,&apos;HH24&apos;) AS FLOAT) &lt; 6 THEN TRUNC(SYSDATE)-1 ELSE TRUNC(SYSDATE) END)
+                                   ELSE TO_DATE(SUBSTR(#sq(prompt(&apos;p_Data&apos;, &apos;date&apos;, &apos;1900-01-01&apos;))#,1,10), &apos;YYYY-MM-DD&apos;) END
+            )
+            OR
+            (
+                #sq(prompt(&apos;p_TipoData&apos;, &apos;token&apos;, &apos;EXPEDICAO&apos;))# = &apos;CRIACAO&apos; AND
+                RG.DATA_CRIACAO = CASE WHEN #sq(prompt(&apos;p_Data&apos;, &apos;date&apos;, &apos;1900-01-01&apos;))# = &apos;1900-01-01&apos;
+                                   THEN (CASE WHEN CAST(TO_CHAR(SYSDATE,&apos;HH24&apos;) AS FLOAT) &lt; 6 THEN TRUNC(SYSDATE)-1 ELSE TRUNC(SYSDATE) END)
+                                   ELSE TO_DATE(SUBSTR(#sq(prompt(&apos;p_Data&apos;, &apos;date&apos;, &apos;1900-01-01&apos;))#,1,10), &apos;YYYY-MM-DD&apos;) END
+            )
+        )
+    )
+    OR
+    (RG.SHIPMENT_STATUS_ID &lt; 80)
+GROUP BY
+    RG.OPERACAO,
+    RG.DATA_CRIACAO,
+    RG.DATA_EXP,
+    RG.BANDEIRA,
+    RG.TURNO    
+ORDER BY
+    RG.DATA_CRIACAO</sqlText>
+					
+				<mdProjectedItems><mdProjectedItem name="OPERACAO"/><mdProjectedItem name="DATA"/><mdProjectedItem name="DATA_EXP"/><mdProjectedItem name="BANDEIRA"/><mdProjectedItem name="TURNO"/><mdProjectedItem name="QTY_VEIC_GER"/><mdProjectedItem name="QTY_VEIC_EXP"/><mdProjectedItem name="QTY_VEIC_EXP_ATR"/><mdProjectedItem name="QTY_VEIC_PEND"/><mdProjectedItem name="QTY_LOJAS_EXP"/></mdProjectedItems></sqlQuery>
+			</source>
+			<selection>
+				<dataItem name="OPERACAO"><expression>[SQL1].[OPERACAO]</expression></dataItem>
+				<dataItem name="DATA" aggregate="none"><expression>[SQL1].[DATA]</expression></dataItem>
+				<dataItem name="DATA_EXP" aggregate="none"><expression>[SQL1].[DATA_EXP]</expression></dataItem>
+				<dataItem name="BANDEIRA" aggregate="none"><expression>[SQL1].[BANDEIRA]</expression></dataItem>
+				<dataItem name="TURNO" aggregate="none"><expression>[SQL1].[TURNO]</expression></dataItem>
+				<dataItem name="QTY_VEIC_GER" aggregate="total" label="Qtde. Gerada"><expression>[SQL1].[QTY_VEIC_GER]</expression></dataItem>
+				<dataItem name="QTY_VEIC_EXP" aggregate="total" label="Qtde. Expedida"><expression>[SQL1].[QTY_VEIC_EXP]</expression></dataItem>
+				<dataItem name="QTY_VEIC_EXP_ATR" aggregate="total" label="Qtde. Expedida C/Atraso"><expression>[SQL1].[QTY_VEIC_EXP_ATR]</expression></dataItem>
+				<dataItem name="QTY_LOJAS_EXP" aggregate="total" label="Lojas Expedidas"><expression>[SQL1].[QTY_LOJAS_EXP]</expression></dataItem>
+				<dataItem name="QTY_VEIC_PEND" aggregate="total" label="Veículos Pendentes (Backlog)"><expression>[SQL1].[QTY_VEIC_PEND]</expression></dataItem>
+				<dataItem name="Chave"><expression>1</expression></dataItem>
+			</selection>
+			<queryHints><localCache value="false"/><queryProcessing value="databaseOnly"/></queryHints>
+		</query>
+		<query name="Chave">
+			<source><model/></source>
+			<selection><dataItem name="Chave"><expression>1</expression></dataItem></selection>
+			<queryHints><localCache value="false"/></queryHints>
+		</query>
+		<query name="Veiculos data">
+			<source>
+				<joinOperation>
+					<joinOperands>
+						<joinOperand cardinality="1:1"><queryRef refQuery="Chave"/></joinOperand>
+						<joinOperand cardinality="1:1"><queryRef refQuery="Veiculos por data nova"/></joinOperand>
+					</joinOperands>
+					<joinFilter>
+						<filterExpression>[Chave].[Chave] = [Veiculos por data nova].[Chave]</filterExpression>
+					</joinFilter>
+				</joinOperation>
+			</source>
+			<selection>
+				<dataItem aggregate="none" name="TURNO"><expression>[Veiculos por data nova].[TURNO]</expression><XMLAttributes><XMLAttribute output="no" name="RS_dataType" value="3"/><XMLAttribute output="no" name="RS_dataUsage" value="1"/></XMLAttributes></dataItem>
+				<dataItem aggregate="total" name="QTY_VEIC_GER" label="Qtd. Veiculo Gerados"><expression>[Veiculos por data nova].[QTY_VEIC_GER]</expression><XMLAttributes><XMLAttribute output="no" name="RS_dataType" value="9"/><XMLAttribute output="no" name="RS_dataUsage" value="2"/></XMLAttributes></dataItem>
+				<dataItem aggregate="total" name="QTY_VEIC_EXP" label="Qtd. Veiculo Expedidos"><expression>[Veiculos por data nova].[QTY_VEIC_EXP]</expression><XMLAttributes><XMLAttribute output="no" name="RS_dataType" value="9"/><XMLAttribute output="no" name="RS_dataUsage" value="2"/></XMLAttributes></dataItem>
+				<dataItem aggregate="total" name="QTY_VEIC_EXP_ATR" label="Expedido Atrasado"><expression>[Veiculos por data nova].[QTY_VEIC_EXP_ATR]</expression><XMLAttributes><XMLAttribute output="no" name="RS_dataType" value="9"/><XMLAttribute output="no" name="RS_dataUsage" value="2"/></XMLAttributes></dataItem>
+				<dataItem aggregate="total" name="QTY_LOJAS_EXP"><expression>[Veiculos por data nova].[QTY_LOJAS_EXP]</expression></dataItem>
+				<dataItem aggregate="total" name="QTY_VEIC_PEND"><expression>[Veiculos por data nova].[QTY_VEIC_PEND]</expression></dataItem>
+				<dataItem name="PERCENTUAL">
+					<expression>CASE WHEN ([QTY_VEIC_EXP] + [QTY_VEIC_PEND]) = 0 THEN 0 ELSE round(([QTY_VEIC_EXP] * 100.0) / ([QTY_VEIC_EXP] + [QTY_VEIC_PEND]), 0) END</expression>
+				</dataItem>
+			</selection>
+			<queryHints><localCache value="false"/></queryHints>
+		</query>
+		<query name="Base Carregamento">
+			<source>
+				<sqlQuery name="SQL2" dataSource="WMOS" type="passThrough">
+					<sqlText>WITH CTE_QTD_LOJAS AS (
+    SELECT
+        L.TC_SHIPMENT_ID,
+        COUNT(DISTINCT L.D_FACILITY_ALIAS_ID) AS QTD_LOJAS
+    FROM LPN L
+    WHERE L.TC_SHIPMENT_ID IS NOT NULL
+    GROUP BY L.TC_SHIPMENT_ID
+),
+
+CTE_SHIP_CONFIRM AS (
+    SELECT
+        PTT.REF_FIELD_1 AS TC_SHIPMENT_ID,
+        MAX(PTT.MOD_DATE_TIME) AS SHIP_CONF
+    FROM PROD_TRKG_TRAN PTT
+    WHERE PTT.TRAN_TYPE = &apos;800&apos; AND PTT.TRAN_CODE = &apos;003&apos;
+    GROUP BY PTT.REF_FIELD_1
+),
+
+CTE_SH_INV_TYPE AS (
+    SELECT
+        L.TC_SHIPMENT_ID,
+        MAX(SC.SHORT_DESC) AS SHORT_DESC
+    FROM LPN L
+    JOIN LPN_DETAIL LD ON L.LPN_ID = LD.LPN_ID
+    LEFT JOIN SYS_CODE SC ON LD.INVENTORY_TYPE = SC.CODE_ID AND SC.CODE_TYPE = &apos;064&apos;
+    WHERE L.INBOUND_OUTBOUND_INDICATOR = &apos;O&apos; AND L.TC_SHIPMENT_ID IS NOT NULL
+    GROUP BY L.TC_SHIPMENT_ID
+    HAVING COUNT(DISTINCT LD.INVENTORY_TYPE) = 1
+),
+
+CTE_SHIPMENT_STOP AS (
+    SELECT
+        SH.SHIPMENT_ID,
+        SH.TC_SHIPMENT_ID,
+        SH.CREATED_DTTM,
+        SH.SHIPMENT_STATUS,
+        SH.O_FACILITY_ID,
+        S.DEPARTURE_END_DTTM
+    FROM SHIPMENT SH
+    LEFT JOIN STOP S ON SH.SHIPMENT_ID = S.SHIPMENT_ID AND S.STOP_SEQ = 1
+),
+
+CTE_QTD_EMBARCADA AS (
+    SELECT
+        PTT.REF_FIELD_1 AS TC_SHIPMENT_ID,
+        PTT.USER_ID AS CARREGADOR,
+        INITCAP(VU.FIRST_NAME || &apos; &apos; || VU.LAST_NAME) AS NOME_CARREGADOR,
+        COUNT(DISTINCT CASE WHEN PTT.PLT_ID IS NOT NULL THEN PTT.PLT_ID ELSE PTT.CNTR_NBR END) AS QTD_EMBARCADA
+    FROM PROD_TRKG_TRAN PTT
+    LEFT JOIN VIEW_UCL_USER VU ON PTT.USER_ID = VU.LOGIN_USER_ID
+    WHERE PTT.MENU_OPTN_NAME = &apos;Carregamento&apos;
+    GROUP BY PTT.REF_FIELD_1, PTT.USER_ID, VU.FIRST_NAME, VU.LAST_NAME
+),
+
+CTE_TOTAL_EMBARCADO_SH AS (
+    SELECT TC_SHIPMENT_ID, SUM(QTD_EMBARCADA) AS TOTAL_EMBARCADO
+    FROM CTE_QTD_EMBARCADA
+    GROUP BY TC_SHIPMENT_ID
+),
+
+CTE_DADOS_AGREGADOS AS (
+    SELECT
+        CASE WHEN INV.SHORT_DESC = &apos;ENCAIXE&apos; THEN &apos;930&apos; WHEN INV.SHORT_DESC IS NULL THEN S.O_FACILITY_ID ELSE INV.SHORT_DESC END AS OPERACAO,
+        TRUNC(S.CREATED_DTTM) AS DATA_CRIACAO,
+        CASE WHEN TO_CHAR(C.SHIP_CONF, &apos;HH24&apos;) &lt; &apos;06&apos; THEN TRUNC(C.SHIP_CONF) - 1 ELSE TRUNC(C.SHIP_CONF) END AS DATA_CICLO,
+        CASE WHEN S.SHIPMENT_STATUS = 80 THEN (CASE WHEN TO_CHAR(C.SHIP_CONF,&apos;HH24&apos;) &lt; &apos;06&apos; THEN TRUNC(C.SHIP_CONF) - 1 ELSE TRUNC(C.SHIP_CONF) END) ELSE NULL END AS DATA_EXP,
+        
+        -- INÍCIO DA LÓGICA DE TURNOS NA BASE CARREGAMENTO
+        CASE
+            -- 1º REGRA: OPERAÇÃO 07801 (4 TURNOS)
+            WHEN (CASE WHEN INV.SHORT_DESC = &apos;ENCAIXE&apos; THEN &apos;930&apos; WHEN INV.SHORT_DESC IS NULL THEN S.O_FACILITY_ID ELSE INV.SHORT_DESC END) = &apos;07801&apos; THEN
+                CASE
+                    WHEN S.SHIPMENT_STATUS = 80 THEN
+                        CASE
+                            WHEN TO_CHAR(C.SHIP_CONF,&apos;HH24&apos;) &lt; &apos;06&apos; THEN &apos;3º - turno&apos;
+                            WHEN TO_CHAR(C.SHIP_CONF,&apos;HH24&apos;) &gt;= &apos;22&apos; THEN &apos;3º - turno&apos;
+                            WHEN TO_CHAR(C.SHIP_CONF,&apos;HH24&apos;) &gt;= &apos;08&apos; AND TO_CHAR(C.SHIP_CONF,&apos;HH24&apos;) &lt; &apos;18&apos; THEN &apos;4º - turno&apos;
+                            WHEN TO_CHAR(C.SHIP_CONF,&apos;HH24&apos;) &gt;= &apos;06&apos; AND TO_CHAR(C.SHIP_CONF,&apos;HH24&apos;) &lt; &apos;08&apos; THEN &apos;1º - turno&apos;
+                            WHEN TO_CHAR(C.SHIP_CONF,&apos;HH24&apos;) &gt;= &apos;18&apos; AND TO_CHAR(C.SHIP_CONF,&apos;HH24&apos;) &lt; &apos;22&apos; THEN &apos;2º - turno&apos;
+                            ELSE &apos;2º - turno&apos;
+                        END
+                    ELSE
+                        CASE
+                            WHEN TO_CHAR(S.CREATED_DTTM,&apos;HH24&apos;) &lt; &apos;06&apos; THEN &apos;3º - turno&apos;
+                            WHEN TO_CHAR(S.CREATED_DTTM,&apos;HH24&apos;) &gt;= &apos;22&apos; THEN &apos;3º - turno&apos;
+                            WHEN TO_CHAR(S.CREATED_DTTM,&apos;HH24&apos;) &gt;= &apos;08&apos; AND TO_CHAR(S.CREATED_DTTM,&apos;HH24&apos;) &lt; &apos;18&apos; THEN &apos;4º - turno&apos;
+                            WHEN TO_CHAR(S.CREATED_DTTM,&apos;HH24&apos;) &gt;= &apos;06&apos; AND TO_CHAR(S.CREATED_DTTM,&apos;HH24&apos;) &lt; &apos;08&apos; THEN &apos;1º - turno&apos;
+                            WHEN TO_CHAR(S.CREATED_DTTM,&apos;HH24&apos;) &gt;= &apos;18&apos; AND TO_CHAR(S.CREATED_DTTM,&apos;HH24&apos;) &lt; &apos;22&apos; THEN &apos;2º - turno&apos;
+                            ELSE &apos;2º - turno&apos;
+                        END
+                END
+            
+            -- 2º REGRA: FACILITY 1942 (HORA E MINUTO ESPECÍFICOS)
+            WHEN S.O_FACILITY_ID = &apos;1942&apos; THEN
+                CASE
+                    WHEN S.SHIPMENT_STATUS = 80 THEN
+                        CASE
+                            WHEN TO_CHAR(C.SHIP_CONF,&apos;HH24:MI&apos;) BETWEEN &apos;06:00&apos; AND &apos;12:44&apos; THEN &apos;1º - turno&apos;
+                            WHEN TO_CHAR(C.SHIP_CONF,&apos;HH24:MI&apos;) BETWEEN &apos;12:45&apos; AND &apos;22:20&apos; THEN &apos;2º - turno&apos;
+                            ELSE &apos;3º - turno&apos;
+                        END
+                    ELSE
+                        CASE
+                            WHEN TO_CHAR(S.CREATED_DTTM,&apos;HH24:MI&apos;) BETWEEN &apos;06:00&apos; AND &apos;12:44&apos; THEN &apos;1º - turno&apos;
+                            WHEN TO_CHAR(S.CREATED_DTTM,&apos;HH24:MI&apos;) BETWEEN &apos;12:45&apos; AND &apos;22:20&apos; THEN &apos;2º - turno&apos;
+                            ELSE &apos;3º - turno&apos;
+                        END
+                END
+            
+            -- 3º REGRA: DEFAULT (PADRÃO PARA AS DEMAIS)
+            ELSE
+                CASE
+                    WHEN S.SHIPMENT_STATUS = 80 THEN
+                        CASE
+                            WHEN TO_CHAR(C.SHIP_CONF,&apos;HH24&apos;) &lt; &apos;06&apos; THEN &apos;3º - turno&apos;
+                            WHEN TO_CHAR(C.SHIP_CONF,&apos;HH24&apos;) &gt; &apos;21&apos; THEN &apos;3º - turno&apos;
+                            WHEN TO_CHAR(C.SHIP_CONF,&apos;HH24&apos;) &lt; &apos;14&apos; THEN &apos;1º - turno&apos;
+                            ELSE &apos;2º - turno&apos;
+                        END
+                    ELSE
+                        CASE
+                            WHEN TO_CHAR(S.CREATED_DTTM,&apos;HH24&apos;) &lt; &apos;06&apos; THEN &apos;3º - turno&apos;
+                            WHEN TO_CHAR(S.CREATED_DTTM,&apos;HH24&apos;) &gt; &apos;21&apos; THEN &apos;3º - turno&apos;
+                            WHEN TO_CHAR(S.CREATED_DTTM,&apos;HH24&apos;) &lt; &apos;14&apos; THEN &apos;1º - turno&apos;
+                            ELSE &apos;2º - turno&apos;
+                        END
+                END
+        END AS TURNO,
+        -- FIM DA LÓGICA DE TURNOS
+
+        QE.CARREGADOR,
+        QE.NOME_CARREGADOR AS NOME,
+
+        SUM(QE.QTD_EMBARCADA) AS QTD_EMBARCADA,
+
+        SUM((QE.QTD_EMBARCADA / TES.TOTAL_EMBARCADO) * CASE WHEN S.SHIPMENT_STATUS = 80 THEN 1 ELSE 0 END) AS QTY_EXP,
+        SUM((QE.QTD_EMBARCADA / TES.TOTAL_EMBARCADO) * CASE WHEN S.SHIPMENT_STATUS = 80 AND C.SHIP_CONF &gt; S.DEPARTURE_END_DTTM THEN 1 ELSE 0 END) AS QTD_EXP_ATR,
+        SUM((QE.QTD_EMBARCADA / TES.TOTAL_EMBARCADO) * QL.QTD_LOJAS) AS QTD_LOJAS
+
+    FROM CTE_SHIPMENT_STOP S
+    LEFT JOIN CTE_SHIP_CONFIRM C ON S.TC_SHIPMENT_ID = C.TC_SHIPMENT_ID
+    LEFT JOIN CTE_SH_INV_TYPE INV ON INV.TC_SHIPMENT_ID = S.TC_SHIPMENT_ID
+    LEFT JOIN CTE_QTD_EMBARCADA QE ON S.TC_SHIPMENT_ID = QE.TC_SHIPMENT_ID
+    LEFT JOIN CTE_QTD_LOJAS QL ON S.TC_SHIPMENT_ID = QL.TC_SHIPMENT_ID
+    LEFT JOIN CTE_TOTAL_EMBARCADO_SH TES ON S.TC_SHIPMENT_ID = TES.TC_SHIPMENT_ID
+    WHERE S.SHIPMENT_STATUS NOT IN (120) AND QE.CARREGADOR IS NOT NULL
+
+    GROUP BY
+        CASE WHEN INV.SHORT_DESC = &apos;ENCAIXE&apos; THEN &apos;930&apos; WHEN INV.SHORT_DESC IS NULL THEN S.O_FACILITY_ID ELSE INV.SHORT_DESC END,
+        TRUNC(S.CREATED_DTTM),
+        CASE WHEN TO_CHAR(C.SHIP_CONF, &apos;HH24&apos;) &lt; &apos;06&apos; THEN TRUNC(C.SHIP_CONF) - 1 ELSE TRUNC(C.SHIP_CONF) END,
+        CASE WHEN S.SHIPMENT_STATUS = 80 THEN (CASE WHEN TO_CHAR(C.SHIP_CONF,&apos;HH24&apos;) &lt; &apos;06&apos; THEN TRUNC(C.SHIP_CONF) - 1 ELSE TRUNC(C.SHIP_CONF) END) ELSE NULL END,
+        -- INÍCIO DA LÓGICA DE TURNOS NA BASE CARREGAMENTO
+        CASE
+            -- 1º REGRA: OPERAÇÃO 07801 (4 TURNOS)
+            WHEN (CASE WHEN INV.SHORT_DESC = &apos;ENCAIXE&apos; THEN &apos;930&apos; WHEN INV.SHORT_DESC IS NULL THEN S.O_FACILITY_ID ELSE INV.SHORT_DESC END) = &apos;07801&apos; THEN
+                CASE
+                    WHEN S.SHIPMENT_STATUS = 80 THEN
+                        CASE
+                            WHEN TO_CHAR(C.SHIP_CONF,&apos;HH24&apos;) &lt; &apos;06&apos; THEN &apos;3º - turno&apos;
+                            WHEN TO_CHAR(C.SHIP_CONF,&apos;HH24&apos;) &gt;= &apos;22&apos; THEN &apos;3º - turno&apos;
+                            WHEN TO_CHAR(C.SHIP_CONF,&apos;HH24&apos;) &gt;= &apos;08&apos; AND TO_CHAR(C.SHIP_CONF,&apos;HH24&apos;) &lt; &apos;18&apos; THEN &apos;4º - turno&apos;
+                            WHEN TO_CHAR(C.SHIP_CONF,&apos;HH24&apos;) &gt;= &apos;06&apos; AND TO_CHAR(C.SHIP_CONF,&apos;HH24&apos;) &lt; &apos;08&apos; THEN &apos;1º - turno&apos;
+                            WHEN TO_CHAR(C.SHIP_CONF,&apos;HH24&apos;) &gt;= &apos;18&apos; AND TO_CHAR(C.SHIP_CONF,&apos;HH24&apos;) &lt; &apos;22&apos; THEN &apos;2º - turno&apos;
+                            ELSE &apos;2º - turno&apos;
+                        END
+                    ELSE
+                        CASE
+                            WHEN TO_CHAR(S.CREATED_DTTM,&apos;HH24&apos;) &lt; &apos;06&apos; THEN &apos;3º - turno&apos;
+                            WHEN TO_CHAR(S.CREATED_DTTM,&apos;HH24&apos;) &gt;= &apos;22&apos; THEN &apos;3º - turno&apos;
+                            WHEN TO_CHAR(S.CREATED_DTTM,&apos;HH24&apos;) &gt;= &apos;08&apos; AND TO_CHAR(S.CREATED_DTTM,&apos;HH24&apos;) &lt; &apos;18&apos; THEN &apos;4º - turno&apos;
+                            WHEN TO_CHAR(S.CREATED_DTTM,&apos;HH24&apos;) &gt;= &apos;06&apos; AND TO_CHAR(S.CREATED_DTTM,&apos;HH24&apos;) &lt; &apos;08&apos; THEN &apos;1º - turno&apos;
+                            WHEN TO_CHAR(S.CREATED_DTTM,&apos;HH24&apos;) &gt;= &apos;18&apos; AND TO_CHAR(S.CREATED_DTTM,&apos;HH24&apos;) &lt; &apos;22&apos; THEN &apos;2º - turno&apos;
+                            ELSE &apos;2º - turno&apos;
+                        END
+                END
+            
+            -- 2º REGRA: FACILITY 1942 (HORA E MINUTO ESPECÍFICOS)
+            WHEN S.O_FACILITY_ID = &apos;1942&apos; THEN
+                CASE
+                    WHEN S.SHIPMENT_STATUS = 80 THEN
+                        CASE
+                            WHEN TO_CHAR(C.SHIP_CONF,&apos;HH24:MI&apos;) BETWEEN &apos;06:00&apos; AND &apos;12:44&apos; THEN &apos;1º - turno&apos;
+                            WHEN TO_CHAR(C.SHIP_CONF,&apos;HH24:MI&apos;) BETWEEN &apos;12:45&apos; AND &apos;22:20&apos; THEN &apos;2º - turno&apos;
+                            ELSE &apos;3º - turno&apos;
+                        END
+                    ELSE
+                        CASE
+                            WHEN TO_CHAR(S.CREATED_DTTM,&apos;HH24:MI&apos;) BETWEEN &apos;06:00&apos; AND &apos;12:44&apos; THEN &apos;1º - turno&apos;
+                            WHEN TO_CHAR(S.CREATED_DTTM,&apos;HH24:MI&apos;) BETWEEN &apos;12:45&apos; AND &apos;22:20&apos; THEN &apos;2º - turno&apos;
+                            ELSE &apos;3º - turno&apos;
+                        END
+                END
+            
+            -- 3º REGRA: DEFAULT (PADRÃO PARA AS DEMAIS)
+            ELSE
+                CASE
+                    WHEN S.SHIPMENT_STATUS = 80 THEN
+                        CASE
+                            WHEN TO_CHAR(C.SHIP_CONF,&apos;HH24&apos;) &lt; &apos;06&apos; THEN &apos;3º - turno&apos;
+                            WHEN TO_CHAR(C.SHIP_CONF,&apos;HH24&apos;) &gt; &apos;21&apos; THEN &apos;3º - turno&apos;
+                            WHEN TO_CHAR(C.SHIP_CONF,&apos;HH24&apos;) &lt; &apos;14&apos; THEN &apos;1º - turno&apos;
+                            ELSE &apos;2º - turno&apos;
+                        END
+                    ELSE
+                        CASE
+                            WHEN TO_CHAR(S.CREATED_DTTM,&apos;HH24&apos;) &lt; &apos;06&apos; THEN &apos;3º - turno&apos;
+                            WHEN TO_CHAR(S.CREATED_DTTM,&apos;HH24&apos;) &gt; &apos;21&apos; THEN &apos;3º - turno&apos;
+                            WHEN TO_CHAR(S.CREATED_DTTM,&apos;HH24&apos;) &lt; &apos;14&apos; THEN &apos;1º - turno&apos;
+                            ELSE &apos;2º - turno&apos;
+                        END
+                END
+        END,
+        -- FIM DA LÓGICA DE TURNOS
+        QE.CARREGADOR, QE.NOME_CARREGADOR
+),
+
+CTE_FILTRADO AS (
+    SELECT 
+        MAX(OPERACAO) AS OPERACAO,
+        MAX(DATA_CICLO) AS DATA_CICLO,
+        MAX(DATA_EXP) AS DATA_EXP,
+        TURNO,
+        CARREGADOR,
+        NOME,
+        SUM(QTD_EMBARCADA) AS QTD_EMBARCADA,
+        SUM(QTY_EXP) AS QTY_EXP,
+        SUM(QTD_EXP_ATR) AS QTD_EXP_ATR,
+        SUM(QTD_LOJAS) AS QTD_LOJAS
+    FROM CTE_DADOS_AGREGADOS
+    WHERE 
+        (
+            #sq(prompt(&apos;p_TipoData&apos;, &apos;token&apos;, &apos;EXPEDICAO&apos;))# = &apos;EXPEDICAO&apos; AND
+            DATA_CICLO = CASE WHEN #sq(prompt(&apos;p_Data&apos;, &apos;date&apos;, &apos;1900-01-01&apos;))# = &apos;1900-01-01&apos;
+                               THEN (CASE WHEN CAST(TO_CHAR(SYSDATE,&apos;HH24&apos;) AS FLOAT) &lt; 6 THEN TRUNC(SYSDATE)-1 ELSE TRUNC(SYSDATE) END)
+                               ELSE TO_DATE(SUBSTR(#sq(prompt(&apos;p_Data&apos;, &apos;date&apos;, &apos;1900-01-01&apos;))#,1,10), &apos;YYYY-MM-DD&apos;) END
+        )
+        OR
+        (
+            #sq(prompt(&apos;p_TipoData&apos;, &apos;token&apos;, &apos;EXPEDICAO&apos;))# = &apos;CRIACAO&apos; AND
+            DATA_CRIACAO = CASE WHEN #sq(prompt(&apos;p_Data&apos;, &apos;date&apos;, &apos;1900-01-01&apos;))# = &apos;1900-01-01&apos;
+                               THEN (CASE WHEN CAST(TO_CHAR(SYSDATE,&apos;HH24&apos;) AS FLOAT) &lt; 6 THEN TRUNC(SYSDATE)-1 ELSE TRUNC(SYSDATE) END)
+                               ELSE TO_DATE(SUBSTR(#sq(prompt(&apos;p_Data&apos;, &apos;date&apos;, &apos;1900-01-01&apos;))#,1,10), &apos;YYYY-MM-DD&apos;) END
+        )
+    GROUP BY TURNO, CARREGADOR, NOME
+),
+
+CTE_QTD_EMBARCADA_HORA_ATUAL AS (
+    SELECT QE.CARREGADOR, SUM(QE.QTD_EMBARCADA) AS QTD_EMBARCADA_HORA_ATUAL
+    FROM CTE_SHIPMENT_STOP S
+    LEFT JOIN CTE_SHIP_CONFIRM C ON S.TC_SHIPMENT_ID = C.TC_SHIPMENT_ID
+    LEFT JOIN CTE_QTD_EMBARCADA QE ON S.TC_SHIPMENT_ID = QE.TC_SHIPMENT_ID
+    WHERE C.SHIP_CONF &gt;= TRUNC(SYSDATE, &apos;HH&apos;) AND C.SHIP_CONF &lt; TRUNC(SYSDATE, &apos;HH&apos;) + INTERVAL &apos;1&apos; HOUR
+    GROUP BY QE.CARREGADOR
+)
+
+SELECT
+    T1.*,
+    COALESCE(T2.QTD_EMBARCADA_HORA_ATUAL, 0) AS QTD_EMBARCADA_HORA_ATUAL,
+    RANK() OVER (ORDER BY T1.QTD_EMBARCADA DESC) AS RANK
+FROM CTE_FILTRADO T1
+LEFT JOIN CTE_QTD_EMBARCADA_HORA_ATUAL T2 ON T1.CARREGADOR = T2.CARREGADOR
+ORDER BY RANK, T1.TURNO, T1.CARREGADOR</sqlText>
+					
+				<mdProjectedItems><mdProjectedItem name="OPERACAO"/><mdProjectedItem name="DATA_CICLO"/><mdProjectedItem name="DATA_EXP"/><mdProjectedItem name="TURNO"/><mdProjectedItem name="CARREGADOR"/><mdProjectedItem name="NOME"/><mdProjectedItem name="QTD_EMBARCADA"/><mdProjectedItem name="QTY_EXP"/><mdProjectedItem name="QTD_EXP_ATR"/><mdProjectedItem name="QTD_LOJAS"/><mdProjectedItem name="QTD_EMBARCADA_HORA_ATUAL"/><mdProjectedItem name="RANK"/></mdProjectedItems></sqlQuery>
+			</source>
+			<selection>
+				<dataItem name="OPERACAO"><expression>[SQL2].[OPERACAO]</expression></dataItem>
+				<dataItem name="TURNO"><expression>[SQL2].[TURNO]</expression></dataItem>
+				<dataItem name="DATA_CICLO"><expression>[SQL2].[DATA_CICLO]</expression></dataItem>
+				<dataItem name="CAD."><expression>[SQL2].[CARREGADOR]</expression></dataItem>
+				<dataItem name="NOME"><expression>[SQL2].[NOME]</expression></dataItem>
+				<dataItem name="QTD_PLT"><expression>[SQL2].[QTD_EMBARCADA]</expression></dataItem>
+				<dataItem name="QTD_LOJAS"><expression>[SQL2].[QTD_LOJAS]</expression></dataItem>
+				<dataItem name="Vei_Exp"><expression>[SQL2].[QTY_EXP]</expression></dataItem>
+				<dataItem name="QTD_EXP_ATR"><expression>[SQL2].[QTD_EXP_ATR]</expression></dataItem>
+				<dataItem name="Chave"><expression>1</expression></dataItem>
+				<dataItem name="RANK"><expression>[SQL2].[RANK]</expression></dataItem>
+				<dataItem name="HORAS_DECORRIDAS">
+					<expression>CASE
+    WHEN [TURNO] = &apos;1º - turno&apos; AND [HORA_ATUAL] &gt;= 6 AND [HORA_ATUAL] &lt; 14 THEN ([HORA_ATUAL] - 6) + 1
+    WHEN [TURNO] = &apos;2º - turno&apos; AND [HORA_ATUAL] &gt;= 14 AND [HORA_ATUAL] &lt; 22 THEN ([HORA_ATUAL] - 14) + 1
+    WHEN [TURNO] = &apos;3º - turno&apos; AND [HORA_ATUAL] &gt;= 22 THEN ([HORA_ATUAL] - 22) + 1
+    WHEN [TURNO] = &apos;3º - turno&apos; AND [HORA_ATUAL] &gt;= 0 AND [HORA_ATUAL] &lt; 6 THEN ([HORA_ATUAL] + 2) + 1
+    ELSE 8
+END</expression>
+				</dataItem>
+				<dataItem name="HORA_ATUAL"><expression>_hour(current_timestamp)</expression></dataItem>
+				
+				<dataItem name="M_H">
+					<expression>CASE 
+						WHEN [HORAS_DECORRIDAS] = 0 THEN 0 
+						ELSE round([QTD_PLT] / [HORAS_DECORRIDAS], 2) 
+					END</expression>
+				</dataItem>
+				
+				<dataItem name="T_H"><expression>[SQL2].[QTD_EMBARCADA_HORA_ATUAL]</expression></dataItem>
+				<dataItem name="TOTAL_H" aggregate="total" rollupAggregate="total"><expression>[SQL2].[QTD_EMBARCADA_HORA_ATUAL]</expression></dataItem>
+				<dataItem name="QTD_H" aggregate="total" rollupAggregate="total">
+					<expression>CASE WHEN [SQL2].[QTD_EMBARCADA_HORA_ATUAL] &gt; 0 THEN 1 ELSE 0 END</expression>
+				</dataItem>
+				
+				<dataItem name="MED_H" aggregate="average" rollupAggregate="average">
+					<expression>[M_H]</expression>
+				</dataItem>
+			</selection>
+			<queryHints><localCache value="false"/><queryProcessing value="databaseOnly"/></queryHints>
+		</query>
+		<query name="Pt_1">
+			<source>
+				<joinOperation>
+					<joinOperands>
+						<joinOperand cardinality="1:1"><queryRef refQuery="Base Carregamento"/></joinOperand>
+						<joinOperand cardinality="1:1"><queryRef refQuery="Chave"/></joinOperand>
+					</joinOperands>
+					<joinFilter>
+						<filterExpression>[Base Carregamento].[Chave] = [Chave].[Chave]</filterExpression>
+					</joinFilter>
+				</joinOperation>
+			</source>
+			<selection>
+				<dataItem name="TURNO"><expression>[Base Carregamento].[TURNO]</expression><XMLAttributes><XMLAttribute output="no" name="RS_dataType" value="3"/><XMLAttribute output="no" name="RS_dataUsage" value="3"/></XMLAttributes></dataItem>
+				<dataItem name="CAD."><expression>[Base Carregamento].[CAD.]</expression></dataItem>
+				<dataItem name="NOME"><expression>[Base Carregamento].[NOME]</expression><XMLAttributes><XMLAttribute output="no" name="RS_dataType" value="3"/><XMLAttribute output="no" name="RS_dataUsage" value="3"/></XMLAttributes></dataItem>
+				<dataItem name="Vei_Exp"><expression>[Base Carregamento].[Vei_Exp]</expression><XMLAttributes><XMLAttribute output="no" name="RS_dataType" value="9"/><XMLAttribute output="no" name="RS_dataUsage" value="3"/></XMLAttributes></dataItem>
+				<dataItem name="QTD_LOJAS"><expression>[Base Carregamento].[QTD_LOJAS]</expression><XMLAttributes><XMLAttribute output="no" name="RS_dataType" value="9"/><XMLAttribute output="no" name="RS_dataUsage" value="3"/></XMLAttributes></dataItem>
+				<dataItem name="QTD_PLT"><expression>[Base Carregamento].[QTD_PLT]</expression><XMLAttributes><XMLAttribute output="no" name="RS_dataType" value="9"/><XMLAttribute output="no" name="RS_dataUsage" value="3"/></XMLAttributes></dataItem>
+				<dataItem name="RANK"><expression>[Base Carregamento].[RANK]</expression></dataItem>
+				<dataItem name="M_H"><expression>[Base Carregamento].[M_H]</expression><XMLAttributes><XMLAttribute output="no" name="RS_dataType" value="9"/><XMLAttribute output="no" name="RS_dataUsage" value="2"/></XMLAttributes></dataItem>
+				<dataItem name="T_H"><expression>[Base Carregamento].[T_H]</expression></dataItem>
+			</selection>
+			<detailFilters><detailFilter><filterExpression>[Base Carregamento].[RANK]&lt;=18</filterExpression></detailFilter></detailFilters>
+			<queryHints><localCache value="false"/></queryHints>
+		</query>
+		<query name="Pt_2">
+			<source>
+				<joinOperation>
+					<joinOperands>
+						<joinOperand cardinality="1:1"><queryRef refQuery="Base Carregamento"/></joinOperand>
+						<joinOperand cardinality="1:1"><queryRef refQuery="Chave"/></joinOperand>
+					</joinOperands>
+					<joinFilter>
+						<filterExpression>[Base Carregamento].[Chave] = [Chave].[Chave]</filterExpression>
+					</joinFilter>
+				</joinOperation>
+			</source>
+			<selection>
+				<dataItem name="TURNO"><expression>[Base Carregamento].[TURNO]</expression><XMLAttributes><XMLAttribute output="no" name="RS_dataType" value="3"/><XMLAttribute output="no" name="RS_dataUsage" value="3"/></XMLAttributes></dataItem>
+				<dataItem name="CAD."><expression>[Base Carregamento].[CAD.]</expression></dataItem>
+				<dataItem name="NOME"><expression>[Base Carregamento].[NOME]</expression><XMLAttributes><XMLAttribute output="no" name="RS_dataType" value="3"/><XMLAttribute output="no" name="RS_dataUsage" value="3"/></XMLAttributes></dataItem>
+				<dataItem name="Vei_Exp"><expression>[Base Carregamento].[Vei_Exp]</expression><XMLAttributes><XMLAttribute output="no" name="RS_dataType" value="9"/><XMLAttribute output="no" name="RS_dataUsage" value="3"/></XMLAttributes></dataItem>
+				<dataItem name="QTD_LOJAS"><expression>[Base Carregamento].[QTD_LOJAS]</expression><XMLAttributes><XMLAttribute output="no" name="RS_dataType" value="9"/><XMLAttribute output="no" name="RS_dataUsage" value="3"/></XMLAttributes></dataItem>
+				<dataItem name="QTD_PLT"><expression>[Base Carregamento].[QTD_PLT]</expression><XMLAttributes><XMLAttribute output="no" name="RS_dataType" value="9"/><XMLAttribute output="no" name="RS_dataUsage" value="3"/></XMLAttributes></dataItem>
+				<dataItem name="RANK"><expression>[Base Carregamento].[RANK]</expression></dataItem>
+				<dataItem name="M_H"><expression>[Base Carregamento].[M_H]</expression><XMLAttributes><XMLAttribute output="no" name="RS_dataType" value="9"/><XMLAttribute output="no" name="RS_dataUsage" value="2"/></XMLAttributes></dataItem>
+				<dataItem name="T_H"><expression>[Base Carregamento].[T_H]</expression></dataItem>
+			</selection>
+			<detailFilters><detailFilter><filterExpression>[Base Carregamento].[RANK]&gt;18 AND [Base Carregamento].[RANK] &lt;=38</filterExpression></detailFilter></detailFilters>
+			<queryHints><localCache value="false"/></queryHints>
+		</query>
+		<query name="Pt_3">
+			<source>
+				<joinOperation>
+					<joinOperands>
+						<joinOperand cardinality="1:1"><queryRef refQuery="Chave"/></joinOperand>
+						<joinOperand cardinality="1:1"><queryRef refQuery="Base Carregamento"/></joinOperand>
+					</joinOperands>
+					<joinFilter>
+						<filterExpression>[Chave].[Chave] = [Base Carregamento].[Chave]</filterExpression>
+					</joinFilter>
+				</joinOperation>
+			</source>
+			<selection>
+				<dataItem name="TURNO"><expression>[Base Carregamento].[TURNO]</expression></dataItem>
+				<dataItem name="CAD."><expression>[Base Carregamento].[CAD.]</expression></dataItem>
+				<dataItem name="NOME"><expression>[Base Carregamento].[NOME]</expression></dataItem>
+				<dataItem name="Vei_Exp"><expression>[Base Carregamento].[Vei_Exp]</expression></dataItem>
+				<dataItem name="QTD_LOJAS"><expression>[Base Carregamento].[QTD_LOJAS]</expression></dataItem>
+				<dataItem name="QTD_PLT"><expression>[Base Carregamento].[QTD_PLT]</expression></dataItem>
+				<dataItem name="RANK"><expression>[Base Carregamento].[RANK]</expression></dataItem>
+				<dataItem name="M_H"><expression>[Base Carregamento].[M_H]</expression></dataItem>
+				<dataItem name="T_H"><expression>[Base Carregamento].[T_H]</expression></dataItem>
+			</selection>
+			<detailFilters><detailFilter><filterExpression>[Base Carregamento].[RANK]&gt;38 AND [Base Carregamento].[RANK] &lt;=100</filterExpression></detailFilter></detailFilters>
+			<queryHints><localCache value="false"/></queryHints>
+		</query>
+	</queries>
+
+	<namedConditionalStyles>
+		<advancedConditionalStyle name="Estilo Condicional Premium 1">
+			<styleCases>
+				<styleCase><style><CSS value="background-color:#064E3B; color:#34D399; font-weight:bold;"/></style><reportCondition>[Pt_1].[QTD_PLT] &gt; 80</reportCondition></styleCase>
+				<styleCase><style><CSS value="background-color:#713F12; color:#FDE047; font-weight:bold;"/></style><reportCondition>[Pt_1].[QTD_PLT] &gt; 50</reportCondition></styleCase>
+			</styleCases>
+			<styleDefault><style><CSS value="background-color:#7F1D1D; color:#FCA5A5; font-weight:bold;"/></style></styleDefault>
+		</advancedConditionalStyle>
+		<advancedConditionalStyle name="M_H_P_Premium 1">
+			<styleCases>
+				<styleCase><style><CSS value="background-color:#064E3B; color:#34D399; font-weight:bold;"/></style><reportCondition>[Pt_1].[M_H] &gt; 10</reportCondition></styleCase>
+				<styleCase><style><CSS value="background-color:#713F12; color:#FDE047; font-weight:bold;"/></style><reportCondition>[Pt_1].[M_H] &gt; 5</reportCondition></styleCase>
+			</styleCases>
+			<styleDefault><style><CSS value="background-color:#7F1D1D; color:#FCA5A5; font-weight:bold;"/></style></styleDefault>
+		</advancedConditionalStyle>
+
+		<advancedConditionalStyle name="Estilo Condicional Premium 2">
+			<styleCases>
+				<styleCase><style><CSS value="background-color:#064E3B; color:#34D399; font-weight:bold;"/></style><reportCondition>[Pt_2].[QTD_PLT] &gt; 80</reportCondition></styleCase>
+				<styleCase><style><CSS value="background-color:#713F12; color:#FDE047; font-weight:bold;"/></style><reportCondition>[Pt_2].[QTD_PLT] &gt; 50</reportCondition></styleCase>
+			</styleCases>
+			<styleDefault><style><CSS value="background-color:#7F1D1D; color:#FCA5A5; font-weight:bold;"/></style></styleDefault>
+		</advancedConditionalStyle>
+		<advancedConditionalStyle name="M_H_P_Premium 2">
+			<styleCases>
+				<styleCase><style><CSS value="background-color:#064E3B; color:#34D399; font-weight:bold;"/></style><reportCondition>[Pt_2].[M_H] &gt; 10</reportCondition></styleCase>
+				<styleCase><style><CSS value="background-color:#713F12; color:#FDE047; font-weight:bold;"/></style><reportCondition>[Pt_2].[M_H] &gt; 5</reportCondition></styleCase>
+			</styleCases>
+			<styleDefault><style><CSS value="background-color:#7F1D1D; color:#FCA5A5; font-weight:bold;"/></style></styleDefault>
+		</advancedConditionalStyle>
+
+		<advancedConditionalStyle name="Estilo Condicional Premium 3">
+			<styleCases>
+				<styleCase><style><CSS value="background-color:#064E3B; color:#34D399; font-weight:bold;"/></style><reportCondition>[Pt_3].[QTD_PLT] &gt; 80</reportCondition></styleCase>
+				<styleCase><style><CSS value="background-color:#713F12; color:#FDE047; font-weight:bold;"/></style><reportCondition>[Pt_3].[QTD_PLT] &gt; 50</reportCondition></styleCase>
+			</styleCases>
+			<styleDefault><style><CSS value="background-color:#7F1D1D; color:#FCA5A5; font-weight:bold;"/></style></styleDefault>
+		</advancedConditionalStyle>
+		<advancedConditionalStyle name="M_H_P_Premium 3">
+			<styleCases>
+				<styleCase><style><CSS value="background-color:#064E3B; color:#34D399; font-weight:bold;"/></style><reportCondition>[Pt_3].[M_H] &gt; 10</reportCondition></styleCase>
+				<styleCase><style><CSS value="background-color:#713F12; color:#FDE047; font-weight:bold;"/></style><reportCondition>[Pt_3].[M_H] &gt; 5</reportCondition></styleCase>
+			</styleCases>
+			<styleDefault><style><CSS value="background-color:#7F1D1D; color:#FCA5A5; font-weight:bold;"/></style></styleDefault>
+		</advancedConditionalStyle>
+	</namedConditionalStyles>
+</report>
