@@ -1,0 +1,369 @@
+<report xmlns="http://developer.cognos.com/schemas/report/14.3/" useStyleVersion="11.4" expressionLocale="en" viewPagesAsTabs="topLeft">
+	<drillBehavior/>
+	<layouts>
+		<layout>
+			<reportPages>
+				<page name="Painel Célula">
+					<style>
+						<defaultStyles>
+							<defaultStyle refStyle="pg"/>
+						</defaultStyles>
+						<CSS value="background-color:#0a1929; font-family: &apos;Segoe UI&apos;, Roboto, Helvetica, sans-serif;"/>
+					</style>
+					<pageBody>
+						<style>
+							<defaultStyles>
+								<defaultStyle refStyle="pb"/>
+							</defaultStyles>
+						</style>
+						<contents>
+
+							<!-- ═══════════════════════════════════════════════ -->
+							<!-- CABEÇALHO DA PÁGINA                            -->
+							<!-- ═══════════════════════════════════════════════ -->
+							<block>
+								<style><CSS value="margin-bottom:8px"/></style>
+								<contents>
+									<table>
+										<style>
+											<CSS value="width:100%; border-collapse:collapse; background-color:#0d2137; border-radius:6px; border: 1px solid #1E293B; box-shadow: 0 2px 6px rgba(0,0,0,0.4);"/>
+										</style>
+										<tableRows>
+											<tableRow>
+												<tableCells>
+													<tableCell>
+														<style><CSS value="padding:6px 15px; width:40%;"/></style>
+														<contents>
+															<textItem>
+																<dataSource><staticValue>PAINEL DE CÉLULAS</staticValue></dataSource>
+																<style><CSS value="color:#38BDF8; font-size:14pt; font-weight:800; letter-spacing:1px; display:block;"/></style>
+															</textItem>
+														</contents>
+													</tableCell>
+													<tableCell>
+														<style><CSS value="padding:6px 8px; width:25%; vertical-align:middle; text-align:right;"/></style>
+														<contents>
+															<textItem>
+																<dataSource><staticValue>TURNO:</staticValue></dataSource>
+																<style><CSS value="font-size:7pt; font-weight:700; color:#94A3B8; display:block; margin-bottom:2px; white-space:nowrap;"/></style>
+															</textItem>
+															<selectValue name="p_Turno" parameter="p_Turno" required="false">
+																<style><CSS value="padding:4px; font-size:9pt; border-radius:4px; background-color:#1E293B; color:silver; width:140px; border:1px solid #334155;"/></style>
+																<defaultSelections><defaultSimpleSelection>TODOS</defaultSimpleSelection></defaultSelections>
+																<selectOptions>
+																	<selectOption useValue="TODOS"><displayValue>-- TODOS --</displayValue></selectOption>
+																	<selectOption useValue="1"><displayValue>1º Turno</displayValue></selectOption>
+																	<selectOption useValue="2"><displayValue>2º Turno</displayValue></selectOption>
+																	<selectOption useValue="3"><displayValue>3º Turno</displayValue></selectOption>
+																</selectOptions>
+															</selectValue>
+														</contents>
+													</tableCell>
+													<tableCell>
+														<style><CSS value="padding:6px 8px; width:20%; vertical-align:middle; text-align:right;"/></style>
+														<contents>
+															<textItem>
+																<dataSource><staticValue>DATA:</staticValue></dataSource>
+																<style><CSS value="font-size:7pt; font-weight:700; color:#94A3B8; display:block; margin-bottom:2px; white-space:nowrap;"/></style>
+															</textItem>
+															<selectDate name="p_Data" parameter="p_Data" required="false" selectDateUI="editBox">
+																<style><CSS value="font-size:9pt; padding:4px; border-radius:4px; background-color:#1E293B; color:#F8FAFC; border:1px solid #334155; width:140px;"/></style>
+															</selectDate>
+														</contents>
+													</tableCell>
+													<tableCell>
+														<style><CSS value="padding:6px 15px 6px 8px; width:15%; vertical-align:middle; text-align:right;"/></style>
+														<contents>
+															<promptButton type="finish">
+																<contents><textItem><dataSource><staticValue>🔎 Filtrar</staticValue></dataSource></textItem></contents>
+																<style><CSS value="background-color:#3B82F6; color:white; font-weight:bold; border-top-width:none; border-bottom-width:none; border-left-width:none; border-right-width:none; padding-left:10px; padding-right:10px; border-radius:4px; cursor:pointer; box-shadow:0 2px 4px rgba(0,0,0,0.5);"/></style>
+															</promptButton>
+														</contents>
+													</tableCell>
+												</tableCells>
+											</tableRow>
+										</tableRows>
+									</table>
+								</contents>
+							</block>
+
+							<!-- ═══════════════════════════════════════════════ -->
+							<!-- CARDS DE CÉLULA (repeaterTable)                 -->
+							<!-- ═══════════════════════════════════════════════ -->
+							<block>
+								<style><CSS value="width:100%;"/></style>
+								<contents>
+									<repeaterTable name="rt_celulas" refQuery="Celulas">
+										<style><CSS value="width:100%; border-collapse:collapse;"/></style>
+										<across>3</across>
+										<repeaterTableCells>
+											<repeaterTableCell>
+												<style><CSS value="width:33.33%; padding:4px; vertical-align:top;"/></style>
+												<contents>
+
+													<!-- ─── CARD DA CÉLULA ─────────────────────────────── -->
+													<block>
+														<style><CSS value="border-radius:10px; overflow:hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.5); border: 1px solid #1e3a5f; background-color:#0a1929;"/></style>
+														<contents>
+
+															<!-- ─── CABEÇALHO DO CARD ──────────────────────── -->
+															<block>
+																<style><CSS value="background: linear-gradient(135deg, #0d2137 0%, #0a1929 100%); padding: 8px 10px; border-bottom: 1px solid #1e3a5f;"/></style>
+																<contents>
+																	<table>
+																		<style><CSS value="width:100%; border-collapse:collapse;"/></style>
+																		<tableRows>
+																			<tableRow>
+																				<tableCells>
+
+																					<!-- Nome da célula -->
+																					<tableCell>
+																						<style><CSS value="vertical-align:middle;"/></style>
+																						<contents>
+																							<textItem>
+																								<dataSource><dataItemValue refDataItem="NM_CELULA"/></dataSource>
+																								<style><CSS value="font-size:11pt; font-weight:700; color:#e2e8f0; display:block; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;"/></style>
+																							</textItem>
+																							<textItem>
+																								<dataSource><dataItemValue refDataItem="CD_CELULA"/></dataSource>
+																								<style><CSS value="font-size:7pt; color:#64748b; display:block; margin-top:1px;"/></style>
+																							</textItem>
+																						</contents>
+																					</tableCell>
+
+																					<!-- ─── BLOCO DE HEADCOUNT DE COLABORADORES ── -->
+																					<!--
+																						Badge de colaboradores (linhas 140-172):
+																						fundo quase transparente + borda sutil,
+																						integrado ao gradiente escuro do cabeçalho.
+																					-->
+																					<tableCell>
+																						<style><CSS value="vertical-align:middle; text-align:right; white-space:nowrap;"/></style>
+																						<contents>
+																							<block>
+																								<style><CSS value="background-color: rgba(255, 255, 255, 0.04); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 6px; padding: 3px 8px 3px 6px; display: inline-block;"/></style>
+																								<contents>
+																									<!-- Rótulo "COLABORADORES" -->
+																									<textItem>
+																										<dataSource><staticValue>COLABORADORES</staticValue></dataSource>
+																										<style><CSS value="font-size: 6pt; color: #475569; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 1px;"/></style>
+																									</textItem>
+																									<!-- Ícone de pessoa -->
+																									<textItem>
+																										<dataSource><staticValue>👤</staticValue></dataSource>
+																										<style><CSS value="font-size: 11pt; color: #60a5fa; display: inline-block; vertical-align: middle;"/></style>
+																									</textItem>
+																									<!-- Números: ativos nos últimos 15 min / última hora -->
+																									<textItem>
+																										<dataSource><dataItemValue refDataItem="COLAB_ULTIMOS_15_MIN"/></dataSource>
+																										<style><CSS value="font-size: 10pt; font-weight: 700; color: #cbd5e1; display: inline-block; vertical-align: middle;"/></style>
+																									</textItem>
+																									<textItem>
+																										<dataSource><staticValue>/</staticValue></dataSource>
+																										<style><CSS value="font-size: 9pt; color: #475569; display: inline-block; vertical-align: middle; margin: 0 2px;"/></style>
+																									</textItem>
+																									<textItem>
+																										<dataSource><dataItemValue refDataItem="COLAB_ULTIMA_HORA"/></dataSource>
+																										<style><CSS value="font-size: 10pt; font-weight: 700; color: #cbd5e1; display: inline-block; vertical-align: middle;"/></style>
+																									</textItem>
+																								</contents>
+																							</block>
+																						</contents>
+																					</tableCell>
+
+																				</tableCells>
+																			</tableRow>
+																		</tableRows>
+																	</table>
+																</contents>
+															</block>
+
+															<!-- ─── CORPO DO CARD ───────────────────────────── -->
+															<block>
+																<style><CSS value="padding: 8px 10px;"/></style>
+																<contents>
+																	<table>
+																		<style><CSS value="width:100%; border-collapse:collapse;"/></style>
+																		<tableRows>
+
+																			<!-- Linha 1: KPIs principais -->
+																			<tableRow>
+																				<tableCells>
+																					<tableCell>
+																						<style><CSS value="padding: 4px 4px 4px 0; width:50%; vertical-align:top;"/></style>
+																						<contents>
+																							<block>
+																								<style><CSS value="background-color:#0f2744; border-radius:6px; padding:6px 8px; border-left: 3px solid #3B82F6;"/></style>
+																								<contents>
+																									<textItem>
+																										<dataSource><staticValue>PRODUÇÃO</staticValue></dataSource>
+																										<style><CSS value="font-size:6.5pt; color:#64748b; text-transform:uppercase; letter-spacing:0.5px; display:block; margin-bottom:2px;"/></style>
+																									</textItem>
+																									<textItem>
+																										<dataSource><dataItemValue refDataItem="QTD_PRODUCAO"/></dataSource>
+																										<style><CSS value="font-size:20pt; font-weight:700; color:#93c5fd; display:block; line-height:1;"/></style>
+																									</textItem>
+																									<textItem>
+																										<dataSource><staticValue>unidades</staticValue></dataSource>
+																										<style><CSS value="font-size:6.5pt; color:#475569; display:block; margin-top:1px;"/></style>
+																									</textItem>
+																								</contents>
+																							</block>
+																						</contents>
+																					</tableCell>
+																					<tableCell>
+																						<style><CSS value="padding: 4px 0 4px 4px; width:50%; vertical-align:top;"/></style>
+																						<contents>
+																							<block>
+																								<style><CSS value="background-color:#0f2744; border-radius:6px; padding:6px 8px; border-left: 3px solid #10B981;"/></style>
+																								<contents>
+																									<textItem>
+																										<dataSource><staticValue>EFICIÊNCIA</staticValue></dataSource>
+																										<style><CSS value="font-size:6.5pt; color:#64748b; text-transform:uppercase; letter-spacing:0.5px; display:block; margin-bottom:2px;"/></style>
+																									</textItem>
+																									<textItem>
+																										<dataSource><dataItemValue refDataItem="PCT_EFICIENCIA"/></dataSource>
+																										<style><CSS value="font-size:20pt; font-weight:700; color:#6ee7b7; display:block; line-height:1;"/></style>
+																									</textItem>
+																									<textItem>
+																										<dataSource><staticValue>%</staticValue></dataSource>
+																										<style><CSS value="font-size:6.5pt; color:#475569; display:block; margin-top:1px;"/></style>
+																									</textItem>
+																								</contents>
+																							</block>
+																						</contents>
+																					</tableCell>
+																				</tableCells>
+																			</tableRow>
+
+																			<!-- Linha 2: métricas secundárias -->
+																			<tableRow>
+																				<tableCells>
+																					<tableCell>
+																						<style><CSS value="padding: 4px 4px 0 0; width:50%; vertical-align:top;"/></style>
+																						<contents>
+																							<block>
+																								<style><CSS value="background-color:#0f2744; border-radius:6px; padding:6px 8px; border-left: 3px solid #F59E0B;"/></style>
+																								<contents>
+																									<textItem>
+																										<dataSource><staticValue>PENDÊNCIAS</staticValue></dataSource>
+																										<style><CSS value="font-size:6.5pt; color:#64748b; text-transform:uppercase; letter-spacing:0.5px; display:block; margin-bottom:2px;"/></style>
+																									</textItem>
+																									<textItem>
+																										<dataSource><dataItemValue refDataItem="QTD_PENDENCIAS"/></dataSource>
+																										<style><CSS value="font-size:20pt; font-weight:700; color:#fcd34d; display:block; line-height:1;"/></style>
+																									</textItem>
+																								</contents>
+																							</block>
+																						</contents>
+																					</tableCell>
+																					<tableCell>
+																						<style><CSS value="padding: 4px 0 0 4px; width:50%; vertical-align:top;"/></style>
+																						<contents>
+																							<block>
+																								<style><CSS value="background-color:#0f2744; border-radius:6px; padding:6px 8px; border-left: 3px solid #8B5CF6;"/></style>
+																								<contents>
+																									<textItem>
+																										<dataSource><staticValue>QUALIDADE</staticValue></dataSource>
+																										<style><CSS value="font-size:6.5pt; color:#64748b; text-transform:uppercase; letter-spacing:0.5px; display:block; margin-bottom:2px;"/></style>
+																									</textItem>
+																									<textItem>
+																										<dataSource><dataItemValue refDataItem="PCT_QUALIDADE"/></dataSource>
+																										<style><CSS value="font-size:20pt; font-weight:700; color:#c4b5fd; display:block; line-height:1;"/></style>
+																									</textItem>
+																									<textItem>
+																										<dataSource><staticValue>%</staticValue></dataSource>
+																										<style><CSS value="font-size:6.5pt; color:#475569; display:block; margin-top:1px;"/></style>
+																									</textItem>
+																								</contents>
+																							</block>
+																						</contents>
+																					</tableCell>
+																				</tableCells>
+																			</tableRow>
+
+																		</tableRows>
+																	</table>
+																</contents>
+															</block>
+
+														</contents>
+													</block>
+													<!-- ─── FIM CARD DA CÉLULA ────────────────────────── -->
+
+												</contents>
+											</repeaterTableCell>
+										</repeaterTableCells>
+									</repeaterTable>
+								</contents>
+							</block>
+
+						</contents>
+					</pageBody>
+				</page>
+			</reportPages>
+		</layout>
+	</layouts>
+
+	<!-- ═══════════════════════════════════════════════════════════════════ -->
+	<!-- QUERIES                                                              -->
+	<!-- ═══════════════════════════════════════════════════════════════════ -->
+	<queries>
+		<query name="Celulas">
+			<source>
+				<model/>
+			</source>
+			<selection>
+				<dataItem name="CD_CELULA" aggregate="none" rollupAggregate="none">
+					<expression>[Celulas].[CD_CELULA]</expression>
+				</dataItem>
+				<dataItem name="NM_CELULA" aggregate="none" rollupAggregate="none">
+					<expression>[Celulas].[NM_CELULA]</expression>
+				</dataItem>
+				<!-- Headcount: colaboradores ativos nos últimos 15 minutos -->
+				<dataItem name="COLAB_ULTIMOS_15_MIN" aggregate="total" rollupAggregate="total">
+					<expression>[Celulas].[COLAB_ULTIMOS_15_MIN]</expression>
+				</dataItem>
+				<!-- Headcount: colaboradores ativos na última hora -->
+				<dataItem name="COLAB_ULTIMA_HORA" aggregate="total" rollupAggregate="total">
+					<expression>[Celulas].[COLAB_ULTIMA_HORA]</expression>
+				</dataItem>
+				<dataItem name="QTD_PRODUCAO" aggregate="total" rollupAggregate="total">
+					<expression>[Celulas].[QTD_PRODUCAO]</expression>
+				</dataItem>
+				<dataItem name="PCT_EFICIENCIA" aggregate="average" rollupAggregate="average">
+					<expression>[Celulas].[PCT_EFICIENCIA]</expression>
+				</dataItem>
+				<dataItem name="QTD_PENDENCIAS" aggregate="total" rollupAggregate="total">
+					<expression>[Celulas].[QTD_PENDENCIAS]</expression>
+				</dataItem>
+				<dataItem name="PCT_QUALIDADE" aggregate="average" rollupAggregate="average">
+					<expression>[Celulas].[PCT_QUALIDADE]</expression>
+				</dataItem>
+			</selection>
+			<detailFilters>
+				<detailFilter>
+					<filterExpression>
+						<![CDATA[
+							(#$p_Turno# = 'TODOS' OR [Celulas].[NR_TURNO] = #$p_Turno#) AND
+							(cast(#$p_Data#, date) IS NULL OR cast([Celulas].[DT_REFERENCIA], date) = cast(#$p_Data#, date))
+						]]>
+					</filterExpression>
+				</detailFilter>
+			</detailFilters>
+		</query>
+	</queries>
+
+	<!-- ═══════════════════════════════════════════════════════════════════ -->
+	<!-- PARÂMETROS                                                           -->
+	<!-- ═══════════════════════════════════════════════════════════════════ -->
+	<parameters>
+		<parameter name="p_Turno">
+			<style><CSS value=""/></style>
+		</parameter>
+		<parameter name="p_Data">
+			<style><CSS value=""/></style>
+		</parameter>
+	</parameters>
+
+</report>
