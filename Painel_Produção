@@ -1,0 +1,2151 @@
+<report xmlns="http://developer.cognos.com/schemas/report/14.3/"           useStyleVersion="11.4" expressionLocale="en">
+	<drillBehavior/>
+	<layouts>
+		<layout>
+			<reportPages>
+				<page name="Página1">
+					<style>
+						<defaultStyles>
+							<defaultStyle refStyle="pg"/>
+						</defaultStyles>
+					</style>
+					<pageBody>
+						<style>
+							<defaultStyles>
+								<defaultStyle refStyle="pb"/>
+							</defaultStyles>
+							<CSS value="background-color: #f8fafc; background-image: radial-gradient(#cbd5e1 1.5px, transparent 1.5px); background-size: 25px 25px; padding: 10px; font-family: &apos;Segoe UI&apos;, Tahoma, Geneva, Verdana, sans-serif;"/>
+						</style>
+						<contents>
+							<block>
+								<contents>
+									<HTMLItem>
+										<dataSource>
+											<staticValue>&lt;script&gt;
+   var zxzx = { };
+   zxzx.sendFinishAction = function()
+   {
+      var oCR = cognos.Report.getReport(&apos;_THIS_&apos;);
+      oCR.sendRequest(cognos.Report.Action.FINISH);  
+   }
+   // 90000 milissegundos = 1 minuto e 30 segundos
+   setTimeout(zxzx.sendFinishAction, 90000);
+&lt;/script&gt;</staticValue>
+										</dataSource>
+									</HTMLItem>
+									<table>
+										<style>
+											<defaultStyles>
+												<defaultStyle refStyle="tb"/>
+											</defaultStyles>
+											<CSS value="border-collapse:collapse;width:100%;"/>
+										</style>
+										<tableRows>
+											
+											<tableRow>
+												<tableCells>
+													<tableCell colSpan="3">
+														<style><CSS value="padding-bottom: 0px;"/></style>
+														<contents>
+															<block>
+																<style><CSS value="background-color:#1e293b; border-left: 8px solid #3b82f6; border-radius: 8px 8px 0 0; padding: 16px 24px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); display: block;"/></style>
+																<contents>
+																	<textItem>
+																		<dataSource><staticValue>PAINEL DE PRODUTIVIDADE WMS</staticValue></dataSource>
+																		<style><CSS value="font-size:22pt; font-weight:800; color:#f8fafc; letter-spacing: 0.05em;"/></style>
+																	</textItem>
+																	<textItem>
+																		<dataSource><staticValue>   |   Visão Operacional</staticValue></dataSource>
+																		<style><CSS value="font-size:14pt; font-weight:400; color:#94a3b8; font-style: italic;"/></style>
+																	</textItem>
+																<HTMLItem>
+			<dataSource>
+				<staticValue>&lt;style&gt;
+    /* Transições suaves */
+    body, div, td, span, table, text, svg {
+        transition: background-color 0.4s, color 0.4s, fill 0.4s, border-color 0.4s;
+    }
+    
+    /* 1. FUNDO DA PÁGINA (Escuro com grid sutil) */
+    body.dark-theme, body.dark-theme form, body.dark-theme .pb, body.dark-theme .pg {
+        background-color: #0f172a !important;
+        background-image: radial-gradient(#334155 1.5px, transparent 1.5px) !important;
+        color: #f8fafc !important;
+    }
+
+    /* 2. PAINÉIS E CARDS BRANCOS -&gt; ESCUROS */
+    /* Modifica apenas os quadros que têm fundo branco explícito, sem afetar as barras azuis */
+    body.dark-theme table[style*=&quot;background-color:#FFFFFF&quot; i],
+    body.dark-theme table[style*=&quot;background-color: #FFFFFF&quot; i],
+    body.dark-theme td[style*=&quot;background-color:#FFFFFF&quot; i],
+    body.dark-theme td[style*=&quot;background-color: #FFFFFF&quot; i] {
+        background-color: #1e293b !important;
+        border-color: #334155 !important;
+    }
+
+    /* =====================================================================
+       3. MÁGICA DA TABELA: RESPEITANDO O COGNOS
+       O segredo: O fundo escuro NÃO tem &quot;!important&quot;. 
+       Assim, se o Cognos colocar Vermelho, Verde ou Amarelo, a cor original vence!
+       ===================================================================== */
+    body.dark-theme .ls, 
+    body.dark-theme .lc, 
+    body.dark-theme .lm {
+        background-color: #1e293b; 
+        border-bottom: 1px solid #334155 !important;
+    }
+    
+    /* 4. TEXTO BRANCO NAS CÉLULAS NORMAIS */
+    /* Garante que o RANK, o número do PROD/HORA e as células vazias fiquem brancos */
+    body.dark-theme .ls, body.dark-theme .ls span, body.dark-theme .ls div,
+    body.dark-theme .lc, body.dark-theme .lc span, body.dark-theme .lc div,
+    body.dark-theme .lm, body.dark-theme .lm span, body.dark-theme .lm div {
+        color: #f8fafc !important;
+    }
+
+    /* =====================================================================
+       5. LETRA PRETA E NEGRITA APENAS NAS CÉLULAS COM CONDICIONAL
+       ===================================================================== */
+    /* Condicionais VERDES */
+    body.dark-theme td[style*=&quot;green&quot; i], body.dark-theme td[style*=&quot;00FF00&quot; i], body.dark-theme td[style*=&quot;008000&quot; i], body.dark-theme td[style*=&quot;166534&quot; i] {
+        color: #000000 !important; font-weight: bold !important;
+    }
+    body.dark-theme td[style*=&quot;green&quot; i] *, body.dark-theme td[style*=&quot;00FF00&quot; i] *, body.dark-theme td[style*=&quot;008000&quot; i] *, body.dark-theme td[style*=&quot;166534&quot; i] * {
+        color: #000000 !important;
+    }
+    /* Condicionais AMARELAS */
+    body.dark-theme td[style*=&quot;yellow&quot; i], body.dark-theme td[style*=&quot;FFFF00&quot; i], body.dark-theme td[style*=&quot;FFCC00&quot; i], body.dark-theme td[style*=&quot;854d0e&quot; i] {
+        color: #000000 !important; font-weight: bold !important;
+    }
+    body.dark-theme td[style*=&quot;yellow&quot; i] *, body.dark-theme td[style*=&quot;FFFF00&quot; i] *, body.dark-theme td[style*=&quot;FFCC00&quot; i] *, body.dark-theme td[style*=&quot;854d0e&quot; i] * {
+        color: #000000 !important;
+    }
+    /* Condicionais VERMELHAS */
+    body.dark-theme td[style*=&quot;red&quot; i], body.dark-theme td[style*=&quot;FF0000&quot; i], body.dark-theme td[style*=&quot;CC0000&quot; i], body.dark-theme td[style*=&quot;991b1b&quot; i] {
+        color: #000000 !important; font-weight: bold !important;
+    }
+    body.dark-theme td[style*=&quot;red&quot; i] *, body.dark-theme td[style*=&quot;FF0000&quot; i] *, body.dark-theme td[style*=&quot;CC0000&quot; i] *, body.dark-theme td[style*=&quot;991b1b&quot; i] * {
+        color: #000000 !important;
+    }
+
+    /* 6. CABEÇALHO AZUL DA TABELA */
+    body.dark-theme td[style*=&quot;background-color:#004EBB&quot; i],
+    body.dark-theme td[style*=&quot;background-color: #004EBB&quot; i] {
+        background-color: #0f172a !important;
+        color: #60a5fa !important;
+        border-bottom: 2px solid #3b82f6 !important;
+    }
+    body.dark-theme td[style*=&quot;background-color:#004EBB&quot; i] span,
+    body.dark-theme td[style*=&quot;background-color: #004EBB&quot; i] span {
+        color: #60a5fa !important;
+    }
+    body.dark-theme td[style*=&quot;background-color:#F8F9FA&quot; i] {
+        background-color: #0f172a !important;
+        color: #f8fafc !important;
+        border-top: 1px solid #334155 !important;
+    }
+
+    /* 7. GRÁFICOS E EIXOS (Força os números do gráfico a ficarem brancos) */
+    body.dark-theme svg text {
+        fill: #f8fafc !important;
+        color: #f8fafc !important;
+    }
+
+    /* 8. CARTÕES DE KPI Superiores */
+    body.dark-theme *[style*=&quot;color:#333&quot; i],
+    body.dark-theme *[style*=&quot;color: #333&quot; i],
+    body.dark-theme *[style*=&quot;color:#888&quot; i],
+    body.dark-theme *[style*=&quot;color: #888&quot; i] {
+        color: #cbd5e1 !important;
+    }
+
+    /* Filtros da Tela de Busca */
+    body.dark-theme .clsPromptComponent, 
+    body.dark-theme input, 
+    body.dark-theme select { 
+        background-color: #1e293b !important; 
+        color: white !important; 
+        border: 1px solid #475569 !important; 
+    }
+
+    /* ----------------------------------------------------- */
+    /* BALÃO DE INFORMAÇÕES E BOTÕES                         */
+    /* ----------------------------------------------------- */
+    .tooltip-container { float: right; margin-top: 2px; margin-left: 10px; position: relative; display: inline-block; font-family: &apos;Segoe UI&apos;, Tahoma, sans-serif; }
+    .tooltip-icon { background-color: #3b82f6; color: white; width: 34px; height: 34px; border-radius: 50%; text-align: center; line-height: 34px; font-weight: bold; font-style: italic; font-size: 18px; cursor: help; box-shadow: 0 2px 4px rgba(0,0,0,0.2); border: 2px solid transparent; transition: 0.3s; }
+    .tooltip-icon:hover { background-color: #2563eb; border-color: white; }
+    .tooltip-text { visibility: hidden; opacity: 0; width: 380px; background-color: #1e293b !important; color: #f8fafc !important; text-align: left; border-radius: 8px; padding: 15px; position: absolute; z-index: 9999; top: 130%; right: 0; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.5); transition: opacity 0.3s, visibility 0.3s; font-size: 10pt; line-height: 1.5; border: 1px solid #3b82f6; }
+    .tooltip-text::after { content: &quot;&quot;; position: absolute; bottom: 100%; right: 12px; border-width: 8px; border-style: solid; border-color: transparent transparent #3b82f6 transparent; }
+    .tooltip-container:hover .tooltip-text { visibility: visible; opacity: 1; }
+&lt;/style&gt;
+
+&lt;div class=&quot;tooltip-container&quot;&gt;
+    &lt;div class=&quot;tooltip-icon&quot;&gt;i&lt;/div&gt;
+    &lt;div class=&quot;tooltip-text&quot;&gt;
+        &lt;span style=&quot;font-size: 11pt; font-weight: bold; color: #60a5fa !important;&quot;&gt;ℹ️ Sobre o Painel&lt;/span&gt;
+        &lt;hr style=&quot;border: 0; border-bottom: 1px solid #334155; margin: 8px 0;&quot;&gt;
+        Relatório desenvolvido por:&lt;br&gt;
+        • &lt;b&gt;roberlan.santiago@gpabr.com&lt;/b&gt;&lt;br&gt;
+        • &lt;b&gt;vagner.moura@gpabr.com&lt;/b&gt;&lt;br&gt;&lt;br&gt;
+        Em caso de problemas ou inconsistências, abrir uma &lt;b&gt;RITM&lt;/b&gt; e encaminhar para a equipe responsável.
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;button type=&quot;button&quot; onclick=&quot;var d=document,e=d.documentElement,f=d.fullscreenElement||d.webkitFullscreenElement;if(!f){if(e.requestFullscreen)e.requestFullscreen();else if(e.webkitRequestFullscreen)e.webkitRequestFullscreen();}else{if(d.exitFullscreen)d.exitFullscreen();else if(d.webkitExitFullscreen)d.webkitExitFullscreen();}&quot; style=&quot;float: right; margin-top: 2px; margin-left: 10px; padding: 8px 15px; background-color: #3b82f6; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; font-family: &apos;Segoe UI&apos;, Tahoma, sans-serif; box-shadow: 0 2px 4px rgba(0,0,0,0.2);&quot;&gt;
+    📺 TELA CHEIA
+&lt;/button&gt;
+
+&lt;button type=&quot;button&quot; onclick=&quot;toggleDarkMode()&quot; id=&quot;btnDarkMode&quot; style=&quot;float: right; margin-top: 2px; margin-left: 10px; padding: 8px 15px; background-color: #1e293b; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; font-family: &apos;Segoe UI&apos;, Tahoma, sans-serif; box-shadow: 0 2px 4px rgba(0,0,0,0.2);&quot;&gt;
+    🌙 MODO ESCURO
+&lt;/button&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+function toggleDarkMode() {
+    var body = document.body;
+    var btn = document.getElementById(&apos;btnDarkMode&apos;);
+    if (!btn) return;
+    
+    if (body.classList.contains(&apos;dark-theme&apos;)) {
+        body.classList.remove(&apos;dark-theme&apos;);
+        btn.innerHTML = &apos;🌙 MODO ESCURO&apos;;
+        btn.style.backgroundColor = &apos;#1e293b&apos;;
+        btn.style.color = &apos;white&apos;;
+        localStorage.setItem(&apos;temaPainel&apos;, &apos;light&apos;);
+    } else {
+        body.classList.add(&apos;dark-theme&apos;);
+        btn.innerHTML = &apos;☀️ MODO CLARO&apos;;
+        btn.style.backgroundColor = &apos;#f1f5f9&apos;;
+        btn.style.color = &apos;#0f172a&apos;;
+        localStorage.setItem(&apos;temaPainel&apos;, &apos;dark&apos;);
+    }
+}
+
+if (localStorage.getItem(&apos;temaPainel&apos;) === &apos;dark&apos;) {
+    setTimeout(function(){
+        if(!document.body.classList.contains(&apos;dark-theme&apos;)) {
+            document.body.classList.add(&apos;dark-theme&apos;);
+            var btn = document.getElementById(&apos;btnDarkMode&apos;);
+            if (btn) {
+                btn.innerHTML = &apos;☀️ MODO CLARO&apos;;
+                btn.style.backgroundColor = &apos;#f1f5f9&apos;;
+                btn.style.color = &apos;#0f172a&apos;;
+            }
+        }
+    }, 100);
+}
+&lt;/script&gt;</staticValue>
+			</dataSource>
+		</HTMLItem><selectValue parameter="Parâmetro1" refQuery="CD"><useItem refDataItem="OPERACAO"/></selectValue></contents>
+															</block>
+														</contents>
+													</tableCell>
+												</tableCells>
+											</tableRow>
+
+											<tableRow>
+												<tableCells>
+													<tableCell colSpan="3">
+														<style><CSS value="background-color:#1e293b; padding: 0 15px 15px 15px; border-radius: 0 0 8px 8px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);"/></style>
+														<contents>
+															<table>
+																<style><CSS value="border-collapse:collapse; width:100%;"/></style>
+																<tableRows>
+																	<tableRow>
+																		<tableCells>
+																			<tableCell><style><CSS value="width:20%; padding: 0 5px;"/></style><contents>
+																				<block><style><CSS value="padding:12px; background:#111827; border-radius:8px; border-top:4px solid #c084fc; text-align:center;"/></style><contents>
+																					<textItem><dataSource><staticValue>👥 COLAB. ATIVOS</staticValue></dataSource><style><CSS value="font-size:10pt; color:#FFFFFF; font-weight:bold; opacity: 0.7;"/></style></textItem>
+																					<block><contents><singleton name="QTD_COLAB" refQuery="KPIs"><contents><textItem><dataSource><dataItemValue refDataItem="QTD_COLAB"/></dataSource><style><CSS value="font-size:20pt; font-weight:bold; color:#c084fc;"/></style></textItem></contents></singleton></contents></block>
+																				</contents></block>
+																			</contents></tableCell>
+																			<tableCell><style><CSS value="width:20%; padding: 0 5px;"/></style><contents>
+																				<block><style><CSS value="padding:12px; background:#111827; border-radius:8px; border-top:4px solid #facc15; text-align:center;"/></style><contents>
+																					<textItem><dataSource><staticValue>🎯 META / HORA</staticValue></dataSource><style><CSS value="font-size:10pt; color:#FFFFFF; font-weight:bold; opacity: 0.7;"/></style></textItem>
+																					<block><contents><singleton name="meta" refQuery="Consulta1"><contents><textItem><dataSource><dataItemValue refDataItem="meta"/></dataSource><style><CSS value="font-size:20pt; font-weight:bold; color:#facc15;"/></style></textItem></contents></singleton></contents></block>
+																				</contents></block>
+																			</contents></tableCell>
+																			<tableCell><style><CSS value="width:20%; padding: 0 5px;"/></style><contents>
+																				<block><style><CSS value="padding:12px; background:#111827; border-radius:8px; border-top:4px solid #9ca3af; text-align:center;"/></style><contents>
+																					<textItem><dataSource><staticValue>📦 TOTAL PROD.</staticValue></dataSource><style><CSS value="font-size:10pt; color:#FFFFFF; font-weight:bold; opacity: 0.7;"/></style></textItem>
+																					<block><contents><singleton name="TOTAL_PROD" refQuery="KPIs"><contents><textItem><dataSource><dataItemValue refDataItem="TOTAL_PROD"/></dataSource><style><CSS value="font-size:20pt; font-weight:bold; color:#FFFFFF;"/><dataFormat><numberFormat decimalSize="0" groupDelimiter="." useGrouping="true"/></dataFormat></style></textItem></contents></singleton></contents></block>
+																				</contents></block>
+																			</contents></tableCell>
+																			<tableCell><style><CSS value="width:20%; padding: 0 5px;"/></style><contents>
+																				<block><style><CSS value="padding:12px; background:#111827; border-radius:8px; border-top:4px solid #22c55e; text-align:center;"/></style><contents>
+																					<textItem><dataSource><staticValue>⚡ EFICIÊNCIA MÉDIA</staticValue></dataSource><style><CSS value="font-size:10pt; color:#FFFFFF; font-weight:bold; opacity: 0.7;"/></style></textItem>
+																					<block><contents><singleton name="EFF_PCT" refQuery="KPIs"><contents><textItem><dataSource><dataItemValue refDataItem="EFF_PCT"/></dataSource><style><dataFormat><numberFormat decimalSize="1"/></dataFormat><CSS value="font-size:20pt; font-weight:bold; color:#22c55e;"/></style></textItem><textItem><dataSource><staticValue>%</staticValue></dataSource><style><CSS value="font-size:14pt; font-weight:bold; color:#22c55e;"/></style></textItem></contents></singleton></contents></block>
+																				</contents></block>
+																			</contents></tableCell>
+																			<tableCell><style><CSS value="width:20%; padding: 0 5px;"/></style><contents>
+																				<block><style><CSS value="padding:12px; background:#111827; border-radius:8px; border-top:4px solid #60a5fa; text-align:center;"/></style><contents>
+																					<textItem><dataSource><staticValue>⏱️ ATUALIZAÇÃO</staticValue></dataSource><style><CSS value="font-size:10pt; color:#FFFFFF; font-weight:bold; opacity: 0.7;"/></style></textItem>
+																					<block><contents><singleton name="ATUAL" refQuery="KPIs"><contents><textItem><dataSource><dataItemValue refDataItem="ATUAL"/></dataSource><style><CSS value="font-size:14pt; font-weight:bold; color:#60a5fa;"/></style></textItem></contents></singleton></contents></block>
+																				</contents></block>
+																			</contents></tableCell>
+																		</tableCells>
+																	</tableRow>
+																</tableRows>
+															</table>
+														</contents>
+													</tableCell>
+												</tableCells>
+											</tableRow>
+											
+											<tableRow>
+												<tableCells>
+													<tableCell colSpan="3">
+														<contents/>
+														<style><CSS value="height:20px;"/></style>
+													</tableCell>
+												</tableCells>
+											</tableRow>
+
+											<tableRow>
+												<tableCells>
+													<tableCell>
+														<contents>
+															<block>
+																<style><CSS value="background-color: white; border-radius: 8px; padding: 5px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);"/></style>
+																<contents>
+																	<list horizontalPagination="true" name="Lista1" refQuery="Parte 1" rowsPerPage="24">
+																		<noDataHandler>
+																			<contents>
+																				<block>
+																					<contents>
+																						<textItem>
+																							<dataSource><staticValue>Não há dados disponíveis</staticValue></dataSource>
+																							<style><CSS value="padding:10px 18px;"/></style>
+																						</textItem>
+																					</contents>
+																				</block>
+																			</contents>
+																		</noDataHandler>
+																		<style>
+																			<CSS value="border-collapse:collapse;width:100%;"/>
+																			<defaultStyles><defaultStyle refStyle="ls"/></defaultStyles>
+																		</style>
+																		<listColumns>
+																			<listColumn>
+																				<listColumnTitle>
+																					<style>
+																						<defaultStyles><defaultStyle refStyle="lt"/></defaultStyles>
+																						<CSS value="padding:10px 6px 10px 6px;background-color:#1e293b;color:#f8fafc;font-weight:bold;text-align:center;font-size:9pt;border-bottom:3px solid #3b82f6"/>
+																					</style>
+																					<contents>
+																						<textItem><dataSource><dataItemLabel refDataItem="RANK"/></dataSource></textItem>
+																					</contents>
+																				</listColumnTitle>
+																				<listColumnBody>
+																					<style>
+																						<defaultStyles><defaultStyle refStyle="lm"/></defaultStyles>
+																						<CSS value="padding:8px 4px 8px 4px;text-align:center;font-size:8pt;font-weight:bold;color:#475569;border-bottom:1px solid #f1f5f9"/>
+																					</style>
+																					<contents>
+																						<textItem><dataSource><dataItemValue refDataItem="LINHA"/></dataSource></textItem>
+																					</contents>
+																				</listColumnBody>
+																			</listColumn>
+																			<listColumn><listColumnTitle><style><defaultStyles><defaultStyle refStyle="lt"/></defaultStyles><CSS value="padding:10px 6px 10px 6px;background-color:#1e293b;color:#f8fafc;font-weight:bold;text-align:center;font-size:9pt;border-bottom:3px solid #3b82f6"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="CADASTRO"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:8px 4px 8px 4px;text-align:center;font-size:10pt;font-weight:bold;color:#0F0F0F;border-bottom:1px solid #f1f5f9"/><defaultStyles><defaultStyle refStyle="lm"/></defaultStyles></style><contents><textItem><dataSource><dataItemValue refDataItem="CADASTRO"/></dataSource></textItem></contents></listColumnBody></listColumn><listColumn>
+																				<listColumnTitle>
+																					<style>
+																						<defaultStyles><defaultStyle refStyle="lt"/></defaultStyles>
+																						<CSS value="padding:10px 6px 10px 6px;background-color:#1e293b;color:#f8fafc;font-weight:bold;text-align:horizontalAuto;font-size:9pt;border-bottom:3px solid #3b82f6"/>
+																					</style>
+																					<contents>
+																						<textItem><dataSource><dataItemLabel refDataItem="COLABORADOR"/></dataSource></textItem>
+																					</contents>
+																				</listColumnTitle>
+																				<listColumnBody>
+																					<style>
+																						<defaultStyles><defaultStyle refStyle="lm"/></defaultStyles>
+																						<CSS value="padding:8px 4px 8px 4px;text-align:center;font-size:10pt;font-weight:bold;border-bottom:1px solid #f1f5f9"/>
+																					</style>
+																					<contents>
+																						<textItem><dataSource><dataItemValue refDataItem="COLABORADOR"/></dataSource></textItem>
+																					</contents>
+																				</listColumnBody>
+																			</listColumn>
+																			<listColumn>
+																				<listColumnTitle>
+																					<style>
+																						<defaultStyles><defaultStyle refStyle="lt"/></defaultStyles>
+																						<CSS value="padding:10px 6px 10px 6px;background-color:#1e293b;color:#f8fafc;font-weight:bold;text-align:horizontalAuto;font-size:9pt;border-bottom:3px solid #3b82f6"/>
+																					</style>
+																					<contents>
+																						<textItem><dataSource><dataItemLabel refDataItem="QTY_CXS_SEP"/></dataSource></textItem>
+																					</contents>
+																				</listColumnTitle>
+																				<listColumnBody>
+																					<style>
+																						<defaultStyles><defaultStyle refStyle="lm"/></defaultStyles>
+																						<CSS value="padding:8px 4px 8px 4px;text-align:center;font-size:10pt;font-weight:bold;border-bottom:1px solid #f1f5f9"/>
+																					</style>
+																					<contents>
+																						<textItem><dataSource><dataItemValue refDataItem="QTY_CXS_SEP"/></dataSource></textItem>
+																					</contents>
+																					<conditionalStyleRefs>
+																						<conditionalStyleRef refConditionalStyle="PROD_HORA_P1"/>
+																					</conditionalStyleRefs>
+																				</listColumnBody>
+																			</listColumn>
+																			<listColumn>
+																				<listColumnTitle>
+																					<style>
+																						<defaultStyles><defaultStyle refStyle="lt"/></defaultStyles>
+																						<CSS value="padding:10px 4px 10px 4px;background-color:#1e293b;color:#f8fafc;font-weight:bold;text-align:horizontalAuto;font-size:9pt;width:80px;border-bottom:3px solid #3b82f6"/>
+																					</style>
+																					<contents>
+																						<textItem><dataSource><dataItemLabel refDataItem="PROD_HORA"/></dataSource></textItem>
+																					</contents>
+																				</listColumnTitle>
+																				<listColumnBody>
+																					<style>
+																						<defaultStyles><defaultStyle refStyle="lm"/></defaultStyles>
+																						<CSS value="padding:8px 4px 8px 4px;text-align:center;border-bottom:1px solid #f1f5f9"/>
+																						<dataFormat><numberFormat decimalDelimiter="," decimalSize="3"/></dataFormat>
+																					</style>
+																					<contents>
+																						<table><style><CSS value="border-collapse:collapse;width:100%;"/></style><tableRows><tableRow><tableCells><tableCell><contents><textItem><dataSource><dataItemValue refDataItem="BAR_META"/></dataSource><style><CSS value="font-size:6pt;letter-spacing:-1px;color:#3b82f6;"/></style></textItem></contents><style><CSS value="text-align:left;padding-right:4px;white-space:nowrap;"/></style></tableCell><tableCell><contents><textItem><dataSource><dataItemValue refDataItem="PROD_HORA"/></dataSource><style><dataFormat><numberFormat decimalDelimiter="," decimalSize="0"/></dataFormat><CSS value="font-size:12pt;font-weight:700;color:#1e293b;"/></style></textItem></contents><style><CSS value="text-align:right;white-space:nowrap;"/></style></tableCell></tableCells></tableRow></tableRows></table>
+																					</contents>
+																				</listColumnBody>
+																			</listColumn>
+																			<listColumn>
+																				<listColumnTitle><style><CSS value="padding:0;font-size:0pt;width:0%;text-align:horizontalAuto"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="META_HORA"/></dataSource></textItem></contents></listColumnTitle>
+																				<listColumnBody><style><CSS value="padding:0;font-size:0pt;width:0%;border-top-width:none;border-bottom-width:none;border-left-width:none;border-right-width:none;text-align:center"/></style><contents><textItem><dataSource><dataItemValue refDataItem="PER_META"/></dataSource></textItem></contents></listColumnBody>
+																			</listColumn>
+																			<listColumn><listColumnTitle><style><CSS value="padding:10px 4px 10px 4px;background-color:#1e293b;color:#f8fafc;font-weight:bold;text-align:horizontalAuto;font-size:9pt;border-bottom:3px solid #3b82f6"/><defaultStyles><defaultStyle refStyle="lt"/></defaultStyles></style><contents><textItem><dataSource><dataItemLabel refDataItem="HORARIO"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:8px 4px 8px 4px;text-align:center;font-size:10pt;font-weight:bold;color:#000000;border-bottom:1px solid #f1f5f9"/><defaultStyles><defaultStyle refStyle="lm"/></defaultStyles></style><contents><textItem><dataSource><dataItemValue refDataItem="HORARIO"/></dataSource></textItem></contents></listColumnBody></listColumn><listColumn>
+																				<listColumnTitle>
+																					<style>
+																						<defaultStyles><defaultStyle refStyle="lt"/></defaultStyles>
+																						<CSS value="padding:10px 4px 10px 4px;background-color:#1e293b;color:#f8fafc;font-weight:bold;text-align:horizontalAuto;font-size:8pt;width:50px;border-bottom:3px solid #3b82f6"/>
+																					</style>
+																					<contents>
+																						<textItem><dataSource><dataItemLabel refDataItem="TEMPO(MIN)"/></dataSource></textItem>
+																					</contents>
+																				</listColumnTitle>
+																				<listColumnBody>
+																					<style>
+																						<defaultStyles><defaultStyle refStyle="lm"/></defaultStyles>
+																						<CSS value="padding:8px 4px 8px 4px;text-align:center;font-size:9pt;font-weight:bold;color:#64748b;border-bottom:1px solid #f1f5f9"/>
+																					</style>
+																					<contents>
+																						<textItem><dataSource><dataItemValue refDataItem="TEMPO(MIN)"/></dataSource></textItem>
+																					</contents>
+																					<conditionalStyleRefs>
+																						<conditionalStyleRef refConditionalStyle="EST. TEMPO"/>
+																					</conditionalStyleRefs>
+																				</listColumnBody>
+																			</listColumn>
+																		</listColumns>
+																	</list>
+																</contents>
+															</block>
+														</contents>
+														<style><CSS value="vertical-align:top;width:33.33%;padding-right:10px;"/></style>
+													</tableCell>
+													
+													<tableCell>
+														<contents>
+															<block>
+																<style><CSS value="background-color: white; border-radius: 8px; padding: 5px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);"/></style>
+																<contents>
+																	<list horizontalPagination="true" name="Lista2" refQuery="Parte 2" rowsPerPage="49">
+																		<noDataHandler>
+																			<contents>
+																				<block>
+																					<contents>
+																						<textItem>
+																							<dataSource><staticValue>Não há dados disponíveis</staticValue></dataSource>
+																							<style><CSS value="padding:10px 18px;"/></style>
+																						</textItem>
+																					</contents>
+																				</block>
+																			</contents>
+																		</noDataHandler>
+																		<style>
+																			<CSS value="border-collapse:collapse;width:100%;"/>
+																			<defaultStyles><defaultStyle refStyle="ls"/></defaultStyles>
+																		</style>
+																		<listColumns>
+																			<listColumn>
+																				<listColumnTitle>
+																					<style>
+																						<defaultStyles><defaultStyle refStyle="lt"/></defaultStyles>
+																						<CSS value="padding:10px 6px 10px 6px;background-color:#1e293b;color:#f8fafc;font-weight:bold;text-align:horizontalAuto;font-size:9pt;border-bottom:3px solid #3b82f6"/>
+																					</style>
+																					<contents>
+																						<textItem><dataSource><dataItemLabel refDataItem="RANK"/></dataSource></textItem>
+																					</contents>
+																				</listColumnTitle>
+																				<listColumnBody>
+																					<style>
+																						<defaultStyles><defaultStyle refStyle="lm"/></defaultStyles>
+																						<CSS value="padding:8px 4px 8px 4px;text-align:center;font-size:8pt;font-weight:bold;color:#475569;border-bottom:1px solid #f1f5f9"/>
+																					</style>
+																					<contents>
+																						<textItem><dataSource><dataItemValue refDataItem="LINHA"/></dataSource></textItem>
+																					</contents>
+																				</listColumnBody>
+																			</listColumn>
+																			<listColumn><listColumnTitle><style><defaultStyles><defaultStyle refStyle="lt"/></defaultStyles><CSS value="padding:10px 6px 10px 6px;background-color:#1e293b;color:#f8fafc;font-weight:bold;text-align:horizontalAuto;font-size:9pt;border-bottom:3px solid #3b82f6"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="CADASTRO"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:8px 4px 8px 4px;text-align:center;font-size:10pt;font-weight:bold;color:#0F0F0F;border-bottom:1px solid #f1f5f9"/><defaultStyles><defaultStyle refStyle="lm"/></defaultStyles></style><contents><textItem><dataSource><dataItemValue refDataItem="CADASTRO"/></dataSource></textItem></contents></listColumnBody></listColumn><listColumn>
+																				<listColumnTitle>
+																					<style>
+																						<defaultStyles><defaultStyle refStyle="lt"/></defaultStyles>
+																						<CSS value="padding:10px 6px 10px 6px;background-color:#1e293b;color:#f8fafc;font-weight:bold;text-align:horizontalAuto;font-size:9pt;border-bottom:3px solid #3b82f6"/>
+																					</style>
+																					<contents>
+																						<textItem><dataSource><dataItemLabel refDataItem="COLABORADOR"/></dataSource></textItem>
+																					</contents>
+																				</listColumnTitle>
+																				<listColumnBody>
+																					<style>
+																						<defaultStyles><defaultStyle refStyle="lm"/></defaultStyles>
+																						<CSS value="padding:8px 4px 8px 4px;text-align:center;font-size:10pt;font-weight:bold;border-bottom:1px solid #f1f5f9"/>
+																					</style>
+																					<contents>
+																						<textItem><dataSource><dataItemValue refDataItem="COLABORADOR"/></dataSource></textItem>
+																					</contents>
+																				</listColumnBody>
+																			</listColumn>
+																			<listColumn>
+																				<listColumnTitle>
+																					<style>
+																						<defaultStyles><defaultStyle refStyle="lt"/></defaultStyles>
+																						<CSS value="padding:10px 6px 10px 6px;background-color:#1e293b;color:#f8fafc;font-weight:bold;text-align:horizontalAuto;font-size:9pt;border-bottom:3px solid #3b82f6"/>
+																					</style>
+																					<contents>
+																						<textItem><dataSource><dataItemLabel refDataItem="QTY_CXS_SEP"/></dataSource></textItem>
+																					</contents>
+																				</listColumnTitle>
+																				<listColumnBody>
+																					<style>
+																						<defaultStyles><defaultStyle refStyle="lm"/></defaultStyles>
+																						<CSS value="padding:8px 4px 8px 4px;text-align:center;font-size:10pt;font-weight:bold;border-bottom:1px solid #f1f5f9"/>
+																					</style>
+																					<contents>
+																						<textItem><dataSource><dataItemValue refDataItem="QTY_CXS_SEP"/></dataSource></textItem>
+																					</contents>
+																					<conditionalStyleRefs>
+																						<conditionalStyleRef refConditionalStyle="PARTE 2 "/>
+																					</conditionalStyleRefs>
+																				</listColumnBody>
+																			</listColumn>
+																			<listColumn>
+																				<listColumnTitle>
+																					<style>
+																						<defaultStyles><defaultStyle refStyle="lt"/></defaultStyles>
+																						<CSS value="padding:10px 4px 10px 4px;background-color:#1e293b;color:#f8fafc;font-weight:bold;text-align:horizontalAuto;font-size:9pt;width:80px;border-bottom:3px solid #3b82f6"/>
+																					</style>
+																					<contents>
+																						<textItem><dataSource><dataItemLabel refDataItem="PROD_HORA"/></dataSource></textItem>
+																					</contents>
+																				</listColumnTitle>
+																				<listColumnBody>
+																					<style>
+																						<defaultStyles><defaultStyle refStyle="lm"/></defaultStyles>
+																						<CSS value="padding:8px 4px 8px 4px;text-align:center;font-size:12pt;border-bottom:1px solid #f1f5f9"/>
+																						<dataFormat><numberFormat decimalDelimiter="," decimalSize="3"/></dataFormat>
+																					</style>
+																					<contents>
+																						<table><style><CSS value="border-collapse:collapse;width:100%;"/></style><tableRows><tableRow><tableCells><tableCell><contents><textItem><dataSource><dataItemValue refDataItem="BAR_META"/></dataSource><style><CSS value="font-size:6pt;letter-spacing:-1px;color:#3b82f6;"/></style></textItem></contents><style><CSS value="text-align:left;padding-right:4px;white-space:nowrap;"/></style></tableCell><tableCell><contents><textItem><dataSource><dataItemValue refDataItem="PROD_HORA"/></dataSource><style><dataFormat><numberFormat decimalDelimiter="," decimalSize="0"/></dataFormat><CSS value="font-size:12pt;font-weight:700;color:#1e293b;"/></style></textItem></contents><style><CSS value="text-align:right;white-space:nowrap;"/></style></tableCell></tableCells></tableRow></tableRows></table>
+																					</contents>
+																				</listColumnBody>
+																			</listColumn>
+																			<listColumn><listColumnTitle><style><defaultStyles><defaultStyle refStyle="lt"/></defaultStyles><CSS value="padding:10px 4px 10px 4px;background-color:#1e293b;color:#f8fafc;font-weight:bold;text-align:horizontalAuto;font-size:9pt;border-bottom:3px solid #3b82f6"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="HORARIO"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:8px 4px 8px 4px;text-align:center;font-size:10pt;font-weight:bold;border-bottom:1px solid #f1f5f9"/><defaultStyles><defaultStyle refStyle="lm"/></defaultStyles></style><contents><textItem><dataSource><dataItemValue refDataItem="HORARIO"/></dataSource></textItem></contents></listColumnBody></listColumn><listColumn>
+																				<listColumnTitle><style><CSS value="padding:0;font-size:0pt;width:0%;text-align:horizontalAuto"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="META_HORA"/></dataSource></textItem></contents></listColumnTitle>
+																				<listColumnBody><style><CSS value="padding:0;font-size:0pt;width:0%;border-top-width:none;border-bottom-width:none;border-left-width:none;border-right-width:none;text-align:center"/></style><contents><textItem><dataSource><dataItemValue refDataItem="PER_META"/></dataSource></textItem></contents></listColumnBody>
+																			</listColumn>
+																			<listColumn>
+																				<listColumnTitle>
+																					<style>
+																						<defaultStyles><defaultStyle refStyle="lt"/></defaultStyles>
+																						<CSS value="padding:10px 4px 10px 4px;background-color:#1e293b;color:#f8fafc;font-weight:bold;text-align:horizontalAuto;font-size:8pt;width:50px;border-bottom:3px solid #3b82f6"/>
+																					</style>
+																					<contents>
+																						<textItem><dataSource><dataItemLabel refDataItem="TEMPO(MIN)"/></dataSource></textItem>
+																					</contents>
+																				</listColumnTitle>
+																				<listColumnBody>
+																					<style>
+																						<defaultStyles><defaultStyle refStyle="lm"/></defaultStyles>
+																						<CSS value="padding:8px 4px 8px 4px;text-align:center;font-size:9pt;font-weight:bold;color:#64748b;border-bottom:1px solid #f1f5f9"/>
+																					</style>
+																					<contents>
+																						<textItem><dataSource><dataItemValue refDataItem="TEMPO(MIN)"/></dataSource></textItem>
+																					</contents>
+																					<conditionalStyleRefs>
+																						<conditionalStyleRef refConditionalStyle="EST. TEMPO 2"/>
+																					</conditionalStyleRefs>
+																				</listColumnBody>
+																			</listColumn>
+																		</listColumns>
+																	</list>
+																</contents>
+															</block>
+														</contents>
+														<style><CSS value="vertical-align:top;width:33.33%;padding-right:10px;"/></style>
+													</tableCell>
+													
+													<tableCell>
+														<contents>
+															<block>
+																<style><CSS value="padding:5px 5px 7px 5px;background-color:white;border-radius:8px;box-shadow:0 4px 6px -1px rgba(0, 0, 0, 0.1)"/></style>
+																<contents>
+                                                                    <HTMLItem>
+                                                                        <dataSource>
+                                                                            <staticValue>&lt;div id=&quot;scrollAreaLista3&quot; style=&quot;height: 800px; overflow-y: auto; overflow-x: hidden;&quot;&gt;</staticValue>
+                                                                        </dataSource>
+                                                                    </HTMLItem>
+																	<list horizontalPagination="true" name="Lista3" refQuery="Parte 3" rowsPerPage="200">
+																		<noDataHandler>
+																			<contents>
+																				<block>
+																					<contents>
+																						<textItem>
+																							<dataSource><staticValue>Não há dados disponíveis</staticValue></dataSource>
+																							<style><CSS value="padding:10px 18px;color:#9ca3af;font-style:italic;"/></style>
+																						</textItem>
+																					</contents>
+																				</block>
+																			</contents>
+																		</noDataHandler>
+																		<style>
+																			<CSS value="border-collapse:collapse;width:100%;"/>
+																			<defaultStyles><defaultStyle refStyle="ls"/></defaultStyles>
+																		</style>
+																		<listColumns>
+																			<listColumn>
+																				<listColumnTitle>
+																					<style>
+																						<defaultStyles><defaultStyle refStyle="lt"/></defaultStyles>
+																						<CSS value="padding:10px 6px 10px 6px;background-color:#1e293b;color:#f8fafc;font-weight:bold;text-align:horizontalAuto;font-size:9pt;border-bottom:3px solid #3b82f6"/>
+																					</style>
+																					<contents>
+																						<textItem><dataSource><dataItemLabel refDataItem="RANK"/></dataSource></textItem>
+																					</contents>
+																				</listColumnTitle>
+																				<listColumnBody>
+																					<style>
+																						<defaultStyles><defaultStyle refStyle="lm"/></defaultStyles>
+																						<CSS value="padding:8px 4px 8px 4px;text-align:center;font-size:8pt;font-weight:bold;color:#475569;border-bottom:1px solid #f1f5f9"/>
+																					</style>
+																					<contents>
+																						<textItem><dataSource><dataItemValue refDataItem="LINHA"/></dataSource></textItem>
+																					</contents>
+																				</listColumnBody>
+																			</listColumn>
+																			<listColumn><listColumnTitle><style><defaultStyles><defaultStyle refStyle="lt"/></defaultStyles><CSS value="padding:10px 6px 10px 6px;background-color:#1e293b;color:#f8fafc;font-weight:bold;text-align:horizontalAuto;font-size:9pt;border-bottom:3px solid #3b82f6"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="CADASTRO"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><CSS value="padding:8px 4px 8px 4px;text-align:center;font-size:10pt;font-weight:bold;color:#0F0F0F;border-bottom:1px solid #f1f5f9"/><defaultStyles><defaultStyle refStyle="lm"/></defaultStyles></style><contents><textItem><dataSource><dataItemValue refDataItem="CADASTRO"/></dataSource></textItem></contents></listColumnBody></listColumn><listColumn>
+																				<listColumnTitle>
+																					<style>
+																						<defaultStyles><defaultStyle refStyle="lt"/></defaultStyles>
+																						<CSS value="padding:10px 6px 10px 6px;background-color:#1e293b;color:#f8fafc;font-weight:bold;text-align:horizontalAuto;font-size:9pt;border-bottom:3px solid #3b82f6"/>
+																					</style>
+																					<contents>
+																						<textItem><dataSource><dataItemLabel refDataItem="COLABORADOR"/></dataSource></textItem>
+																					</contents>
+																				</listColumnTitle>
+																				<listColumnBody>
+																					<style>
+																						<defaultStyles><defaultStyle refStyle="lm"/></defaultStyles>
+																						<CSS value="padding:8px 4px 8px 4px;text-align:center;font-size:10pt;font-weight:bold;border-bottom:1px solid #f1f5f9"/>
+																					</style>
+																					<contents>
+																						<textItem><dataSource><dataItemValue refDataItem="COLABORADOR"/></dataSource></textItem>
+																					</contents>
+																				</listColumnBody>
+																			</listColumn>
+																			<listColumn>
+																				<listColumnTitle>
+																					<style>
+																						<defaultStyles><defaultStyle refStyle="lt"/></defaultStyles>
+																						<CSS value="padding:10px 6px 10px 6px;background-color:#1e293b;color:#f8fafc;font-weight:bold;text-align:horizontalAuto;font-size:9pt;border-bottom:3px solid #3b82f6"/>
+																					</style>
+																					<contents>
+																						<textItem><dataSource><dataItemLabel refDataItem="QTY_CXS_SEP"/></dataSource></textItem>
+																					</contents>
+																				</listColumnTitle>
+																				<listColumnBody>
+																					<style>
+																						<defaultStyles><defaultStyle refStyle="lm"/></defaultStyles>
+																						<CSS value="padding:8px 4px 8px 4px;text-align:center;font-size:10pt;font-weight:bold;border-bottom:1px solid #f1f5f9"/>
+																					</style>
+																					<contents>
+																						<textItem><dataSource><dataItemValue refDataItem="QTY_CXS_SEP"/></dataSource></textItem>
+																					</contents>
+																					<conditionalStyleRefs>
+																						<conditionalStyleRef refConditionalStyle="PARTE 3"/>
+																					</conditionalStyleRefs>
+																				</listColumnBody>
+																			</listColumn>
+																			<listColumn>
+																				<listColumnTitle>
+																					<style>
+																						<defaultStyles><defaultStyle refStyle="lt"/></defaultStyles>
+																						<CSS value="padding:10px 4px 10px 4px;background-color:#1e293b;color:#f8fafc;font-weight:bold;text-align:horizontalAuto;font-size:9pt;width:80px;border-bottom:3px solid #3b82f6"/>
+																					</style>
+																					<contents>
+																						<textItem><dataSource><dataItemLabel refDataItem="PROD_HORA"/></dataSource></textItem>
+																					</contents>
+																				</listColumnTitle>
+																				<listColumnBody>
+																					<style>
+																						<defaultStyles><defaultStyle refStyle="lm"/></defaultStyles>
+																						<CSS value="padding:8px 4px 8px 4px;text-align:center;border-bottom:1px solid #f1f5f9"/>
+																						<dataFormat><numberFormat decimalDelimiter="," decimalSize="3"/></dataFormat>
+																					</style>
+																					<contents>
+																						<table><style><CSS value="border-collapse:collapse;width:100%;"/></style><tableRows><tableRow><tableCells><tableCell><contents><textItem><dataSource><dataItemValue refDataItem="BAR_META"/></dataSource><style><CSS value="font-size:6pt;letter-spacing:-1px;color:#3b82f6;"/></style></textItem></contents><style><CSS value="text-align:left;padding-right:4px;white-space:nowrap;"/></style></tableCell><tableCell><contents><textItem><dataSource><dataItemValue refDataItem="PROD_HORA"/></dataSource><style><dataFormat><numberFormat decimalDelimiter="," decimalSize="0"/></dataFormat><CSS value="font-size:12pt;font-weight:700;color:#1e293b;"/></style></textItem></contents><style><CSS value="text-align:right;white-space:nowrap;"/></style></tableCell></tableCells></tableRow></tableRows></table>
+																					</contents>
+																				</listColumnBody>
+																			</listColumn>
+																			<listColumn><listColumnTitle><style><defaultStyles><defaultStyle refStyle="lt"/></defaultStyles><CSS value="padding:10px 4px 10px 4px;background-color:#1e293b;color:#f8fafc;font-weight:bold;text-align:horizontalAuto;font-size:9pt;border-bottom:3px solid #3b82f6"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="HORARIO"/></dataSource></textItem></contents></listColumnTitle><listColumnBody><style><defaultStyles><defaultStyle refStyle="lm"/></defaultStyles><CSS value="padding:8px 4px 8px 4px;text-align:center;font-size:10pt;font-weight:bold;border-bottom:1px solid #f1f5f9"/></style><contents><textItem><dataSource><dataItemValue refDataItem="HORARIO"/></dataSource></textItem></contents></listColumnBody></listColumn><listColumn>
+																				<listColumnTitle><style><CSS value="padding:0;font-size:0pt;width:0%;text-align:horizontalAuto"/></style><contents><textItem><dataSource><dataItemLabel refDataItem="META_HORA"/></dataSource></textItem></contents></listColumnTitle>
+																				<listColumnBody><style><CSS value="padding:0;font-size:0pt;width:0%;border-top-width:none;border-bottom-width:none;border-left-width:none;border-right-width:none;text-align:center"/></style><contents><textItem><dataSource><dataItemValue refDataItem="PER_META"/></dataSource></textItem></contents></listColumnBody>
+																			</listColumn>
+																			<listColumn>
+																				<listColumnTitle>
+																					<style>
+																						<defaultStyles><defaultStyle refStyle="lt"/></defaultStyles>
+																						<CSS value="padding:10px 4px 10px 4px;background-color:#1e293b;color:#f8fafc;font-weight:bold;text-align:horizontalAuto;font-size:8pt;width:50px;border-bottom:3px solid #3b82f6"/>
+																					</style>
+																					<contents>
+																						<textItem><dataSource><dataItemLabel refDataItem="TEMPO(MIN)"/></dataSource></textItem>
+																					</contents>
+																				</listColumnTitle>
+																				<listColumnBody>
+																					<style>
+																						<defaultStyles><defaultStyle refStyle="lm"/></defaultStyles>
+																						<CSS value="padding:8px 4px 8px 4px;text-align:center;font-size:9pt;font-weight:bold;color:#64748b;border-bottom:1px solid #f1f5f9"/>
+																					</style>
+																					<contents>
+																						<textItem><dataSource><dataItemValue refDataItem="TEMPO(MIN)"/></dataSource></textItem>
+																					</contents>
+																					<conditionalStyleRefs>
+																						<conditionalStyleRef refConditionalStyle="EST. TEMPO 3"/>
+																					</conditionalStyleRefs>
+																				</listColumnBody>
+																			</listColumn>
+																		</listColumns>
+																	</list>
+                                                                    <HTMLItem>
+                                                                        <dataSource>
+                                                                            <staticValue>&lt;/div&gt;
+&lt;style&gt;
+    /* Customizando a barra de rolagem */
+    #scrollAreaLista3::-webkit-scrollbar { width: 6px; }
+    #scrollAreaLista3::-webkit-scrollbar-track { background: transparent; }
+    #scrollAreaLista3::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+    #scrollAreaLista3::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    
+    /* Travando o cabecalho no topo da caixa de rolagem */
+    #scrollAreaLista3 .lt {
+        position: sticky !important;
+        top: 0 !important;
+        z-index: 10 !important;
+        background-color: #1e293b !important; 
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+    }
+&lt;/style&gt;
+&lt;script&gt;
+(function() {
+    var list3 = document.getElementById(&apos;scrollAreaLista3&apos;);
+    if(!list3) return;
+
+    var direction = 1;
+    var isPaused = false;
+
+    list3.addEventListener(&apos;mouseenter&apos;, function() { isPaused = true; });
+    list3.addEventListener(&apos;mouseleave&apos;, function() { isPaused = false; });
+
+    function autoScroll() {
+        if (isPaused == false) {
+            var maxScroll = list3.scrollHeight - list3.clientHeight;
+            
+            /* So rola a tela se os itens ultrapassarem a altura de 800px */
+            if (maxScroll &gt; 0) {
+                list3.scrollTop += direction;
+                
+                if (direction == 1 &amp;&amp; list3.scrollTop &gt;= maxScroll - 1) {
+                    direction = -1; 
+                    isPaused = true;
+                    setTimeout(function() { isPaused = false; autoScroll(); }, 2000);
+                    return;
+                } 
+                if (direction == -1 &amp;&amp; list3.scrollTop &lt;= 0) {
+                    direction = 1; 
+                    isPaused = true;
+                    setTimeout(function() { isPaused = false; autoScroll(); }, 2000);
+                    return;
+                }
+            }
+        }
+        setTimeout(autoScroll, 40); 
+    }
+    setTimeout(autoScroll, 3000); 
+})();
+&lt;/script&gt;</staticValue>
+                                                                        </dataSource>
+                                                                    </HTMLItem>
+																</contents>
+															</block>
+														</contents>
+														<style><CSS value="vertical-align:top;width:33.33%;"/></style>
+													</tableCell>
+												</tableCells>
+											</tableRow>
+										</tableRows>
+									</table>
+								</contents>
+							</block>
+							<block>
+								<contents><HTMLItem>
+			<dataSource>
+				<staticValue>&lt;style&gt;
+    /* ----------------------------------------------------- */
+    /* NOVA LEGENDA INFERIOR (PROD e MIN)                    */
+    /* ----------------------------------------------------- */
+    .legend-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #FFFFFF;
+        border-radius: 8px;
+        padding: 15px 30px;
+        box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
+        margin: 20px auto;
+        border: 1px solid #EAEAEA;
+        font-family: &apos;Segoe UI&apos;, Tahoma, sans-serif;
+        flex-wrap: wrap;
+        gap: 20px;
+        width: fit-content;
+        transition: background-color 0.4s, border-color 0.4s;
+    }
+
+    .legend-section {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .legend-divider {
+        width: 2px;
+        height: 35px;
+        background-color: #EAEAEA;
+        margin: 0 10px;
+        transition: background-color 0.4s;
+    }
+
+    .legend-title {
+        font-weight: bold;
+        font-size: 11pt;
+        color: #004EBB;
+        transition: color 0.4s;
+    }
+
+    .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 10pt;
+        font-weight: 600;
+        color: #333333;
+        transition: color 0.4s;
+    }
+
+    /* Quadrados de Cor Lisos e Claros (Padrão Cognos) */
+    .color-box {
+        width: 20px;
+        height: 20px;
+        border-radius: 4px;
+        border: 1px solid rgba(0,0,0,0.2);
+    }
+    .bg-light-green { background-color: #92D050; }
+    .bg-light-yellow { background-color: #FFFF00; }
+    .bg-light-red { background-color: #FF5050; }
+
+    /* Integração da Legenda com o Modo Escuro */
+    body.dark-theme .legend-wrapper { background-color: #1e293b !important; border-color: #334155 !important; }
+    body.dark-theme .legend-divider { background-color: #475569 !important; }
+    body.dark-theme .legend-title { color: #60a5fa !important; }
+    body.dark-theme .legend-item { color: #f8fafc !important; }
+&lt;/style&gt;
+
+&lt;div class=&quot;legend-wrapper&quot;&gt;
+    &lt;div class=&quot;legend-section&quot;&gt;
+        &lt;div class=&quot;legend-title&quot;&gt;📊 PROD. (Produtividade):&lt;/div&gt;
+        &lt;div class=&quot;legend-item&quot;&gt;
+            &lt;div class=&quot;color-box bg-light-green&quot;&gt;&lt;/div&gt;
+            &lt;span&gt; Na Meta&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;legend-item&quot;&gt;
+            &lt;div class=&quot;color-box bg-light-yellow&quot;&gt;&lt;/div&gt;
+            &lt;span&gt;Próximo à Meta&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;legend-item&quot;&gt;
+            &lt;div class=&quot;color-box bg-light-red&quot;&gt;&lt;/div&gt;
+            &lt;span&gt;Abaixo da Meta&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class=&quot;legend-divider&quot;&gt;&lt;/div&gt;
+
+    &lt;div class=&quot;legend-section&quot;&gt;
+        &lt;div class=&quot;legend-title&quot;&gt;⏱️ MIN. (Tempo Ocioso):&lt;/div&gt;
+        &lt;div class=&quot;legend-item&quot;&gt;
+            &lt;div class=&quot;color-box bg-light-red&quot;&gt;&lt;/div&gt;
+            &lt;span&gt;Acima de 10 min&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</staticValue>
+			</dataSource>
+		</HTMLItem></contents>
+							</block>
+						</contents>
+					</pageBody>
+				</page>
+			</reportPages>
+		</layout>
+	</layouts>
+	<XMLAttributes><XMLAttribute output="no" name="RS_CreateExtendedDataItems" value="true"/><XMLAttribute output="no" name="listSeparator" value=","/><XMLAttribute output="no" name="RS_modelModificationTime" value="2025-03-28T19:35:55.146Z"/></XMLAttributes>
+	<reportName>Prod_v3</reportName>
+	<modelPath>/content/folder[@name=&apos;SCI Data Packages&apos;]/folder[@name=&apos;Operational Packages&apos;]/folder[@name=&apos;Warehouse Management OS&apos;]/package[@name=&apos;Labor_MJVO&apos;]/model[@name=&apos;model&apos;]</modelPath>
+	<queries>
+		<query name="Base">
+			<source>
+				<sqlQuery name="SQL1" dataSource="WMOS">
+					<sqlText>WITH BASE_TRANSACTIONS AS (
+    -- Isolamos a leitura da PROD_TRKG_TRAN aqui para o banco ler e calcular os turnos apenas UMA VEZ.
+    SELECT 
+        PTT.TASK_ID,
+        PTT.USER_ID,
+        PTT.ITEM_ID,
+        PTT.NBR_UNITS,
+        PTT.CNTR_NBR,
+        PTT.LINE_ITEM_ID,
+        PTT.TC_ORDER_ID,
+        PTT.MOD_DATE_TIME,
+        PTT.CREATE_DATE_TIME,
+        PTT.MENU_OPTN_NAME,
+        PTT.FROM_LOCN,
+        TH.INVN_TYPE AS TH_INVN_TYPE,
+        TH.WHSE AS TH_WHSE,
+        TH.INVN_NEED_TYPE AS TH_INVN_NEED_TYPE
+    FROM PROD_TRKG_TRAN PTT
+    JOIN TASK_HDR TH ON TH.TASK_ID = PTT.TASK_ID
+    WHERE PTT.TRAN_TYPE = 500
+      AND TH.INVN_NEED_TYPE != 2
+      AND CASE WHEN TH.INVN_TYPE = &apos;H&apos; THEN
+            CASE
+                WHEN CAST(TO_CHAR(PTT.MOD_DATE_TIME,&apos;HH24&apos;) AS FLOAT)&lt;6 THEN 3
+                WHEN CAST(TO_CHAR(PTT.MOD_DATE_TIME,&apos;HH24&apos;) AS FLOAT) &gt;=22 AND CAST(TO_CHAR(PTT.MOD_DATE_TIME,&apos;MI&apos;) AS FLOAT)&gt;30 THEN 3 
+                WHEN CAST(TO_CHAR(PTT.MOD_DATE_TIME,&apos;HH24&apos;) AS FLOAT) &gt;=23 THEN 3 
+                WHEN CAST(TO_CHAR(PTT.MOD_DATE_TIME,&apos;HH24&apos;) AS FLOAT)&lt;12 THEN 1        
+                WHEN CAST(TO_CHAR(PTT.MOD_DATE_TIME,&apos;HH24&apos;) AS FLOAT)&gt;=12  AND CAST(TO_CHAR(PTT.MOD_DATE_TIME,&apos;HH24&apos;) AS FLOAT)&lt;13 AND CAST(TO_CHAR(PTT.MOD_DATE_TIME,&apos;MI&apos;) AS FLOAT)&lt;=45 THEN 1                    
+            ELSE 2 END
+        WHEN TH.INVN_TYPE = &apos;J&apos; THEN
+            CASE
+                WHEN CAST(TO_CHAR(PTT.MOD_DATE_TIME, &apos;HH24&apos;) AS FLOAT) &gt;= 6 AND CAST(TO_CHAR(PTT.MOD_DATE_TIME, &apos;HH24&apos;) AS FLOAT) &lt; 18 THEN 1
+                WHEN CAST(TO_CHAR(PTT.MOD_DATE_TIME, &apos;HH24&apos;) AS FLOAT) &gt;= 22 OR CAST(TO_CHAR(PTT.MOD_DATE_TIME, &apos;HH24&apos;) AS FLOAT) &lt; 6 THEN 3
+            ELSE NULL END
+        ELSE
+            CASE
+                WHEN CAST(TO_CHAR(PTT.MOD_DATE_TIME,&apos;HH24&apos;) AS FLOAT)&lt;6 THEN 3
+                WHEN CAST(TO_CHAR(PTT.MOD_DATE_TIME,&apos;HH24&apos;) AS FLOAT) &gt; 21 THEN 3     
+                WHEN CAST(TO_CHAR(PTT.MOD_DATE_TIME,&apos;HH24&apos;) AS FLOAT)&lt;14  THEN 1        
+            ELSE 2 END
+        END = 
+        CASE WHEN TH.INVN_TYPE = &apos;H&apos; THEN
+            CASE
+                WHEN CAST(TO_CHAR(SYSDATE,&apos;HH24&apos;) AS FLOAT)&lt;6 THEN 3
+                WHEN CAST(TO_CHAR(SYSDATE,&apos;HH24&apos;) AS FLOAT) &gt;=22 AND CAST(TO_CHAR(SYSDATE,&apos;MI&apos;) AS FLOAT)&gt;30 THEN 3 
+                WHEN CAST(TO_CHAR(SYSDATE,&apos;HH24&apos;) AS FLOAT) &gt;=23 THEN 3 
+                WHEN CAST(TO_CHAR(SYSDATE,&apos;HH24&apos;) AS FLOAT)&lt;12 THEN 1        
+                WHEN CAST(TO_CHAR(SYSDATE,&apos;HH24&apos;) AS FLOAT)&gt;=12  AND CAST(TO_CHAR(SYSDATE,&apos;HH24&apos;) AS FLOAT)&lt;13 AND CAST(TO_CHAR(SYSDATE,&apos;MI&apos;) AS FLOAT)&lt;=45 THEN 1                    
+            ELSE 2 END
+        WHEN TH.INVN_TYPE = &apos;J&apos; THEN
+            CASE
+                WHEN CAST(TO_CHAR(SYSDATE, &apos;HH24&apos;) AS FLOAT) &gt;= 6 AND CAST(TO_CHAR(SYSDATE, &apos;HH24&apos;) AS FLOAT) &lt; 18 THEN 1
+                WHEN CAST(TO_CHAR(SYSDATE, &apos;HH24&apos;) AS FLOAT) &gt;= 22 OR CAST(TO_CHAR(SYSDATE, &apos;HH24&apos;) AS FLOAT) &lt; 6 THEN 3
+            ELSE NULL END
+        ELSE
+            CASE
+                WHEN CAST(TO_CHAR(SYSDATE,&apos;HH24&apos;) AS FLOAT)&lt;6 THEN 3
+                WHEN CAST(TO_CHAR(SYSDATE,&apos;HH24&apos;) AS FLOAT) &gt; 21 THEN 3     
+                WHEN CAST(TO_CHAR(SYSDATE,&apos;HH24&apos;) AS FLOAT)&lt;14  THEN 1        
+            ELSE 2 END
+        END
+      AND (CASE
+            WHEN CAST(TO_CHAR(PTT.MOD_DATE_TIME,&apos;HH24&apos;) AS FLOAT)&lt;6 THEN TRUNC(PTT.MOD_DATE_TIME)-1
+            ELSE TRUNC(PTT.MOD_DATE_TIME)
+          END) = 
+          (CASE
+            WHEN CAST(TO_CHAR(SYSDATE,&apos;HH24&apos;) AS FLOAT)&lt;6 THEN TRUNC(SYSDATE)-1
+            ELSE TRUNC(SYSDATE)
+          END)
+)
+SELECT
+    ROWNUM AS LINHA,
+    D.USER_ID,
+
+    SUBSTR(
+        D.COLABORADOR,
+        INSTR(D.COLABORADOR, &apos;-&apos;) + 1,
+        INSTR(D.COLABORADOR, &apos;[&apos;) - INSTR(D.COLABORADOR, &apos;-&apos;) - 1
+    ) AS ID_COLABORADOR,
+
+    SUBSTR(
+        D.COLABORADOR,
+        1,
+        INSTR(SUBSTR(D.COLABORADOR, 1, INSTR(D.COLABORADOR, &apos;[&apos;) - 1), &apos;-&apos;, -1) - 1
+    ) AS COLABORADOR,
+
+    SUBSTR(
+        D.COLABORADOR,
+        INSTR(D.COLABORADOR, &apos;[&apos;) + 1,
+        INSTR(D.COLABORADOR, &apos;]&apos;) - INSTR(D.COLABORADOR, &apos;[&apos;) - 1
+    ) AS HORARIO,
+
+    D.QTY_HORAS,
+    D.QTY_CXS_SEP,
+    D.&quot;ATUALIZAÇÃO&quot;,
+    D.TURNO,
+    D.OPE,
+    D.OPERACAO,
+    D.HORA_TURNO,
+    D.QTY_CORTE_CXS,
+    D.TEMPO,
+    D.RANK
+FROM 
+((SELECT  
+    C.RANK,
+    C.USER_ID,
+    C.COLABORADOR,
+    C.QTY_HORAS,
+    C.PROD_HORA,
+    C.QTY_CXS_SEP,
+    C.&quot;ATUALIZAÇÃO&quot;,
+    C.TURNO,
+    C.OPE,
+    C.OPERACAO,
+    CASE 
+        WHEN C.OPERACAO=&apos;CD 1942&apos; THEN 
+            CASE 
+                WHEN C.TURNO=1 THEN 6.25
+                WHEN C.TURNO=2 THEN 9.73
+                ELSE 7.48
+            END
+       ELSE
+            CASE 
+                WHEN C.TURNO=1 THEN 7.0
+                WHEN C.TURNO=2 THEN 7.0
+                ELSE 7.0
+            END
+    END AS HORA_TURNO,
+    0 AS QTY_CORTE_CXS,
+    TEMPO_PEGA.TEMPO
+FROM
+((SELECT  
+        RANK() OVER(ORDER BY B.QTY_CXS_SEP DESC) AS RANK,
+        B.USER_ID,
+        B.COLABORADOR ||&apos;[&apos;|| TO_CHAR(B.MENOR_PEGA,&apos;HH24:MI&apos;)||&apos;-&apos;||TO_CHAR(B.ULTIMA_PEGA,&apos;HH24:MI&apos;)||&apos;]&apos; AS COLABORADOR,
+        B.QTY_HORAS,
+        B.PROD_HORA,
+        B.QTY_CXS_SEP,
+        B.&quot;ATUALIZAÇÃO&quot;,
+        B.TURNO,
+        B.OPE,
+        B.OPERACAO
+    FROM    
+    ((SELECT    
+        A.USER_ID,
+        UPPER(A.COLABORADOR) AS COLABORADOR,
+        A.QTY_HORAS,
+        A.QTY_CXS_SEP,
+        A.PROD_HORA,
+        A.MENOR_PEGA,
+        A.ULTIMA_PEGA,
+        TO_CHAR(SYSDATE,&apos;DD/MM/YYYY HH24:MI&apos;) AS &quot;ATUALIZAÇÃO&quot;,
+        A.TURNO,
+        A.OPE,
+        A.OPERACAO
+    FROM
+    ((SELECT   
+        A.USER_ID,
+        A.COLABORADOR,
+        A.TURNO,
+        A.OPERACAO,
+        A.OPE,
+        MIN(A.MENOR_PEGA) AS MENOR_PEGA,
+        MAX(A.ULTIMA_PEGA) AS ULTIMA_PEGA,    
+        COUNT(DISTINCT A.HORA) AS QTY_HORAS,
+        SUM(A.QTY_CXS_SEP) AS QTY_CXS_SEP,
+        ROUND(SUM(A.QTY_CXS_SEP) / COUNT(DISTINCT A.HORA)) AS PROD_HORA
+    FROM    
+    ((SELECT
+        CD.CD,
+        PRO_FINAL.DT_SEP AS DATA_PRODUCAO,
+        PRO_FINAL.USER_ID,
+        UU.USER_FIRST_NAME||&apos; &apos;||USER_LAST_NAME ||&apos;-&apos;|| PRO_FINAL.USER_ID as COLABORADOR,
+        PRO_FINAL.&quot;TURNO DE CADASTRO&quot;,
+        CASE 
+            WHEN PRO_FINAL.TURNO=1 THEN &apos;1º Turno&apos;
+            WHEN PRO_FINAL.TURNO=2 THEN &apos;2º Turno&apos;
+            ELSE &apos;3º Turno&apos;
+        END AS TURNO_DATA,    
+        PRO_FINAL.HORA,
+        PRO_FINAL.QTY_CXS_SEP AS PRODUCAO,
+        PRO_FINAL.QTY_CXS_PLT,
+        PRO_FINAL.QTY_CXS_SEP_PICKING AS QTY_CXS_SEP,
+        PRO_FINAL.PRODUTIVIDADE,
+        PRO_FINAL.EMPRESA,
+        PRO_FINAL.INVN_TYPE,
+        PRO_FINAL.WHSE,
+        PRO_FINAL.OPE,
+        PRO_FINAL.CODE_DESC,
+        CASE WHEN PRO_FINAL.CODE_DESC IS NULL THEN &apos;CD &apos;|| CD.CD ELSE  PRO_FINAL.CODE_DESC END AS OPERACAO,
+        CASE
+                WHEN PRO_FINAL.WHSE IN(&apos;CCE&apos;,&apos;CDF&apos;,&apos;CPE&apos;) THEN 
+                    CASE 
+                        WHEN PRO_FINAL.CATEGORIA=&apos;F.L.V&apos; THEN &apos;F.L.V&apos;
+                        WHEN PRO_FINAL.CATEGORIA=&apos;CARNES&apos; THEN &apos;CARNES&apos;
+                        ELSE  &apos;MERCEARIA&apos;
+                        END
+                WHEN PRO_FINAL.WHSE IN(&apos;CRJ&apos;) THEN 
+                CASE 
+                    WHEN PRO_FINAL.CATEGORIA IN(&apos;F.L.V&apos;,&apos;INSUMO PAD/CHOCOLATES&apos;) THEN &apos;F.L.V&apos;                
+                    WHEN PRO_FINAL.CATEGORIA=&apos;CARNES&apos; THEN &apos;CARNES&apos;
+                ELSE  &apos;MERCEARIA&apos;
+                END            
+        ELSE 
+            &apos;GERAL&apos;
+        END AS CATEGORIA,
+        PRO_FINAL.MENOR_PEGA AS MENOR_PEGA,
+        PRO_FINAL.ULTIMA_PEGA AS ULTIMA_PEGA,
+        PRO_FINAL.TURNO    
+    FROM    
+    ((SELECT 
+        PRD_WMS.DT_SEP,
+        PRD_WMS.USER_ID,
+        PRDTY_LABOR.&quot;TURNO&quot; AS &quot;TURNO DE CADASTRO&quot;,
+        PRDTY_LABOR.EMPRESA,
+        PRD_WMS.HORA,
+        PRD_WMS.TURNO,
+        PRD_WMS.QTY_CXS_SEP,
+        PRDTY_LABOR.PRODUTIVIDADE,
+        PRD_WMS.INVN_TYPE,
+        PRD_WMS.WHSE,
+        PRD_WMS.OPE,
+        PRD_WMS.CODE_DESC,
+        PRD_WMS.CATEGORIA,
+        PRD_WMS.QTY_CXS_PLT,
+        PRD_WMS.QTY_CXS_SEP_PICKING,
+        PRD_WMS.MENOR_PEGA AS MENOR_PEGA,
+        PRD_WMS.ULTIMA_PEGA AS ULTIMA_PEGA    
+    FROM  
+    ((SELECT 
+         PROD.DT_SEP,
+         PROD.USER_ID,
+         PROD.INVN_TYPE,
+         PROD.WHSE,
+         PROD.CODE_DESC,
+         CASE
+            WHEN PROD.HORA=22 THEN  &apos;1- 22h&apos;
+            WHEN PROD.HORA=23 THEN  &apos;2- 23h&apos;
+            WHEN PROD.HORA=0 THEN   &apos;3- 0h&apos;
+            WHEN PROD.HORA=1 THEN   &apos;4- 1h&apos;
+            WHEN PROD.HORA=2 THEN   &apos;5- 2h&apos;
+            WHEN PROD.HORA=3 THEN   &apos;6- 3h&apos;
+            WHEN PROD.HORA=4 THEN   &apos;7- 4h&apos;
+            WHEN PROD.HORA=5 THEN   &apos;8- 5h&apos;
+            WHEN PROD.HORA=6 THEN   &apos;1- 6h&apos;
+            WHEN PROD.HORA=7 THEN   &apos;2- 7h&apos;
+            WHEN PROD.HORA=8 THEN   &apos;3- 8h&apos;
+            WHEN PROD.HORA=9 THEN   &apos;4- 9h&apos;
+            WHEN PROD.HORA=10 THEN  &apos;5- 10h&apos;
+            WHEN PROD.HORA=11 THEN  &apos;6- 11h&apos;
+            WHEN PROD.HORA=12 THEN  &apos;7- 12h&apos;
+            WHEN PROD.HORA=13 THEN  &apos;8- 13h&apos;
+            WHEN PROD.HORA=14 THEN  &apos;1- 14h&apos;
+            WHEN PROD.HORA=15 THEN  &apos;2- 15h&apos;
+            WHEN PROD.HORA=16 THEN  &apos;3- 16h&apos;
+            WHEN PROD.HORA=17 THEN  &apos;4- 17h&apos;
+            WHEN PROD.HORA=18 THEN  &apos;5- 18h&apos;
+            WHEN PROD.HORA=19 THEN  &apos;6- 19h&apos;
+            WHEN PROD.HORA=20 THEN  &apos;7- 20h&apos;
+            ELSE   &apos;8- 21h&apos;
+         END AS HORA,
+         PROD.CATEGORIA,
+         PROD.TURNO,
+         PROD.OPE,
+         MIN(PROD.DATA_HORA) AS MENOR_PEGA,
+         MAX(PROD.DATA_HORA) AS ULTIMA_PEGA,     
+         ROUND(SUM(PROD.QTY_CXS),0) AS QTY_CXS_SEP,
+         ROUND(SUM(PROD.QTY_CXS_PLT),0) AS QTY_CXS_PLT,
+         ROUND(SUM(PROD.QTY_CXS_SEP),0) AS QTY_CXS_SEP_PICKING
+    FROM
+       ((SELECT             
+                PTT.CREATE_DATE_TIME AS DATA_HORA,            
+                CASE
+                  WHEN CAST(TO_CHAR(PTT.CREATE_DATE_TIME,&apos;HH24&apos;) AS FLOAT)&lt;6 THEN TRUNC(PTT.CREATE_DATE_TIME)-1
+                  ELSE TRUNC(PTT.CREATE_DATE_TIME)    
+                END AS DT_SEP,
+                CAST(TO_CHAR(PTT.MOD_DATE_TIME,&apos;HH24&apos;) AS FLOAT) AS HORA,    
+                CASE WHEN PTT.TH_INVN_TYPE = &apos;H&apos; THEN
+                    CASE
+                        WHEN CAST(TO_CHAR(PTT.MOD_DATE_TIME, &apos;HH24&apos;) AS FLOAT) &lt; 6 THEN 3
+                        WHEN CAST(TO_CHAR(PTT.MOD_DATE_TIME, &apos;HH24&apos;) AS FLOAT) &gt;= 22 AND CAST(TO_CHAR(PTT.MOD_DATE_TIME, &apos;MI&apos;) AS FLOAT) &gt; 30 THEN 3
+                        WHEN CAST(TO_CHAR(PTT.MOD_DATE_TIME, &apos;HH24&apos;) AS FLOAT) &gt;= 23 THEN 3
+                        WHEN CAST(TO_CHAR(PTT.MOD_DATE_TIME, &apos;HH24&apos;) AS FLOAT) &lt; 12 THEN 1
+                        WHEN CAST(TO_CHAR(PTT.MOD_DATE_TIME, &apos;HH24&apos;) AS FLOAT) &gt;= 12 AND CAST(TO_CHAR(PTT.MOD_DATE_TIME, &apos;HH24&apos;) AS FLOAT) &lt; 13 AND CAST(TO_CHAR(PTT.MOD_DATE_TIME, &apos;MI&apos;) AS FLOAT) &lt;= 45 THEN 1
+                    ELSE 2
+                    END
+                WHEN PTT.TH_INVN_TYPE = &apos;J&apos; THEN
+                    CASE
+                        WHEN CAST(TO_CHAR(PTT.MOD_DATE_TIME, &apos;HH24&apos;) AS FLOAT) &gt;= 6 AND CAST(TO_CHAR(PTT.MOD_DATE_TIME, &apos;HH24&apos;) AS FLOAT) &lt; 18 THEN 1
+                        WHEN CAST(TO_CHAR(PTT.MOD_DATE_TIME, &apos;HH24&apos;) AS FLOAT) &gt;= 22 OR CAST(TO_CHAR(PTT.MOD_DATE_TIME, &apos;HH24&apos;) AS FLOAT) &lt; 6 THEN 3
+                    ELSE NULL 
+                    END
+                ELSE
+                    CASE
+                        WHEN CAST(TO_CHAR(PTT.MOD_DATE_TIME, &apos;HH24&apos;) AS FLOAT) &lt; 6 THEN 3
+                        WHEN CAST(TO_CHAR(PTT.MOD_DATE_TIME, &apos;HH24&apos;) AS FLOAT) &gt; 21 THEN 3
+                        WHEN CAST(TO_CHAR(PTT.MOD_DATE_TIME, &apos;HH24&apos;) AS FLOAT) &lt; 14 THEN 1
+                    ELSE 2
+                    END
+                END AS TURNO,
+                CASE WHEN PTT.TH_INVN_TYPE = &apos;H&apos; THEN
+                    CASE
+                        WHEN CAST(TO_CHAR(SYSDATE,&apos;HH24&apos;) AS FLOAT) &lt; 6 THEN 3
+                        WHEN CAST(TO_CHAR(SYSDATE,&apos;HH24&apos;) AS FLOAT) &gt;= 22 AND CAST(TO_CHAR(SYSDATE,&apos;MI&apos;) AS FLOAT) &gt; 30 THEN 3 
+                        WHEN CAST(TO_CHAR(SYSDATE,&apos;HH24&apos;) AS FLOAT) &gt;= 23 THEN 3 
+                        WHEN CAST(TO_CHAR(SYSDATE,&apos;HH24&apos;) AS FLOAT) &lt; 12 THEN 1        
+                        WHEN CAST(TO_CHAR(SYSDATE,&apos;HH24&apos;) AS FLOAT) &gt;= 12 AND CAST(TO_CHAR(SYSDATE,&apos;HH24&apos;) AS FLOAT) &lt; 13 AND CAST(TO_CHAR(SYSDATE,&apos;MI&apos;) AS FLOAT) &lt;= 45 THEN 1                    
+                    ELSE 2    
+                    END
+                WHEN PTT.TH_INVN_TYPE = &apos;J&apos; THEN
+                    CASE
+                        WHEN CAST(TO_CHAR(SYSDATE,&apos;HH24&apos;) AS FLOAT) &gt;= 6 AND CAST(TO_CHAR(SYSDATE,&apos;HH24&apos;) AS FLOAT) &lt; 18 THEN 1
+                        WHEN CAST(TO_CHAR(SYSDATE,&apos;HH24&apos;) AS FLOAT) &gt; 22 OR CAST(TO_CHAR(SYSDATE,&apos;HH24&apos;) AS FLOAT) &lt; 6 THEN 3
+                    ELSE NULL 
+                    END
+                ELSE
+                    CASE
+                        WHEN CAST(TO_CHAR(SYSDATE,&apos;HH24&apos;) AS FLOAT) &lt; 6 THEN 3
+                        WHEN CAST(TO_CHAR(SYSDATE,&apos;HH24&apos;) AS FLOAT) &gt; 21 THEN 3     
+                        WHEN CAST(TO_CHAR(SYSDATE,&apos;HH24&apos;) AS FLOAT) &lt; 14 THEN 1        
+                    ELSE 2    
+                    END 
+                END AS TURNO_ATUAL,                
+                PTT.TH_INVN_NEED_TYPE,
+                CASE WHEN (LENGTH(PTT.TH_INVN_TYPE)=0) OR PTT.TH_INVN_TYPE IS NULL OR (LENGTH(PTT.TH_INVN_TYPE)&gt;0 AND PTT.TH_INVN_TYPE!=&apos;G&apos;) THEN &apos;G&apos; ELSE PTT.TH_INVN_TYPE END AS INVN_TYPE,
+                PTT.TH_WHSE AS WHSE,
+                SC.CODE_DESC,
+                SUBSTR(PTT.TC_ORDER_ID,1,5) AS PRX_PED,
+                CASE  
+                    WHEN PTT.TH_INVN_NEED_TYPE=2 THEN &apos;PLT Fechado&apos;
+                    WHEN SUBSTR(PTT.TC_ORDER_ID,1,5)=&apos;DOFTX&apos; THEN &apos;Separação Fatex&apos;
+                    ELSE &apos;Separação &apos; || DADOS_ITEM.CATEGORIA
+                END AS TASK_DESC,
+                PTT.TASK_ID,
+                PTT.USER_ID,
+                PTT.ITEM_ID,
+                cd.OPE,
+                DADOS_ITEM.CATEGORIA,
+                DADOS_ITEM.ITEM_NAME,            
+                PTT.NBR_UNITS,
+                ROUND(PTT.NBR_UNITS/DADOS_ITEM.EMB_FINAL,3) AS QTY_CXS,
+                CASE WHEN (CASE  
+                    WHEN PTT.TH_INVN_NEED_TYPE=2 THEN &apos;PLT Fechado&apos;
+                    WHEN SUBSTR(PTT.TC_ORDER_ID,1,5)=&apos;DOFTX&apos; THEN &apos;Separação Fatex&apos;
+                    ELSE &apos;Separação &apos; || DADOS_ITEM.CATEGORIA
+                END)=&apos;PLT Fechado&apos; THEN ROUND(PTT.NBR_UNITS/DADOS_ITEM.EMB_FINAL,3) ELSE 0 END QTY_CXS_PLT,
+                CASE 
+                    WHEN PTT.NBR_UNITS &lt; DADOS_ITEM.EMB_FINAL AND oli.QTY_UOM_ID != &apos;253&apos; THEN PTT.NBR_UNITS
+                    WHEN (CASE  
+                        WHEN PTT.TH_INVN_NEED_TYPE=2 THEN &apos;PLT Fechado&apos;
+                        WHEN SUBSTR(PTT.TC_ORDER_ID,1,5)=&apos;DOFTX&apos; THEN &apos;Separação Fatex&apos;
+                        ELSE &apos;Separação &apos; || DADOS_ITEM.CATEGORIA
+                    END)!=&apos;PLT Fechado&apos; THEN ROUND(PTT.NBR_UNITS/DADOS_ITEM.EMB_FINAL,3) ELSE 0 END QTY_CXS_SEP        
+        FROM BASE_TRANSACTIONS PTT  
+        LEFT JOIN lpn l ON ptt.CNTR_NBR = l.tc_lpn_id
+        LEFT JOIN ORDER_LINE_ITEM oli ON ptt.LINE_ITEM_ID = oli.LINE_ITEM_ID
+        LEFT JOIN
+            (SELECT 
+                ld.LPN_ID,
+                sc.CODE_ID,
+                sc.CODE_DESC OPE
+             FROM SYS_CODE sc
+             JOIN LPN_DETAIL ld ON ld.INVENTORY_TYPE=sc.CODE_ID
+             WHERE sc.CODE_TYPE=&apos;064&apos;
+             GROUP BY ld.LPN_ID, sc.CODE_ID, sc.CODE_DESC) cd 
+        ON l.lpn_id = cd.lpn_id   
+        JOIN
+            ((SELECT
+                DI.ITEM_ID,
+                DI.ITEM_NAME,
+                DI.COMPRADOR,
+                DI.ITEM,
+                DI.PRODUCT_CLASS_ID,
+                DI.BASE_UOM,
+                DI.QTY_UOM,
+                DI.CATEGORIA,
+                DI.SHELF_DAYS,
+                CASE WHEN DI.VARIABLE_WEIGHT=1 THEN PV.EMB_PS_VAR ELSE DI.EMB_FINAL END AS EMB_FINAL,
+                DI.BASE,
+                DI.ALTURA,
+                DI.PALETIZACAO
+        FROM
+        ((SELECT
+                ITEM_RES.ITEM_ID,
+                ITEM_RES.ITEM_NAME,
+                ITEM_RES.COMPRADOR,
+                ITEM_RES.DESCRIPTION AS ITEM,
+                ITEM_RES.DSP_LOCN,
+                ITEM_RES.PRODUCT_CLASS_ID,
+                ITEM_RES.EMBALAGEM,
+                ITEM_RES.BASE_UOM,
+                ITEM_RES.QTY_UOM,
+                ITEM_RES.UOM_PKT,
+                ITEM_RES.CATEGORIA,
+                ITEM_RES.SHELF_DAYS,
+                ITEM_RES.EMB_FINAL,
+                ITEM_RES.BASE,
+                ITEM_RES.ALTURA,
+                ITEM_RES.PALETIZACAO,
+                ITEM_RES.UNIT_COST,
+                ITEM_RES.DATA_AT,
+                ITEM_RES.VARIABLE_WEIGHT                            
+        FROM
+        ((SELECT 
+            IC.ITEM_ID,    
+            IC.ITEM_NAME,
+            IC.REF_FIELD8 AS COMPRADOR,
+            IC.DESCRIPTION AS DESCRIPTION,
+            LOC_PIKING.DSP_LOCN,
+            IC.PRODUCT_CLASS_ID,
+            IC.VARIABLE_WEIGHT,
+            CASE WHEN EMB_PADRAO.IS_STD IS NULL THEN IPC.QUANTITY ELSE EMB_PADRAO.QUANTITY END AS EMBALAGEM, 
+            IPC.IS_STD,        
+            EMB_PADRAO.IS_STD AS EMB_STD,
+            UB.DESCRIPTION AS BASE_UOM,
+            UQ.DESCRIPTION AS QTY_UOM,
+            CASE WHEN EMB_PADRAO.IS_STD IS NULL THEN UP.DESCRIPTION ELSE EMB_PADRAO.UOM_PKT END AS UOM_PKT,
+            PC.DESCRIPTION AS CATEGORIA,
+            IFMW.SHELF_DAYS,
+            CASE                
+                WHEN UQ.DESCRIPTION=&apos;Unidades&apos; THEN 1
+                WHEN IPC.QUANTITY IS NULL  AND UB.DESCRIPTION=&apos;Gramas&apos; THEN 1000
+                WHEN IPC.QUANTITY IS NULL AND UB.DESCRIPTION=&apos;Unidades&apos; THEN 1
+                ELSE CASE WHEN EMB_PADRAO.IS_STD IS NULL THEN IPC.QUANTITY ELSE EMB_PADRAO.QUANTITY END 
+            END AS EMB_FINAL,                        
+            IFMW.LPN_PER_TIER BASE,
+            IFMW.TIER_PER_PLT ALTURA,
+            IFMW.LPN_PER_TIER * IFMW.TIER_PER_PLT AS PALETIZACAO,
+            CUSTO.UNIT_COST,
+            CUSTO.DATA_AT
+        FROM ITEM_CBO IC
+        LEFT JOIN ITEM_PACKAGE_CBO IPC ON IC.ITEM_ID=IPC.ITEM_ID
+        LEFT JOIN SIZE_UOM UB ON IC.BASE_STORAGE_UOM_ID=UB.SIZE_UOM_ID
+        LEFT JOIN SIZE_UOM UQ ON IC.DISPLAY_QTY_UOM_ID=UQ.SIZE_UOM_ID
+        LEFT JOIN SIZE_UOM UP ON IPC.PACKAGE_UOM_ID=UP.SIZE_UOM_ID
+        LEFT JOIN PRODUCT_CLASS PC ON PC.PRODUCT_CLASS_ID=IC.PRODUCT_CLASS_ID
+        LEFT JOIN
+            (SELECT PLD.LOCN_ID, PLD.ITEM_ID, LH.DSP_LOCN
+             FROM LOCN_HDR LH
+             LEFT JOIN PICK_LOCN_DTL PLD ON LH.LOCN_ID=PLD.LOCN_ID) LOC_PIKING
+        ON IC.ITEM_ID=LOC_PIKING.ITEM_ID
+        LEFT JOIN ITEM_FACILITY_MAPPING_WMS IFMW ON IFMW.ITEM_ID=IC.ITEM_ID        
+        LEFT JOIN
+            (SELECT ITEM_ID, UNIT_COST, DATA_AT
+             FROM (
+                 SELECT ITEM_ID, UNIT_COST, AUDIT_LAST_UPDATED_DTTM AS DATA_AT,
+                        ROW_NUMBER() OVER(PARTITION BY ITEM_ID ORDER BY AUDIT_LAST_UPDATED_DTTM DESC) as rn
+                 FROM ITEM_COST_CBO
+             ) WHERE rn = 1) CUSTO
+        ON CUSTO.ITEM_ID=IC.ITEM_ID
+        LEFT JOIN
+            (SELECT ITEM_ID, UOM_PKT, QUANTITY, WEIGHT, VOLUME, IS_STD, MARK_FOR_DELETION
+             FROM (
+                SELECT
+                    IPC.ITEM_ID,
+                    UP.DESCRIPTION AS UOM_PKT,
+                    IPC.QUANTITY,
+                    IPC.WEIGHT,
+                    IPC.VOLUME,
+                    IPC.IS_STD,
+                    IPC.MARK_FOR_DELETION,
+                    ROW_NUMBER() OVER (
+                        PARTITION BY IPC.ITEM_ID 
+                        ORDER BY CASE WHEN UP.DESCRIPTION = &apos;Subpack&apos; THEN 1 ELSE 2 END ASC,
+                                 IPC.QUANTITY DESC
+                    ) AS RN
+                FROM ITEM_PACKAGE_CBO IPC
+                JOIN SIZE_UOM UP ON IPC.PACKAGE_UOM_ID = UP.SIZE_UOM_ID
+                WHERE IPC.MARK_FOR_DELETION = 0
+                  AND IPC.IS_STD = 1
+             )
+             WHERE RN = 1) EMB_PADRAO
+        ON EMB_PADRAO.ITEM_ID=IC.ITEM_ID
+        GROUP BY
+            IC.ITEM_ID, IC.ITEM_NAME, IC.VARIABLE_WEIGHT, IC.REF_FIELD8, IC.DESCRIPTION, IC.PRODUCT_CLASS_ID,
+            CASE WHEN EMB_PADRAO.IS_STD IS NULL THEN IPC.QUANTITY ELSE EMB_PADRAO.QUANTITY END,
+            IPC.IS_STD, EMB_PADRAO.IS_STD, UB.DESCRIPTION, UQ.DESCRIPTION, UP.DESCRIPTION, PC.DESCRIPTION,
+            IFMW.SHELF_DAYS, LOC_PIKING.DSP_LOCN, IFMW.LPN_PER_TIER, IFMW.TIER_PER_PLT,
+            IFMW.LPN_PER_TIER * IFMW.TIER_PER_PLT,
+            CASE
+                WHEN UQ.DESCRIPTION=&apos;Unidades&apos; THEN 1
+                WHEN IPC.QUANTITY IS NULL  AND UB.DESCRIPTION=&apos;Gramas&apos; THEN 1000
+                WHEN IPC.QUANTITY IS NULL AND UB.DESCRIPTION=&apos;Unidades&apos; THEN 1
+                ELSE CASE WHEN EMB_PADRAO.IS_STD IS NULL THEN IPC.QUANTITY ELSE EMB_PADRAO.QUANTITY END
+            END,
+            CASE WHEN EMB_PADRAO.IS_STD IS NULL THEN UP.DESCRIPTION ELSE EMB_PADRAO.UOM_PKT END,
+            CUSTO.UNIT_COST, CUSTO.DATA_AT
+        ) ITEM_RES)
+        GROUP BY
+            ITEM_RES.ITEM_ID, ITEM_RES.ITEM_NAME, ITEM_RES.VARIABLE_WEIGHT, ITEM_RES.COMPRADOR, ITEM_RES.DESCRIPTION,
+            ITEM_RES.DSP_LOCN, ITEM_RES.PRODUCT_CLASS_ID, ITEM_RES.EMBALAGEM, ITEM_RES.BASE_UOM, ITEM_RES.QTY_UOM,
+            ITEM_RES.UOM_PKT, ITEM_RES.CATEGORIA, ITEM_RES.SHELF_DAYS, ITEM_RES.EMB_FINAL, ITEM_RES.BASE,
+            ITEM_RES.ALTURA, ITEM_RES.PALETIZACAO, ITEM_RES.UNIT_COST, ITEM_RES.DATA_AT
+    ) DI)
+    LEFT JOIN
+        (SELECT IC.ITEM_ID, IC.VARIABLE_WEIGHT, MAX(IPC.QUANTITY) AS EMB_PS_VAR
+         FROM ITEM_CBO IC, ITEM_PACKAGE_CBO IPC
+         WHERE IC.ITEM_ID=IPC.ITEM_ID
+           AND IC.VARIABLE_WEIGHT=1
+         GROUP BY IC.ITEM_ID, IC.VARIABLE_WEIGHT) PV
+    ON PV.ITEM_ID=DI.ITEM_ID
+    GROUP BY
+        DI.ITEM_ID, DI.ITEM_NAME, DI.COMPRADOR, DI.ITEM, DI.PRODUCT_CLASS_ID, DI.BASE_UOM, DI.QTY_UOM,
+        DI.CATEGORIA, DI.SHELF_DAYS, CASE WHEN DI.VARIABLE_WEIGHT=1 THEN PV.EMB_PS_VAR ELSE DI.EMB_FINAL END,
+        DI.BASE, DI.ALTURA, DI.PALETIZACAO
+    ) DADOS_ITEM)
+        ON DADOS_ITEM.ITEM_ID=PTT.ITEM_ID
+    LEFT JOIN SYS_CODE SC ON PTT.TH_INVN_TYPE=SC.CODE_ID AND SC.CODE_TYPE=&apos;064&apos;
+    ) PROD)
+    GROUP BY
+         PROD.DT_SEP, PROD.HORA, PROD.TURNO, PROD.OPE, PROD.USER_ID, PROD.INVN_TYPE, PROD.WHSE, PROD.CODE_DESC, PROD.CATEGORIA
+    ORDER BY
+         PROD.DT_SEP, PROD.USER_ID, PROD.TURNO, PROD.HORA
+    ) PRD_WMS)
+    LEFT JOIN
+       (SELECT
+            B_FINAL.DT_PROD,
+            B_FINAL.&quot;ATIVIDADE&quot;,
+            B_FINAL.&quot;USUÁRIO&quot;,
+            B_FINAL.&quot;COLABORADOR&quot;,
+            B_FINAL.&quot;TURNO&quot;,
+            B_FINAL.EMPRESA,
+            B_FINAL.&quot;ENCARREGADO&quot;,     
+            SUM(B_FINAL.&quot;QUANTIDADE&quot;) AS &quot;QUANTIDADE&quot;,
+            ROUND(SUM(B_FINAL.&quot;MINUTOS&quot;)/60,2) AS &quot;MINUTOS&quot;,
+            CASE WHEN SUM(B_FINAL.&quot;MINUTOS&quot;) &gt; 0 THEN ROUND((60*(SUM(B_FINAL.&quot;QUANTIDADE&quot;)/(SUM(B_FINAL.&quot;MINUTOS&quot;)))),0) ELSE 0 END AS PRODUTIVIDADE
+        FROM
+        (SELECT    
+            TRUNC(ECPF.CLOCK_IN_DATE) AS DT_PROD,
+            ECPF.LEVEL_2 as &quot;ATIVIDADE&quot;,
+            ECPF.LOGIN_USER_ID as &quot;USUÁRIO&quot;,
+            UU.USER_FIRST_NAME||&apos; &apos;||USER_LAST_NAME as &quot;COLABORADOR&quot;,
+            ECPF.SHIFT_CODE AS &quot;TURNO&quot;,
+            CASE WHEN ECPF.SHIFT_CODE IS NOT NULL THEN SUBSTR(ECPF.SHIFT_CODE,3,3) ELSE NULL END AS EMPRESA,
+            ECPF.SPVSR_LOGIN_USER_ID AS &quot;ENCARREGADO&quot;,
+            ECPF.TOTAL_TIME AS &quot;MINUTOS&quot;,
+            ECPF.DISPLAY_UOM_QTY AS &quot;QUANTIDADE&quot;,
+            CASE WHEN ECPF.LEVEL_2 IN(&apos;ARMAZENAR&apos;,&apos;RESSUPRIMENTO&apos;,&apos;PUXADA RECEB&apos;)
+                 AND (ECPF.DISPLAY_UOM&lt;&gt;&apos;ILPN&apos; AND ECPF.DISPLAY_UOM IS NOT NULL) THEN &apos;N&apos; ELSE &apos;S&apos; END AS FILTRO   
+        FROM E_CONSOL_PERF_SMRY ECPF    
+        JOIN UCL_USER UU ON ECPF.LOGIN_USER_ID = UU.USER_NAME
+        WHERE ECPF.CLOCK_IN_STATUS&lt;90 
+          AND ECPF.EMP_PERF_SMRY_ID IS NOT NULL 
+          AND ECPF.JOB_FUNCTION_NAME NOT IN (&apos;ALMOÇO/JANTA&apos;,&apos;ALMOCO/JANTA&apos;)
+          AND ECPF.LEVEL_2 IS NOT NULL
+        ) B_FINAL
+        WHERE B_FINAL.FILTRO=&apos;S&apos;
+          AND B_FINAL.ATIVIDADE=&apos;SEPARACAO&apos;
+        GROUP BY
+            B_FINAL.DT_PROD, B_FINAL.&quot;ATIVIDADE&quot;, B_FINAL.&quot;USUÁRIO&quot;, B_FINAL.&quot;COLABORADOR&quot;,
+            B_FINAL.EMPRESA, B_FINAL.&quot;TURNO&quot;, B_FINAL.&quot;ENCARREGADO&quot;
+        ORDER BY B_FINAL.DT_PROD   
+       ) PRDTY_LABOR
+    ON PRDTY_LABOR.DT_PROD=PRD_WMS.DT_SEP
+   AND PRDTY_LABOR.&quot;USUÁRIO&quot;=PRD_WMS.USER_ID
+    ) PRO_FINAL)
+    JOIN UCL_USER UU ON PRO_FINAL.USER_ID= UU.USER_NAME
+    LEFT JOIN
+        (SELECT
+             F.FACILITY_ID,
+             FA.FACILITY_ALIAS_ID AS CD,
+             F.WHSE,
+             SC.CODE_ID AS INVN_TYPE
+        FROM FACILITY F
+        JOIN FACILITY_ALIAS FA ON F.FACILITY_ID=FA.FACILITY_ID
+        JOIN SYS_CODE SC ON SC.SHORT_DESC = FA.FACILITY_ALIAS_ID
+                         AND SC.CODE_TYPE = &apos;064&apos;
+        WHERE F.WHSE IS NOT NULL AND F.WHSE &lt;&gt;&apos;01&apos;
+        ) CD
+    ON CD.INVN_TYPE=PRO_FINAL.INVN_TYPE
+    ) A)
+    GROUP BY   
+        A.USER_ID,
+        A.COLABORADOR,
+        A.TURNO,
+        A.OPE,
+        A.OPERACAO
+    ORDER BY 5 
+    ) A)
+    ) B)
+) C)
+LEFT JOIN
+((SELECT
+    TEMPO.USER_ID,
+    TEMPO.DIA,
+    TEMPO.HORA,
+    TEMPO.MINUTOS,
+    (TEMPO.DIA*1440)+(TEMPO.HORA*60)+TEMPO.MINUTOS AS TEMPO
+FROM
+((SELECT
+    A.USER_ID,
+    UPPER (UC.USER_FIRST_NAME ||&apos; &apos;|| UC.USER_LAST_NAME) AS &quot;COLABORADOR(A)&quot;,
+    TO_CHAR(MAX(A.&quot;DATA HORA SEPARAÇÃO&quot;),&apos;DD/MM/YYYY HH24:MI:SS&apos;) AS &quot;DATA SEPARAÇÃO&quot;,
+    TO_CHAR(SYSDATE,&apos;DD/MM/YYYY HH24:MI:SS&apos;) AS &quot;DATA ATUAL&quot;,
+    EXTRACT(DAY FROM (SYSDATE - MAX(A.&quot;DATA HORA SEPARAÇÃO&quot;))) AS DIA,
+    EXTRACT(HOUR FROM (SYSDATE - MAX(A.&quot;DATA HORA SEPARAÇÃO&quot;))) AS HORA,
+    EXTRACT(MINUTE FROM (SYSDATE - MAX(A.&quot;DATA HORA SEPARAÇÃO&quot;))) AS MINUTOS,
+    CASE 
+        WHEN LENGTH(EXTRACT(HOUR FROM (SYSDATE - MAX(A.&quot;DATA HORA SEPARAÇÃO&quot;))))&lt;2 
+         AND LENGTH(EXTRACT(MINUTE FROM (SYSDATE - MAX(A.&quot;DATA HORA SEPARAÇÃO&quot;))))&lt;2 THEN
+            &apos;0&apos;||EXTRACT(HOUR FROM (SYSDATE - MAX(A.&quot;DATA HORA SEPARAÇÃO&quot;))) || &apos;:0&apos;||EXTRACT(MINUTE FROM (SYSDATE - MAX(A.&quot;DATA HORA SEPARAÇÃO&quot;)))
+        WHEN LENGTH(EXTRACT(HOUR FROM (SYSDATE - MAX(A.&quot;DATA HORA SEPARAÇÃO&quot;))))&lt;2 
+         AND LENGTH(EXTRACT(MINUTE FROM (SYSDATE - MAX(A.&quot;DATA HORA SEPARAÇÃO&quot;))))=2 THEN
+            &apos;0&apos;||EXTRACT(HOUR FROM (SYSDATE - MAX(A.&quot;DATA HORA SEPARAÇÃO&quot;))) || &apos;:&apos;||EXTRACT(MINUTE FROM (SYSDATE - MAX(A.&quot;DATA HORA SEPARAÇÃO&quot;)))
+        WHEN LENGTH(EXTRACT(HOUR FROM (SYSDATE - MAX(A.&quot;DATA HORA SEPARAÇÃO&quot;))))=2 
+         AND LENGTH(EXTRACT(MINUTE FROM (SYSDATE - MAX(A.&quot;DATA HORA SEPARAÇÃO&quot;))))&lt;2 THEN
+            EXTRACT(HOUR FROM (SYSDATE - MAX(A.&quot;DATA HORA SEPARAÇÃO&quot;))) || &apos;:0&apos;||EXTRACT(MINUTE FROM (SYSDATE - MAX(A.&quot;DATA HORA SEPARAÇÃO&quot;)))
+        ELSE
+            EXTRACT(HOUR FROM (SYSDATE - MAX(A.&quot;DATA HORA SEPARAÇÃO&quot;))) || &apos;:&apos; || EXTRACT(MINUTE FROM (SYSDATE - MAX(A.&quot;DATA HORA SEPARAÇÃO&quot;)))
+    END AS TEMPO
+FROM    
+((SELECT            
+        CASE
+          WHEN CAST(TO_CHAR(PTT.CREATE_DATE_TIME,&apos;HH24&apos;) AS FLOAT)&lt;6 THEN TRUNC(PTT.CREATE_DATE_TIME)-1
+          ELSE TRUNC(PTT.CREATE_DATE_TIME)    
+        END AS DT_SEP,
+        CAST(TO_CHAR(PTT.MOD_DATE_TIME,&apos;HH24&apos;) AS FLOAT) AS HORA,
+        CASE WHEN PTT.TH_INVN_TYPE = &apos;H&apos; THEN
+            CASE
+                WHEN CAST(TO_CHAR(PTT.MOD_DATE_TIME,&apos;HH24&apos;) AS FLOAT)&lt;6 THEN 3
+                WHEN CAST(TO_CHAR(PTT.MOD_DATE_TIME,&apos;HH24&apos;) AS FLOAT) &gt;=22 AND CAST(TO_CHAR(PTT.MOD_DATE_TIME,&apos;MI&apos;) AS FLOAT)&gt;30 THEN 3 
+                WHEN CAST(TO_CHAR(PTT.MOD_DATE_TIME,&apos;HH24&apos;) AS FLOAT) &gt;=23 THEN 3 
+                WHEN CAST(TO_CHAR(PTT.MOD_DATE_TIME,&apos;HH24&apos;) AS FLOAT)&lt;12 THEN 1        
+                WHEN CAST(TO_CHAR(PTT.MOD_DATE_TIME,&apos;HH24&apos;) AS FLOAT)&gt;=12 AND CAST(TO_CHAR(PTT.MOD_DATE_TIME,&apos;HH24&apos;) AS FLOAT)&lt;13 AND CAST(TO_CHAR(PTT.MOD_DATE_TIME,&apos;MI&apos;) AS FLOAT)&lt;=45 THEN 1                    
+            ELSE 2 END
+        WHEN PTT.TH_INVN_TYPE = &apos;J&apos; THEN
+            CASE
+                WHEN CAST(TO_CHAR(PTT.MOD_DATE_TIME, &apos;HH24&apos;) AS FLOAT) &gt;= 6 AND CAST(TO_CHAR(PTT.MOD_DATE_TIME, &apos;HH24&apos;) AS FLOAT) &lt; 18 THEN 1
+                WHEN CAST(TO_CHAR(PTT.MOD_DATE_TIME, &apos;HH24&apos;) AS FLOAT) &gt;= 22 OR CAST(TO_CHAR(PTT.MOD_DATE_TIME, &apos;HH24&apos;) AS FLOAT) &lt; 6 THEN 3
+            ELSE NULL END
+        ELSE
+            CASE
+                WHEN CAST(TO_CHAR(PTT.MOD_DATE_TIME,&apos;HH24&apos;) AS FLOAT)&lt;6 THEN 3
+                WHEN CAST(TO_CHAR(PTT.MOD_DATE_TIME,&apos;HH24&apos;) AS FLOAT) &gt; 21 THEN 3     
+                WHEN CAST(TO_CHAR(PTT.MOD_DATE_TIME,&apos;HH24&apos;) AS FLOAT)&lt;14 THEN 1        
+            ELSE 2 END 
+        END AS TURNO,
+        CASE WHEN PTT.TH_INVN_TYPE = &apos;H&apos; THEN
+            CASE
+                WHEN CAST(TO_CHAR(SYSDATE,&apos;HH24&apos;) AS FLOAT)&lt;6 THEN 3
+                WHEN CAST(TO_CHAR(SYSDATE,&apos;HH24&apos;) AS FLOAT) &gt;=22 AND CAST(TO_CHAR(SYSDATE,&apos;MI&apos;) AS FLOAT)&gt;30 THEN 3 
+                WHEN CAST(TO_CHAR(SYSDATE,&apos;HH24&apos;) AS FLOAT) &gt;=23 THEN 3 
+                WHEN CAST(TO_CHAR(SYSDATE,&apos;HH24&apos;) AS FLOAT)&lt;12 THEN 1        
+                WHEN CAST(TO_CHAR(SYSDATE,&apos;HH24&apos;) AS FLOAT)&gt;=12 AND CAST(TO_CHAR(SYSDATE,&apos;HH24&apos;) AS FLOAT)&lt;13 AND CAST(TO_CHAR(SYSDATE,&apos;MI&apos;) AS FLOAT)&lt;=45 THEN 1                    
+            ELSE 2 END
+        WHEN PTT.TH_INVN_TYPE = &apos;J&apos; THEN
+            CASE
+                WHEN CAST(TO_CHAR(SYSDATE, &apos;HH24&apos;) AS FLOAT) &gt;= 6 AND CAST(TO_CHAR(SYSDATE, &apos;HH24&apos;) AS FLOAT) &lt; 18 THEN 1
+                WHEN CAST(TO_CHAR(SYSDATE, &apos;HH24&apos;) AS FLOAT) &gt;= 22 OR CAST(TO_CHAR(SYSDATE, &apos;HH24&apos;) AS FLOAT) &lt; 6 THEN 3
+            ELSE NULL END
+        ELSE
+            CASE
+                WHEN CAST(TO_CHAR(SYSDATE,&apos;HH24&apos;) AS FLOAT)&lt;6 THEN 3
+                WHEN CAST(TO_CHAR(SYSDATE,&apos;HH24&apos;) AS FLOAT) &gt; 21 THEN 3     
+                WHEN CAST(TO_CHAR(SYSDATE,&apos;HH24&apos;) AS FLOAT)&lt;14 THEN 1        
+            ELSE 2 END 
+        END AS TURNO_ATUAL,
+        PTT.TH_INVN_TYPE AS INVN_TYPE,
+        PTT.TH_WHSE AS WHSE,
+        PTT.TH_INVN_NEED_TYPE AS INVN_NEED_TYPE,
+        SUBSTR(PTT.TC_ORDER_ID,1,5) AS PRX_PED,            
+        PTT.TASK_ID,
+        PTT.USER_ID,
+        PTT.ITEM_ID,
+        PTT.NBR_UNITS,
+        PTT.FROM_LOCN,
+        CASE
+            WHEN PTT.MENU_OPTN_NAME = &apos;VocollectPack&apos; THEN &apos;2- VOICE&apos;
+            ELSE &apos;1- RF&apos;
+        END AS DISPOSITIVO,        
+        PTT.MOD_DATE_TIME AS &quot;DATA HORA SEPARAÇÃO&quot;            
+    FROM BASE_TRANSACTIONS PTT 
+) A)
+JOIN UCL_USER UC ON UC.USER_NAME=A.USER_ID
+GROUP BY
+    A.USER_ID,
+    UC.USER_FIRST_NAME ||&apos; &apos;|| UC.USER_LAST_NAME,
+    SYSDATE
+ORDER BY 3
+) TEMPO)
+) TEMPO_PEGA)
+ON TEMPO_PEGA.USER_ID=C.USER_ID
+ORDER BY C.QTY_CXS_SEP DESC
+) D)</sqlText>
+					
+				<mdProjectedItems><mdProjectedItem name="LINHA"/><mdProjectedItem name="USER_ID"/><mdProjectedItem name="ID_COLABORADOR"/><mdProjectedItem name="COLABORADOR"/><mdProjectedItem name="HORARIO"/><mdProjectedItem name="QTY_HORAS"/><mdProjectedItem name="QTY_CXS_SEP"/><mdProjectedItem name="ATUALIZAÇÃO"/><mdProjectedItem name="TURNO"/><mdProjectedItem name="OPE"/><mdProjectedItem name="OPERACAO"/><mdProjectedItem name="HORA_TURNO"/><mdProjectedItem name="QTY_CORTE_CXS"/><mdProjectedItem name="TEMPO"/><mdProjectedItem name="RANK"/></mdProjectedItems></sqlQuery>
+			</source>
+			<selection>
+				<dataItem name="RANK">
+					<expression>[SQL1].[RANK]</expression>
+				</dataItem>
+				<dataItem name="Chave">
+					<expression>1</expression>
+				</dataItem>
+				<dataItem name="USER_ID">
+					<expression>[SQL1].[USER_ID]</expression>
+				</dataItem>
+				<dataItem name="COLABORADOR">
+					<expression>[SQL1].[COLABORADOR]</expression>
+				</dataItem>
+				<dataItem name="QTY_HORAS">
+					<expression>[SQL1].[QTY_HORAS]</expression>
+				</dataItem>
+				<dataItem name="QTY_CXS_SEP" aggregate="total" rollupAggregate="total">
+					<expression>[SQL1].[QTY_CXS_SEP]</expression>
+				</dataItem>
+				<dataItem name="PROD_HORA" aggregate="calculated">
+					<expression>[QTY_CXS_SEP]/[SQL1].[QTY_HORAS]</expression>
+				</dataItem>
+				<dataItem name="Data">
+					<expression>[SQL1].[ATUALIZAÇÃO]</expression>
+				</dataItem>
+				<dataItem name="LINHA" sort="ascending">
+					<expression>[SQL1].[LINHA]</expression>
+				</dataItem>
+				<dataItem name="META_HORA">
+					<expression>CASE 
+    WHEN COALESCE([Base].[OPERACAO], &apos;&apos;) = &apos;CD 930&apos; THEN 98
+    WHEN COALESCE([Base].[OPERACAO], &apos;&apos;) = &apos;CD 6757&apos; THEN 98
+    WHEN COALESCE([Base].[OPERACAO], &apos;&apos;) = &apos;CD 7801&apos; THEN 77
+    WHEN COALESCE([Base].[OPERACAO], &apos;&apos;) = &apos;CD 1965&apos; THEN 95
+    ELSE 80
+END</expression>
+				</dataItem>
+				<dataItem name="HORA_TURNO">
+					<expression>[SQL1].[HORA_TURNO]</expression>
+				</dataItem>
+				<dataItem name="HORA_ATUAL">
+					<expression>_hour (current_time)+(_minute (current_time)/60)</expression>
+				</dataItem>
+				<dataItem name="OPERACAO">
+					<expression>[SQL1].[OPERACAO]</expression>
+				</dataItem>
+				<dataItem name="SALDO_HORAS">
+					<expression>	CASE WHEN [OPERACAO]=&apos;CD 1942&apos; THEN
+		CASE
+				
+				WHEN [TURNO_ATUAL] = 3 AND [HORA_ATUAL]&gt;22 THEN  
+						([HORA_ATUAL] + 7.48) - [HORA_ATUAL] 
+				WHEN [TURNO_ATUAL] = 3 AND [HORA_ATUAL]&lt;=6 THEN  		 
+						 7.48 - ([HORA_ATUAL]+1.5) 
+				WHEN [TURNO_ATUAL] = 2 THEN  		 
+						 22.5 - [HORA_ATUAL]
+				ELSE 12.75 - [HORA_ATUAL]
+			END
+
+	ELSE
+			CASE
+				
+				WHEN  [TURNO_ATUAL] = 3 AND [HORA_ATUAL]&gt;22 THEN  
+						([HORA_ATUAL] + 8) - [HORA_ATUAL] 
+				WHEN [TURNO_ATUAL] = 3 AND [HORA_ATUAL]&lt;=6 THEN  		 
+						 8 - ([HORA_ATUAL]+2) 
+				WHEN [TURNO_ATUAL] = 2 THEN  		 
+						 22 - [HORA_ATUAL]
+				ELSE 14 - [HORA_ATUAL]
+			END
+	END</expression>
+				</dataItem>
+				<dataItem name="HORAS_UTILIZADA">
+					<expression>[HORA_TURNO]-[SALDO_HORAS]</expression>
+				</dataItem>
+				<dataItem name="TURNO_ATUAL">
+					<expression>[SQL1].[TURNO]</expression>
+				</dataItem>
+				<dataItem name="QTDE. CORTE">
+					<expression>[SQL1].[QTY_CORTE_CXS]</expression>
+				</dataItem>
+				<dataItem name="TEMPO(MIN)">
+					<expression>[SQL1].[TEMPO]</expression>
+				</dataItem>
+				<dataItem name="PROD_HORA_NOVA">
+					<expression>[SQL1].[QTY_CXS_SEP]/[SQL1].[QTY_HORAS]</expression>
+				</dataItem>
+				<dataItem name="PER_META" aggregate="calculated">
+					<expression>[PROD_HORA_NOVA]/[META_HORA]</expression>
+				</dataItem>
+			<dataItem name="HORARIO"><expression>[SQL1].[HORARIO]</expression></dataItem></selection>
+			<queryHints>
+				<localCache value="false"/>
+			<queryProcessing value="databaseOnly"/></queryHints>
+		</query>
+		<query name="KPIs"><source><queryRef refQuery="Base"/></source><selection><dataItem name="TOTAL_PROD" aggregate="total"><expression>[Base].[QTY_CXS_SEP]</expression></dataItem><dataItem name="AVG_PER_META" aggregate="average"><expression>[Base].[PER_META]</expression></dataItem><dataItem name="ATUAL" aggregate="maximum"><expression>[Base].[Data]</expression></dataItem><dataItem name="EFF_PCT" aggregate="average"><expression>[Base].[PER_META]*100</expression></dataItem><dataItem name="QTD_COLAB" aggregate="calculated"><expression>count(distinct [Base].[COLABORADOR])</expression></dataItem></selection><queryHints><localCache value="false"/></queryHints></query><query name="Parte 1">
+			<source>
+				<joinOperation>
+					<joinOperands>
+						<joinOperand cardinality="1:1">
+							<queryRef refQuery="Base"/>
+						</joinOperand>
+						<joinOperand cardinality="1:1">
+							<queryRef refQuery="Chave"/>
+						</joinOperand>
+					</joinOperands>
+					<joinFilter>
+						<filterExpression>[Base].[Chave] = [Chave].[Chave]</filterExpression>
+					</joinFilter>
+				</joinOperation>
+			</source>
+			<selection>
+				<dataItem name="LINHA" detail="false" sort="ascending">
+					<expression>[Base].[LINHA]</expression>
+				<XMLAttributes><XMLAttribute output="no" name="RS_dataType" value="9"/><XMLAttribute output="no" name="RS_dataUsage" value="3"/></XMLAttributes></dataItem>
+				<dataItem name="RANK">
+					<expression>[Base].[RANK]</expression>
+				</dataItem>
+				<dataItem name="COLABORADOR">
+					<expression>[Base].[COLABORADOR]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="PROD_HORA" label="PROD./HORA">
+					<expression>[Base].[PROD_HORA]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="9"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="2"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="QTY_HORAS">
+					<expression>[Base].[QTY_HORAS]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="9"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="QTY_CXS_SEP" label="PROD.">
+					<expression>[Base].[QTY_CXS_SEP]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="9"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="HOTAS_UTILIZADA">
+					<expression>[Base].[HORAS_UTILIZADA]</expression>
+				</dataItem>
+				<dataItem name="META_HORA" label=" &apos;&apos;">
+					<expression>[Base].[META_HORA]</expression>
+				</dataItem>
+				<dataItem name="TEMPO(MIN)" label="MIN">
+					<expression>[Base].[TEMPO(MIN)]</expression>
+				<XMLAttributes><XMLAttribute output="no" name="RS_dataType" value="9"/><XMLAttribute output="no" name="RS_dataUsage" value="3"/></XMLAttributes></dataItem>
+				<dataItem name="PER_META" aggregate="calculated">
+					<expression>[Base].[PER_META]</expression>
+				<XMLAttributes><XMLAttribute output="no" name="RS_dataType" value="9"/><XMLAttribute output="no" name="RS_dataUsage" value="2"/></XMLAttributes></dataItem>
+			<dataItem name="BAR_META" label=" "><expression>CASE WHEN [PER_META] &gt;= 1.00 THEN &apos;████████████████████&apos; WHEN [PER_META] &gt;= 0.90 THEN &apos;███████████████████░&apos; WHEN [PER_META] &gt;= 0.80 THEN &apos;██████████████████░░&apos; WHEN [PER_META] &gt;= 0.70 THEN &apos;█████████████████░░░&apos; WHEN [PER_META] &gt;= 0.60 THEN &apos;████████████████░░░░&apos; WHEN [PER_META] &gt;= 0.50 THEN &apos;███████████████░░░░░&apos; WHEN [PER_META] &gt;= 0.40 THEN &apos;██████████████░░░░░░&apos; WHEN [PER_META] &gt;= 0.30 THEN &apos;█████████████░░░░░░░&apos; WHEN [PER_META] &gt;= 0.20 THEN &apos;████████████░░░░░░░░&apos; WHEN [PER_META] &gt;= 0.10 THEN &apos;███████████░░░░░░░░░&apos; ELSE &apos;█████░░░░░░░░&apos; END</expression></dataItem><dataItem name="CADASTRO"><expression>[Base].[USER_ID]</expression></dataItem><dataItem name="HORARIO"><expression>[Base].[HORARIO]</expression></dataItem></selection>
+			<detailFilters>
+				<detailFilter>
+					<filterExpression>[LINHA]&lt;=23</filterExpression>
+				</detailFilter>
+			</detailFilters>
+			<queryHints>
+				<localCache value="false"/>
+			</queryHints>
+		</query>
+		<query name="Chave">
+			<source>
+				<model/>
+			</source>
+			<selection>
+				<dataItem name="Chave">
+					<expression>1</expression>
+				</dataItem>
+			</selection>
+			<queryHints>
+				<localCache value="false"/>
+			</queryHints>
+		</query>
+		<query name="Parte 2">
+			<source>
+				<joinOperation>
+					<joinOperands>
+						<joinOperand cardinality="1:1">
+							<queryRef refQuery="Base"/>
+						</joinOperand>
+						<joinOperand cardinality="1:1">
+							<queryRef refQuery="Chave"/>
+						</joinOperand>
+					</joinOperands>
+					<joinFilter>
+						<filterExpression>[Base].[Chave] = [Chave].[Chave]</filterExpression>
+					</joinFilter>
+				</joinOperation>
+			</source>
+			<selection>
+				<dataItem name="LINHA" detail="false" sort="ascending">
+					<expression>[Base].[LINHA]</expression>
+				<XMLAttributes><XMLAttribute output="no" name="RS_dataType" value="9"/><XMLAttribute output="no" name="RS_dataUsage" value="3"/></XMLAttributes></dataItem>
+				<dataItem name="RANK">
+					<expression>[Base].[RANK]</expression>
+				</dataItem>
+				<dataItem name="COLABORADOR">
+					<expression>[Base].[COLABORADOR]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="QTY_HORAS">
+					<expression>[Base].[QTY_HORAS]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="9"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="PROD_HORA" label="PROD./HORA">
+					<expression>[Base].[PROD_HORA]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="9"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="2"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="QTY_CXS_SEP" label="PROD.">
+					<expression>[Base].[QTY_CXS_SEP]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="9"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="HOTAS_UTILIZADA">
+					<expression>[Base].[HORAS_UTILIZADA]</expression>
+				</dataItem>
+				<dataItem name="META_HORA" label="&apos;&apos;">
+					<expression>[Base].[META_HORA]</expression>
+				</dataItem>
+				<dataItem name="TEMPO(MIN)" label="MIN">
+					<expression>[Base].[TEMPO(MIN)]</expression>
+				<XMLAttributes><XMLAttribute output="no" name="RS_dataType" value="9"/><XMLAttribute output="no" name="RS_dataUsage" value="3"/></XMLAttributes></dataItem>
+				<dataItem name="PER_META">
+					<expression>[Base].[PER_META]</expression>
+				<XMLAttributes><XMLAttribute output="no" name="RS_dataType" value="9"/><XMLAttribute output="no" name="RS_dataUsage" value="2"/></XMLAttributes></dataItem>
+			<dataItem name="BAR_META" label=" "><expression>CASE WHEN [PER_META] &gt;= 1.00 THEN &apos;████████████████████&apos; WHEN [PER_META] &gt;= 0.90 THEN &apos;███████████████████░&apos; WHEN [PER_META] &gt;= 0.80 THEN &apos;██████████████████░░&apos; WHEN [PER_META] &gt;= 0.70 THEN &apos;█████████████████░░░&apos; WHEN [PER_META] &gt;= 0.60 THEN &apos;████████████████░░░░&apos; WHEN [PER_META] &gt;= 0.50 THEN &apos;███████████████░░░░░&apos; WHEN [PER_META] &gt;= 0.40 THEN &apos;██████████████░░░░░░&apos; WHEN [PER_META] &gt;= 0.30 THEN &apos;█████████████░░░░░░░&apos; WHEN [PER_META] &gt;= 0.20 THEN &apos;████████████░░░░░░░░&apos; WHEN [PER_META] &gt;= 0.10 THEN &apos;███████████░░░░░░░░░&apos; ELSE &apos;█████░░░░░░░░&apos; END</expression></dataItem><dataItem name="CADASTRO"><expression>[Base].[USER_ID]</expression></dataItem><dataItem name="HORARIO"><expression>[Base].[HORARIO]</expression></dataItem></selection>
+			<detailFilters>
+				<detailFilter>
+					<filterExpression>[LINHA]&gt;23AND [LINHA]&lt;=46</filterExpression>
+				</detailFilter>
+			</detailFilters>
+			<queryHints>
+				<localCache value="false"/>
+			</queryHints>
+		</query>
+		<query name="Parte 3">
+			<source>
+				<joinOperation>
+					<joinOperands>
+						<joinOperand cardinality="1:1">
+							<queryRef refQuery="Base"/>
+						</joinOperand>
+						<joinOperand cardinality="1:1">
+							<queryRef refQuery="Chave"/>
+						</joinOperand>
+					</joinOperands>
+					<joinFilter>
+						<filterExpression>[Base].[Chave] = [Chave].[Chave]</filterExpression>
+					</joinFilter>
+				</joinOperation>
+			</source>
+			<selection>
+				<dataItem name="LINHA" detail="false" sort="ascending">
+					<expression>[Base].[LINHA]</expression>
+				</dataItem>
+				<dataItem name="RANK">
+					<expression>[Base].[RANK]</expression>
+				</dataItem>
+				<dataItem name="COLABORADOR">
+					<expression>[Base].[COLABORADOR]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="QTY_HORAS">
+					<expression>[Base].[QTY_HORAS]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="9"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="PROD_HORA" label="PROD./HORA">
+					<expression>[Base].[PROD_HORA]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="9"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="QTY_CXS_SEP" label="PROD.">
+					<expression>[Base].[QTY_CXS_SEP]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="9"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="HOTAS_UTILIZADA">
+					<expression>[Base].[HORAS_UTILIZADA]</expression>
+				</dataItem>
+				<dataItem name="META_HORA" label="&apos;&apos;">
+					<expression>[Base].[META_HORA]</expression>
+				</dataItem>
+				<dataItem name="QTDE. CORTE">
+					<expression>[Base].[QTDE. CORTE]</expression>
+				</dataItem>
+				<dataItem name="TEMPO(MIN)" label="MIN">
+					<expression>[Base].[TEMPO(MIN)]</expression>
+				</dataItem>
+				<dataItem name="%. CORTE" aggregate="calculated">
+					<expression>[QTDE. CORTE]/[QTY_CXS_SEP]</expression>
+				</dataItem>
+				<dataItem name="PER_META">
+					<expression>[Base].[PER_META]</expression>
+				</dataItem>
+			<dataItem name="BAR_META" label=" "><expression>CASE WHEN [PER_META] &gt;= 1.00 THEN &apos;████████████████████&apos; WHEN [PER_META] &gt;= 0.90 THEN &apos;███████████████████░&apos; WHEN [PER_META] &gt;= 0.80 THEN &apos;██████████████████░░&apos; WHEN [PER_META] &gt;= 0.70 THEN &apos;█████████████████░░░&apos; WHEN [PER_META] &gt;= 0.60 THEN &apos;████████████████░░░░&apos; WHEN [PER_META] &gt;= 0.50 THEN &apos;███████████████░░░░░&apos; WHEN [PER_META] &gt;= 0.40 THEN &apos;██████████████░░░░░░&apos; WHEN [PER_META] &gt;= 0.30 THEN &apos;█████████████░░░░░░░&apos; WHEN [PER_META] &gt;= 0.20 THEN &apos;████████████░░░░░░░░&apos; WHEN [PER_META] &gt;= 0.10 THEN &apos;███████████░░░░░░░░░&apos; ELSE &apos;█████░░░░░░░░&apos; END</expression></dataItem><dataItem name="CADASTRO"><expression>[Base].[USER_ID]</expression></dataItem><dataItem name="HORARIO"><expression>[Base].[HORARIO]</expression></dataItem></selection>
+			<detailFilters>
+				<detailFilter>
+					<filterExpression>[LINHA]&gt;46AND [LINHA]&lt;=200</filterExpression>
+				</detailFilter>
+			</detailFilters>
+			<queryHints>
+				<localCache value="false"/>
+			</queryHints>
+		</query>
+		<query name="DATA">
+			<source>
+				<model/>
+			</source>
+			<selection>
+				<dataItem name="Data">
+					<expression>CURRENT_TIMESTAMP</expression>
+				</dataItem>
+			</selection>
+			<queryHints>
+				<localCache value="false"/>
+			</queryHints>
+		</query>
+		<query name="Parte 4">
+			<source>
+				<joinOperation>
+					<joinOperands>
+						<joinOperand cardinality="1:1">
+							<queryRef refQuery="Base"/>
+						</joinOperand>
+						<joinOperand cardinality="1:1">
+							<queryRef refQuery="Chave"/>
+						</joinOperand>
+					</joinOperands>
+					<joinFilter>
+						<filterExpression>[Base].[Chave] = [Chave].[Chave]</filterExpression>
+					</joinFilter>
+				</joinOperation>
+			</source>
+			<selection>
+				<dataItem name="LINHA" detail="false" sort="ascending">
+					<expression>[Base].[LINHA]</expression>
+				</dataItem>
+				<dataItem name="RANK">
+					<expression>[Base].[RANK]</expression>
+				</dataItem>
+				<dataItem name="COLABORADOR">
+					<expression>[Base].[COLABORADOR]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="QTY_HORAS">
+					<expression>[Base].[QTY_HORAS]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="9"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="PROD_HORA" label="PROD./HORA">
+					<expression>[Base].[PROD_HORA]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="9"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="QTY_CXS_SEP" label="PROD.">
+					<expression>[Base].[QTY_CXS_SEP]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="9"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="HOTAS_UTILIZADA">
+					<expression>[Base].[HORAS_UTILIZADA]</expression>
+				</dataItem>
+				<dataItem name="META_HORA" label="&apos;&apos;">
+					<expression>[Base].[META_HORA]</expression>
+				</dataItem>
+				<dataItem name="TEMPO(MIN)">
+					<expression>[Base].[TEMPO(MIN)]</expression>
+				</dataItem>
+				<dataItem name="PER_META">
+					<expression>[Base].[PER_META]</expression>
+				</dataItem>
+			</selection>
+			<detailFilters>
+				<detailFilter>
+					<filterExpression>[LINHA]&gt;75AND [LINHA]&lt;=100</filterExpression>
+				</detailFilter>
+			</detailFilters>
+			<queryHints>
+				<localCache value="false"/>
+			</queryHints>
+		</query>
+		<query name="Consulta1">
+			<source>
+				<model/>
+			</source>
+			<selection>
+				<dataItem name="meta">
+					<expression>CASE 
+    WHEN COALESCE([Base].[OPERACAO], &apos;&apos;) = &apos;CD 930&apos; THEN 98
+    WHEN COALESCE([Base].[OPERACAO], &apos;&apos;) = &apos;CD 6757&apos; THEN 98
+    WHEN COALESCE([Base].[OPERACAO], &apos;&apos;) = &apos;CD 7801&apos; THEN 77
+    WHEN COALESCE([Base].[OPERACAO], &apos;&apos;) = &apos;CD 1965&apos; THEN 95
+    ELSE 80
+END
+</expression>
+				</dataItem>
+			</selection>
+		<queryHints><localCache value="false"/></queryHints></query>
+	<query name="CD">
+			<source>
+				
+			<sqlQuery name="SQL2" dataSource="WMOS">
+			<sqlText>SELECT CODE_DESC AS OPERACAO FROM sys_code WHERE CODE_TYPE = &apos;064&apos; AND REC_TYPE = &apos;B&apos; ORDER BY 1</sqlText>
+		<mdProjectedItems><mdProjectedItem name="OPERACAO"/></mdProjectedItems></sqlQuery></source>
+			<selection><dataItem name="OPERACAO"><expression>[SQL2].[OPERACAO]</expression></dataItem></selection>
+		</query></queries>
+	<namedConditionalStyles>
+		<advancedConditionalStyle name="PROD_HORA_P1">
+			
+			
+		<styleCases><styleCase><style>
+						<CSS value="background-color:#dcfce7;color:#166534;font-weight:bold;"/>
+					</style><reportCondition>[Parte 1].[PER_META]&gt;=1</reportCondition></styleCase><styleCase><style>
+						<CSS value="background-color:#fef08a;color:#854d0e;font-weight:bold;"/>
+					</style><reportCondition>[Parte 1].[PER_META]&gt;=0.75</reportCondition></styleCase></styleCases><styleDefault><style>
+					<CSS value="background-color:#fee2e2;color:#991b1b;font-weight:bold;"/>
+				</style></styleDefault></advancedConditionalStyle>
+		<advancedConditionalStyle name="PARTE 2 ">
+			
+			
+		<styleCases><styleCase><style>
+						<CSS value="background-color:#dcfce7;color:#166534;font-weight:bold;"/>
+					</style><reportCondition>[Parte 2].[PER_META]&gt;=1</reportCondition></styleCase><styleCase><style>
+						<CSS value="background-color:#fef08a;color:#854d0e;font-weight:bold;"/>
+					</style><reportCondition>[Parte 2].[PER_META]&gt;=0.75</reportCondition></styleCase></styleCases><styleDefault><style>
+					<CSS value="background-color:#fee2e2;color:#991b1b;font-weight:bold;"/>
+				</style></styleDefault></advancedConditionalStyle>
+		<advancedConditionalStyle name="PARTE 3">
+			
+			
+		<styleCases><styleCase><style>
+						<CSS value="background-color:#dcfce7;color:#166534;font-weight:bold;"/>
+					</style><reportCondition>[Parte 3].[PER_META]&gt;=1</reportCondition></styleCase><styleCase><style>
+						<CSS value="background-color:#fef08a;color:#854d0e;font-weight:bold;"/>
+					</style><reportCondition>[Parte 3].[PER_META]&gt;=0.75</reportCondition></styleCase></styleCases><styleDefault><style>
+					<CSS value="background-color:#fee2e2;color:#991b1b;font-weight:bold;"/>
+				</style></styleDefault></advancedConditionalStyle>
+		<advancedConditionalStyle name="PARTE 4">
+			<styleCases>
+				<styleCase>
+					<style>
+						<CSS value="background-color:#dcfce7;color:#166534;font-weight:bold;"/>
+					</style>
+					<reportCondition>[Parte 4].[PER_META]&gt;=0.75</reportCondition>
+				</styleCase>
+				<styleCase>
+					<style>
+						<CSS value="background-color:#fef08a;color:#854d0e;font-weight:bold;"/>
+					</style>
+					<reportCondition>[Parte 4].[PER_META]&gt;=0.50</reportCondition>
+				</styleCase>
+			</styleCases>
+			<styleDefault>
+				<style>
+					<CSS value="background-color:#fee2e2;color:#991b1b;font-weight:bold;"/>
+				</style>
+			</styleDefault>
+		</advancedConditionalStyle>
+		<advancedConditionalStyle name="EST. TEMPO">
+			
+			
+		<styleCases><styleCase><style>
+						<CSS value="background-color:#fee2e2;color:#991b1b;"/>
+					</style><reportCondition>[Parte 1].[TEMPO(MIN)]&gt;=15</reportCondition></styleCase></styleCases><styleDefault/></advancedConditionalStyle>
+		<advancedConditionalStyle name="EST. TEMPO 2">
+			<styleCases>
+				<styleCase>
+					<style>
+						<CSS value="background-color:#fee2e2;color:#991b1b;"/>
+					</style>
+					<reportCondition>[Parte 2].[TEMPO(MIN)]&gt;=15</reportCondition>
+				</styleCase>
+			</styleCases>
+			<styleDefault>
+				<style>
+					<CSS value="background-color:transparent;"/>
+				</style>
+			</styleDefault>
+		</advancedConditionalStyle>
+		<advancedConditionalStyle name="EST. TEMPO 3">
+			<styleCases>
+				<styleCase>
+					<style>
+						<CSS value="background-color:#fee2e2;color:#991b1b;"/>
+					</style>
+					<reportCondition>[Parte 3].[TEMPO(MIN)]&gt;=15</reportCondition>
+				</styleCase>
+			</styleCases>
+			<styleDefault>
+				<style>
+					<CSS value="background-color:transparent;"/>
+				</style>
+			</styleDefault>
+		</advancedConditionalStyle>
+		<advancedConditionalStyle name="EST. TEMPO 4">
+			<styleCases>
+				<styleCase>
+					<style>
+						<CSS value="background-color:#fee2e2;color:#991b1b;"/>
+					</style>
+					<reportCondition>[Parte 4].[TEMPO(MIN)]&gt;=15</reportCondition>
+				</styleCase>
+			</styleCases>
+			<styleDefault>
+				<style>
+					<CSS value="background-color:transparent;"/>
+				</style>
+			</styleDefault>
+		</advancedConditionalStyle>
+	</namedConditionalStyles>
+</report>
