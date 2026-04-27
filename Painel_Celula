@@ -1,0 +1,1091 @@
+<report xmlns="http://developer.cognos.com/schemas/report/14.3/"           useStyleVersion="11.4" expressionLocale="pt-br">
+    <drillBehavior/>
+    <layouts>
+        <layout>
+            <reportPages>
+                <page name="Página1">
+                    <style>
+                        <defaultStyles><defaultStyle refStyle="pg"/></defaultStyles>
+                        <CSS value="background-color: #0a0f1e; font-family: &apos;Segoe UI&apos;, Roboto, Helvetica, sans-serif; padding: 20px; overflow: hidden;"/>
+                    </style>
+                    <pageBody>
+                        <style><defaultStyles><defaultStyle refStyle="pb"/></defaultStyles></style>
+                        <contents>
+                        <block>
+                            <style>
+                                <CSS value="background: linear-gradient(135deg, #0d2137 0%, #112240 100%); border-left: 5px solid #3b82f6; border-radius: 12px; padding: 16px 22px 14px 22px; margin-bottom: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.6);"/>
+                            </style>
+                            <contents>
+                                <HTMLItem>
+			<dataSource>
+				<staticValue>&lt;script&gt;
+   var zxzx = { };
+   zxzx.sendFinishAction = function()
+   {
+      var oCR = cognos.Report.getReport(&apos;_THIS_&apos;);
+      oCR.sendRequest(cognos.Report.Action.FINISH);  
+   }
+setTimeout(zxzx.sendFinishAction, 120000);
+&lt;/script&gt;</staticValue>
+			</dataSource>
+		</HTMLItem><table>
+                                    <style><CSS value="width: 100%; border-collapse: collapse;"/></style>
+                                    <tableRows>
+                                        <tableRow>
+                                            <tableCells>
+                                                <tableCell>
+                                                    <style><CSS value="vertical-align: middle; padding-right: 20px;"/></style>
+                                                    <contents>
+                                                        <block>
+                                                            <style><CSS value="font-size: 18pt; font-weight: 800; color: #f1f5f9; letter-spacing: 0.5px;"/></style>
+                                                            <contents><textItem><dataSource><staticValue>📦  PAINEL DE STATUS — SEPARAÇÃO POR CÉLULA</staticValue></dataSource></textItem></contents>
+                                                        </block>
+                                                        <HTMLItem>
+			<dataSource>
+				<staticValue>&lt;style&gt;
+    .tooltip-container { float: right; margin-top: 2px; margin-left: 10px; position: relative; display: inline-block; font-family: &apos;Segoe UI&apos;, Tahoma, sans-serif; }
+    .tooltip-icon { background-color: #3b82f6; color: white; width: 34px; height: 34px; border-radius: 50%; text-align: center; line-height: 34px; font-weight: bold; font-style: italic; font-size: 18px; cursor: help; box-shadow: 0 2px 4px rgba(0,0,0,0.2); border: 2px solid transparent; transition: 0.3s; }
+    .tooltip-icon:hover { background-color: #2563eb; border-color: white; }
+    .tooltip-text { visibility: hidden; opacity: 0; width: 380px; background-color: #1e293b !important; color: #f8fafc !important; text-align: left; border-radius: 8px; padding: 15px; position: absolute; z-index: 9999; top: 130%; right: 0; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.5); transition: opacity 0.3s, visibility 0.3s; font-size: 10pt; line-height: 1.5; border: 1px solid #3b82f6; }
+    .tooltip-text::after { content: &quot;&quot;; position: absolute; bottom: 100%; right: 12px; border-width: 8px; border-style: solid; border-color: transparent transparent #3b82f6 transparent; }
+    .tooltip-container:hover .tooltip-text { visibility: visible; opacity: 1; }
+&lt;/style&gt;
+
+&lt;div class=&quot;tooltip-container&quot;&gt;
+    &lt;div class=&quot;tooltip-icon&quot;&gt;i&lt;/div&gt;
+    &lt;div class=&quot;tooltip-text&quot;&gt;
+        &lt;span style=&quot;font-size: 11pt; font-weight: bold; color: #60a5fa !important;&quot;&gt;ℹ️ Sobre o Painel&lt;/span&gt;
+        &lt;hr style=&quot;border: 0; border-bottom: 1px solid #334155; margin: 8px 0;&quot;/&gt;
+        Relatório desenvolvido por:&lt;br/&gt;
+        • &lt;b&gt;roberlan.santiago@gpabr.com&lt;/b&gt;&lt;br/&gt;
+        • &lt;b&gt;vagner.moura@gpabr.com&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;
+        Em caso de problemas ou inconsistências, abrir uma &lt;b&gt;RITM&lt;/b&gt; e encaminhar para a equipe responsável.
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;button type=&quot;button&quot; onclick=&quot;var d=document,e=d.documentElement,f=d.fullscreenElement||d.webkitFullscreenElement;if(!f){if(e.requestFullscreen)e.requestFullscreen();else if(e.webkitRequestFullscreen)e.webkitRequestFullscreen();}else{if(d.exitFullscreen)d.exitFullscreen();else if(d.webkitExitFullscreen)d.webkitExitFullscreen();}&quot; style=&quot;float: right; margin-top: 2px; margin-left: 10px; padding: 8px 15px; background-color: #3b82f6; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; font-family: &apos;Segoe UI&apos;, Tahoma, sans-serif; box-shadow: 0 2px 4px rgba(0,0,0,0.2);&quot;&gt;
+    📺 TELA CHEIA
+&lt;/button&gt;</staticValue>
+			</dataSource>
+		</HTMLItem><block>
+                                                            <style><CSS value="font-size: 8.5pt; color: #475569; margin-top: 3px;"/></style>
+                                                            <contents><textItem><dataSource><staticValue>Warehouse Management OS  •  Monitoramento em Tempo Real  •  Capacidade Dinâmica</staticValue></dataSource></textItem></contents>
+                                                        </block>
+                                                    </contents>
+                                                </tableCell>
+                                                <tableCell>
+                                                    <style><CSS value="text-align: right; vertical-align: middle; white-space: nowrap; width: 1%;"/></style>
+                                                    <contents>
+                                                        <block>
+                                                            <style><CSS value="background-color: #0a1929; border: 1px solid #1e3a5f; border-radius: 8px; padding: 6px 14px; display: inline-block;"/></style>
+                                                            <contents>
+                                                                <block>
+                                                                    <style><CSS value="font-size: 7pt; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; text-align: center;"/></style>
+                                                                    <contents><textItem><dataSource><staticValue>Legenda de Capacidade</staticValue></dataSource><style><CSS value="color:white"/></style></textItem></contents>
+                                                                </block>
+                                                                <block>
+                                                                    <style><CSS value="font-size: 9.5pt; font-weight: 700; color: #f1f5f9; white-space: nowrap;"/></style>
+                                                                    <contents>
+                                                                        <textItem><dataSource><staticValue>🟢 Livre ≤70%   </staticValue></dataSource></textItem>
+                                                                        <textItem><dataSource><staticValue>🟡 Atenção 71–90%   </staticValue></dataSource></textItem>
+                                                                        <textItem><dataSource><staticValue>🔴 Lotada &gt;90%</staticValue></dataSource></textItem>
+                                                                    </contents>
+                                                                </block>
+                                                            </contents>
+                                                        </block>
+                                                    </contents>
+                                                </tableCell>
+                                            </tableCells>
+                                        </tableRow>
+                                    </tableRows>
+                                </table>
+                                <block><style><CSS value="border-top: 1px solid #1e3a5f; margin: 12px 0 10px 0;"/></style><contents/></block>
+                                <singleton name="KPISummary" refQuery="Consulta2">
+                                    <contents>
+                                        <table>
+                                            <style><CSS value="width: 100%; border-collapse: separate; border-spacing: 8px 0; table-layout: fixed;"/></style>
+                                            <tableRows><tableRow><tableCells>
+                                                <tableCell>
+                                                    <style><CSS value="background-color: #071a2e; border: 1px solid #166534; border-top: 3px solid #22c55e; border-radius: 8px; padding: 8px; vertical-align: middle;"/></style>
+                                                    <contents>
+                                                        <block><style><CSS value="font-size: 6pt; color: #fca5a5; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; text-align: center;"/></style>
+                                                                            <contents><textItem><dataSource><staticValue> </staticValue></dataSource></textItem></contents>
+                                                                        </block><table><style><CSS value="width: 100%; border-collapse: collapse;"/></style>
+                                                            <tableRows><tableRow><tableCells>
+                                                                <tableCell><style><CSS value="width: 28px; text-align: center; vertical-align: middle;"/></style>
+                                                                    <contents><block><style><CSS value="font-size: 17pt; line-height: 1;"/></style>
+                                                                        <contents><textItem><dataSource><staticValue>🏭</staticValue></dataSource></textItem></contents>
+                                                                    </block></contents>
+                                                                </tableCell>
+                                                                <tableCell><style><CSS value="vertical-align:top;padding-left:4px;text-align:left"/></style>
+                                                                    <contents>
+                                                                        <block><style><CSS value="font-size:17pt;font-weight:800;color:#22c55e;line-height:1.2;margin-bottom:3px;text-align:center"/></style>
+                                                                            <contents><textItem><dataSource><dataItemValue refDataItem="GT_COMPLETAS"/></dataSource><style><CSS value="font-size:20pt"/></style></textItem></contents>
+                                                                        </block>
+                                                                    </contents>
+                                                                </tableCell>
+                                                            </tableCells></tableRow></tableRows>
+                                                        </table>
+                                                    <block><style><CSS value="font-size: 6pt; color: #86efac; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; text-align: center;"/></style>
+                                                                            <contents><textItem><dataSource><staticValue> </staticValue></dataSource></textItem></contents>
+                                                                        </block><block><style><CSS value="font-size:10pt;color:#86efac;text-transform:uppercase;letter-spacing:0.5px;font-weight:700;text-align:center"/></style>
+                                                                            <contents><textItem><dataSource><staticValue>Pallets em Doca</staticValue></dataSource></textItem></contents>
+                                                                        </block></contents>
+                                                </tableCell>
+                                                <tableCell>
+                                                    <style><CSS value="background-color: #1c0a0a; border: 1px solid #7f1d1d; border-top: 3px solid #ef4444; border-radius: 8px; padding: 8px; vertical-align: middle;"/></style>
+                                                    <contents>
+                                                        <block><style><CSS value="font-size: 6pt; color: #fca5a5; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; text-align: center;"/></style>
+                                                                            <contents><textItem><dataSource><staticValue> </staticValue></dataSource></textItem></contents>
+                                                                        </block><table><style><CSS value="width: 100%; border-collapse: collapse;"/></style>
+                                                            <tableRows><tableRow><tableCells>
+                                                                <tableCell><style><CSS value="width:28px;vertical-align:middle"/></style>
+                                                                    <contents><block><style><CSS value="font-size: 17pt; line-height: 1;"/></style>
+                                                                        <contents><textItem><dataSource><staticValue>⏳</staticValue></dataSource></textItem></contents>
+                                                                    </block></contents>
+                                                                </tableCell>
+                                                                <tableCell><style><CSS value="text-align: center; vertical-align: top; padding-left: 4px;"/></style>
+                                                                    <contents>
+                                                                        <block><style><CSS value="font-size: 17pt; font-weight: 800; color: #ef4444; text-align: center; line-height: 1.2; margin-bottom: 3px;"/></style>
+                                                                            <contents><textItem><dataSource><dataItemValue refDataItem="GT_EM_ANDAMENTO"/></dataSource><style><CSS value="font-size:20pt"/></style></textItem></contents>
+                                                                        </block>
+                                                                        <block><style><CSS value="font-size: 6pt; color: #fca5a5; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; text-align: center;"/></style>
+                                                                            <contents><block>
+			<contents/>
+		</block></contents>
+                                                                        </block>
+                                                                    <block><style><CSS value="font-size: 6pt; color: #86efac; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; text-align: center;"/></style>
+                                                                            <contents><textItem><dataSource><staticValue> </staticValue></dataSource></textItem><block><style><CSS value="font-size: 6pt; color: #fca5a5; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; text-align: center;"/></style>
+                                                                            <contents><textItem><dataSource><staticValue>Em Separação</staticValue></dataSource><style><CSS value="font-size:10pt;font-weight:700"/></style></textItem></contents>
+                                                                        </block></contents>
+                                                                        </block></contents>
+                                                                </tableCell>
+                                                            </tableCells></tableRow></tableRows>
+                                                        </table>
+                                                    </contents>
+                                                </tableCell>
+                                                <tableCell>
+                                                    <style><CSS value="background-color: #071a2e; border: 1px solid #166534; border-top: 3px solid #22c55e; border-radius: 8px; padding: 8px; vertical-align: middle;"/></style>
+                                                    <contents>
+                                                        <block><style><CSS value="font-size: 6pt; color: #fca5a5; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; text-align: center;"/></style>
+                                                                            <contents><textItem><dataSource><staticValue> </staticValue></dataSource></textItem></contents>
+                                                                        </block><table><style><CSS value="width: 100%; border-collapse: collapse;"/></style>
+                                                            <tableRows><tableRow><tableCells>
+                                                                <tableCell><style><CSS value="width: 28px; text-align: center; vertical-align: middle;"/></style>
+                                                                    <contents><block><style><CSS value="font-size: 17pt; line-height: 1;"/></style>
+                                                                        <contents><textItem><dataSource><staticValue>📦</staticValue></dataSource></textItem></contents>
+                                                                    </block></contents>
+                                                                </tableCell>
+                                                                <tableCell><style><CSS value="vertical-align:top;padding-left:4px"/></style>
+                                                                    <contents>
+                                                                        <block><style><CSS value="font-size: 17pt; font-weight: 800; color: #22c55e; text-align: center; line-height: 1.2; margin-bottom: 3px;"/></style>
+                                                                            <contents><textItem><dataSource><dataItemValue refDataItem="GT_SEPARADO"/></dataSource><style><CSS value="font-size:20pt"/></style></textItem></contents>
+                                                                        </block>
+                                                                        <block><style><CSS value="font-size: 6pt; color: #86efac; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; text-align: center;"/></style>
+                                                                            <contents/>
+                                                                        </block>
+                                                                    </contents>
+                                                                </tableCell>
+                                                            </tableCells></tableRow></tableRows>
+                                                        </table>
+                                                    <block><style><CSS value="font-size: 6pt; color: #fca5a5; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; text-align: center;"/></style>
+                                                                            <contents><textItem><dataSource><staticValue> </staticValue></dataSource></textItem><block><style><CSS value="font-size: 6pt; color: #86efac; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; text-align: center;"/></style>
+                                                                            <contents><textItem><dataSource><staticValue>Caixas Separadas</staticValue></dataSource><style><CSS value="font-size:10pt;font-weight:700"/></style></textItem></contents>
+                                                                        </block></contents>
+                                                                        </block></contents>
+                                                </tableCell>
+                                                <tableCell>
+                                                    <style><CSS value="background-color: #1c0a0a; border: 1px solid #7f1d1d; border-top: 3px solid #ef4444; border-radius: 8px; padding: 8px; vertical-align: middle;"/></style>
+                                                    <contents>
+                                                        <block><style><CSS value="font-size: 6pt; color: #fca5a5; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; text-align: center;"/></style>
+                                                                            <contents><textItem><dataSource><staticValue> </staticValue></dataSource></textItem></contents>
+                                                                        </block><table><style><CSS value="width: 100%; border-collapse: collapse;"/></style>
+                                                            <tableRows><tableRow><tableCells>
+                                                                <tableCell><style><CSS value="width: 28px; text-align: center; vertical-align: middle;"/></style>
+                                                                    <contents><block><style><CSS value="font-size: 17pt; line-height: 1;"/></style>
+                                                                        <contents><textItem><dataSource><staticValue>⚠️</staticValue></dataSource></textItem></contents>
+                                                                    </block></contents>
+                                                                </tableCell>
+                                                                <tableCell><style><CSS value="text-align: center; vertical-align: top; padding-left: 4px;"/></style>
+                                                                    <contents>
+                                                                        <block><style><CSS value="font-size: 17pt; font-weight: 800; color: #ef4444; text-align: center; line-height: 1.2; margin-bottom: 3px;"/></style>
+                                                                            <contents><textItem><dataSource><dataItemValue refDataItem="GT_PENDENTE"/></dataSource><style><CSS value="font-size:20pt"/></style></textItem></contents>
+                                                                        </block>
+                                                                        <block><style><CSS value="font-size: 6pt; color: #fca5a5; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; text-align: center;"/></style>
+                                                                            <contents/>
+                                                                        </block>
+                                                                    </contents>
+                                                                </tableCell>
+                                                            </tableCells></tableRow></tableRows>
+                                                        </table>
+                                                    <block><style><CSS value="font-size: 6pt; color: #fca5a5; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; text-align: center;"/></style>
+                                                                            <contents><textItem><dataSource><staticValue> </staticValue></dataSource></textItem><block><style><CSS value="font-size: 6pt; color: #fca5a5; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; text-align: center;"/></style>
+                                                                            <contents><textItem><dataSource><staticValue>Caixas Pendentes</staticValue></dataSource><style><CSS value="font-size:10pt;font-weight:700"/></style></textItem></contents>
+                                                                        </block></contents>
+                                                                        </block></contents>
+                                                </tableCell>
+                                                <tableCell>
+                                                    <style><CSS value="background-color: #071a2e; border: 1px solid #166534; border-top: 3px solid #22c55e; border-radius: 8px; padding: 8px; vertical-align: middle;"/></style>
+                                                    <contents>
+                                                        <block><style><CSS value="font-size: 6pt; color: #fca5a5; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; text-align: center;"/></style>
+                                                                            <contents><textItem><dataSource><staticValue> </staticValue></dataSource></textItem></contents>
+                                                                        </block><table><style><CSS value="width: 100%; border-collapse: collapse;"/></style>
+                                                            <tableRows><tableRow><tableCells>
+                                                                <tableCell><style><CSS value="width: 28px; text-align: center; vertical-align: middle;"/></style>
+                                                                    <contents><block><style><CSS value="font-size: 17pt; line-height: 1;"/></style>
+                                                                        <contents><textItem><dataSource><staticValue>✅</staticValue></dataSource></textItem></contents>
+                                                                    </block></contents>
+                                                                </tableCell>
+                                                                <tableCell><style><CSS value="text-align: center; vertical-align: top; padding-left: 4px;"/></style>
+                                                                    <contents>
+                                                                        <block><style><CSS value="font-size: 17pt; font-weight: 800; color: #22c55e; text-align: center; line-height: 1.2; margin-bottom: 3px;"/></style>
+                                                                            <contents><textItem><dataSource><dataItemValue refDataItem="GT_EMB_COMPLETOS"/></dataSource><style><CSS value="font-size:20pt"/></style></textItem></contents>
+                                                                        </block>
+                                                                        <block><style><CSS value="font-size: 6pt; color: #86efac; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; text-align: center;"/></style>
+                                                                            <contents/>
+                                                                        </block>
+                                                                    </contents>
+                                                                </tableCell>
+                                                            </tableCells></tableRow></tableRows>
+                                                        </table>
+                                                    <block><style><CSS value="font-size: 6pt; color: #fca5a5; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; text-align: center;"/></style>
+                                                                            <contents><textItem><dataSource><staticValue> </staticValue></dataSource></textItem><block><style><CSS value="font-size: 6pt; color: #86efac; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; text-align: center;"/></style>
+                                                                            <contents><textItem><dataSource><staticValue>Emb. Completos</staticValue></dataSource><style><CSS value="font-size:10pt;font-weight:700"/></style></textItem></contents>
+                                                                        </block></contents>
+                                                                        </block></contents>
+                                                </tableCell>
+                                                <tableCell>
+                                                    <style><CSS value="background-color: #1a0f00; border: 1px solid #78350f; border-top: 3px solid #f59e0b; border-radius: 8px; padding: 8px; vertical-align: middle;"/></style>
+                                                    <contents>
+                                                        <block><style><CSS value="font-size: 6pt; color: #fca5a5; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; text-align: center;"/></style>
+                                                                            <contents><textItem><dataSource><staticValue> </staticValue></dataSource></textItem></contents>
+                                                                        </block><table><style><CSS value="width: 100%; border-collapse: collapse;"/></style>
+                                                            <tableRows><tableRow><tableCells>
+                                                                <tableCell><style><CSS value="width: 28px; text-align: center; vertical-align: middle;"/></style>
+                                                                    <contents><block><style><CSS value="font-size: 17pt; line-height: 1;"/></style>
+                                                                        <contents><textItem><dataSource><staticValue>🔄</staticValue></dataSource></textItem></contents>
+                                                                    </block></contents>
+                                                                </tableCell>
+                                                                <tableCell><style><CSS value="text-align: center; vertical-align: top; padding-left: 4px;"/></style>
+                                                                    <contents>
+                                                                        <block><style><CSS value="font-size: 17pt; font-weight: 800; color: #f59e0b; text-align: center; line-height: 1.2; margin-bottom: 3px;"/></style>
+                                                                            <contents><textItem><dataSource><dataItemValue refDataItem="GT_EMB_ANDAMENTO"/></dataSource><style><CSS value="font-size:20pt"/></style></textItem></contents>
+                                                                        </block>
+                                                                        <block><style><CSS value="font-size: 6pt; color: #fcd34d; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; text-align: center;"/></style>
+                                                                            <contents/>
+                                                                        </block>
+                                                                    </contents>
+                                                                </tableCell>
+                                                            </tableCells></tableRow></tableRows>
+                                                        </table>
+                                                    <block><style><CSS value="font-size: 6pt; color: #fca5a5; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; text-align: center;"/></style>
+                                                                            <contents><textItem><dataSource><staticValue> </staticValue></dataSource></textItem><block><style><CSS value="font-size: 6pt; color: #fcd34d; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; text-align: center;"/></style>
+                                                                            <contents><textItem><dataSource><staticValue>Emb. Andamento</staticValue></dataSource><style><CSS value="font-size:10pt;font-weight:700"/></style></textItem></contents>
+                                                                        </block></contents>
+                                                                        </block></contents>
+                                                </tableCell>
+                                                <tableCell>
+                                                    <style><CSS value="background-color: #00131f; border: 1px solid #0c4a6e; border-top: 3px solid #38bdf8; border-radius: 8px; padding: 8px; vertical-align: middle;"/></style>
+                                                    <contents>
+                                                        <block><style><CSS value="font-size: 6pt; color: #fca5a5; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; text-align: center;"/></style>
+                                                                            <contents><textItem><dataSource><staticValue> </staticValue></dataSource></textItem></contents>
+                                                                        </block><table><style><CSS value="width: 100%; border-collapse: collapse;"/></style>
+                                                            <tableRows><tableRow><tableCells>
+                                                                <tableCell><style><CSS value="width: 28px; text-align: center; vertical-align: middle;"/></style>
+                                                                    <contents><block><style><CSS value="font-size: 17pt; line-height: 1;"/></style>
+                                                                        <contents><textItem><dataSource><staticValue>🚛</staticValue></dataSource></textItem></contents>
+                                                                    </block></contents>
+                                                                </tableCell>
+                                                                <tableCell><style><CSS value="text-align: center; vertical-align: top; padding-left: 4px;"/></style>
+                                                                    <contents>
+                                                                        <block><style><CSS value="font-size: 17pt; font-weight: 800; color: #38bdf8; text-align: center; line-height: 1.2; margin-bottom: 3px;"/></style>
+                                                                            <contents><textItem><dataSource><dataItemValue refDataItem="GT_CARREGANDO"/></dataSource><style><CSS value="font-size:20pt"/></style></textItem></contents>
+                                                                        </block>
+                                                                        <block><style><CSS value="font-size: 6pt; color: #7dd3fc; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; text-align: center;"/></style>
+                                                                            <contents/>
+                                                                        </block>
+                                                                    </contents>
+                                                                </tableCell>
+                                                            </tableCells></tableRow></tableRows>
+                                                        </table>
+                                                    <block><style><CSS value="font-size: 6pt; color: #fca5a5; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; text-align: center;"/></style>
+                                                                            <contents><textItem><dataSource><staticValue> </staticValue></dataSource></textItem><block><style><CSS value="font-size: 6pt; color: #7dd3fc; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; text-align: center;"/></style>
+                                                                            <contents><textItem><dataSource><staticValue>oLPN Carregando</staticValue></dataSource><style><CSS value="font-size:10pt;font-weight:700"/></style></textItem></contents>
+                                                                        </block></contents>
+                                                                        </block></contents>
+                                                </tableCell>
+                                            </tableCells></tableRow></tableRows>
+                                        </table>
+                                    </contents>
+                                </singleton>
+                            </contents>
+                        </block>
+                        <table>
+                            <style><CSS value="width: 100%; border-collapse: collapse;"/></style>
+                            <tableRows>
+                                <tableRow>
+                                    <tableCells>
+                                        <tableCell>
+                                            <style><CSS value="padding: 0px; vertical-align: top;"/></style>
+                                            <contents>
+                                                <HTMLItem>
+                                                    <dataSource>
+                                                        <staticValue>&lt;div id=&quot;rolagem_vagner&quot; style=&quot;height: 1000px; overflow-y: auto; overflow-x: hidden; width: 100%;&quot;&gt;</staticValue>
+                                                    </dataSource>
+                                                </HTMLItem>
+                                                <repeaterTable across="5" refQuery="Consulta1">
+                                                    <style>
+                                                        <CSS value="width: 100%; table-layout: fixed; border-collapse: separate; border-spacing: 10px;"/>
+                                                    </style>
+                                                    <repeaterTableCell>
+                                                        <style><CSS value="width: 20%; vertical-align: top;"/></style>
+                                                        <contents>
+                                                            <block>
+                                                                <style><CSS value="display:none;"/></style>
+                                                                <contents>
+                                                                    <textItem><dataSource><dataItemValue refDataItem="BARRA_PALLETS_COMPLETOS"/></dataSource></textItem>
+                                                                    <textItem><dataSource><dataItemValue refDataItem="BARRA_PALLETS_ANDAMENTO"/></dataSource></textItem>
+                                                                    <textItem><dataSource><dataItemValue refDataItem="BARRA_PALLETS_AG_SEPARACAO"/></dataSource></textItem>
+                                                                    <textItem><dataSource><dataItemValue refDataItem="BARRA_CX_SEPARADAS"/></dataSource></textItem>
+                                                                    <textItem><dataSource><dataItemValue refDataItem="BARRA_CX_PENDENTES"/></dataSource></textItem>
+                                                                    <textItem><dataSource><dataItemValue refDataItem="BARRA_CX_AG_SEPARACAO"/></dataSource></textItem>
+                                                                    <textItem><dataSource><dataItemValue refDataItem="BARRA_EMB_COMPLETOS"/></dataSource></textItem>
+                                                                    <textItem><dataSource><dataItemValue refDataItem="BARRA_EMB_ANDAMENTO"/></dataSource></textItem>
+                                                                    <textItem><dataSource><dataItemValue refDataItem="BARRA_TAREFAS_COMPLETAS"/></dataSource></textItem>
+                                                                    <textItem><dataSource><dataItemValue refDataItem="BARRA_TAREFAS_EM_ANDAMENTO"/></dataSource></textItem>
+                                                                    <textItem><dataSource><dataItemValue refDataItem="BARRA_TAREFAS_AG_SEPARACAO"/></dataSource></textItem>
+                                                                </contents>
+                                                            </block>
+                                                            <block>
+                                                                <style><CSS value="width: 100%; border-radius: 14px; overflow: hidden; box-shadow: 0 6px 28px rgba(0,0,0,0.6); border: 1px solid #1e3a5f;"/></style>
+                                                                <contents>
+                                                                    <block>
+                                                                        <style><CSS value="background: linear-gradient(135deg, #0d2137 0%, #0a1929 100%); padding: 10px 14px 11px 14px; border-bottom: 3px solid #3b82f6; text-align: center;"/></style>
+                                                                        <contents>
+                                                                            <table>
+                                                                                <style><CSS value="width: 100%; border-collapse: collapse;"/></style>
+                                                                                <tableRows>
+                                                                                    <tableRow>
+                                                                                        <tableCells>
+                                                                                            <tableCell>
+                                                                                                <style><CSS value="text-align: left; vertical-align: top; width: 33%;"/></style>
+                                                                                                <contents>
+                                                                                                    <block>
+                                                                                                        <style><CSS value="background-color: rgba(59, 130, 246, 0.15); border-radius: 8px; padding: 4px 8px; display: inline-block;"/></style>
+                                                                                                        <contents>
+                                                                                                            <block>
+                                                                                                                <style><CSS value="font-size: 14pt; color: #60a5fa; display: inline-block; vertical-align: middle;"/></style>
+                                                                                                                <contents><textItem><dataSource><staticValue>👤 </staticValue></dataSource></textItem></contents>
+                                                                                                            </block>
+                                                                                                            <block>
+                                                                                                                <style><CSS value="font-size: 11pt; font-weight: 700; color: #f1f5f9; display: inline-block; vertical-align: middle; margin-left: 4px;"/></style>
+                                                                                                                <contents>
+                                                                                                                    <textItem><dataSource><dataItemValue refDataItem="COLAB_ULTIMOS_15_MIN"/></dataSource></textItem>
+                                                                                                                    <textItem><dataSource><staticValue>/</staticValue></dataSource></textItem>
+                                                                                                                    <textItem><dataSource><dataItemValue refDataItem="COLAB_ULTIMA_HORA"/></dataSource></textItem>
+                                                                                                                </contents>
+                                                                                                            </block>
+                                                                                                        </contents>
+                                                                                                    </block>
+                                                                                                </contents>
+                                                                                            </tableCell>
+                                                                                            <tableCell>
+                                                                                                <style><CSS value="text-align: center; vertical-align: middle;"/></style>
+                                                                                                <contents>
+                                                                                                    <block>
+                                                                                                        <style><CSS value="font-size: 15pt; font-weight: 800; color: #e2e8f0; letter-spacing: 1px; text-transform: uppercase;"/></style>
+                                                                                                        <contents><textItem><dataSource><dataItemValue refDataItem="CELULAS"/></dataSource></textItem></contents>
+                                                                                                    </block>
+                                                                                                </contents>
+                                                                                            </tableCell>
+                                                                                            <tableCell>
+                                                                                                <style><CSS value="text-align: right; vertical-align: top; width: 33%;"/></style>
+                                                                                                <contents>
+                                                                                                    <block>
+                                                                                                        <style><CSS value="font-size: 9pt; font-weight: 700; color: #f1f5f9; text-transform: uppercase;"/></style>
+                                                                                                        <contents><textItem><dataSource><dataItemValue refDataItem="FAROL"/></dataSource></textItem></contents>
+                                                                                                    </block>
+                                                                                                </contents>
+                                                                                            </tableCell>
+                                                                                        </tableCells>
+                                                                                    </tableRow>
+                                                                                </tableRows>
+                                                                            </table>
+                                                                            <block>
+                                                                                <style><CSS value="margin-top:4px;font-size:8.5pt;color:#FFFFFF"/></style>
+                                                                                <contents>
+                                                                                    <textItem><dataSource><dataItemValue refDataItem="TOTAL_DE_OLPN"/></dataSource></textItem>
+                                                                                    <textItem><dataSource><staticValue> / </staticValue></dataSource></textItem><textItem><dataSource><dataItemValue refDataItem="CAPACIDADE_TOTAL"/></dataSource></textItem><textItem><dataSource><staticValue>  (</staticValue></dataSource></textItem>
+                                                                                    <textItem><dataSource><dataItemValue refDataItem="PCT_OCUPACAO"/></dataSource></textItem>
+                                                                                    <textItem><dataSource><staticValue>%)</staticValue></dataSource></textItem>
+                                                                                </contents>
+                                                                            </block>
+                                                                            <block>
+                                                                                <style><CSS value="margin-top: 7px; background-color: #0c3058; border: 1px solid #1d4ed8; border-radius: 20px; padding: 3px 12px; display: inline-block;"/></style>
+                                                                                <contents>
+                                                                                    <block><style><CSS value="font-size:10pt;font-weight:700;color:#60a5fa"/></style>
+                                                                                        <contents>
+                                                                                            <textItem><dataSource><staticValue>📥 </staticValue></dataSource></textItem>
+                                                                                            <textItem><dataSource><dataItemValue refDataItem="TOTAL_DISPONIVEL"/></dataSource></textItem>
+                                                                                            <textItem><dataSource><staticValue> vagas livres</staticValue></dataSource></textItem>
+                                                                                        </contents>
+                                                                                    </block>
+                                                                                </contents>
+                                                                            </block>
+                                                                        </contents>
+                                                                    </block>
+                                                                    <block>
+                                                                        <style><CSS value="background-color: #0d1b2a; padding: 12px;"/></style>
+                                                                        <contents>
+                                                                            <block>
+                                                                                <style><CSS value="background-color: #071e38; border-radius: 9px; padding: 11px; margin-bottom: 8px; border-left: 4px solid #3b82f6;"/></style>
+                                                                                <contents>
+                                                                                    <table><style><CSS value="width: 100%;"/></style>
+                                                                                        <tableRows>
+                                                                                            <tableRow><tableCells>
+                                                                                                <tableCell><style><CSS value="vertical-align: middle; padding-bottom: 5px;"/></style>
+                                                                                                    <contents><block><style><CSS value="font-size:12pt;text-transform:uppercase;letter-spacing:1.5px"/></style>
+                                                                                                        <contents><textItem><dataSource><staticValue>▪ PALLETS</staticValue></dataSource><style><CSS value="color:#425FFF"/></style></textItem></contents>
+                                                                                                    </block></contents>
+                                                                                                </tableCell>
+                                                                                                <tableCell><style><CSS value="text-align: right; vertical-align: middle; padding-bottom: 5px;"/></style>
+                                                                                                    <contents><block><style><CSS value="font-size: 19pt; font-weight: 800; color: #e2e8f0; line-height: 1;"/></style>
+                                                                                                        <contents><textItem><dataSource><dataItemValue refDataItem="TOTAL_DE_OLPN"/></dataSource></textItem></contents>
+                                                                                                    </block></contents>
+                                                                                                </tableCell>
+                                                                                            </tableCells></tableRow>
+                                                                                            <tableRow><tableCells>
+                                                                                                <tableCell><style><CSS value="border-top: 1px solid #1e3a5f; padding: 0; height: 1px;"/></style><contents/></tableCell>
+                                                                                                <tableCell><style><CSS value="border-top: 1px solid #1e3a5f; padding: 0; height: 1px;"/></style><contents/></tableCell>
+                                                                                            </tableCells></tableRow>
+                                                                                            <tableRow><tableCells>
+                                                                                                <tableCell><style><CSS value="padding: 5px 0 2px 0; font-size: 9pt; color: #94a3b8; white-space: nowrap;"/></style>
+                                                                                                    <contents><textItem><dataSource><staticValue>✔ Completos (Doca)</staticValue></dataSource><style><CSS value="font-size:11pt;color:white"/></style></textItem><HTMLItem><dataSource><reportExpression>&apos;&lt;div style=&quot;width: 60px; background-color: #1e3a5f; height: 6px; border-radius: 3px; display: inline-block; vertical-align: middle; margin-left: 10px;&quot;&gt;&lt;div style=&quot;background-color: #4ade80; height: 100%; border-radius: 3px; width: &apos; + number2string([BARRA_PALLETS_COMPLETOS]) + &apos;%;&quot;&gt;&lt;/div&gt;&lt;/div&gt;&apos;</reportExpression></dataSource></HTMLItem></contents>
+                                                                                                </tableCell>
+                                                                                                <tableCell><style><CSS value="text-align: right; padding: 5px 0 2px 0;"/></style>
+                                                                                                    <contents><block><style><CSS value="padding:1px 8px 1px 8px;font-size:11pt;font-weight:700;color:#4ade80;background-color:#052e16;border-radius:5px;display:inline"/></style>
+                                                                                                        <contents><textItem><dataSource><dataItemValue refDataItem="OLPNS_COMPLETAS"/></dataSource></textItem></contents>
+                                                                                                    </block></contents>
+                                                                                                </tableCell>
+                                                                                            </tableCells></tableRow>
+                                                                                            <tableRow><tableCells>
+                                                                                                <tableCell><style><CSS value="padding: 2px 0; font-size: 9pt; color: #94a3b8; white-space: nowrap;"/></style>
+                                                                                                    <contents><textItem><dataSource><staticValue>⏳ Em Separação</staticValue></dataSource><style><CSS value="font-size:11pt;color:white"/></style></textItem><HTMLItem><dataSource><reportExpression>&apos;&lt;div style=&quot;width: 60px; background-color: #1e3a5f; height: 6px; border-radius: 3px; display: inline-block; vertical-align: middle; margin-left: 10px;&quot;&gt;&lt;div style=&quot;background-color: #f59e0b; height: 100%; border-radius: 3px; width: &apos; + number2string([BARRA_PALLETS_ANDAMENTO]) + &apos;%;&quot;&gt;&lt;/div&gt;&lt;/div&gt;&apos;</reportExpression></dataSource></HTMLItem></contents>
+                                                                                                </tableCell>
+                                                                                                <tableCell><style><CSS value="text-align: right; padding: 2px 0;"/></style>
+                                                                                                    <contents><block><style><CSS value="padding:1px 8px 1px 8px;font-size:11pt;font-weight:700;color:#FFFFFF;background-color:#422006;border-radius:5px;display:inline"/></style>
+                                                                                                        <contents><textItem><dataSource><dataItemValue refDataItem="OLPNS_EM_ANDAMENTO"/></dataSource></textItem></contents>
+                                                                                                    </block></contents>
+                                                                                                </tableCell>
+                                                                                            </tableCells></tableRow>
+                                                                                            <tableRow><tableCells>
+                                                                                                <tableCell><style><CSS value="padding: 2px 0; font-size: 9pt; color: #94a3b8; white-space: nowrap;"/></style>
+                                                                                                    <contents><textItem><dataSource><staticValue>🛑 Ag. Separação</staticValue></dataSource><style><CSS value="font-size:11pt;color:white"/></style></textItem><HTMLItem><dataSource><reportExpression>&apos;&lt;div style=&quot;width: 60px; background-color: #1e3a5f; height: 6px; border-radius: 3px; display: inline-block; vertical-align: middle; margin-left: 10px;&quot;&gt;&lt;div style=&quot;background-color: #ef4444; height: 100%; border-radius: 3px; width: &apos; + number2string([BARRA_PALLETS_AG_SEPARACAO]) + &apos;%;&quot;&gt;&lt;/div&gt;&lt;/div&gt;&apos;</reportExpression></dataSource></HTMLItem></contents>
+                                                                                                </tableCell>
+                                                                                                <tableCell><style><CSS value="text-align: right; padding: 2px 0;"/></style>
+                                                                                                    <contents><block><style><CSS value="padding:1px 8px 1px 8px;font-size:11pt;font-weight:700;color:#FFFFFF;background-color:#450a0a;border-radius:5px;display:inline"/></style>
+                                                                                                        <contents><textItem><dataSource><dataItemValue refDataItem="OLPNS_AG_SEPARACAO"/></dataSource></textItem></contents>
+                                                                                                    </block></contents>
+                                                                                                </tableCell>
+                                                                                            </tableCells></tableRow>
+                                                                                        </tableRows>
+                                                                                    </table>
+                                                                                </contents>
+                                                                            </block>
+                                                                            <block>
+                                                                                <style><CSS value="background-color: #120d2e; border-radius: 9px; padding: 11px; margin-bottom: 8px; border-left: 4px solid #7c3aed;"/></style>
+                                                                                <contents>
+                                                                                    <table><style><CSS value="width: 100%;"/></style>
+                                                                                        <tableRows>
+                                                                                            <tableRow><tableCells>
+                                                                                                <tableCell><style><CSS value="vertical-align: middle; padding-bottom: 5px;"/></style>
+                                                                                                    <contents><block><style><CSS value="font-size:12pt;text-transform:uppercase;letter-spacing:1.5px;color:#BB00BB"/></style>
+                                                                                                        <contents><textItem><dataSource><staticValue>▪ CAIXAS</staticValue></dataSource></textItem></contents>
+                                                                                                    </block></contents>
+                                                                                                </tableCell>
+                                                                                                <tableCell><style><CSS value="text-align: right; vertical-align: middle; padding-bottom: 5px;"/></style>
+                                                                                                    <contents><block><style><CSS value="font-size: 19pt; font-weight: 800; color: #e2e8f0; line-height: 1;"/></style>
+                                                                                                        <contents><textItem><dataSource><dataItemValue refDataItem="TOTAL_QTD"/></dataSource></textItem></contents>
+                                                                                                    </block></contents>
+                                                                                                </tableCell>
+                                                                                            </tableCells></tableRow>
+                                                                                            <tableRow><tableCells>
+                                                                                                <tableCell><style><CSS value="border-top: 1px solid #2d1b69; padding: 0; height: 1px;"/></style><contents/></tableCell>
+                                                                                                <tableCell><style><CSS value="border-top: 1px solid #2d1b69; padding: 0; height: 1px;"/></style><contents/></tableCell>
+                                                                                            </tableCells></tableRow>
+                                                                                            <tableRow><tableCells>
+                                                                                                <tableCell><style><CSS value="padding: 5px 0 2px 0; font-size: 9pt; color: #94a3b8; white-space: nowrap;"/></style>
+                                                                                                    <contents><textItem><dataSource><staticValue>✔ Separadas</staticValue></dataSource><style><CSS value="font-size:11pt;color:white"/></style></textItem><HTMLItem><dataSource><reportExpression>&apos;&lt;div style=&quot;width: 60px; background-color: #2d1b69; height: 6px; border-radius: 3px; display: inline-block; vertical-align: middle; margin-left: 10px;&quot;&gt;&lt;div style=&quot;background-color: #4ade80; height: 100%; border-radius: 3px; width: &apos; + number2string([BARRA_CX_SEPARADAS]) + &apos;%;&quot;&gt;&lt;/div&gt;&lt;/div&gt;&apos;</reportExpression></dataSource></HTMLItem></contents>
+                                                                                                </tableCell>
+                                                                                                <tableCell><style><CSS value="text-align: right; padding: 5px 0 2px 0;"/></style>
+                                                                                                    <contents><block><style><CSS value="padding:1px 8px 1px 8px;font-size:11pt;font-weight:700;color:#4ade80;background-color:#052e16;border-radius:5px;display:inline"/></style>
+                                                                                                        <contents><textItem><dataSource><dataItemValue refDataItem="SEPARADO"/></dataSource></textItem></contents>
+                                                                                                    </block></contents>
+                                                                                                </tableCell>
+                                                                                            </tableCells></tableRow>
+                                                                                            <tableRow><tableCells>
+                                                                                                <tableCell><style><CSS value="padding: 2px 0; font-size: 9pt; color: #94a3b8; white-space: nowrap;"/></style>
+                                                                                                    <contents><textItem><dataSource><staticValue>⏳ Em Separação</staticValue></dataSource><style><CSS value="font-size:11pt;color:white"/></style></textItem><HTMLItem><dataSource><reportExpression>&apos;&lt;div style=&quot;width: 60px; background-color: #2d1b69; height: 6px; border-radius: 3px; display: inline-block; vertical-align: middle; margin-left: 10px;&quot;&gt;&lt;div style=&quot;background-color: #f59e0b; height: 100%; border-radius: 3px; width: &apos; + number2string([BARRA_CX_PENDENTES]) + &apos;%;&quot;&gt;&lt;/div&gt;&lt;/div&gt;&apos;</reportExpression></dataSource></HTMLItem></contents>
+                                                                                                </tableCell>
+                                                                                                <tableCell><style><CSS value="text-align: right; padding: 2px 0;"/></style>
+                                                                                                    <contents><block><style><CSS value="padding:1px 8px 1px 8px;font-size:11pt;font-weight:700;color:#FFFFFF;background-color:#422006;border-radius:5px;display:inline"/></style>
+                                                                                                        <contents><textItem><dataSource><dataItemValue refDataItem="PENDENTE"/></dataSource></textItem></contents>
+                                                                                                    </block></contents>
+                                                                                                </tableCell>
+                                                                                            </tableCells></tableRow>
+                                                                                            <tableRow><tableCells>
+                                                                                                <tableCell><style><CSS value="padding: 2px 0; font-size: 9pt; color: #94a3b8; white-space: nowrap;"/></style>
+                                                                                                    <contents><textItem><dataSource><staticValue>🛑 Ag. Separação</staticValue></dataSource><style><CSS value="font-size:11pt;color:white"/></style></textItem><HTMLItem><dataSource><reportExpression>&apos;&lt;div style=&quot;width: 60px; background-color: #2d1b69; height: 6px; border-radius: 3px; display: inline-block; vertical-align: middle; margin-left: 10px;&quot;&gt;&lt;div style=&quot;background-color: #ef4444; height: 100%; border-radius: 3px; width: &apos; + number2string([BARRA_CX_AG_SEPARACAO]) + &apos;%;&quot;&gt;&lt;/div&gt;&lt;/div&gt;&apos;</reportExpression></dataSource></HTMLItem></contents>
+                                                                                                </tableCell>
+                                                                                                <tableCell><style><CSS value="text-align: right; padding: 2px 0;"/></style>
+                                                                                                    <contents><block><style><CSS value="padding:1px 8px 1px 8px;font-size:11pt;font-weight:700;color:#FFFFFF;background-color:#450a0a;border-radius:5px;display:inline"/></style>
+                                                                                                        <contents><textItem><dataSource><dataItemValue refDataItem="CX_AG_SEPARACAO"/></dataSource></textItem></contents>
+                                                                                                    </block></contents>
+                                                                                                </tableCell>
+                                                                                            </tableCells></tableRow>
+                                                                                        </tableRows>
+                                                                                    </table>
+                                                                                </contents>
+                                                                            </block>
+                                                                            <block>
+                                                                                <style><CSS value="background-color: #022c22; border-radius: 9px; padding: 11px; margin-bottom: 8px; border-left: 4px solid #10b981;"/></style>
+                                                                                <contents>
+                                                                                    <table><style><CSS value="width: 100%;"/></style>
+                                                                                        <tableRows>
+                                                                                            <tableRow><tableCells>
+                                                                                                <tableCell><style><CSS value="vertical-align: middle; padding-bottom: 5px;"/></style>
+                                                                                                    <contents><block><style><CSS value="font-size:12pt;text-transform:uppercase;letter-spacing:1.5px;color:#34d399"/></style>
+                                                                                                        <contents><textItem><dataSource><staticValue>▪ TAREFAS</staticValue></dataSource></textItem></contents>
+                                                                                                    </block></contents>
+                                                                                                </tableCell>
+                                                                                                <tableCell><style><CSS value="text-align: right; vertical-align: middle; padding-bottom: 5px;"/></style>
+                                                                                                    <contents><block><style><CSS value="font-size: 19pt; font-weight: 800; color: #e2e8f0; line-height: 1;"/></style>
+                                                                                                        <contents><textItem><dataSource><dataItemValue refDataItem="TOTAL_TAREFAS"/></dataSource></textItem></contents>
+                                                                                                    </block></contents>
+                                                                                                </tableCell>
+                                                                                            </tableCells></tableRow>
+                                                                                            <tableRow><tableCells>
+                                                                                                <tableCell><style><CSS value="border-top: 1px solid #064e3b; padding: 0; height: 1px;"/></style><contents/></tableCell>
+                                                                                                <tableCell><style><CSS value="border-top: 1px solid #064e3b; padding: 0; height: 1px;"/></style><contents/></tableCell>
+                                                                                            </tableCells></tableRow>
+                                                                                            <tableRow><tableCells>
+                                                                                                <tableCell><style><CSS value="padding: 5px 0 2px 0; font-size: 9pt; color: #94a3b8; white-space: nowrap;"/></style>
+                                                                                                    <contents><textItem><dataSource><staticValue>✔ Completas</staticValue></dataSource><style><CSS value="font-size:11pt;color:white"/></style></textItem><HTMLItem><dataSource><reportExpression>&apos;&lt;div style=&quot;width: 60px; background-color: #064e3b; height: 6px; border-radius: 3px; display: inline-block; vertical-align: middle; margin-left: 10px;&quot;&gt;&lt;div style=&quot;background-color: #4ade80; height: 100%; border-radius: 3px; width: &apos; + number2string([BARRA_TAREFAS_COMPLETAS]) + &apos;%;&quot;&gt;&lt;/div&gt;&lt;/div&gt;&apos;</reportExpression></dataSource></HTMLItem></contents>
+                                                                                                </tableCell>
+                                                                                                <tableCell><style><CSS value="text-align: right; padding: 5px 0 2px 0;"/></style>
+                                                                                                    <contents><block><style><CSS value="padding:1px 8px 1px 8px;font-size:11pt;font-weight:700;color:#4ADE80;background-color:#052e16;border-radius:5px;display:inline"/></style>
+                                                                                                        <contents><textItem><dataSource><dataItemValue refDataItem="TAREFAS_COMPLETAS"/></dataSource></textItem></contents>
+                                                                                                    </block></contents>
+                                                                                                </tableCell>
+                                                                                            </tableCells></tableRow>
+                                                                                            <tableRow><tableCells>
+                                                                                                <tableCell><style><CSS value="padding: 2px 0 2px 0; font-size: 9pt; color: #94a3b8; white-space: nowrap;"/></style>
+                                                                                                    <contents><textItem><dataSource><staticValue>⏳ Em Andamento</staticValue></dataSource><style><CSS value="font-size:11pt;color:white"/></style></textItem><HTMLItem><dataSource><reportExpression>&apos;&lt;div style=&quot;width: 60px; background-color: #064e3b; height: 6px; border-radius: 3px; display: inline-block; vertical-align: middle; margin-left: 10px;&quot;&gt;&lt;div style=&quot;background-color: #f59e0b; height: 100%; border-radius: 3px; width: &apos; + number2string([BARRA_TAREFAS_EM_ANDAMENTO]) + &apos;%;&quot;&gt;&lt;/div&gt;&lt;/div&gt;&apos;</reportExpression></dataSource></HTMLItem></contents>
+                                                                                                </tableCell>
+                                                                                                <tableCell><style><CSS value="text-align: right; padding: 2px 0 2px 0;"/></style>
+                                                                                                    <contents><block><style><CSS value="padding:1px 8px 1px 8px;font-size:11pt;font-weight:700;color:#FFFFFF;background-color:#422006;border-radius:5px;display:inline"/></style>
+                                                                                                        <contents><textItem><dataSource><dataItemValue refDataItem="TAREFAS_EM_ANDAMENTO"/></dataSource></textItem></contents>
+                                                                                                    </block></contents>
+                                                                                                </tableCell>
+                                                                                            </tableCells></tableRow>
+                                                                                            <tableRow><tableCells>
+                                                                                                <tableCell><style><CSS value="padding: 2px 0; font-size: 9pt; color: #94a3b8; white-space: nowrap;"/></style>
+                                                                                                    <contents><textItem><dataSource><staticValue>🛑 Ag. Separação</staticValue></dataSource><style><CSS value="font-size:11pt;color:white"/></style></textItem><HTMLItem><dataSource><reportExpression>&apos;&lt;div style=&quot;width: 60px; background-color: #064e3b; height: 6px; border-radius: 3px; display: inline-block; vertical-align: middle; margin-left: 10px;&quot;&gt;&lt;div style=&quot;background-color: #ef4444; height: 100%; border-radius: 3px; width: &apos; + number2string([BARRA_TAREFAS_AG_SEPARACAO]) + &apos;%;&quot;&gt;&lt;/div&gt;&lt;/div&gt;&apos;</reportExpression></dataSource></HTMLItem></contents>
+                                                                                                </tableCell>
+                                                                                                <tableCell><style><CSS value="text-align: right; padding: 2px 0;"/></style>
+                                                                                                    <contents><block><style><CSS value="padding:1px 8px 1px 8px;font-size:11pt;font-weight:700;color:#FFFFFF;background-color:#450a0a;border-radius:5px;display:inline"/></style>
+                                                                                                        <contents><textItem><dataSource><dataItemValue refDataItem="TAREFAS_AG_SEPARACAO"/></dataSource></textItem></contents>
+                                                                                                    </block></contents>
+                                                                                                </tableCell>
+                                                                                            </tableCells></tableRow>
+                                                                                        </tableRows>
+                                                                                    </table>
+                                                                                </contents>
+                                                                            </block>
+                                                                            <block>
+                                                                                <style><CSS value="background-color: #1a1000; border-radius: 9px; padding: 11px; border-left: 4px solid #d97706;"/></style>
+                                                                                <contents>
+                                                                                    <table><style><CSS value="width: 100%;"/></style>
+                                                                                        <tableRows>
+                                                                                            <tableRow><tableCells>
+                                                                                                <tableCell><style><CSS value="vertical-align: middle; padding-bottom: 5px;"/></style>
+                                                                                                    <contents><block><style><CSS value="font-size: 7pt; font-weight: 700; color: #fbbf24; text-transform: uppercase; letter-spacing: 1.5px;"/></style>
+                                                                                                        <contents><textItem><dataSource><staticValue>▪ EMBARQUES</staticValue></dataSource><style><CSS value="font-size:12pt"/></style></textItem></contents>
+                                                                                                    </block></contents>
+                                                                                                </tableCell>
+                                                                                                <tableCell><style><CSS value="text-align: right; vertical-align: middle; padding-bottom: 5px;"/></style>
+                                                                                                    <contents><block><style><CSS value="font-size: 19pt; font-weight: 800; color: #e2e8f0; line-height: 1;"/></style>
+                                                                                                        <contents><textItem><dataSource><dataItemValue refDataItem="TOTAL_DE_EMBARQUES"/></dataSource></textItem></contents>
+                                                                                                    </block></contents>
+                                                                                                </tableCell>
+                                                                                            </tableCells></tableRow>
+                                                                                            <tableRow><tableCells>
+                                                                                                <tableCell><style><CSS value="border-top: 1px solid #3d2000; padding: 0; height: 1px;"/></style><contents/></tableCell>
+                                                                                                <tableCell><style><CSS value="border-top: 1px solid #3d2000; padding: 0; height: 1px;"/></style><contents/></tableCell>
+                                                                                            </tableCells></tableRow>
+                                                                                            <tableRow><tableCells>
+                                                                                                <tableCell><style><CSS value="padding: 5px 0 2px 0; font-size: 9pt; color: #94a3b8; white-space: nowrap;"/></style>
+                                                                                                    <contents><textItem><dataSource><staticValue>✔ Completos</staticValue></dataSource><style><CSS value="font-size:11pt;color:white"/></style></textItem><HTMLItem><dataSource><reportExpression>&apos;&lt;div style=&quot;width: 60px; background-color: #3d2000; height: 6px; border-radius: 3px; display: inline-block; vertical-align: middle; margin-left: 10px;&quot;&gt;&lt;div style=&quot;background-color: #4ade80; height: 100%; border-radius: 3px; width: &apos; + number2string([BARRA_EMB_COMPLETOS]) + &apos;%;&quot;&gt;&lt;/div&gt;&lt;/div&gt;&apos;</reportExpression></dataSource></HTMLItem></contents>
+                                                                                                </tableCell>
+                                                                                                <tableCell><style><CSS value="text-align: right; padding: 5px 0 2px 0;"/></style>
+                                                                                                    <contents><block><style><CSS value="padding:1px 8px 1px 8px;font-size:11pt;font-weight:700;color:#4ADE80;background-color:#052e16;border-radius:5px;display:inline"/></style>
+                                                                                                        <contents><textItem><dataSource><dataItemValue refDataItem="EMBARQUES_COMPLETOS"/></dataSource></textItem></contents>
+                                                                                                    </block></contents>
+                                                                                                </tableCell>
+                                                                                            </tableCells></tableRow>
+                                                                                            <tableRow><tableCells>
+                                                                                                <tableCell><style><CSS value="padding: 2px 0 7px 0; font-size: 9pt; color: #94a3b8; white-space: nowrap;"/></style>
+                                                                                                    <contents><textItem><dataSource><staticValue>⏳ Em Andamento</staticValue></dataSource><style><CSS value="font-size:11pt;color:white"/></style></textItem><HTMLItem><dataSource><reportExpression>&apos;&lt;div style=&quot;width: 60px; background-color: #3d2000; height: 6px; border-radius: 3px; display: inline-block; vertical-align: middle; margin-left: 10px;&quot;&gt;&lt;div style=&quot;background-color: #f59e0b; height: 100%; border-radius: 3px; width: &apos; + number2string([BARRA_EMB_ANDAMENTO]) + &apos;%;&quot;&gt;&lt;/div&gt;&lt;/div&gt;&apos;</reportExpression></dataSource></HTMLItem></contents>
+                                                                                                </tableCell>
+                                                                                                <tableCell><style><CSS value="text-align: right; padding: 2px 0 7px 0;"/></style>
+                                                                                                    <contents><block><style><CSS value="padding:1px 8px 1px 8px;font-size:11pt;font-weight:700;color:#FFFFFF;background-color:#450a0a;border-radius:5px;display:inline"/></style>
+                                                                                                        <contents><textItem><dataSource><dataItemValue refDataItem="EMBARQUES_EM_ANDAMENTO"/></dataSource></textItem></contents>
+                                                                                                    </block></contents>
+                                                                                                </tableCell>
+                                                                                            </tableCells></tableRow>
+                                                                                            <tableRow><tableCells>
+                                                                                                <tableCell><style><CSS value="border-top: 1px dashed #3d2000; padding: 0; height: 1px;"/></style><contents/></tableCell>
+                                                                                                <tableCell><style><CSS value="border-top: 1px dashed #3d2000; padding: 0; height: 1px;"/></style><contents/></tableCell>
+                                                                                            </tableCells></tableRow>
+                                                                                            <tableRow><tableCells>
+                                                                                                <tableCell><style><CSS value="padding: 7px 0 0 0;"/></style>
+                                                                                                    <contents><block><style><CSS value="font-size: 9pt; font-weight: 700; color: #38bdf8;"/></style>
+                                                                                                        <contents><textItem><dataSource><staticValue>🚛 Pallets em Carregamento</staticValue></dataSource><style><CSS value="font-size:11pt"/></style></textItem></contents>
+                                                                                                    </block></contents>
+                                                                                                </tableCell>
+                                                                                                <tableCell><style><CSS value="text-align: right; padding: 7px 0 0 0;"/></style>
+                                                                                                    <contents><block><style><CSS value="padding:2px 10px 2px 10px;font-size:12pt;font-weight:800;color:#38bdf8;background-color:#0c2a47;border-radius:7px;display:inline"/></style>
+                                                                                                        <contents><textItem><dataSource><dataItemValue refDataItem="OLPNS_A_CARREGAR"/></dataSource></textItem></contents>
+                                                                                                    </block></contents>
+                                                                                                </tableCell>
+                                                                                            </tableCells></tableRow>
+                                                                                        </tableRows>
+                                                                                    </table>
+                                                                                </contents>
+                                                                            </block>
+                                                                        </contents>
+                                                                    </block>
+                                                                </contents>
+                                                            </block>
+                                                        </contents>
+                                                    </repeaterTableCell>
+                                                <sortList><sortItem refDataItem="CELULAS"/></sortList></repeaterTable>
+                                            <block>
+			<contents><textItem><dataSource><staticValue> </staticValue></dataSource></textItem><HTMLItem>
+                                                    <dataSource>
+                                                        <staticValue>&lt;/div&gt;
+&lt;style&gt;
+    ::-webkit-scrollbar {
+        width: 0px !important;
+        background: transparent !important;
+    }
+    #rolagem_vagner::-webkit-scrollbar { 
+        width: 6px !important; 
+    }
+    #rolagem_vagner::-webkit-scrollbar-track { 
+        background: transparent !important; 
+    }
+    #rolagem_vagner::-webkit-scrollbar-thumb { 
+        background: #1e3a5f !important; 
+        border-radius: 4px !important;
+    }
+&lt;/style&gt;
+&lt;script&gt;
+    if (typeof window.motorRolagem !== &apos;undefined&apos;) {
+        clearInterval(window.motorRolagem);
+    }
+    window.direcao = 1;
+    window.pausado = false;
+    window.motorRolagem = setInterval(function() {
+        var caixa = document.getElementById(&quot;rolagem_vagner&quot;);
+        if (caixa !== null) {
+            if (caixa.getAttribute(&quot;data-sensor&quot;) !== &quot;ok&quot;) {
+                caixa.addEventListener(&quot;mouseenter&quot;, function() { window.pausado = true; });
+                caixa.addEventListener(&quot;mouseleave&quot;, function() { window.pausado = false; });
+                caixa.setAttribute(&quot;data-sensor&quot;, &quot;ok&quot;);
+            }
+            if (window.pausado === false) {
+                var posicaoAntes = caixa.scrollTop;
+                caixa.scrollTop = caixa.scrollTop + window.direcao;
+                if (posicaoAntes === caixa.scrollTop) {
+                    window.direcao = window.direcao * -1; 
+                }
+            }
+        }
+    }, 70); 
+&lt;/script&gt;</staticValue>
+                                                    </dataSource>
+                                                </HTMLItem><block>
+			<contents/>
+		<style><CSS value="height:90px"/></style></block></contents>
+		<style><CSS value="height:30px"/></style></block></contents>
+                                        </tableCell>
+                                    </tableCells>
+                                </tableRow>
+                            </tableRows>
+                        </table>
+                        </contents>
+                    </pageBody>
+                </page>
+            </reportPages>
+        </layout>
+    </layouts>
+    <XMLAttributes><XMLAttribute output="no" name="RS_CreateExtendedDataItems" value="false"/><XMLAttribute output="no" name="listSeparator" value=";"/><XMLAttribute output="no" name="RS_modelModificationTime" value="2025-03-28T19:35:55.146Z"/></XMLAttributes>
+    <queries>
+        <query name="Consulta1">
+            <source>
+                <sqlQuery name="SQL1" dataSource="WMOS">
+                    <sqlText>    WITH BaseCelulas AS (
+        SELECT 
+            CASE 
+                WHEN CAST(lh.LOCN_ID AS NUMBER) BETWEEN 659685 AND 659690 THEN &apos;CÉLULA 06&apos;
+                WHEN CAST(lh.LOCN_ID AS NUMBER) BETWEEN 659691 AND 659696 THEN &apos;CÉLULA 07&apos;
+                WHEN CAST(lh.LOCN_ID AS NUMBER) BETWEEN 659697 AND 659702 THEN &apos;CÉLULA 08&apos;
+                WHEN CAST(lh.LOCN_ID AS NUMBER) BETWEEN 659703 AND 659708 THEN &apos;CÉLULA 09&apos;
+                WHEN CAST(lh.LOCN_ID AS NUMBER) BETWEEN 659709 AND 659714 THEN &apos;CÉLULA 10&apos;
+                WHEN CAST(lh.LOCN_ID AS NUMBER) BETWEEN 659715 AND 659720 THEN &apos;CÉLULA 11&apos;
+                WHEN CAST(lh.LOCN_ID AS NUMBER) BETWEEN 659721 AND 659726 THEN &apos;CÉLULA 12&apos;
+                WHEN CAST(lh.LOCN_ID AS NUMBER) BETWEEN 659727 AND 659732 THEN &apos;CÉLULA 13&apos;
+                WHEN CAST(lh.LOCN_ID AS NUMBER) BETWEEN 659733 AND 659738 THEN &apos;CÉLULA 14&apos;
+                WHEN CAST(lh.LOCN_ID AS NUMBER) BETWEEN 659739 AND 659744 THEN &apos;CÉLULA 15&apos;
+                WHEN CAST(lh.LOCN_ID AS NUMBER) BETWEEN 659745 AND 659750 THEN &apos;CÉLULA 16&apos;
+                WHEN CAST(lh.LOCN_ID AS NUMBER) BETWEEN 659751 AND 659756 THEN &apos;CÉLULA 17&apos;
+                WHEN CAST(lh.LOCN_ID AS NUMBER) BETWEEN 659757 AND 659762 THEN &apos;CÉLULA 18&apos;
+                WHEN CAST(lh.LOCN_ID AS NUMBER) BETWEEN 659763 AND 659768 THEN &apos;CÉLULA 19&apos;
+                WHEN CAST(lh.LOCN_ID AS NUMBER) BETWEEN 659769 AND 659774 THEN &apos;CÉLULA 20&apos;
+            END AS CELULAS,
+            SUM(pk.MAX_UOM_QTY) AS CAPACIDADE_TOTAL
+        FROM LOCN_HDR lh
+        LEFT JOIN PKT_CONSOL_LOCN pk ON lh.LOCN_ID = pk.LOCN_ID
+        WHERE (CAST(lh.LOCN_ID AS NUMBER) BETWEEN 659685 AND 659774)
+        AND PKT_CONSOL_FLAG = &apos;1&apos;       
+        and REC_TYPE = &apos;P&apos;
+        GROUP BY
+            CASE
+                WHEN CAST(lh.LOCN_ID AS NUMBER) BETWEEN 659685 AND 659690 THEN &apos;CÉLULA 06&apos;
+                WHEN CAST(lh.LOCN_ID AS NUMBER) BETWEEN 659691 AND 659696 THEN &apos;CÉLULA 07&apos;
+                WHEN CAST(lh.LOCN_ID AS NUMBER) BETWEEN 659697 AND 659702 THEN &apos;CÉLULA 08&apos;
+                WHEN CAST(lh.LOCN_ID AS NUMBER) BETWEEN 659703 AND 659708 THEN &apos;CÉLULA 09&apos;
+                WHEN CAST(lh.LOCN_ID AS NUMBER) BETWEEN 659709 AND 659714 THEN &apos;CÉLULA 10&apos;
+                WHEN CAST(lh.LOCN_ID AS NUMBER) BETWEEN 659715 AND 659720 THEN &apos;CÉLULA 11&apos;
+                WHEN CAST(lh.LOCN_ID AS NUMBER) BETWEEN 659721 AND 659726 THEN &apos;CÉLULA 12&apos;
+                WHEN CAST(lh.LOCN_ID AS NUMBER) BETWEEN 659727 AND 659732 THEN &apos;CÉLULA 13&apos;
+                WHEN CAST(lh.LOCN_ID AS NUMBER) BETWEEN 659733 AND 659738 THEN &apos;CÉLULA 14&apos;
+                WHEN CAST(lh.LOCN_ID AS NUMBER) BETWEEN 659739 AND 659744 THEN &apos;CÉLULA 15&apos;
+                WHEN CAST(lh.LOCN_ID AS NUMBER) BETWEEN 659745 AND 659750 THEN &apos;CÉLULA 16&apos;
+                WHEN CAST(lh.LOCN_ID AS NUMBER) BETWEEN 659751 AND 659756 THEN &apos;CÉLULA 17&apos;
+                WHEN CAST(lh.LOCN_ID AS NUMBER) BETWEEN 659757 AND 659762 THEN &apos;CÉLULA 18&apos;
+                WHEN CAST(lh.LOCN_ID AS NUMBER) BETWEEN 659763 AND 659768 THEN &apos;CÉLULA 19&apos;
+                WHEN CAST(lh.LOCN_ID AS NUMBER) BETWEEN 659769 AND 659774 THEN &apos;CÉLULA 20&apos;
+            END
+    ),
+    BaseTarefas AS (
+        -- VOLTEI ESTA CTE PARA O SEU ESTADO ORIGINAL RÁPIDO
+        SELECT
+            hr.TASK_DESC, hr.INVN_NEED_TYPE, hr.TASK_ID,
+            ol.TC_SHIPMENT_ID, tl.CARTON_NBR,
+            tl.QTY_ALLOC, tl.QTY_PULLD, tl.ALLOC_UOM_QTY, tl.ALLOC_UOM,
+            IC.BASE_STORAGE_UOM_ID, IQ.Std_PACK_QTY,
+            hr.STAT_CODE, ol.LPN_STATUS,
+            TRIM(COALESCE(ol.CURR_SUB_LOCN_ID, ol.PREV_SUB_LOCN_ID, ol.DEST_SUB_LOCN_ID)) AS CELULA_ID_TAREFA
+        FROM task_hdr hr
+        JOIN task_dtl tl ON hr.TASK_ID = tl.TASK_ID
+        JOIN LPN ol ON TRIM(tl.CARTON_NBR) = TRIM(ol.TC_LPN_ID)
+        JOIN ITEM_CBO IC ON tl.ITEM_ID = IC.ITEM_ID
+        JOIN ITEM_QUANTITY IQ ON IC.ITEM_ID = IQ.ITEM_ID
+        WHERE hr.INVN_NEED_TYPE IN (&apos;50&apos;,&apos;2&apos;)
+          AND CAST(ol.LPN_FACILITY_STATUS AS NUMBER) &lt; 90
+          AND ol.LPN_STATUS NOT IN (&apos;35&apos;,&apos;99&apos;)
+    ),
+    TarefasMapeadas AS (
+        SELECT bt.*,
+            CASE
+                WHEN CAST(CELULA_ID_TAREFA AS NUMBER) BETWEEN 659685 AND 659690 THEN &apos;CÉLULA 06&apos;
+                WHEN CAST(CELULA_ID_TAREFA AS NUMBER) BETWEEN 659691 AND 659696 THEN &apos;CÉLULA 07&apos;
+                WHEN CAST(CELULA_ID_TAREFA AS NUMBER) BETWEEN 659697 AND 659702 THEN &apos;CÉLULA 08&apos;
+                WHEN CAST(CELULA_ID_TAREFA AS NUMBER) BETWEEN 659703 AND 659708 THEN &apos;CÉLULA 09&apos;
+                WHEN CAST(CELULA_ID_TAREFA AS NUMBER) BETWEEN 659709 AND 659714 THEN &apos;CÉLULA 10&apos;
+                WHEN CAST(CELULA_ID_TAREFA AS NUMBER) BETWEEN 659715 AND 659720 THEN &apos;CÉLULA 11&apos;
+                WHEN CAST(CELULA_ID_TAREFA AS NUMBER) BETWEEN 659721 AND 659726 THEN &apos;CÉLULA 12&apos;
+                WHEN CAST(CELULA_ID_TAREFA AS NUMBER) BETWEEN 659727 AND 659732 THEN &apos;CÉLULA 13&apos;
+                WHEN CAST(CELULA_ID_TAREFA AS NUMBER) BETWEEN 659733 AND 659738 THEN &apos;CÉLULA 14&apos;
+                WHEN CAST(CELULA_ID_TAREFA AS NUMBER) BETWEEN 659739 AND 659744 THEN &apos;CÉLULA 15&apos;
+                WHEN CAST(CELULA_ID_TAREFA AS NUMBER) BETWEEN 659745 AND 659750 THEN &apos;CÉLULA 16&apos;
+                WHEN CAST(CELULA_ID_TAREFA AS NUMBER) BETWEEN 659751 AND 659756 THEN &apos;CÉLULA 17&apos;
+                WHEN CAST(CELULA_ID_TAREFA AS NUMBER) BETWEEN 659757 AND 659762 THEN &apos;CÉLULA 18&apos;
+                WHEN CAST(CELULA_ID_TAREFA AS NUMBER) BETWEEN 659763 AND 659768 THEN &apos;CÉLULA 19&apos;
+                WHEN CAST(CELULA_ID_TAREFA AS NUMBER) BETWEEN 659769 AND 659774 THEN &apos;CÉLULA 20&apos;
+                ELSE &apos;OUTRAS&apos;
+            END AS CELULAS
+        FROM BaseTarefas bt
+        WHERE CELULA_ID_TAREFA IS NOT NULL
+    ),
+    StatusTarefas AS (
+        SELECT
+            COALESCE(MAX(CASE WHEN INVN_NEED_TYPE = &apos;50&apos; THEN TASK_DESC END)
+                     OVER (PARTITION BY CELULAS), TASK_DESC) AS TASK_DESC_AGRUPADO,
+            CELULAS, TC_SHIPMENT_ID, CARTON_NBR, TASK_ID,
+            QTY_ALLOC, QTY_PULLD, ALLOC_UOM_QTY, ALLOC_UOM,
+            BASE_STORAGE_UOM_ID, Std_PACK_QTY,
+            MIN(CASE WHEN STAT_CODE=&apos;5&apos; THEN 1 WHEN STAT_CODE=&apos;10&apos; THEN 2
+                     WHEN STAT_CODE=&apos;13&apos; THEN 3 WHEN STAT_CODE=&apos;15&apos; THEN 4
+                     WHEN STAT_CODE=&apos;20&apos; THEN 5 WHEN STAT_CODE=&apos;30&apos; THEN 6
+                     WHEN STAT_CODE=&apos;40&apos; THEN 7 WHEN STAT_CODE=&apos;90&apos; THEN 99 ELSE 50 END)
+                OVER (PARTITION BY CARTON_NBR) AS RANK_STATUS_CAIXA,
+            MIN(CASE WHEN STAT_CODE=&apos;5&apos; THEN 1 WHEN STAT_CODE=&apos;10&apos; THEN 2
+                     WHEN STAT_CODE=&apos;13&apos; THEN 3 WHEN STAT_CODE=&apos;15&apos; THEN 4
+                     WHEN STAT_CODE=&apos;20&apos; THEN 5 WHEN STAT_CODE=&apos;30&apos; THEN 6
+                     WHEN STAT_CODE=&apos;40&apos; THEN 7 WHEN STAT_CODE=&apos;90&apos; THEN 99 ELSE 50 END)
+                OVER (PARTITION BY TC_SHIPMENT_ID) AS RANK_STATUS_EMBARQUE,
+            MAX(CASE WHEN LPN_STATUS=&apos;30&apos; THEN 1 ELSE 0 END)
+                OVER (PARTITION BY TC_SHIPMENT_ID) AS EMB_VAI_CARREGAR
+        FROM TarefasMapeadas
+        WHERE CELULAS &lt;&gt; &apos;OUTRAS&apos;
+    ),
+    ResumoTarefas AS (
+        SELECT
+            TASK_DESC_AGRUPADO AS TASK_DESC, CELULAS,
+            COUNT(DISTINCT CARTON_NBR) - COUNT(DISTINCT CASE WHEN EMB_VAI_CARREGAR = 1 THEN CARTON_NBR END) AS TOTAL_DE_OLPN,
+            COUNT(DISTINCT CASE WHEN RANK_STATUS_CAIXA = 99 THEN CARTON_NBR END) AS OLPNS_COMPLETAS,
+            COUNT(DISTINCT CASE WHEN RANK_STATUS_CAIXA IN (1, 2, 3) THEN CARTON_NBR END) AS OLPNS_AG_SEPARACAO,
+            COUNT(DISTINCT CASE WHEN RANK_STATUS_CAIXA &gt; 3 AND RANK_STATUS_CAIXA &lt; 99 THEN CARTON_NBR END) AS OLPNS_EM_ANDAMENTO,
+            
+            COUNT(DISTINCT TC_SHIPMENT_ID) AS TOTAL_DE_EMBARQUES,
+            COUNT(DISTINCT CASE WHEN RANK_STATUS_EMBARQUE = 99 THEN TC_SHIPMENT_ID END) AS EMBARQUES_COMPLETOS,
+            COUNT(DISTINCT CASE WHEN RANK_STATUS_EMBARQUE &lt; 99 THEN TC_SHIPMENT_ID END) AS EMBARQUES_EM_ANDAMENTO,
+            COUNT(DISTINCT CASE WHEN EMB_VAI_CARREGAR = 1 THEN CARTON_NBR END) AS OLPNS_A_CARREGAR,
+            
+            SUM(CASE 
+                    WHEN ALLOC_UOM = &apos;U&apos; THEN QTY_ALLOC / NULLIF(ALLOC_UOM_QTY, 0)
+                    ELSE QTY_ALLOC / NULLIF(Std_PACK_QTY, 0) 
+                END) AS TOTAL_QTD,
+                
+            SUM(CASE 
+                    WHEN BASE_STORAGE_UOM_ID = 233 THEN QTY_PULLD / NULLIF(Std_PACK_QTY, 0)
+                    WHEN ALLOC_UOM IN (&apos;B&apos;) AND QTY_PULLD &gt;= 100 AND ALLOC_UOM_QTY = 1 THEN 0
+                    WHEN ALLOC_UOM = &apos;U&apos; THEN QTY_PULLD / NULLIF(ALLOC_UOM_QTY, 0)
+                    ELSE QTY_PULLD / NULLIF(Std_PACK_QTY, 0) 
+                END) AS SEPARADO,
+                
+            SUM(CASE WHEN RANK_STATUS_CAIXA &gt; 3 AND RANK_STATUS_CAIXA &lt; 99 THEN 
+                (CASE WHEN ALLOC_UOM = &apos;U&apos; THEN QTY_ALLOC / NULLIF(ALLOC_UOM_QTY, 0) ELSE QTY_ALLOC / NULLIF(Std_PACK_QTY, 0) END) -
+                (CASE WHEN BASE_STORAGE_UOM_ID = 233 THEN QTY_PULLD / NULLIF(Std_PACK_QTY, 0)
+                      WHEN ALLOC_UOM IN (&apos;B&apos;) AND QTY_PULLD &gt;= 100 AND ALLOC_UOM_QTY = 1 THEN 0
+                      WHEN ALLOC_UOM = &apos;U&apos; THEN QTY_PULLD / NULLIF(ALLOC_UOM_QTY, 0)
+                      ELSE QTY_PULLD / NULLIF(Std_PACK_QTY, 0) END)
+                ELSE 0 END) AS PENDENTE,
+                      
+            SUM(CASE WHEN RANK_STATUS_CAIXA IN (1, 2, 3) THEN 
+                (CASE WHEN ALLOC_UOM = &apos;U&apos; THEN QTY_ALLOC / NULLIF(ALLOC_UOM_QTY, 0) ELSE QTY_ALLOC / NULLIF(Std_PACK_QTY, 0) END) -
+                (CASE WHEN BASE_STORAGE_UOM_ID = 233 THEN QTY_PULLD / NULLIF(Std_PACK_QTY, 0)
+                      WHEN ALLOC_UOM IN (&apos;B&apos;) AND QTY_PULLD &gt;= 100 AND ALLOC_UOM_QTY = 1 THEN 0
+                      WHEN ALLOC_UOM = &apos;U&apos; THEN QTY_PULLD / NULLIF(ALLOC_UOM_QTY, 0)
+                      ELSE QTY_PULLD / NULLIF(Std_PACK_QTY, 0) END)
+                ELSE 0 END) AS CX_AG_SEPARACAO,
+                
+            COUNT(DISTINCT TASK_ID) AS TOTAL_TAREFAS,
+            COUNT(DISTINCT CASE WHEN RANK_STATUS_CAIXA = 99 THEN TASK_ID END) AS TAREFAS_COMPLETAS,
+            COUNT(DISTINCT CASE WHEN RANK_STATUS_CAIXA IN (1, 2, 3) THEN TASK_ID END) AS TAREFAS_AG_SEPARACAO,
+            COUNT(DISTINCT CASE WHEN RANK_STATUS_CAIXA &gt; 3 AND RANK_STATUS_CAIXA &lt; 99 THEN TASK_ID END) AS TAREFAS_EM_ANDAMENTO
+                
+        FROM StatusTarefas
+        GROUP BY TASK_DESC_AGRUPADO, CELULAS
+    ),
+    
+    -- &gt;&gt;&gt; NOVO BLOCO ISOLADO DE COLABORADORES (ALTA PERFORMANCE) &lt;&lt;&lt;
+    UltimosUsuarios AS (
+        -- Filtra a base gigante direto na fonte. Traz só os poucos usuários ativos e pega o último LPN deles
+        SELECT 
+            USER_ID,
+            MAX(MOD_DATE_TIME) AS ULTIMA_DATA,
+            MAX(CARTON_NBR) KEEP (DENSE_RANK LAST ORDER BY MOD_DATE_TIME) AS ULTIMO_CARTON
+        FROM task_dtl
+        WHERE MOD_DATE_TIME &gt;= SYSDATE - 1/24
+          AND USER_ID IS NOT NULL
+        GROUP BY USER_ID
+    ),
+    UsuariosNasCelulas AS (
+        -- Vai na tabela de LPNs apenas para os poucos usuários retornados acima
+        SELECT 
+            u.USER_ID,
+            u.ULTIMA_DATA,
+            CASE
+                WHEN CAST(TRIM(COALESCE(ol.CURR_SUB_LOCN_ID, ol.PREV_SUB_LOCN_ID, ol.DEST_SUB_LOCN_ID)) AS NUMBER) BETWEEN 659685 AND 659690 THEN &apos;CÉLULA 06&apos;
+                WHEN CAST(TRIM(COALESCE(ol.CURR_SUB_LOCN_ID, ol.PREV_SUB_LOCN_ID, ol.DEST_SUB_LOCN_ID)) AS NUMBER) BETWEEN 659691 AND 659696 THEN &apos;CÉLULA 07&apos;
+                WHEN CAST(TRIM(COALESCE(ol.CURR_SUB_LOCN_ID, ol.PREV_SUB_LOCN_ID, ol.DEST_SUB_LOCN_ID)) AS NUMBER) BETWEEN 659697 AND 659702 THEN &apos;CÉLULA 08&apos;
+                WHEN CAST(TRIM(COALESCE(ol.CURR_SUB_LOCN_ID, ol.PREV_SUB_LOCN_ID, ol.DEST_SUB_LOCN_ID)) AS NUMBER) BETWEEN 659703 AND 659708 THEN &apos;CÉLULA 09&apos;
+                WHEN CAST(TRIM(COALESCE(ol.CURR_SUB_LOCN_ID, ol.PREV_SUB_LOCN_ID, ol.DEST_SUB_LOCN_ID)) AS NUMBER) BETWEEN 659709 AND 659714 THEN &apos;CÉLULA 10&apos;
+                WHEN CAST(TRIM(COALESCE(ol.CURR_SUB_LOCN_ID, ol.PREV_SUB_LOCN_ID, ol.DEST_SUB_LOCN_ID)) AS NUMBER) BETWEEN 659715 AND 659720 THEN &apos;CÉLULA 11&apos;
+                WHEN CAST(TRIM(COALESCE(ol.CURR_SUB_LOCN_ID, ol.PREV_SUB_LOCN_ID, ol.DEST_SUB_LOCN_ID)) AS NUMBER) BETWEEN 659721 AND 659726 THEN &apos;CÉLULA 12&apos;
+                WHEN CAST(TRIM(COALESCE(ol.CURR_SUB_LOCN_ID, ol.PREV_SUB_LOCN_ID, ol.DEST_SUB_LOCN_ID)) AS NUMBER) BETWEEN 659727 AND 659732 THEN &apos;CÉLULA 13&apos;
+                WHEN CAST(TRIM(COALESCE(ol.CURR_SUB_LOCN_ID, ol.PREV_SUB_LOCN_ID, ol.DEST_SUB_LOCN_ID)) AS NUMBER) BETWEEN 659733 AND 659738 THEN &apos;CÉLULA 14&apos;
+                WHEN CAST(TRIM(COALESCE(ol.CURR_SUB_LOCN_ID, ol.PREV_SUB_LOCN_ID, ol.DEST_SUB_LOCN_ID)) AS NUMBER) BETWEEN 659739 AND 659744 THEN &apos;CÉLULA 15&apos;
+                WHEN CAST(TRIM(COALESCE(ol.CURR_SUB_LOCN_ID, ol.PREV_SUB_LOCN_ID, ol.DEST_SUB_LOCN_ID)) AS NUMBER) BETWEEN 659745 AND 659750 THEN &apos;CÉLULA 16&apos;
+                WHEN CAST(TRIM(COALESCE(ol.CURR_SUB_LOCN_ID, ol.PREV_SUB_LOCN_ID, ol.DEST_SUB_LOCN_ID)) AS NUMBER) BETWEEN 659751 AND 659756 THEN &apos;CÉLULA 17&apos;
+                WHEN CAST(TRIM(COALESCE(ol.CURR_SUB_LOCN_ID, ol.PREV_SUB_LOCN_ID, ol.DEST_SUB_LOCN_ID)) AS NUMBER) BETWEEN 659757 AND 659762 THEN &apos;CÉLULA 18&apos;
+                WHEN CAST(TRIM(COALESCE(ol.CURR_SUB_LOCN_ID, ol.PREV_SUB_LOCN_ID, ol.DEST_SUB_LOCN_ID)) AS NUMBER) BETWEEN 659763 AND 659768 THEN &apos;CÉLULA 19&apos;
+                WHEN CAST(TRIM(COALESCE(ol.CURR_SUB_LOCN_ID, ol.PREV_SUB_LOCN_ID, ol.DEST_SUB_LOCN_ID)) AS NUMBER) BETWEEN 659769 AND 659774 THEN &apos;CÉLULA 20&apos;
+                ELSE &apos;OUTRAS&apos;
+            END AS CELULAS
+        FROM UltimosUsuarios u
+        JOIN LPN ol ON TRIM(u.ULTIMO_CARTON) = TRIM(ol.TC_LPN_ID)
+    ),
+    ColaboradoresPorCelula AS (
+        -- Agrupa os totais rápidos por célula
+        SELECT 
+            CELULAS,
+            COUNT(USER_ID) AS COLAB_ULTIMA_HORA,
+            COUNT(CASE WHEN ULTIMA_DATA &gt;= SYSDATE - 15/(24*60) THEN USER_ID END) AS COLAB_ULTIMOS_15_MIN
+        FROM UsuariosNasCelulas
+        WHERE CELULAS &lt;&gt; &apos;OUTRAS&apos;
+        GROUP BY CELULAS
+    )
+    -- &gt;&gt;&gt; FIM DO BLOCO ISOLADO &lt;&lt;&lt;
+    
+    SELECT
+        COALESCE(t.TASK_DESC, &apos;Disponível / Sem Tarefas&apos;) AS TASK_DESC,
+        c.CELULAS,
+        
+        COALESCE(cc.COLAB_ULTIMA_HORA, 0) AS COLAB_ULTIMA_HORA,
+        COALESCE(cc.COLAB_ULTIMOS_15_MIN, 0) AS COLAB_ULTIMOS_15_MIN,
+    
+        COALESCE(t.TOTAL_DE_OLPN,         0) AS TOTAL_DE_OLPN,
+        COALESCE(t.OLPNS_COMPLETAS,        0) AS OLPNS_COMPLETAS,
+        COALESCE(t.OLPNS_EM_ANDAMENTO,     0) AS OLPNS_EM_ANDAMENTO,
+        COALESCE(t.OLPNS_AG_SEPARACAO,     0) AS OLPNS_AG_SEPARACAO,
+        
+        COALESCE(t.TOTAL_DE_EMBARQUES,     0) AS TOTAL_DE_EMBARQUES,
+        COALESCE(t.EMBARQUES_COMPLETOS,    0) AS EMBARQUES_COMPLETOS,
+        COALESCE(t.EMBARQUES_EM_ANDAMENTO, 0) AS EMBARQUES_EM_ANDAMENTO,
+        COALESCE(t.OLPNS_A_CARREGAR,       0) AS OLPNS_A_CARREGAR,
+        ROUND(COALESCE(t.TOTAL_QTD,              0)) AS TOTAL_QTD,
+        ROUND(COALESCE(t.SEPARADO,               0)) AS SEPARADO,
+        
+        ROUND(COALESCE(t.PENDENTE,               0)) AS PENDENTE,
+        ROUND(COALESCE(t.CX_AG_SEPARACAO,        0)) AS CX_AG_SEPARACAO,
+        
+        COALESCE(t.TOTAL_TAREFAS, 0) AS TOTAL_TAREFAS,
+        COALESCE(t.TAREFAS_COMPLETAS, 0) AS TAREFAS_COMPLETAS,
+        COALESCE(t.TAREFAS_AG_SEPARACAO, 0) AS TAREFAS_AG_SEPARACAO,
+        COALESCE(t.TAREFAS_EM_ANDAMENTO, 0) AS TAREFAS_EM_ANDAMENTO,
+        
+        COALESCE(c.CAPACIDADE_TOTAL,       0) AS CAPACIDADE_TOTAL,
+        (COALESCE(c.CAPACIDADE_TOTAL, 0) - COALESCE(t.TOTAL_DE_OLPN, 0)) AS TOTAL_DISPONIVEL,
+        
+        CASE
+            WHEN COALESCE(c.CAPACIDADE_TOTAL, 0) = 0 THEN &apos;🔴 LOTADA&apos;
+            WHEN (COALESCE(t.TOTAL_DE_OLPN, 0) * 100 / c.CAPACIDADE_TOTAL) &lt;= 70 THEN &apos;🟢 LIVRE&apos;
+            WHEN (COALESCE(t.TOTAL_DE_OLPN, 0) * 100 / c.CAPACIDADE_TOTAL) &lt;= 90 THEN &apos;🟡 ATENÇÃO&apos;
+            ELSE &apos;🔴 LOTADA&apos;
+        END AS FAROL,
+        
+        ROUND(COALESCE(t.TOTAL_DE_OLPN, 0) * 100 / NULLIF(c.CAPACIDADE_TOTAL, 0), 0) AS PCT_OCUPACAO,
+    
+        CASE WHEN COALESCE(t.TOTAL_DE_OLPN,0) &gt; 0 THEN ROUND(COALESCE(t.OLPNS_COMPLETAS,0) * 100 / t.TOTAL_DE_OLPN, 0) ELSE 0 END AS BARRA_PALLETS_COMPLETOS,
+        CASE WHEN COALESCE(t.TOTAL_DE_OLPN,0) &gt; 0 THEN ROUND(COALESCE(t.OLPNS_EM_ANDAMENTO,0) * 100 / t.TOTAL_DE_OLPN, 0) ELSE 0 END AS BARRA_PALLETS_ANDAMENTO,
+        CASE WHEN COALESCE(t.TOTAL_DE_OLPN,0) &gt; 0 THEN ROUND(COALESCE(t.OLPNS_AG_SEPARACAO,0) * 100 / t.TOTAL_DE_OLPN, 0) ELSE 0 END AS BARRA_PALLETS_AG_SEPARACAO,
+        
+        CASE WHEN COALESCE(t.TOTAL_QTD,0) &gt; 0 THEN ROUND(COALESCE(t.SEPARADO,0) * 100 / t.TOTAL_QTD, 0) ELSE 0 END AS BARRA_CX_SEPARADAS,
+        CASE WHEN COALESCE(t.TOTAL_QTD,0) &gt; 0 THEN ROUND(COALESCE(t.PENDENTE,0) * 100 / t.TOTAL_QTD, 0) ELSE 0 END AS BARRA_CX_PENDENTES,
+        CASE WHEN COALESCE(t.TOTAL_QTD,0) &gt; 0 THEN ROUND(COALESCE(t.CX_AG_SEPARACAO,0) * 100 / t.TOTAL_QTD, 0) ELSE 0 END AS BARRA_CX_AG_SEPARACAO,
+        
+        CASE WHEN COALESCE(t.TOTAL_DE_EMBARQUES,0) &gt; 0 THEN ROUND(COALESCE(t.EMBARQUES_COMPLETOS,0) * 100 / t.TOTAL_DE_EMBARQUES, 0) ELSE 0 END AS BARRA_EMB_COMPLETOS,
+        CASE WHEN COALESCE(t.TOTAL_DE_EMBARQUES,0) &gt; 0 THEN ROUND(COALESCE(t.EMBARQUES_EM_ANDAMENTO,0) * 100 / t.TOTAL_DE_EMBARQUES, 0) ELSE 0 END AS BARRA_EMB_ANDAMENTO,
+    
+        CASE WHEN COALESCE(t.TOTAL_TAREFAS,0) &gt; 0 THEN ROUND(COALESCE(t.TAREFAS_COMPLETAS,0) * 100 / t.TOTAL_TAREFAS, 0) ELSE 0 END AS BARRA_TAREFAS_COMPLETAS,
+        CASE WHEN COALESCE(t.TOTAL_TAREFAS,0) &gt; 0 THEN ROUND(COALESCE(t.TAREFAS_EM_ANDAMENTO,0) * 100 / t.TOTAL_TAREFAS, 0) ELSE 0 END AS BARRA_TAREFAS_EM_ANDAMENTO,
+        CASE WHEN COALESCE(t.TOTAL_TAREFAS,0) &gt; 0 THEN ROUND(COALESCE(t.TAREFAS_AG_SEPARACAO,0) * 100 / t.TOTAL_TAREFAS, 0) ELSE 0 END AS BARRA_TAREFAS_AG_SEPARACAO,
+        
+        CASE c.CELULAS
+            WHEN &apos;CÉLULA 06&apos;  THEN 06
+            WHEN &apos;CÉLULA 07&apos;  THEN 07
+            WHEN &apos;CÉLULA 08&apos;  THEN 08
+            WHEN &apos;CÉLULA 09&apos;  THEN 09
+            WHEN &apos;CÉLULA 10&apos; THEN 10
+            WHEN &apos;CÉLULA 11&apos; THEN 11
+            WHEN &apos;CÉLULA 12&apos; THEN 12
+            WHEN &apos;CÉLULA 13&apos; THEN 13
+            WHEN &apos;CÉLULA 14&apos; THEN 14
+            WHEN &apos;CÉLULA 15&apos; THEN 15
+            WHEN &apos;CÉLULA 16&apos; THEN 16
+            WHEN &apos;CÉLULA 17&apos; THEN 17
+            WHEN &apos;CÉLULA 18&apos; THEN 18
+            WHEN &apos;CÉLULA 19&apos; THEN 19
+            WHEN &apos;CÉLULA 20&apos; THEN 20
+            ELSE 999
+        END AS SORT_KEY
+    FROM BaseCelulas c
+    LEFT JOIN ResumoTarefas t ON c.CELULAS = t.CELULAS
+    LEFT JOIN ColaboradoresPorCelula cc ON c.CELULAS = cc.CELULAS 
+    ORDER BY SORT_KEY ASC</sqlText>
+                    <mdProjectedItems><mdProjectedItem name="TASK_DESC"/><mdProjectedItem name="CELULAS"/><mdProjectedItem name="COLAB_ULTIMA_HORA"/><mdProjectedItem name="COLAB_ULTIMOS_15_MIN"/><mdProjectedItem name="TOTAL_DE_OLPN"/><mdProjectedItem name="OLPNS_COMPLETAS"/><mdProjectedItem name="OLPNS_EM_ANDAMENTO"/><mdProjectedItem name="OLPNS_AG_SEPARACAO"/><mdProjectedItem name="TOTAL_DE_EMBARQUES"/><mdProjectedItem name="EMBARQUES_COMPLETOS"/><mdProjectedItem name="EMBARQUES_EM_ANDAMENTO"/><mdProjectedItem name="OLPNS_A_CARREGAR"/><mdProjectedItem name="TOTAL_QTD"/><mdProjectedItem name="SEPARADO"/><mdProjectedItem name="PENDENTE"/><mdProjectedItem name="CX_AG_SEPARACAO"/><mdProjectedItem name="TOTAL_TAREFAS"/><mdProjectedItem name="TAREFAS_COMPLETAS"/><mdProjectedItem name="TAREFAS_AG_SEPARACAO"/><mdProjectedItem name="TAREFAS_EM_ANDAMENTO"/><mdProjectedItem name="CAPACIDADE_TOTAL"/><mdProjectedItem name="TOTAL_DISPONIVEL"/><mdProjectedItem name="FAROL"/><mdProjectedItem name="PCT_OCUPACAO"/><mdProjectedItem name="BARRA_PALLETS_COMPLETOS"/><mdProjectedItem name="BARRA_PALLETS_ANDAMENTO"/><mdProjectedItem name="BARRA_PALLETS_AG_SEPARACAO"/><mdProjectedItem name="BARRA_CX_SEPARADAS"/><mdProjectedItem name="BARRA_CX_PENDENTES"/><mdProjectedItem name="BARRA_CX_AG_SEPARACAO"/><mdProjectedItem name="BARRA_EMB_COMPLETOS"/><mdProjectedItem name="BARRA_EMB_ANDAMENTO"/><mdProjectedItem name="BARRA_TAREFAS_COMPLETAS"/><mdProjectedItem name="BARRA_TAREFAS_EM_ANDAMENTO"/><mdProjectedItem name="BARRA_TAREFAS_AG_SEPARACAO"/><mdProjectedItem name="SORT_KEY"/></mdProjectedItems></sqlQuery>
+            </source>
+            <selection>
+                <dataItem name="TASK_DESC"><expression>[SQL1].[TASK_DESC]</expression></dataItem>
+                <dataItem name="CELULAS"><expression>[SQL1].[CELULAS]</expression></dataItem>
+                <dataItem name="COLAB_ULTIMA_HORA"><expression>[SQL1].[COLAB_ULTIMA_HORA]</expression></dataItem>
+                <dataItem name="COLAB_ULTIMOS_15_MIN"><expression>[SQL1].[COLAB_ULTIMOS_15_MIN]</expression></dataItem>
+                <dataItem name="TOTAL_DE_OLPN"><expression>[SQL1].[TOTAL_DE_OLPN]</expression></dataItem>
+                <dataItem name="OLPNS_COMPLETAS"><expression>[SQL1].[OLPNS_COMPLETAS]</expression></dataItem>
+                <dataItem name="OLPNS_EM_ANDAMENTO"><expression>[SQL1].[OLPNS_EM_ANDAMENTO]</expression></dataItem>
+                <dataItem name="OLPNS_AG_SEPARACAO"><expression>[SQL1].[OLPNS_AG_SEPARACAO]</expression></dataItem>
+                <dataItem name="TOTAL_DE_EMBARQUES"><expression>[SQL1].[TOTAL_DE_EMBARQUES]</expression></dataItem>
+                <dataItem name="EMBARQUES_COMPLETOS"><expression>[SQL1].[EMBARQUES_COMPLETOS]</expression></dataItem>
+                <dataItem name="EMBARQUES_EM_ANDAMENTO"><expression>[SQL1].[EMBARQUES_EM_ANDAMENTO]</expression></dataItem>
+                <dataItem name="OLPNS_A_CARREGAR"><expression>[SQL1].[OLPNS_A_CARREGAR]</expression></dataItem>
+                <dataItem name="TOTAL_QTD"><expression>[SQL1].[TOTAL_QTD]</expression></dataItem>
+                <dataItem name="SEPARADO"><expression>[SQL1].[SEPARADO]</expression></dataItem>
+                <dataItem name="PENDENTE"><expression>[SQL1].[PENDENTE]</expression></dataItem>
+                <dataItem name="CX_AG_SEPARACAO"><expression>[SQL1].[CX_AG_SEPARACAO]</expression></dataItem>
+                <dataItem name="TOTAL_TAREFAS"><expression>[SQL1].[TOTAL_TAREFAS]</expression></dataItem>
+                <dataItem name="TAREFAS_COMPLETAS"><expression>[SQL1].[TAREFAS_COMPLETAS]</expression></dataItem>
+                <dataItem name="TAREFAS_AG_SEPARACAO"><expression>[SQL1].[TAREFAS_AG_SEPARACAO]</expression></dataItem>
+                <dataItem name="TAREFAS_EM_ANDAMENTO"><expression>[SQL1].[TAREFAS_EM_ANDAMENTO]</expression></dataItem>
+                <dataItem name="CAPACIDADE_TOTAL"><expression>[SQL1].[CAPACIDADE_TOTAL]</expression></dataItem>
+                <dataItem name="TOTAL_DISPONIVEL"><expression>[SQL1].[TOTAL_DISPONIVEL]</expression></dataItem>
+                <dataItem name="FAROL"><expression>[SQL1].[FAROL]</expression></dataItem>
+                <dataItem name="PCT_OCUPACAO"><expression>[SQL1].[PCT_OCUPACAO]</expression></dataItem>
+                <dataItem name="BARRA_PALLETS_COMPLETOS"><expression>[SQL1].[BARRA_PALLETS_COMPLETOS]</expression></dataItem>
+                <dataItem name="BARRA_PALLETS_ANDAMENTO"><expression>[SQL1].[BARRA_PALLETS_ANDAMENTO]</expression></dataItem>
+                <dataItem name="BARRA_PALLETS_AG_SEPARACAO"><expression>[SQL1].[BARRA_PALLETS_AG_SEPARACAO]</expression></dataItem>
+                <dataItem name="BARRA_CX_SEPARADAS"><expression>[SQL1].[BARRA_CX_SEPARADAS]</expression></dataItem>
+                <dataItem name="BARRA_CX_PENDENTES"><expression>[SQL1].[BARRA_CX_PENDENTES]</expression></dataItem>
+                <dataItem name="BARRA_CX_AG_SEPARACAO"><expression>[SQL1].[BARRA_CX_AG_SEPARACAO]</expression></dataItem>
+                <dataItem name="BARRA_EMB_COMPLETOS"><expression>[SQL1].[BARRA_EMB_COMPLETOS]</expression></dataItem>
+                <dataItem name="BARRA_EMB_ANDAMENTO"><expression>[SQL1].[BARRA_EMB_ANDAMENTO]</expression></dataItem>
+                <dataItem name="BARRA_TAREFAS_COMPLETAS"><expression>[SQL1].[BARRA_TAREFAS_COMPLETAS]</expression></dataItem>
+                <dataItem name="BARRA_TAREFAS_EM_ANDAMENTO"><expression>[SQL1].[BARRA_TAREFAS_EM_ANDAMENTO]</expression></dataItem>
+                <dataItem name="BARRA_TAREFAS_AG_SEPARACAO"><expression>[SQL1].[BARRA_TAREFAS_AG_SEPARACAO]</expression></dataItem>
+                <dataItem name="SORT_KEY"><expression>[SQL1].[SORT_KEY]</expression></dataItem>
+            </selection>
+        <queryHints><localCache value="false"/><queryProcessing value="databaseOnly"/></queryHints></query>
+        <query name="Consulta2">
+            <source><queryRef refQuery="Consulta1"/></source>
+            <selection>
+                <dataItem name="GT_COMPLETAS" aggregate="total" rollupAggregate="none">
+                    <expression>total([Consulta1].[OLPNS_COMPLETAS] for report)</expression>
+                </dataItem>
+                <dataItem name="GT_EM_ANDAMENTO" aggregate="total" rollupAggregate="none">
+                    <expression>total([Consulta1].[OLPNS_EM_ANDAMENTO] for report)</expression>
+                </dataItem>
+                <dataItem name="GT_SEPARADO" aggregate="total" rollupAggregate="none">
+                    <expression>total([Consulta1].[SEPARADO] for report)</expression>
+                </dataItem>
+                <dataItem name="GT_PENDENTE" aggregate="total" rollupAggregate="none">
+                    <expression>total([Consulta1].[PENDENTE] for report)</expression>
+                </dataItem>
+                <dataItem name="GT_EMB_COMPLETOS" aggregate="total" rollupAggregate="none">
+                    <expression>total([Consulta1].[EMBARQUES_COMPLETOS] for report)</expression>
+                </dataItem>
+                <dataItem name="GT_EMB_ANDAMENTO" aggregate="total" rollupAggregate="none">
+                    <expression>total([Consulta1].[EMBARQUES_EM_ANDAMENTO] for report)</expression>
+                </dataItem>
+                <dataItem name="GT_CARREGANDO" aggregate="total" rollupAggregate="none">
+                    <expression>total([Consulta1].[OLPNS_A_CARREGAR] for report)</expression>
+                </dataItem>
+            </selection>
+        <queryHints><localCache value="false"/><queryProcessing value="databaseOnly"/></queryHints></query>
+    </queries>
+    <modelPath>/content/folder[@name=&apos;SCI Data Packages&apos;]/folder[@name=&apos;Operational Packages&apos;]/folder[@name=&apos;Warehouse Management OS&apos;]/package[@name=&apos;Labor_MJVO&apos;]/model[@name=&apos;model&apos;]</modelPath>
+    <reportName>📦 PAINEL DE STATUS — SEPARAÇÃO POR CÉLULA</reportName>
+</report>
