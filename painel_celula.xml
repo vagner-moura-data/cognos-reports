@@ -368,7 +368,7 @@ setTimeout(zxzx.sendFinishAction, 120000);
 																						<tableRow>
 																							<tableCells>
 																								<tableCell>
-																									<style><CSS value="text-align: left; vertical-align: middle; width: 40%; white-space: nowrap;"/></style>
+																									<style><CSS value="text-align: left; vertical-align: middle; width: 33%; white-space: nowrap;"/></style>
 																									<contents>
 																										<block>
 																											<style><CSS value="display: inline-block; vertical-align: middle;"/></style>
@@ -400,13 +400,17 @@ setTimeout(zxzx.sendFinishAction, 120000);
 																								</tableCell>
 																								
 																								<tableCell>
-																									<style><CSS value="text-align:left;width:60%;white-space:nowrap"/></style>
+																									<style><CSS value="text-align: center; vertical-align: middle; white-space: nowrap;"/></style>
 																									<contents>
 																										<textItem>
 																											<dataSource><dataItemValue refDataItem="CELULAS"/></dataSource>
 																											<style><CSS value="font-size: 14pt; font-weight: 800; color: #e2e8f0; letter-spacing: 1px; text-transform: uppercase; vertical-align: middle;"/></style>
 																										</textItem>
-																										<textItem><dataSource><staticValue> </staticValue></dataSource></textItem>
+																									</contents>
+																								</tableCell>
+																								<tableCell>
+																									<style><CSS value="text-align: right; vertical-align: top; white-space: nowrap; width: 33%;"/></style>
+																									<contents>
 																										<textItem>
 																											<dataSource><dataItemValue refDataItem="FAROL"/></dataSource>
 																											<style><CSS value="font-size: 11pt; font-weight: 700; color: #f1f5f9; text-transform: uppercase; vertical-align: middle;"/></style>
