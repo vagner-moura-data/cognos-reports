@@ -934,6 +934,10 @@ if (localStorage.getItem(&apos;temaPainel&apos;) === &apos;dark&apos;) {
     JOIN TASK_HDR TH ON TH.TASK_ID = PTT.TASK_ID
     WHERE PTT.TRAN_TYPE = 500
       AND TH.INVN_NEED_TYPE != 2
+      AND (
+          ?Parâmetro1? IS NULL
+          OR PTT.MENU_OPTN_NAME IN (?Parâmetro1?)
+      )
       AND CASE WHEN TH.INVN_TYPE = &apos;H&apos; THEN
             CASE
                 WHEN CAST(TO_CHAR(PTT.MOD_DATE_TIME,&apos;HH24&apos;) AS FLOAT)&lt;6 THEN 3
