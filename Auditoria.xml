@@ -1,0 +1,4427 @@
+<report xmlns="http://developer.cognos.com/schemas/report/14.3/" useStyleVersion="11.4" expressionLocale="pt-br" ignoreFilterContext="true" viewPagesAsTabs="bottomLeft">
+	<drillBehavior/>
+	<layouts>
+		<layout>
+			<reportPages>
+				<page name="Auditoria de Carga">
+					<style>
+						<defaultStyles>
+							<defaultStyle refStyle="pg"/>
+						</defaultStyles>
+					</style>
+					<pageBody>
+						<style>
+							<defaultStyles>
+								<defaultStyle refStyle="pb"/>
+							</defaultStyles>
+						</style>
+						<contents>
+							<block>
+								<contents>
+									<table>
+										<style>
+											<defaultStyles>
+												<defaultStyle refStyle="tb"/>
+											</defaultStyles>
+											<CSS value="width:100%;border-spacing:1;empty-cells:show;font-size:8pt"/>
+										</style>
+										<tableRows>
+											<tableRow>
+												<tableCells>
+													<tableCell>
+														<contents/>
+														<style>
+															<CSS value="padding:3px 5px 3px 5px;background-color:#336699;color:#99CCFF;font-weight:bold;border:1pt solid #003399"/>
+														</style>
+													</tableCell>
+													<tableCell>
+														<contents>
+															<textItem>
+																<dataSource>
+																	<reportExpression>ReportName()</reportExpression>
+																</dataSource>
+																<style>
+																	<CSS value="font-size:16pt;font-weight:bold"/>
+																</style>
+															</textItem>
+														</contents>
+														<style>
+															<CSS value="padding:3px 5px 3px 5px;background-color:#336699;color:#99CCFF;font-weight:bold;text-align:center;border:1pt solid #003399"/>
+														</style>
+													</tableCell>
+													<tableCell>
+														<contents>
+															<date>
+																<style>
+																	<dataFormat>
+																		<dateFormat dateSeparator="/" displayOrder="DMY"/>
+																	</dataFormat>
+																</style>
+															</date>
+														</contents>
+														<style>
+															<CSS value="padding:3px 5px 3px 5px;font-size:16pt;background-color:#336699;color:#99CCFF;font-weight:bold;border:1pt solid #003399"/>
+														</style>
+													</tableCell>
+													<tableCell>
+														<contents>
+															<time>
+																<style>
+																	<dataFormat>
+																		<timeFormat/>
+																	</dataFormat>
+																</style>
+															</time>
+														</contents>
+														<style>
+															<CSS value="padding:3px 5px 3px 5px;font-size:16pt;background-color:#336699;color:#99CCFF;font-weight:bold;border:1pt solid #003399"/>
+														</style>
+													</tableCell>
+												</tableCells>
+											</tableRow>
+										</tableRows>
+									</table>
+								</contents>
+								<style>
+									<CSS value="text-align:center;margin-top:5px;border:0.5pt solid black"/>
+								</style>
+							</block>
+							<block>
+								<contents>
+									<list horizontalPagination="true" name="Lista1" refQuery="C_Check_List_Detalhe">
+										<noDataHandler>
+											<contents>
+												<block>
+													<contents>
+														<textItem>
+															<dataSource>
+																<staticValue>Não há dados disponíveis</staticValue>
+															</dataSource>
+															<style>
+																<CSS value="padding:10px 18px;"/>
+															</style>
+														</textItem>
+													</contents>
+												</block>
+											</contents>
+										</noDataHandler>
+										<style>
+											<CSS value="border-collapse:collapse;font-size:8pt"/>
+											<defaultStyles>
+												<defaultStyle refStyle="ls"/>
+											</defaultStyles>
+										</style>
+										<listColumns>
+											<listColumn>
+												<listColumnTitle>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lt"/>
+														</defaultStyles>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemLabel refDataItem="DATA"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnTitle>
+												<listColumnBody>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lc"/>
+														</defaultStyles>
+														<dataFormat>
+															<dateFormat dateSeparator="/" dateStyle="short" displayOrder="DMY" showDays="2-digits" showMonths="2-digits" showYears="showCentury"/>
+														</dataFormat>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemValue refDataItem="DATA"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnBody>
+											</listColumn>
+											<listColumn>
+												<listColumnTitle>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lt"/>
+														</defaultStyles>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemLabel refDataItem="LOJA"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnTitle>
+												<listColumnBody>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lc"/>
+														</defaultStyles>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemValue refDataItem="LOJA"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnBody>
+											</listColumn>
+											<listColumn>
+												<listColumnTitle>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lt"/>
+														</defaultStyles>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemLabel refDataItem="TURNO"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnTitle>
+												<listColumnBody>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lc"/>
+														</defaultStyles>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemValue refDataItem="TURNO"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnBody>
+											</listColumn>
+											<listColumn>
+												<listColumnTitle>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lt"/>
+														</defaultStyles>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemLabel refDataItem="VALOR"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnTitle>
+												<listColumnBody>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lc"/>
+														</defaultStyles>
+														<dataFormat>
+															<numberFormat decimalDelimiter="," decimalSize="2" groupDelimiter="." useGrouping="true"/>
+														</dataFormat>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemValue refDataItem="VALOR"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnBody>
+											</listColumn>
+											<listColumn>
+												<listColumnTitle>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lt"/>
+														</defaultStyles>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemLabel refDataItem="VOLUME"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnTitle>
+												<listColumnBody>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lc"/>
+														</defaultStyles>
+														<dataFormat>
+															<numberFormat decimalDelimiter="," decimalSize="3"/>
+														</dataFormat>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemValue refDataItem="VOLUME"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnBody>
+											</listColumn>
+											<listColumn>
+												<listColumnTitle>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lt"/>
+														</defaultStyles>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemLabel refDataItem="VOLUME CONFERIDO"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnTitle>
+												<listColumnBody>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lc"/>
+														</defaultStyles>
+														<dataFormat>
+															<numberFormat decimalDelimiter="," decimalSize="3"/>
+														</dataFormat>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemValue refDataItem="VOLUME CONFERIDO"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnBody>
+											</listColumn>
+											<listColumn>
+												<listColumnTitle>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lt"/>
+														</defaultStyles>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemLabel refDataItem="VALOR_EQUIP"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnTitle>
+												<listColumnBody>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lc"/>
+														</defaultStyles>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemValue refDataItem="VALOR_EQUIP"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnBody>
+											</listColumn>
+											<listColumn>
+												<listColumnTitle>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lt"/>
+														</defaultStyles>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemLabel refDataItem="CD"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnTitle>
+												<listColumnBody>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lc"/>
+														</defaultStyles>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemValue refDataItem="CD"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnBody>
+											</listColumn>
+											<listColumn>
+												<listColumnTitle>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lt"/>
+														</defaultStyles>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemLabel refDataItem="FA"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnTitle>
+												<listColumnBody>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lc"/>
+														</defaultStyles>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemValue refDataItem="FA"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnBody>
+											</listColumn>
+											<listColumn>
+												<listColumnTitle>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lt"/>
+														</defaultStyles>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemLabel refDataItem="SO"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnTitle>
+												<listColumnBody>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lc"/>
+														</defaultStyles>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemValue refDataItem="SO"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnBody>
+											</listColumn>
+											<listColumn>
+												<listColumnTitle>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lt"/>
+														</defaultStyles>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemLabel refDataItem="FA/IN"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnTitle>
+												<listColumnBody>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lc"/>
+														</defaultStyles>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemValue refDataItem="FA/IN"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnBody>
+											</listColumn>
+											<listColumn>
+												<listColumnTitle>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lt"/>
+														</defaultStyles>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemLabel refDataItem="SO/IN"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnTitle>
+												<listColumnBody>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lc"/>
+														</defaultStyles>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemValue refDataItem="SO/IN"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnBody>
+											</listColumn>
+											<listColumn>
+												<listColumnTitle>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lt"/>
+														</defaultStyles>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemLabel refDataItem="VL"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnTitle>
+												<listColumnBody>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lc"/>
+														</defaultStyles>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemValue refDataItem="VL"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnBody>
+											</listColumn>
+											<listColumn>
+												<listColumnTitle>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lt"/>
+														</defaultStyles>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemLabel refDataItem="VE"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnTitle>
+												<listColumnBody>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lc"/>
+														</defaultStyles>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemValue refDataItem="VE"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnBody>
+											</listColumn>
+											<listColumn>
+												<listColumnTitle>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lt"/>
+														</defaultStyles>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemLabel refDataItem="AV"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnTitle>
+												<listColumnBody>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lc"/>
+														</defaultStyles>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemValue refDataItem="AV"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnBody>
+											</listColumn>
+											<listColumn>
+												<listColumnTitle>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lt"/>
+														</defaultStyles>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemLabel refDataItem="FA$"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnTitle>
+												<listColumnBody>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lc"/>
+														</defaultStyles>
+														<dataFormat>
+															<numberFormat decimalSize="2" groupDelimiter="." useGrouping="true"/>
+														</dataFormat>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemValue refDataItem="FA$"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnBody>
+											</listColumn>
+											<listColumn>
+												<listColumnTitle>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lt"/>
+														</defaultStyles>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemLabel refDataItem="SO$"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnTitle>
+												<listColumnBody>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lc"/>
+														</defaultStyles>
+														<dataFormat>
+															<numberFormat decimalSize="2" groupDelimiter="." useGrouping="true"/>
+														</dataFormat>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemValue refDataItem="SO$"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnBody>
+											</listColumn>
+											<listColumn>
+												<listColumnTitle>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lt"/>
+														</defaultStyles>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemLabel refDataItem="FA/IN$"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnTitle>
+												<listColumnBody>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lc"/>
+														</defaultStyles>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemValue refDataItem="FA/IN$"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnBody>
+											</listColumn>
+											<listColumn>
+												<listColumnTitle>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lt"/>
+														</defaultStyles>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemLabel refDataItem="SO/IN$"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnTitle>
+												<listColumnBody>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lc"/>
+														</defaultStyles>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemValue refDataItem="SO/IN$"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnBody>
+											</listColumn>
+											<listColumn>
+												<listColumnTitle>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lt"/>
+														</defaultStyles>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemLabel refDataItem="VL$"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnTitle>
+												<listColumnBody>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lc"/>
+														</defaultStyles>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemValue refDataItem="VL$"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnBody>
+											</listColumn>
+											<listColumn>
+												<listColumnTitle>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lt"/>
+														</defaultStyles>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemLabel refDataItem="VE$"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnTitle>
+												<listColumnBody>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lc"/>
+														</defaultStyles>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemValue refDataItem="VE$"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnBody>
+											</listColumn>
+											<listColumn>
+												<listColumnTitle>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lt"/>
+														</defaultStyles>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemLabel refDataItem="AV$"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnTitle>
+												<listColumnBody>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lc"/>
+														</defaultStyles>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemValue refDataItem="AV$"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnBody>
+											</listColumn>
+											<listColumn>
+												<listColumnTitle>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lt"/>
+														</defaultStyles>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemLabel refDataItem="CATEGORIA"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnTitle>
+												<listColumnBody>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lc"/>
+														</defaultStyles>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemValue refDataItem="CATEGORIA"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnBody>
+											</listColumn>
+											<listColumn>
+												<listColumnTitle>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lt"/>
+														</defaultStyles>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemLabel refDataItem="ENCAIXE"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnTitle>
+												<listColumnBody>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lc"/>
+														</defaultStyles>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemValue refDataItem="ENCAIXE"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnBody>
+											</listColumn>
+											<listColumn>
+												<listColumnTitle>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lt"/>
+														</defaultStyles>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemLabel refDataItem="OLPN"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnTitle>
+												<listColumnBody>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lc"/>
+														</defaultStyles>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemValue refDataItem="OLPN"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnBody>
+											</listColumn>
+											<listColumn>
+												<listColumnTitle>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lt"/>
+														</defaultStyles>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemLabel refDataItem="OBS"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnTitle>
+												<listColumnBody>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lc"/>
+														</defaultStyles>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemValue refDataItem="OBS"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnBody>
+											</listColumn>
+											<listColumn>
+												<listColumnTitle>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lt"/>
+														</defaultStyles>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemLabel refDataItem="EMBARQUE"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnTitle>
+												<listColumnBody>
+													<style>
+														<defaultStyles>
+															<defaultStyle refStyle="lm"/>
+														</defaultStyles>
+													</style>
+													<contents>
+														<textItem>
+															<dataSource>
+																<dataItemValue refDataItem="EMBARQUE"/>
+															</dataSource>
+														</textItem>
+													</contents>
+												</listColumnBody>
+											</listColumn>
+										</listColumns>
+									</list>
+								</contents>
+								<style>
+									<CSS value="text-align:center"/>
+								</style>
+							</block>
+							<block>
+								<contents/>
+								<style>
+									<CSS value="padding:1px;text-align:center;border:0.75pt solid black"/>
+								</style>
+							</block>
+						</contents>
+					</pageBody>
+				</page>
+				<page name="Auditoria de Carga Detalhado">
+					<style>
+						<defaultStyles>
+							<defaultStyle refStyle="pg"/>
+						</defaultStyles>
+					</style>
+					<pageBody>
+						<style>
+							<defaultStyles>
+								<defaultStyle refStyle="pb"/>
+							</defaultStyles>
+						</style>
+						<contents>
+							<block>
+								<contents>
+									<table>
+										<style>
+											<defaultStyles>
+												<defaultStyle refStyle="tb"/>
+											</defaultStyles>
+											<CSS value="width:100%;border-spacing:1;empty-cells:show;font-size:8pt"/>
+										</style>
+										<tableRows>
+											<tableRow>
+												<tableCells>
+													<tableCell>
+														<contents/>
+														<style>
+															<CSS value="padding:3px 5px 3px 5px;background-color:#336699;color:#99CCFF;font-weight:bold;border:1pt solid #003399"/>
+														</style>
+													</tableCell>
+													<tableCell>
+														<contents>
+															<textItem>
+																<dataSource>
+																	<staticValue>Relatório - Check list Detalhado</staticValue>
+																</dataSource>
+																<style>
+																	<CSS value="font-size:16pt;font-weight:bold"/>
+																</style>
+															</textItem>
+														</contents>
+														<style>
+															<CSS value="padding:3px 5px 3px 5px;background-color:#336699;color:#99CCFF;font-weight:bold;text-align:center;border:1pt solid #003399"/>
+														</style>
+													</tableCell>
+													<tableCell>
+														<contents>
+															<date>
+																<style>
+																	<dataFormat>
+																		<dateFormat dateSeparator="/" displayOrder="DMY"/>
+																	</dataFormat>
+																</style>
+															</date>
+														</contents>
+														<style>
+															<CSS value="padding:3px 5px 3px 5px;font-size:16pt;background-color:#336699;color:#99CCFF;font-weight:bold;border:1pt solid #003399"/>
+														</style>
+													</tableCell>
+													<tableCell>
+														<contents>
+															<time>
+																<style>
+																	<dataFormat>
+																		<timeFormat/>
+																	</dataFormat>
+																</style>
+															</time>
+														</contents>
+														<style>
+															<CSS value="padding:3px 5px 3px 5px;font-size:16pt;background-color:#336699;color:#99CCFF;font-weight:bold;border:1pt solid #003399"/>
+														</style>
+													</tableCell>
+												</tableCells>
+											</tableRow>
+										</tableRows>
+									</table>
+								</contents>
+								<style>
+									<CSS value="text-align:center;margin-top:5px;border:0.5pt solid black"/>
+								</style>
+							</block>
+							<block>
+								<contents/>
+								<style>
+									<CSS value="text-align:center"/>
+								</style>
+							</block>
+							<block>
+								<contents/>
+								<style>
+									<CSS value="padding:1px;text-align:center;border:0.75pt solid black"/>
+								</style>
+							</block>
+							<list horizontalPagination="true" name="Lista2" refQuery="Auditoria de Carga Detalhado">
+								<noDataHandler>
+									<contents>
+										<block>
+											<contents>
+												<textItem>
+													<dataSource>
+														<staticValue>Não há dados disponíveis</staticValue>
+													</dataSource>
+													<style>
+														<CSS value="padding:10px 18px;"/>
+													</style>
+												</textItem>
+											</contents>
+										</block>
+									</contents>
+								</noDataHandler>
+								<style>
+									<CSS value="border-collapse:collapse"/>
+									<defaultStyles>
+										<defaultStyle refStyle="ls"/>
+									</defaultStyles>
+								</style>
+								<listColumns>
+									<listColumn>
+										<listColumnTitle>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lt"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemLabel refDataItem="CD"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnTitle>
+										<listColumnBody>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lm"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemValue refDataItem="CD"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnBody>
+									</listColumn>
+									<listColumn>
+										<listColumnTitle>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lt"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemLabel refDataItem="Data"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnTitle>
+										<listColumnBody>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lm"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemValue refDataItem="Data"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnBody>
+									</listColumn>
+									<listColumn>
+										<listColumnTitle>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lt"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemLabel refDataItem="Nº Loja"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnTitle>
+										<listColumnBody>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lm"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemValue refDataItem="Nº Loja"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnBody>
+									</listColumn>
+									<listColumn>
+										<listColumnTitle>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lt"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemLabel refDataItem="Nº NF"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnTitle>
+										<listColumnBody>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lm"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemValue refDataItem="Nº NF"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnBody>
+									</listColumn>
+									<listColumn>
+										<listColumnTitle>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lt"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemLabel refDataItem="OLPN"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnTitle>
+										<listColumnBody>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lm"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemValue refDataItem="OLPN"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnBody>
+									</listColumn>
+									<listColumn>
+										<listColumnTitle>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lt"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemLabel refDataItem="Cod Prod"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnTitle>
+										<listColumnBody>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lm"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemValue refDataItem="Cod Prod"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnBody>
+									</listColumn>
+									<listColumn>
+										<listColumnTitle>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lt"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemLabel refDataItem="Seção"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnTitle>
+										<listColumnBody>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lm"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemValue refDataItem="Seção"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnBody>
+									</listColumn>
+									<listColumn>
+										<listColumnTitle>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lt"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemLabel refDataItem="Descrição"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnTitle>
+										<listColumnBody>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lm"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemValue refDataItem="Descrição"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnBody>
+									</listColumn>
+									<listColumn>
+										<listColumnTitle>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lt"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemLabel refDataItem="EMBALAGEM"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnTitle>
+										<listColumnBody>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lm"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemValue refDataItem="EMBALAGEM"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnBody>
+									</listColumn>
+									<listColumn>
+										<listColumnTitle>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lt"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemLabel refDataItem="UOM QTY"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnTitle>
+										<listColumnBody>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lm"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemValue refDataItem="UOM QTY"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnBody>
+									</listColumn>
+									<listColumn>
+										<listColumnTitle>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lt"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemLabel refDataItem="Unidade"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnTitle>
+										<listColumnBody>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lm"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemValue refDataItem="Unidade"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnBody>
+									</listColumn>
+									<listColumn>
+										<listColumnTitle>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lt"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemLabel refDataItem="PAR"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnTitle>
+										<listColumnBody>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lm"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemValue refDataItem="PAR"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnBody>
+									</listColumn>
+									<listColumn>
+										<listColumnTitle>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lt"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemLabel refDataItem="Fat"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnTitle>
+										<listColumnBody>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lm"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemValue refDataItem="Fat"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnBody>
+									</listColumn>
+									<listColumn>
+										<listColumnTitle>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lt"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemLabel refDataItem="Conf"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnTitle>
+										<listColumnBody>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lm"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemValue refDataItem="Conf"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnBody>
+									</listColumn>
+									<listColumn>
+										<listColumnTitle>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lt"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemLabel refDataItem="Dif"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnTitle>
+										<listColumnBody>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lm"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemValue refDataItem="Dif"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnBody>
+									</listColumn>
+									<listColumn>
+										<listColumnTitle>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lt"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemLabel refDataItem="CUSTO_UNITARIO"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnTitle>
+										<listColumnBody>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lm"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemValue refDataItem="CUSTO_UNITARIO"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnBody>
+									</listColumn>
+									<listColumn>
+										<listColumnTitle>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lt"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemLabel refDataItem="Total"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnTitle>
+										<listColumnBody>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lm"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemValue refDataItem="Total"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnBody>
+									</listColumn>
+									<listColumn>
+										<listColumnTitle>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lt"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemLabel refDataItem="MOTIVO"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnTitle>
+										<listColumnBody>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lm"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemValue refDataItem="MOTIVO"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnBody>
+									</listColumn>
+									<listColumn>
+										<listColumnTitle>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lt"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemLabel refDataItem="Erros"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnTitle>
+										<listColumnBody>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lm"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemValue refDataItem="Erros"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnBody>
+									</listColumn>
+									<listColumn>
+										<listColumnTitle>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lt"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemLabel refDataItem="Cód Oc"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnTitle>
+										<listColumnBody>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lm"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemValue refDataItem="Cód Oc"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnBody>
+									</listColumn>
+									<listColumn>
+										<listColumnTitle>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lt"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemLabel refDataItem="Local"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnTitle>
+										<listColumnBody>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lm"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemValue refDataItem="Local"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnBody>
+									</listColumn>
+									<listColumn>
+										<listColumnTitle>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lt"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemLabel refDataItem="Embarque"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnTitle>
+										<listColumnBody>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lm"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemValue refDataItem="Embarque"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnBody>
+									</listColumn>
+									<listColumn>
+										<listColumnTitle>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lt"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemLabel refDataItem="ENCAIXE"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnTitle>
+										<listColumnBody>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lm"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemValue refDataItem="ENCAIXE"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnBody>
+									</listColumn>
+									<listColumn>
+										<listColumnTitle>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lt"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemLabel refDataItem="OBS"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnTitle>
+										<listColumnBody>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lm"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemValue refDataItem="OBS"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnBody>
+									</listColumn>
+									<listColumn>
+										<listColumnTitle>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lt"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemLabel refDataItem="CATEGORIA"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnTitle>
+										<listColumnBody>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lm"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemValue refDataItem="CATEGORIA"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnBody>
+									</listColumn>
+									<listColumn>
+										<listColumnTitle>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lt"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemLabel refDataItem="Separador"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnTitle>
+										<listColumnBody>
+											<style>
+												<defaultStyles>
+													<defaultStyle refStyle="lm"/>
+												</defaultStyles>
+											</style>
+											<contents>
+												<textItem>
+													<dataSource>
+														<dataItemValue refDataItem="Separador"/>
+													</dataSource>
+												</textItem>
+											</contents>
+										</listColumnBody>
+									</listColumn>
+								</listColumns>
+								<sortList>
+									<sortItem refDataItem="Nº Loja"/>
+								</sortList>
+							</list>
+						</contents>
+					</pageBody>
+				</page>
+			</reportPages>
+			<pageSetup orientation="landscape"/>
+			<promptPages>
+				<page name="Prompts">
+					<pageHeader>
+						<contents>
+							<block>
+								<contents>
+									<textItem>
+										<dataSource>
+											<staticValue>Relatório - Check List Resumido - Auditoria de Carga</staticValue>
+										</dataSource>
+										<style>
+											<defaultStyles>
+												<defaultStyle refStyle="tt"/>
+											</defaultStyles>
+										</style>
+									</textItem>
+								</contents>
+								<style>
+									<defaultStyles>
+										<defaultStyle refStyle="ta"/>
+									</defaultStyles>
+									<CSS value="border:1pt solid black"/>
+								</style>
+							</block>
+						</contents>
+						<style>
+							<defaultStyles>
+								<defaultStyle refStyle="hp"/>
+							</defaultStyles>
+						</style>
+					</pageHeader>
+					<pageBody>
+						<contents>
+							<table>
+								<style>
+									<defaultStyles>
+										<defaultStyle refStyle="tb"/>
+									</defaultStyles>
+									<CSS value="width:100%;border-spacing:1;empty-cells:show;font-size:8pt"/>
+								</style>
+								<tableRows>
+									<tableRow>
+										<tableCells>
+											<tableCell colSpan="2">
+												<contents>
+													<textItem>
+														<dataSource>
+															<staticValue>DATA INICIAL</staticValue>
+														</dataSource>
+													</textItem>
+												</contents>
+												<style>
+													<CSS value="background-color:#336699;font-size:16pt;color:white;text-align:center"/>
+												</style>
+											</tableCell>
+										</tableCells>
+									</tableRow>
+									<tableRow>
+										<tableCells>
+											<tableCell colSpan="2">
+												<contents>
+													<selectDate parameter="p_data_in" selectDateUI="editBox"/>
+												</contents>
+												<style>
+													<CSS value="text-align:center"/>
+												</style>
+											</tableCell>
+										</tableCells>
+									</tableRow>
+									<tableRow>
+										<tableCells>
+											<tableCell colSpan="2">
+												<contents>
+													<textItem>
+														<dataSource>
+															<staticValue>DATA FINAL</staticValue>
+														</dataSource>
+													</textItem>
+												</contents>
+												<style>
+													<CSS value="background-color:#336699;font-size:16pt;color:white;text-align:center"/>
+												</style>
+											</tableCell>
+										</tableCells>
+									</tableRow>
+									<tableRow>
+										<tableCells>
+											<tableCell colSpan="2">
+												<contents>
+													<selectDate parameter="p_data_fi" selectDateUI="editBox"/>
+												</contents>
+												<style>
+													<CSS value="text-align:center"/>
+												</style>
+											</tableCell>
+										</tableCells>
+									</tableRow>
+									<tableRow>
+										<tableCells>
+											<tableCell colSpan="2">
+												<contents>
+													<textItem>
+														<dataSource>
+															<staticValue>LOJA</staticValue>
+														</dataSource>
+													</textItem>
+												</contents>
+												<style>
+													<CSS value="background-color:#336699;font-size:16pt;color:white;text-align:center"/>
+												</style>
+											</tableCell>
+										</tableCells>
+									</tableRow>
+									<tableRow>
+										<tableCells>
+											<tableCell colSpan="2">
+												<contents>
+													<textBox parameter="p_loja">
+														<style>
+															<CSS value="width:180px"/>
+														</style>
+													</textBox>
+												</contents>
+												<style>
+													<CSS value="text-align:center"/>
+												</style>
+											</tableCell>
+										</tableCells>
+									</tableRow>
+									<tableRow>
+										<tableCells>
+											<tableCell colSpan="2">
+												<contents>
+													<textItem>
+														<dataSource>
+															<staticValue>OLPN</staticValue>
+														</dataSource>
+													</textItem>
+												</contents>
+												<style>
+													<CSS value="background-color:#336699;font-size:16pt;color:white;text-align:center"/>
+												</style>
+											</tableCell>
+										</tableCells>
+									</tableRow>
+									<tableRow>
+										<tableCells>
+											<tableCell colSpan="2">
+												<contents>
+													<textBox parameter="p_olpn">
+														<style>
+															<CSS value="font-size:14pt;font-weight:bold;width:180px"/>
+														</style>
+													</textBox>
+												</contents>
+												<style>
+													<CSS value="text-align:center"/>
+												</style>
+											</tableCell>
+										</tableCells>
+									</tableRow>
+								</tableRows>
+							</table>
+						</contents>
+						<style>
+							<defaultStyles>
+								<defaultStyle refStyle="py"/>
+							</defaultStyles>
+						</style>
+					</pageBody>
+					<pageFooter>
+						<contents>
+							<promptButton type="cancel">
+								<contents/>
+								<style>
+									<defaultStyles>
+										<defaultStyle refStyle="bp"/>
+									</defaultStyles>
+								</style>
+							</promptButton>
+							<promptButton type="back">
+								<contents/>
+								<style>
+									<defaultStyles>
+										<defaultStyle refStyle="bp"/>
+									</defaultStyles>
+								</style>
+							</promptButton>
+							<promptButton type="next">
+								<contents/>
+								<style>
+									<defaultStyles>
+										<defaultStyle refStyle="bp"/>
+									</defaultStyles>
+								</style>
+							</promptButton>
+							<promptButton type="finish">
+								<contents/>
+								<style>
+									<defaultStyles>
+										<defaultStyle refStyle="bp"/>
+									</defaultStyles>
+								</style>
+							</promptButton>
+						</contents>
+						<style>
+							<defaultStyles>
+								<defaultStyle refStyle="fp"/>
+							</defaultStyles>
+						</style>
+					</pageFooter>
+					<style>
+						<defaultStyles>
+							<defaultStyle refStyle="pp"/>
+						</defaultStyles>
+					</style>
+				</page>
+			</promptPages>
+		</layout>
+	</layouts>
+	<XMLAttributes>
+		<XMLAttribute output="no" name="RS_CreateExtendedDataItems" value="false"/>
+		<XMLAttribute output="no" name="listSeparator" value=";"/>
+	</XMLAttributes>
+	<modelPath>/content/folder[@name=&apos;SCI Data Packages&apos;]/folder[@name=&apos;Operational Packages&apos;]/folder[@name=&apos;Warehouse Management OS&apos;]/package[@name=&apos;MVGPA_Shipping&apos;]/model[@name=&apos;model&apos;]</modelPath>
+	<queries>
+		<query name="C_Check_List_Detalhe">
+			<source>
+				<sqlQuery name="SQL1" dataSource="WMOS" type="passThrough">
+					<sqlText>SELECT
+ RESUMO.*,
+ L1.TC_SHIPMENT_ID
+FROM
+((SELECT
+     RF.CREATED_DTTM,	 
+     RF.DATA,
+     RF.LOJA,
+     RF.TURNO,    
+     RF.VALOR_EQUIP,
+     RF.CD,     
+     RF.&quot;FA/IN&quot;,
+     RF.&quot;SO/IN&quot;,
+     RF.&quot;VL&quot;,
+     RF.&quot;VE&quot;,
+     RF.&quot;AV&quot;,     
+     RF.&quot;FA/IN$&quot;,
+     RF.&quot;SO/IN$&quot;,
+     RF.&quot;VL$&quot;,
+     RF.&quot;VE$&quot;,
+     RF.&quot;AV$&quot;,
+     RF.CATEGORIA,
+     RF.ENCAIXE,
+     RF.OLPN,
+     RF.OBS,
+	 SUM(RF.FA) AS FA,
+     SUM(RF.SO) AS SO,
+	 SUM(RF.&quot;FA$&quot;) AS &quot;FA$&quot;,
+     SUM(RF. &quot;SO$&quot;) AS &quot;SO$&quot;,
+	 SUM(RF.VALOR) AS VALOR,
+     SUM(RF.VOLUME_ESPERADO) AS VOLUME_ESPERADO,
+     SUM(RF.VOLUME_CONFERIDO) AS VOLUME_CONFERIDO	
+FROM
+((SELECT	 
+	 BRESUMO_FINAL.CREATED_DTTM,
+     BRESUMO_FINAL.DATA,
+     BRESUMO_FINAL.LOJA,
+     BRESUMO_FINAL.TURNO,    
+     BRESUMO_FINAL.VALOR_EQUIP,
+     BRESUMO_FINAL.CD,     
+     BRESUMO_FINAL.&quot;FA/IN&quot;,
+     BRESUMO_FINAL.&quot;SO/IN&quot;,
+     BRESUMO_FINAL.&quot;VL&quot;,
+     BRESUMO_FINAL.&quot;VE&quot;,
+     BRESUMO_FINAL.&quot;AV&quot;,     
+     BRESUMO_FINAL.&quot;FA/IN$&quot;,
+     BRESUMO_FINAL.&quot;SO/IN$&quot;,
+     BRESUMO_FINAL.&quot;VL$&quot;,
+     BRESUMO_FINAL.&quot;VE$&quot;,
+     BRESUMO_FINAL.&quot;AV$&quot;,
+     BRESUMO_FINAL.CATEGORIA,
+     BRESUMO_FINAL.ENCAIXE,
+     BRESUMO_FINAL.OLPN,
+     BRESUMO_FINAL.OBS,
+     --BRESUMO_FINAL.ITEM_NAME,
+     --BRESUMO_FINAL.PRODUTO,
+	 SUM(BRESUMO_FINAL.FA) AS FA,
+     SUM(BRESUMO_FINAL.SO) AS SO,
+	 SUM(BRESUMO_FINAL.&quot;FA$&quot;) AS &quot;FA$&quot;,
+     SUM(BRESUMO_FINAL. &quot;SO$&quot;) AS &quot;SO$&quot;,
+	 SUM(BRESUMO_FINAL.VALOR) AS VALOR,
+     SUM(BRESUMO_FINAL.VOLUME_ESPERADO) AS VOLUME_ESPERADO,
+     SUM(BRESUMO_FINAL.VOLUME_CONFERIDO) AS VOLUME_CONFERIDO
+FROM
+((SELECT
+    B_FINAL.ITEM_NAME,
+    B_FINAL.PRODUTO,
+    B_FINAL.CREATED_DTTM,
+    B_FINAL.DATA,
+    B_FINAL.LOJA,
+    B_FINAL.TURNO,
+    B_FINAL.VLR_GERAL_PROD AS VALOR,
+    B_FINAL.EXPECTED_QUANTITY AS VOLUME_ESPERADO,
+    B_FINAL.COUNT_QUANTITY AS VOLUME_CONFERIDO,
+    &apos; &apos; AS VALOR_EQUIP,
+     B_FINAL.CD,
+     B_FINAL.FALTA AS FA,
+    B_FINAL.SOBRA AS SO,
+     &apos; &apos; AS &quot;FA/IN&quot;,
+     &apos; &apos; AS &quot;SO/IN&quot;,
+     &apos; &apos; AS &quot;VL&quot;,
+     &apos; &apos; AS &quot;VE&quot;,
+     &apos; &apos; AS &quot;AV&quot;,
+     B_FINAL.VLR_FALTA &quot;FA$&quot;,
+     B_FINAL.VLR_SOBRA AS &quot;SO$&quot;,
+     &apos; &apos; AS &quot;FA/IN$&quot;,
+     &apos; &apos; AS &quot;SO/IN$&quot;,
+     &apos; &apos; AS &quot;VL$&quot;,
+     &apos; &apos; AS &quot;VE$&quot;,
+     &apos; &apos; AS &quot;AV$&quot;,
+     B_FINAL.CATEGORIA,
+     &apos; &apos; AS ENCAIXE,
+     B_FINAL.OLPN AS OLPN,
+     &apos; &apos; AS OBS
+FROM
+((SELECT
+	LAR.CREATED_DTTM,
+    LAR.TC_SHIPMENT_ID,
+    LAR.TC_LPN_ID AS OLPN,
+    LAR.DEST_FACILITY_ALIAS_ID AS LOJA,
+    CAST(LAR.CREATED_DTTM AS DATE) AS DATA,
+    CASE
+        WHEN CAST(TO_CHAR(LAR.CREATED_DTTM,&apos;HH24&apos;) AS FLOAT)&lt;6 THEN 3
+        WHEN CAST(TO_CHAR(LAR.CREATED_DTTM,&apos;HH24&apos;) AS FLOAT) &gt; 21 THEN 3     
+        WHEN CAST(TO_CHAR(LAR.CREATED_DTTM,&apos;HH24&apos;) AS FLOAT)&lt;14  THEN 1        
+        ELSE  2    
+    END AS TURNO,            
+    LAR.AUDITOR_USERID,
+    LAR.PACKER_USERID,
+    B.ITEM_NAME,
+    B.ITEM AS PRODUTO,
+    B.EMB_FINAL,
+    B.QTY_UOM,
+    B.CATEGORIA,
+    LOCN.DSP_LOCN,
+    --B.UNIT_COST AS CUSTO_UNITARIO,
+	MAX(CASE 
+			WHEN LD.INVENTORY_TYPE IS NULL THEN				
+				(SELECT 
+						MAX(ITC.UNIT_COST) 
+				FROM 
+						ITEM_COST_CBO ITC 
+				WHERE	
+						ITC.ITEM_ID=LD.ITEM_ID)
+			ELSE
+					(SELECT 
+									MAX(ITC.UNIT_COST) 
+					 FROM 
+									ITEM_COST_CBO ITC 
+					 JOIN 
+									FACILITY_ALIAS FA 
+					 ON 
+									FA.FACILITY_ID=ITC.FACILITY_ID
+					 WHERE FA.FACILITY_ALIAS_ID=INVN_TYPE.FA_ALIAS
+					 AND ITC.ITEM_ID=LD.ITEM_ID)
+		END) AS CUSTO_UNITARIO,
+    CASE WHEN B.VARIABLE_WEIGHT=1 THEN
+        ROUND(LAR.EXPECTED_QUANTITY/1000,2) 
+    ELSE
+		CASE 
+			WHEN LD.QTY_UOM_ID=970753 THEN
+				LAR.EXPECTED_QUANTITY/LD.QTY_CONV_FACTOR
+			ELSE		
+				LAR.EXPECTED_QUANTITY/LD.STD_PACK_QTY
+		END 
+    END AS EXPECTED_QUANTITY,
+     CASE WHEN B.VARIABLE_WEIGHT=1 THEN
+        ROUND(LAR.EXPECTED_QUANTITY/1000,2) 
+    ELSE
+		CASE 
+			WHEN LD.QTY_UOM_ID=970753 THEN
+				LAR.EXPECTED_QUANTITY/LD.QTY_CONV_FACTOR
+			ELSE
+				LAR.EXPECTED_QUANTITY/LD.STD_PACK_QTY
+			END
+    END AS &quot;Fat&quot;,   
+    CASE WHEN B.VARIABLE_WEIGHT=1 THEN
+        ROUND(LAR.COUNT_QUANTITY/1000,2)
+    ELSE
+		CASE 
+			WHEN LD.QTY_UOM_ID=970753 THEN
+			LAR.COUNT_QUANTITY/LD.QTY_CONV_FACTOR
+		ELSE		
+			LAR.COUNT_QUANTITY/LD.STD_PACK_QTY
+		END
+    END AS COUNT_QUANTITY,
+    CASE WHEN B.VARIABLE_WEIGHT=1 THEN
+        ROUND(LAR.COUNT_QUANTITY/1000,2)
+    ELSE
+		CASE WHEN LD.QTY_UOM_ID=970753 THEN
+			LAR.COUNT_QUANTITY/LD.QTY_CONV_FACTOR
+		ELSE
+			LAR.COUNT_QUANTITY/LD.STD_PACK_QTY
+		END
+    END AS &quot;Conf&quot;,
+	AVG(CASE WHEN B.VARIABLE_WEIGHT=1 THEN
+		CASE 
+			WHEN LD.INVENTORY_TYPE IS NULL THEN	
+				(LAR.EXPECTED_QUANTITY/1000)
+				*(SELECT 
+						MAX(ITC.UNIT_COST) 
+				FROM 
+						ITEM_COST_CBO ITC 
+				WHERE	
+						ITC.ITEM_ID=LD.ITEM_ID)
+			ELSE
+					(SELECT 
+									MAX(ITC.UNIT_COST) 
+					 FROM 
+									ITEM_COST_CBO ITC 
+					 JOIN 
+									FACILITY_ALIAS FA 
+					 ON 
+									FA.FACILITY_ID=ITC.FACILITY_ID
+					 WHERE FA.FACILITY_ALIAS_ID=INVN_TYPE.FA_ALIAS
+					 AND ITC.ITEM_ID=LD.ITEM_ID)*((LAR.EXPECTED_QUANTITY/1000)) 
+		END
+		ELSE
+			CASE 
+			WHEN LD.INVENTORY_TYPE IS NULL THEN	
+				(LAR.EXPECTED_QUANTITY)
+				*(SELECT 
+						MAX(ITC.UNIT_COST) 
+				FROM 
+						ITEM_COST_CBO ITC 
+				WHERE	
+						ITC.ITEM_ID=LD.ITEM_ID)
+			ELSE
+					(SELECT 
+									MAX(ITC.UNIT_COST) 
+					 FROM 
+									ITEM_COST_CBO ITC 
+					 JOIN 
+									FACILITY_ALIAS FA 
+					 ON 
+									FA.FACILITY_ID=ITC.FACILITY_ID
+					 WHERE FA.FACILITY_ALIAS_ID=INVN_TYPE.FA_ALIAS
+					 AND ITC.ITEM_ID=LD.ITEM_ID)*(LAR.EXPECTED_QUANTITY) 
+			END		
+	END ) AS VLR_GERAL_PROD,	
+    CASE
+        WHEN SUBSTR(LOCN.DSP_LOCN,2,3) IN (&apos;R51&apos;,&apos;R52&apos;,&apos;R53&apos;,&apos;R54&apos;) THEN &apos;S&apos; 
+        ELSE &apos;N&apos;
+    END AS PAR,
+    /*CASE 
+            WHEN SUBSTR(LOCN.DSP_LOCN,2,3) IN (&apos;R51&apos;,&apos;R52&apos;,&apos;R53&apos;,&apos;R54&apos;) THEN 
+                CASE WHEN B.VARIABLE_WEIGHT=1 THEN       
+                      B.UNIT_COST * (LAR.COUNT_QUANTITY/1000)
+                ELSE  B.UNIT_COST * LAR.COUNT_QUANTITY
+                END
+        ELSE 0
+    END AS VLR_PAR_AUDITADO,*/
+	AVG(CASE
+			WHEN LOCN.AISLE IN (&apos;R51&apos;,&apos;R52&apos;,&apos;R53&apos;,&apos;R54&apos;) AND B.VARIABLE_WEIGHT=1 THEN 
+				CASE
+					WHEN LD.INVENTORY_TYPE IS NULL THEN	
+					(LAR.COUNT_QUANTITY/1000)
+					*(SELECT 
+							MAX(ITC.UNIT_COST) 
+					FROM 
+							ITEM_COST_CBO ITC 
+					WHERE	
+							ITC.ITEM_ID=LD.ITEM_ID)
+				ELSE
+					(SELECT 
+									MAX(ITC.UNIT_COST) 
+					 FROM 
+									ITEM_COST_CBO ITC 
+					 JOIN 
+									FACILITY_ALIAS FA 
+					 ON 
+									FA.FACILITY_ID=ITC.FACILITY_ID
+					 WHERE FA.FACILITY_ALIAS_ID=INVN_TYPE.FA_ALIAS
+					 AND ITC.ITEM_ID=LD.ITEM_ID)*((LAR.COUNT_QUANTITY/1000)) 
+				END
+			ELSE
+				0
+		END) AS VLR_PAR_AUDITADO,
+
+    /*CASE
+        WHEN SUBSTR(LOCN.DSP_LOCN,2,3) IN (&apos;R51&apos;,&apos;R52&apos;,&apos;R53&apos;,&apos;R54&apos;) THEN 
+                CASE WHEN B.VARIABLE_WEIGHT=1 THEN       
+                      B.UNIT_COST * (LAR.COUNT_QUANTITY/1000)
+                ELSE  B.UNIT_COST * LAR.EXPECTED_QUANTITY
+                END      
+        ELSE 0
+    END AS VLR_PAR_ESPERADO,*/
+	AVG(CASE
+			WHEN LOCN.AISLE IN (&apos;R51&apos;,&apos;R52&apos;,&apos;R53&apos;,&apos;R54&apos;) 
+				AND B.VARIABLE_WEIGHT=1 THEN 
+				CASE
+					WHEN LD.INVENTORY_TYPE IS NULL THEN	
+					(LAR.EXPECTED_QUANTITY/1000)
+					*(SELECT 
+							MAX(ITC.UNIT_COST) 
+					FROM 
+							ITEM_COST_CBO ITC 
+					WHERE	
+							ITC.ITEM_ID=LD.ITEM_ID)
+				ELSE
+					(SELECT 
+									MAX(ITC.UNIT_COST) 
+					 FROM 
+									ITEM_COST_CBO ITC 
+					 JOIN 
+									FACILITY_ALIAS FA 
+					 ON 
+									FA.FACILITY_ID=ITC.FACILITY_ID
+					 WHERE FA.FACILITY_ALIAS_ID=INVN_TYPE.FA_ALIAS
+					 AND ITC.ITEM_ID=LD.ITEM_ID)*((LAR.EXPECTED_QUANTITY/1000)) 
+				END
+			ELSE
+				0
+		END) AS VLR_PAR_ESPERADO,	
+    CASE 
+        WHEN LAR.COUNT_QUANTITY &lt; LAR.EXPECTED_QUANTITY THEN
+              CASE WHEN B.VARIABLE_WEIGHT=1 THEN       
+                      (LAR.EXPECTED_QUANTITY-LAR.COUNT_QUANTITY)/ 1000
+             ELSE  (LAR.EXPECTED_QUANTITY-LAR.COUNT_QUANTITY)/LD.STD_PACK_QTY
+             END           
+        ELSE 0
+     END AS FALTA,
+     CASE 
+        WHEN LAR.EXPECTED_QUANTITY &lt; LAR.COUNT_QUANTITY  THEN            
+            CASE WHEN B.VARIABLE_WEIGHT=1 THEN       
+                   (LAR.COUNT_QUANTITY-LAR.EXPECTED_QUANTITY)/ 1000
+             ELSE  (LAR.COUNT_QUANTITY-LAR.EXPECTED_QUANTITY)/B.EMB_FINAL
+             END
+        ELSE 0
+    END AS SOBRA,
+    AVG(CASE 
+        WHEN LAR.COUNT_QUANTITY &lt; LAR.EXPECTED_QUANTITY THEN
+
+             CASE WHEN B.VARIABLE_WEIGHT=1 THEN       
+                   --((LAR.EXPECTED_QUANTITY-LAR.COUNT_QUANTITY)/ 1000)*B.UNIT_COST
+				CASE
+					WHEN LD.INVENTORY_TYPE IS NULL THEN	
+					((LAR.EXPECTED_QUANTITY-LAR.COUNT_QUANTITY)/ 1000)
+					*(SELECT 
+							MAX(ITC.UNIT_COST) 
+					FROM 
+							ITEM_COST_CBO ITC 
+					WHERE	
+							ITC.ITEM_ID=LD.ITEM_ID)
+				ELSE
+					(SELECT 
+									MAX(ITC.UNIT_COST) 
+					 FROM 
+									ITEM_COST_CBO ITC 
+					 JOIN 
+									FACILITY_ALIAS FA 
+					 ON 
+									FA.FACILITY_ID=ITC.FACILITY_ID
+					 WHERE FA.FACILITY_ALIAS_ID=INVN_TYPE.FA_ALIAS
+					 AND ITC.ITEM_ID=LD.ITEM_ID)*((LAR.EXPECTED_QUANTITY-LAR.COUNT_QUANTITY)/1000) 
+				END				   
+             ELSE
+				CASE
+					WHEN LD.INVENTORY_TYPE IS NULL THEN	
+					((LAR.EXPECTED_QUANTITY-LAR.COUNT_QUANTITY))
+					*(SELECT 
+							MAX(ITC.UNIT_COST) 
+					FROM 
+							ITEM_COST_CBO ITC 
+					WHERE	
+							ITC.ITEM_ID=LD.ITEM_ID)
+				ELSE
+					(SELECT 
+									MAX(ITC.UNIT_COST) 
+					 FROM 
+									ITEM_COST_CBO ITC 
+					 JOIN 
+									FACILITY_ALIAS FA 
+					 ON 
+									FA.FACILITY_ID=ITC.FACILITY_ID
+					 WHERE FA.FACILITY_ALIAS_ID=INVN_TYPE.FA_ALIAS
+					 AND ITC.ITEM_ID=LD.ITEM_ID)*((LAR.EXPECTED_QUANTITY-LAR.COUNT_QUANTITY)) 
+				END END
+
+        ELSE 0
+     END) AS VLR_FALTA,
+     /*CASE 
+        WHEN LAR.EXPECTED_QUANTITY &lt; LAR.COUNT_QUANTITY  THEN           
+             CASE WHEN B.VARIABLE_WEIGHT=1 THEN       
+                   ((LAR.COUNT_QUANTITY-LAR.EXPECTED_QUANTITY)/ 1000)*B.UNIT_COST
+             ELSE  (LAR.COUNT_QUANTITY-LAR.EXPECTED_QUANTITY)*B.UNIT_COST
+             END           
+        ELSE 0
+     END AS VLR_SOBRA,*/
+	 AVG(CASE 
+        WHEN LAR.COUNT_QUANTITY &gt; LAR.EXPECTED_QUANTITY THEN
+
+             CASE WHEN B.VARIABLE_WEIGHT=1 THEN       
+                   --((LAR.EXPECTED_QUANTITY-LAR.COUNT_QUANTITY)/ 1000)*B.UNIT_COST
+				CASE
+					WHEN LD.INVENTORY_TYPE IS NULL THEN	
+					((LAR.COUNT_QUANTITY-LAR.EXPECTED_QUANTITY)/ 1000)
+					*(SELECT 
+							MAX(ITC.UNIT_COST) 
+					FROM 
+							ITEM_COST_CBO ITC 
+					WHERE	
+							ITC.ITEM_ID=LD.ITEM_ID)
+				ELSE
+					(SELECT 
+									MAX(ITC.UNIT_COST) 
+					 FROM 
+									ITEM_COST_CBO ITC 
+					 JOIN 
+									FACILITY_ALIAS FA 
+					 ON 
+									FA.FACILITY_ID=ITC.FACILITY_ID
+					 WHERE FA.FACILITY_ALIAS_ID=INVN_TYPE.FA_ALIAS
+					 AND ITC.ITEM_ID=LD.ITEM_ID)*((LAR.COUNT_QUANTITY-LAR.EXPECTED_QUANTITY)/1000) 
+				END				   
+             ELSE
+				CASE
+					WHEN LD.INVENTORY_TYPE IS NULL THEN	
+					((LAR.COUNT_QUANTITY-LAR.EXPECTED_QUANTITY))
+					*(SELECT 
+							MAX(ITC.UNIT_COST) 
+					FROM 
+							ITEM_COST_CBO ITC 
+					WHERE	
+							ITC.ITEM_ID=LD.ITEM_ID)
+				ELSE
+					(SELECT 
+									MAX(ITC.UNIT_COST) 
+					 FROM 
+									ITEM_COST_CBO ITC 
+					 JOIN 
+									FACILITY_ALIAS FA 
+					 ON 
+									FA.FACILITY_ID=ITC.FACILITY_ID
+					 WHERE FA.FACILITY_ALIAS_ID=INVN_TYPE.FA_ALIAS
+					 AND ITC.ITEM_ID=LD.ITEM_ID)*((LAR.COUNT_QUANTITY-LAR.EXPECTED_QUANTITY)) 
+				END END
+
+        ELSE 0
+     END) AS VLR_SOBRA,
+
+
+
+     /*CASE WHEN B.VARIABLE_WEIGHT=1 THEN       
+                   ((LAR.COUNT_QUANTITY-LAR.EXPECTED_QUANTITY)/ 1000)*B.UNIT_COST
+             ELSE  (LAR.COUNT_QUANTITY-LAR.EXPECTED_QUANTITY)*B.UNIT_COST
+      END
+     AS VLR_DIF,
+	*/
+	AVG(CASE
+			WHEN LOCN.AISLE IN (&apos;R51&apos;,&apos;R52&apos;,&apos;R53&apos;,&apos;R54&apos;) AND B.VARIABLE_WEIGHT=1 THEN 
+				CASE
+					WHEN LD.INVENTORY_TYPE IS NULL THEN	
+					(LAR.EXPECTED_QUANTITY/1000)
+					*(SELECT 
+							MAX(ITC.UNIT_COST) 
+					FROM 
+							ITEM_COST_CBO ITC 
+					WHERE	
+							ITC.ITEM_ID=LD.ITEM_ID)
+				ELSE
+					(SELECT 
+									MAX(ITC.UNIT_COST) 
+					 FROM 
+									ITEM_COST_CBO ITC 
+					 JOIN 
+									FACILITY_ALIAS FA 
+					 ON 
+									FA.FACILITY_ID=ITC.FACILITY_ID
+					 WHERE FA.FACILITY_ALIAS_ID=INVN_TYPE.FA_ALIAS
+					 AND ITC.ITEM_ID=LD.ITEM_ID)*((LAR.EXPECTED_QUANTITY/100)) 
+				END
+			WHEN LOCN.AISLE IN (&apos;R51&apos;,&apos;R52&apos;,&apos;R53&apos;,&apos;R54&apos;) AND B.VARIABLE_WEIGHT!=1 THEN 
+				CASE
+					WHEN LD.INVENTORY_TYPE IS NULL THEN	
+					(LAR.EXPECTED_QUANTITY)
+					*(SELECT 
+							MAX(ITC.UNIT_COST) 
+					FROM 
+							ITEM_COST_CBO ITC 
+					WHERE	
+							ITC.ITEM_ID=LD.ITEM_ID)
+				ELSE
+					(SELECT 
+									MAX(ITC.UNIT_COST) 
+					 FROM 
+									ITEM_COST_CBO ITC 
+					 JOIN 
+									FACILITY_ALIAS FA 
+					 ON 
+									FA.FACILITY_ID=ITC.FACILITY_ID
+					 WHERE FA.FACILITY_ALIAS_ID=INVN_TYPE.FA_ALIAS
+					 AND ITC.ITEM_ID=LD.ITEM_ID)*((LAR.EXPECTED_QUANTITY)) 
+				END				
+			ELSE
+				0
+		END) AS VLR_PAR_ESPERADO,
+	AVG(CASE WHEN B.VARIABLE_WEIGHT=1 THEN
+		CASE WHEN LD.INVENTORY_TYPE IS NULL THEN	
+				((LAR.COUNT_QUANTITY-LAR.EXPECTED_QUANTITY)/1000)
+				*(SELECT 
+						MAX(ITC.UNIT_COST) 
+				FROM 
+						ITEM_COST_CBO ITC 
+				WHERE	
+						ITC.ITEM_ID=LD.ITEM_ID)
+			ELSE
+					(SELECT 
+									MAX(ITC.UNIT_COST) 
+					 FROM 
+									ITEM_COST_CBO ITC 
+					 JOIN 
+									FACILITY_ALIAS FA 
+					 ON 
+									FA.FACILITY_ID=ITC.FACILITY_ID
+					 WHERE FA.FACILITY_ALIAS_ID=INVN_TYPE.FA_ALIAS
+					 AND ITC.ITEM_ID=LD.ITEM_ID)*((LAR.COUNT_QUANTITY-LAR.EXPECTED_QUANTITY)/1000)			
+
+			END
+    ELSE
+		CASE WHEN LD.INVENTORY_TYPE IS NULL THEN		
+				(LAR.COUNT_QUANTITY-LAR.EXPECTED_QUANTITY)
+				*
+				(SELECT 
+						MAX(ITC.UNIT_COST) 
+				FROM 
+						ITEM_COST_CBO ITC 
+				WHERE	
+						ITC.ITEM_ID=LD.ITEM_ID)
+		ELSE
+			(SELECT 
+									MAX(ITC.UNIT_COST) 
+								FROM 
+									ITEM_COST_CBO ITC 
+								JOIN 
+									FACILITY_ALIAS FA 
+								ON 
+									FA.FACILITY_ID=ITC.FACILITY_ID
+								WHERE FA.FACILITY_ALIAS_ID=INVN_TYPE.FA_ALIAS
+								AND ITC.ITEM_ID=LD.ITEM_ID)*(LAR.COUNT_QUANTITY-LAR.EXPECTED_QUANTITY)
+		END 
+    END) AS VLR_DIF,	
+    LAR.FACILITY_ALIAS_ID as CD,
+    CASE WHEN B.VARIABLE_WEIGHT=1 THEN       
+
+                    (LAR.EXPECTED_QUANTITY-LAR.COUNT_QUANTITY)/1000
+             ELSE   (LAR.EXPECTED_QUANTITY-LAR.COUNT_QUANTITY)/LD.STD_PACK_QTY
+      END
+     AS Erros
+     --,
+    --(LAR.EXPECTED_QUANTITY-LAR.COUNT_QUANTITY)/B.EMB_FINAL AS Erros    
+FROM
+
+  LPN_AUDIT_RESULTS LAR
+JOIN
+	LPN L 
+ON
+	L.TC_LPN_ID=LAR.TC_LPN_ID
+AND
+	L.INBOUND_OUTBOUND_INDICATOR=&apos;O&apos;
+JOIN
+	LPN_DETAIL LD
+ON
+	LD.LPN_ID=L.LPN_ID
+
+
+-- Busca dados do produto --
+JOIN
+((SELECT 
+            IC.ITEM_ID,
+            IC.ITEM_NAME,
+			IC.REF_FIELD8 as COMPRADOR,
+            IC.DESCRIPTION AS ITEM,
+            IC.PRODUCT_CLASS_ID,
+            CASE WHEN IPC.QUANTITY IS NULL THEN 1 ELSE MAX(IPC.QUANTITY) END AS EMB_FINAL,
+            --ICC.UNIT_COST,
+			IC.VARIABLE_WEIGHT,
+            IPC.IS_STD,
+            max(IPC.QUANTITY)as QUANTITY,
+            UB.DESCRIPTION AS BASE_UOM,
+            UQ.DESCRIPTION AS QTY_UOM,
+            PC.DESCRIPTION AS &quot;CLASSE DE PRODUTO&quot;,
+            SC.CODE_DESC AS CATEGORIA,
+			IFMW.SHELF_DAYS,
+			IFMW.LPN_PER_TIER as BASE,
+			IFMW.TIER_PER_PLT as ALTURA,
+			IFMW.LPN_PER_TIER * IFMW.TIER_PER_PLT AS PALETIZACAO,
+			CASE WHEN IC.VARIABLE_WEIGHT=1 THEN 1000 ELSE 1 END AS FAT_CNV_VW
+			--,
+			--ICC.AUDIT_LAST_UPDATED_DTTM as DATA_AT	
+FROM   
+                ITEM_CBO IC
+            LEFT JOIN
+                ITEM_PACKAGE_CBO IPC
+            ON 
+                IC.ITEM_ID=IPC.ITEM_ID
+            AND
+                IPC.IS_STD = 1
+            AND 
+                IPC.PACKAGE_UOM_ID=&apos;173&apos;
+            AND
+                IPC.MARK_FOR_DELETION=0
+            LEFT JOIN
+                SIZE_UOM UB
+            ON
+                IC.BASE_STORAGE_UOM_ID=UB.SIZE_UOM_ID
+            LEFT JOIN
+                SIZE_UOM UQ
+            ON
+                IC.DISPLAY_QTY_UOM_ID=UQ.SIZE_UOM_ID
+            LEFT JOIN
+                PRODUCT_CLASS PC
+            ON
+                PC.PRODUCT_CLASS_ID=IC.PRODUCT_CLASS_ID
+			LEFT JOIN	
+				ITEM_MASTER IM
+			ON	
+				IC.ITEM_ID=IM.ITEM_ID
+            /*LEFT JOIN
+                 ITEM_COST_CBO ICC
+            ON
+                 ICC.ITEM_ID=IC.ITEM_ID*/
+			LEFT JOIN
+				ITEM_FACILITY_MAPPING_WMS IFMW
+            ON
+                IFMW.ITEM_ID=IC.ITEM_ID
+			LEFT JOIN	
+				 SYS_CODE SC
+			ON
+				SC.CODE_ID=IM.PROD_CATGRY
+            AND            
+                SC.REC_TYPE=&apos;B&apos;
+            AND
+                SC.CODE_TYPE=&apos;060&apos;              
+GROUP BY
+            IC.ITEM_ID,
+            IC.ITEM_NAME,
+			IC.REF_FIELD8,
+            IC.DESCRIPTION,
+            IC.PRODUCT_CLASS_ID,
+            IPC.QUANTITY,
+            UB.DESCRIPTION,
+            UQ.DESCRIPTION,
+            PC.DESCRIPTION,
+            IPC.IS_STD,
+            IC. DISPLAY_QTY_UOM_ID,
+            IPC.PACKAGE_UOM_ID,
+            IC.DATABASE_QTY_UOM_ID,
+            IC.DISPLAY_QTY_UOM_ID,
+            SC.CODE_DESC,
+            IC.VARIABLE_WEIGHT,
+            --ICC.UNIT_COST,
+			IFMW.SHELF_DAYS,
+			IFMW.LPN_PER_TIER,
+			IFMW.TIER_PER_PLT,
+			IFMW.LPN_PER_TIER * IFMW.TIER_PER_PLT
+			--,
+			--ICC.AUDIT_LAST_UPDATED_DTTM
+        ORDER BY 
+            IC.ITEM_NAME
+    )B)
+
+ON
+    B.ITEM_ID=LAR.ITEM_ID
+AND
+	LD.ITEM_ID=B.ITEM_ID
+LEFT JOIN
+	/*BUSCA LOCAL DE PICKIN*/
+     ((SELECT 
+                        LC.DSP_LOCN,
+                        PLD.ITEM_ID,
+                        LC.AISLE
+                    FROM
+                        LOCN_HDR LC
+                    JOIN
+                        PICK_LOCN_DTL PLD
+                    ON
+                        LC.LOCN_ID=PLD.LOCN_ID
+					WHERE SKU_DEDCTN_TYPE=&apos;P&apos;
+	)LOCN)
+ON
+         LAR.ITEM_ID=LOCN.ITEM_ID  
+
+---INVENTORY_TYPE--		 
+LEFT JOIN
+		((SELECT
+			SC.CODE_ID AS INVENTORY_TYPE,
+			SC.SHORT_DESC AS FA_ALIAS,
+			&apos;CD &apos;||SC.SHORT_DESC AS OPERACAO
+		FROM
+			 SYS_CODE SC
+		WHERE
+			SC.REC_TYPE=&apos;B&apos;
+		AND
+			SC.CODE_TYPE=&apos;064&apos;
+		)INVN_TYPE)
+ON
+					INVN_TYPE.INVENTORY_TYPE=LD.INVENTORY_TYPE	
+
+
+/*WHERE 
+    LAR.TC_LPN_ID=&apos;529513&apos;*/  
+WHERE
+    LAR.CREATED_DTTM=(SELECT 
+                            MAX(AUD.CREATED_DTTM) 
+                        FROM 
+                                LPN_AUDIT_RESULTS AUD 
+                        WHERE
+                                AUD.ITEM_ID=LAR.ITEM_ID
+                        AND
+                                AUD.DEST_FACILITY_ALIAS_ID=LAR.DEST_FACILITY_ALIAS_ID
+                        AND
+                                AUD.TC_LPN_ID=LAR.TC_LPN_ID
+                        AND
+                                AUD.TC_SHIPMENT_ID=LAR.TC_SHIPMENT_ID)
+GROUP BY
+	LAR.TC_SHIPMENT_ID,
+    LAR.TC_LPN_ID,
+    LAR.DEST_FACILITY_ALIAS_ID,
+    CAST(LAR.CREATED_DTTM AS DATE),
+    CASE
+        WHEN CAST(TO_CHAR(LAR.CREATED_DTTM,&apos;HH24&apos;) AS FLOAT)&lt;6 THEN 3
+        WHEN CAST(TO_CHAR(LAR.CREATED_DTTM,&apos;HH24&apos;) AS FLOAT) &gt; 21 THEN 3     
+        WHEN CAST(TO_CHAR(LAR.CREATED_DTTM,&apos;HH24&apos;) AS FLOAT)&lt;14  THEN 1        
+        ELSE  2    
+    END,            
+    LAR.AUDITOR_USERID,
+    LAR.PACKER_USERID,
+    B.ITEM_NAME,
+    B.ITEM,
+    B.EMB_FINAL,
+    B.QTY_UOM,
+    B.CATEGORIA,
+    LOCN.DSP_LOCN,
+	LD.QTY_CONV_FACTOR,
+	LD.STD_PACK_QTY,
+    LD.QTY_UOM_ID,	
+	LAR.COUNT_QUANTITY,
+	B.VARIABLE_WEIGHT,
+	LAR.EXPECTED_QUANTITY,
+	LD.INVENTORY_TYPE,
+	B.EMB_FINAL,
+	LAR.FACILITY_ALIAS_ID,
+	LAR.CREATED_DTTM    
+/* WHERE LAR.QA_FLAG=&apos;3&apos; */
+
+)B_FINAL)
+ --WHERE
+ --    B_FINAL.OLPN=&apos;680429&apos;
+GROUP BY
+   B_FINAL.CREATED_DTTM,
+    B_FINAL.DATA,
+    B_FINAL.LOJA,
+    B_FINAL.TURNO,
+    B_FINAL.VLR_GERAL_PROD,
+    B_FINAL.EXPECTED_QUANTITY,
+    B_FINAL.COUNT_QUANTITY,
+    &apos; &apos;,
+    B_FINAL.CD,
+    B_FINAL.FALTA,
+    B_FINAL.SOBRA,
+     &apos; &apos;,
+     &apos; &apos;,
+     &apos; &apos;,
+     &apos; &apos;,
+     &apos; &apos;,
+     B_FINAL.VLR_FALTA,
+     B_FINAL.VLR_SOBRA,
+     &apos; &apos;,
+     &apos; &apos;,
+     &apos; &apos;,
+     &apos; &apos;,
+     &apos; &apos;,
+     B_FINAL.CATEGORIA,
+     &apos; &apos;,
+     B_FINAL.OLPN,
+     &apos; &apos;
+     ,
+     B_FINAL.ITEM_NAME,
+     B_FINAL.PRODUTO
+)BRESUMO_FINAL)
+/*WHERE
+    BRESUMO_FINAL.OLPN IN (&apos;926822&apos;)*/
+GROUP BY
+     BRESUMO_FINAL.ITEM_NAME,
+     BRESUMO_FINAL.PRODUTO,
+	 BRESUMO_FINAL.CREATED_DTTM,
+     BRESUMO_FINAL.DATA,
+     BRESUMO_FINAL.LOJA,
+     BRESUMO_FINAL.TURNO,    
+     BRESUMO_FINAL.VALOR_EQUIP,
+     BRESUMO_FINAL.CD,     
+     BRESUMO_FINAL.&quot;FA/IN&quot;,
+     BRESUMO_FINAL.&quot;SO/IN&quot;,
+     BRESUMO_FINAL.&quot;VL&quot;,
+     BRESUMO_FINAL.&quot;VE&quot;,
+     BRESUMO_FINAL.&quot;AV&quot;,     
+     BRESUMO_FINAL.&quot;FA/IN$&quot;,
+     BRESUMO_FINAL.&quot;SO/IN$&quot;,
+     BRESUMO_FINAL.&quot;VL$&quot;,
+     BRESUMO_FINAL.&quot;VE$&quot;,
+     BRESUMO_FINAL.&quot;AV$&quot;,
+     BRESUMO_FINAL.CATEGORIA,
+     BRESUMO_FINAL.ENCAIXE,
+     BRESUMO_FINAL.OLPN,
+     BRESUMO_FINAL.OBS
+)RF)
+GROUP BY	
+	 RF.CREATED_DTTM,	 
+     RF.DATA,
+     RF.LOJA,
+     RF.TURNO,    
+     RF.VALOR_EQUIP,
+     RF.CD,     
+     RF.&quot;FA/IN&quot;,
+     RF.&quot;SO/IN&quot;,
+     RF.&quot;VL&quot;,
+     RF.&quot;VE&quot;,
+     RF.&quot;AV&quot;,     
+     RF.&quot;FA/IN$&quot;,
+     RF.&quot;SO/IN$&quot;,
+     RF.&quot;VL$&quot;,
+     RF.&quot;VE$&quot;,
+     RF.&quot;AV$&quot;,
+     RF.CATEGORIA,
+     RF.ENCAIXE,
+     RF.OLPN,
+     RF.OBS)RESUMO)
+LEFT JOIN 
+	LPN L1
+	ON RESUMO.OLPN = L1.TC_LPN_ID</sqlText>
+					<mdProjectedItems>
+						<mdProjectedItem name="CREATED_DTTM"/>
+						<mdProjectedItem name="DATA"/>
+						<mdProjectedItem name="LOJA"/>
+						<mdProjectedItem name="TURNO"/>
+						<mdProjectedItem name="VALOR_EQUIP"/>
+						<mdProjectedItem name="CD"/>
+						<mdProjectedItem name="FA/IN"/>
+						<mdProjectedItem name="SO/IN"/>
+						<mdProjectedItem name="VL"/>
+						<mdProjectedItem name="VE"/>
+						<mdProjectedItem name="AV"/>
+						<mdProjectedItem name="FA/IN$"/>
+						<mdProjectedItem name="SO/IN$"/>
+						<mdProjectedItem name="VL$"/>
+						<mdProjectedItem name="VE$"/>
+						<mdProjectedItem name="AV$"/>
+						<mdProjectedItem name="CATEGORIA"/>
+						<mdProjectedItem name="ENCAIXE"/>
+						<mdProjectedItem name="OLPN"/>
+						<mdProjectedItem name="OBS"/>
+						<mdProjectedItem name="FA"/>
+						<mdProjectedItem name="SO"/>
+						<mdProjectedItem name="FA$"/>
+						<mdProjectedItem name="SO$"/>
+						<mdProjectedItem name="VALOR"/>
+						<mdProjectedItem name="VOLUME_ESPERADO"/>
+						<mdProjectedItem name="VOLUME_CONFERIDO"/>
+						<mdProjectedItem name="TC_SHIPMENT_ID"/>
+					</mdProjectedItems>
+				</sqlQuery>
+			</source>
+			<selection>
+				<dataItem name="DATA" aggregate="none" rollupAggregate="none" sort="ascending">
+					<expression>cast([SQL1].[DATA];date)</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="7"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="LOJA" aggregate="none" rollupAggregate="none" sort="ascending">
+					<expression>[SQL1].[LOJA]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="TURNO" aggregate="none" rollupAggregate="none">
+					<expression>[SQL1].[TURNO]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="9"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="VALOR" aggregate="none" rollupAggregate="none">
+					<expression>[SQL1].[VALOR]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="9"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="VOLUME" aggregate="none" rollupAggregate="none" label="VOLUME ESPERADO">
+					<expression>[SQL1].[VOLUME_ESPERADO]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="9"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="VOLUME CONFERIDO" aggregate="none">
+					<expression>[SQL1].[VOLUME_CONFERIDO]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="9"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="VALOR_EQUIP" aggregate="none" rollupAggregate="none">
+					<expression>[SQL1].[VALOR_EQUIP]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="CD" aggregate="none" rollupAggregate="none">
+					<expression>[SQL1].[CD]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="FA" aggregate="none" rollupAggregate="none">
+					<expression>[SQL1].[FA]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="9"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="SO" aggregate="none" rollupAggregate="none">
+					<expression>[SQL1].[SO]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="9"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="FA/IN" aggregate="none" rollupAggregate="none">
+					<expression>[SQL1].[FA/IN]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="SO/IN" aggregate="none" rollupAggregate="none">
+					<expression>[SQL1].[SO/IN]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="VL" aggregate="none" rollupAggregate="none">
+					<expression>[SQL1].[VL]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="VE" aggregate="none" rollupAggregate="none">
+					<expression>[SQL1].[VE]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="AV" aggregate="none" rollupAggregate="none">
+					<expression>[SQL1].[AV]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="FA$" aggregate="none" rollupAggregate="none">
+					<expression>[SQL1].[FA$]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="9"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="SO$" aggregate="none" rollupAggregate="none">
+					<expression>[SQL1].[SO$]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="9"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="FA/IN$" aggregate="none" rollupAggregate="none">
+					<expression>[SQL1].[FA/IN$]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="SO/IN$" aggregate="none" rollupAggregate="none">
+					<expression>[SQL1].[SO/IN$]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="VL$" aggregate="none" rollupAggregate="none">
+					<expression>[SQL1].[VL$]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="VE$" aggregate="none" rollupAggregate="none">
+					<expression>[SQL1].[VE$]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="AV$" aggregate="none" rollupAggregate="none">
+					<expression>[SQL1].[AV$]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="CATEGORIA" aggregate="none" rollupAggregate="none">
+					<expression>[SQL1].[CATEGORIA]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="ENCAIXE" aggregate="none" rollupAggregate="none">
+					<expression>[SQL1].[ENCAIXE]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="OLPN" aggregate="none" rollupAggregate="none">
+					<expression>[SQL1].[OLPN]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="OBS" aggregate="none" rollupAggregate="none">
+					<expression>[SQL1].[OBS]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="EMBARQUE">
+					<expression>[SQL1].[TC_SHIPMENT_ID]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+			</selection>
+			<queryHints>
+				<localCache value="false"/>
+			</queryHints>
+			<detailFilters>
+				<detailFilter use="optional">
+					<filterExpression>cast([SQL1].[DATA];date)BETWEEN ?p_data_in? AND ?p_data_fi?</filterExpression>
+				</detailFilter>
+				<detailFilter use="optional">
+					<filterExpression>[SQL1].[LOJA]=?p_loja?</filterExpression>
+				</detailFilter>
+				<detailFilter use="optional">
+					<filterExpression>[SQL1].[OLPN]=?p_olpn?</filterExpression>
+				</detailFilter>
+			</detailFilters>
+		</query>
+		<query name="Auditoria de Carga Detalhado">
+			<source>
+				<sqlQuery name="SQL2" dataSource="WMOS">
+					<sqlText>SELECT 
+  * 
+FROM
+((SELECT
+    B_FINAL.CD,
+    B_FINAL.DATA as &quot;Data&quot;,
+    B_FINAL.LOJA as &quot;Nº Loja&quot;,
+    &apos; &apos; AS &quot;Nº NF&quot;,
+    B_FINAL.OLPN AS OLPN,
+    B_FINAL.ITEM_NAME as &quot;Cod Prod&quot;,
+    &apos; &apos; as &quot;Seção&quot;,
+    B_FINAL.PRODUTO as &quot;Descrição&quot;,
+    B_FINAL.EMB_FINAL EMBALAGEM,
+    B_FINAL.QTY_UOM as &quot;UOM QTY&quot;,
+    &apos;UN&apos; as &quot;Unidade&quot;,
+    B_FINAL.PAR,        
+    SUM(B_FINAL.&quot;Fat&quot;) AS &quot;Fat&quot;,
+    SUM(B_FINAL.&quot;Conf&quot;) AS &quot;Conf&quot;,
+    SUM(B_FINAL.&quot;Conf&quot;)- SUM(B_FINAL.&quot;Fat&quot;) as &quot;Dif&quot;,
+    B_FINAL.CUSTO_UNITARIO,
+    SUM(B_FINAL.VLR_DIF) AS &quot;Total&quot;,
+    CASE
+        WHEN (SUM(B_FINAL.EXPECTED_QUANTITY)-SUM(B_FINAL.COUNT_QUANTITY)) &gt; 0 THEN &apos;FA&apos;
+        WHEN (SUM(B_FINAL.EXPECTED_QUANTITY)-SUM(B_FINAL.COUNT_QUANTITY)) &lt; 0 THEN &apos;SO&apos;
+        ELSE &apos;OK&apos;
+    END AS Motivo,    
+    ABS(sum(B_FINAL.Erros)) as &quot;Erros&quot;,
+    CASE
+        WHEN (SUM(B_FINAL.EXPECTED_QUANTITY)-SUM(B_FINAL.COUNT_QUANTITY)) &gt; 0 THEN 1
+        WHEN (SUM(B_FINAL.EXPECTED_QUANTITY)-SUM(B_FINAL.COUNT_QUANTITY)) &lt; 0 THEN 2
+        ELSE 0
+    END AS &quot;Cód Oc&quot;,    
+    B_FINAL.DSP_LOCN as &quot;Local&quot;,
+    B_FINAL.TC_SHIPMENT_ID as &quot;Embarque&quot;,
+    &apos; &apos; As ENCAIXE,
+    &apos; &apos; as OBS,
+    B_FINAL.CATEGORIA,
+    B_FINAL.PACKER_USERID as &quot;Separador&quot;
+    
+FROM
+((SELECT 
+		LAR.TC_SHIPMENT_ID,
+		LAR.TC_LPN_ID AS OLPN,
+		LAR.DEST_FACILITY_ALIAS_ID AS LOJA,
+		CAST(LAR.CREATED_DTTM AS DATE) AS DATA,
+		CASE
+			WHEN CAST(TO_CHAR(LAR.CREATED_DTTM,&apos;HH24&apos;) AS FLOAT)&lt;6 THEN 3
+			WHEN CAST(TO_CHAR(LAR.CREATED_DTTM,&apos;HH24&apos;) AS FLOAT) &gt; 21 THEN 3     
+			WHEN CAST(TO_CHAR(LAR.CREATED_DTTM,&apos;HH24&apos;) AS FLOAT)&lt;14  THEN 1        
+			ELSE  2    
+		END AS TURNO,            
+		LAR.AUDITOR_USERID,
+		LAR.PACKER_USERID,
+		B.ITEM_NAME,
+		B.ITEM AS PRODUTO,
+		B.EMB_FINAL,
+		B.PAR,
+		B.QTY_UOM,
+		B.CATEGORIA,
+		LOCN.DSP_LOCN,
+		--B.UNIT_COST AS CUSTO_UNITARIO,
+		CUSTO.UNIT_COST AS CUSTO_UNITARIO,
+		CASE WHEN B.VARIABLE_WEIGHT=1 THEN
+			ROUND(LAR.EXPECTED_QUANTITY/1000,2) 
+		ELSE		 
+			LAR.EXPECTED_QUANTITY
+		END AS EXPECTED_QUANTITY,
+		CASE WHEN B.VARIABLE_WEIGHT=1 THEN
+			ROUND(LAR.EXPECTED_QUANTITY/1000,2) 
+		ELSE		
+			LAR.EXPECTED_QUANTITY
+		END AS &quot;Fat&quot;,   
+		CASE WHEN B.VARIABLE_WEIGHT=1 THEN
+			ROUND(LAR.COUNT_QUANTITY/1000,2)
+		ELSE
+			LAR.COUNT_QUANTITY
+		END AS COUNT_QUANTITY,
+		CASE WHEN B.VARIABLE_WEIGHT=1 THEN
+			ROUND(LAR.COUNT_QUANTITY/1000,2)
+		ELSE		
+			LAR.COUNT_QUANTITY
+		END AS &quot;Conf&quot;,	
+		CASE WHEN B.VARIABLE_WEIGHT=1 THEN		
+				((LAR.EXPECTED_QUANTITY) /1000)*CUSTO.UNIT_COST
+			ELSE			
+				(LAR.EXPECTED_QUANTITY) *CUSTO.UNIT_COST
+		END  AS VLR_GERAL_PROD, 
+		CASE
+				WHEN LOCN.AISLE IN (&apos;R51&apos;,&apos;R52&apos;,&apos;R53&apos;,&apos;R54&apos;) AND B.VARIABLE_WEIGHT=1 THEN 				
+					((LAR.COUNT_QUANTITY/1000)) *CUSTO.UNIT_COST	
+				WHEN LOCN.AISLE IN (&apos;R51&apos;,&apos;R52&apos;,&apos;R53&apos;,&apos;R54&apos;) AND B.VARIABLE_WEIGHT!=1 THEN				
+					(LAR.COUNT_QUANTITY)*CUSTO.UNIT_COST	
+				ELSE
+					0
+		END AS VLR_PAR_AUDITADO,
+		CASE
+				WHEN LOCN.AISLE IN (&apos;R51&apos;,&apos;R52&apos;,&apos;R53&apos;,&apos;R54&apos;) AND B.VARIABLE_WEIGHT=1 THEN 
+					((LAR.EXPECTED_QUANTITY/1000)) *CUSTO.UNIT_COST
+					WHEN LOCN.AISLE IN (&apos;R51&apos;,&apos;R52&apos;,&apos;R53&apos;,&apos;R54&apos;) AND B.VARIABLE_WEIGHT!=1 THEN 				
+					(LAR.EXPECTED_QUANTITY)*CUSTO.UNIT_COST
+				ELSE
+					0
+		END AS VLR_PAR_ESPERADO,
+		CASE 
+			WHEN LAR.COUNT_QUANTITY &lt; LAR.EXPECTED_QUANTITY THEN
+				  CASE WHEN B.VARIABLE_WEIGHT=1 THEN       
+						  (LAR.EXPECTED_QUANTITY-LAR.COUNT_QUANTITY)/ 1000
+				 ELSE  (LAR.EXPECTED_QUANTITY-LAR.COUNT_QUANTITY)/B.EMB_FINAL
+				 END           
+			ELSE 0
+		 END AS FALTA,
+		 CASE 
+			WHEN LAR.EXPECTED_QUANTITY &lt; LAR.COUNT_QUANTITY  THEN            
+				CASE WHEN B.VARIABLE_WEIGHT=1 THEN       
+					   (LAR.COUNT_QUANTITY-LAR.EXPECTED_QUANTITY)/ 1000
+				 ELSE  (LAR.COUNT_QUANTITY-LAR.EXPECTED_QUANTITY)/B.EMB_FINAL
+				 END
+			ELSE 0
+		END AS SOBRA,
+		CASE 
+			WHEN LAR.COUNT_QUANTITY &lt; LAR.EXPECTED_QUANTITY THEN            
+				 CASE WHEN B.VARIABLE_WEIGHT=1 THEN                
+					((LAR.EXPECTED_QUANTITY-LAR.COUNT_QUANTITY)/1000) *CUSTO.UNIT_COST	
+				 ELSE
+					
+					((LAR.EXPECTED_QUANTITY-LAR.COUNT_QUANTITY)) *CUSTO.UNIT_COST
+				END
+			ELSE 0
+		 END AS VLR_FALTA,    
+		 CASE 
+			WHEN LAR.COUNT_QUANTITY &gt; LAR.EXPECTED_QUANTITY THEN
+				
+				 CASE WHEN B.VARIABLE_WEIGHT=1 THEN     
+					
+					((LAR.COUNT_QUANTITY-LAR.EXPECTED_QUANTITY)/1000) *CUSTO.UNIT_COST	
+				 ELSE				
+					((LAR.COUNT_QUANTITY-LAR.EXPECTED_QUANTITY)) *CUSTO.UNIT_COST
+				END            
+			ELSE 0
+		 END AS VLR_SOBRA,
+		 /*CASE
+				WHEN LOCN.AISLE IN (&apos;R51&apos;,&apos;R52&apos;,&apos;R53&apos;,&apos;R54&apos;) 
+					AND B.VARIABLE_WEIGHT=1 THEN 					
+					((LAR.EXPECTED_QUANTITY/100)) *CUSTO.UNIT_COST
+				WHEN LOCN.AISLE IN (&apos;R51&apos;,&apos;R52&apos;,&apos;R53&apos;,&apos;R54&apos;) 
+					AND B.VARIABLE_WEIGHT!=1 THEN 					
+					(LAR.EXPECTED_QUANTITY) *CUSTO.UNIT_COST
+				ELSE
+					0
+			END) AS VLR_PAR_ESPERADO,*/
+		CASE WHEN B.VARIABLE_WEIGHT=1 THEN
+			
+				((LAR.COUNT_QUANTITY-LAR.EXPECTED_QUANTITY)/1000)*CUSTO.UNIT_COST
+		ELSE			
+			(LAR.COUNT_QUANTITY-LAR.EXPECTED_QUANTITY)*CUSTO.UNIT_COST	
+			
+		END AS VLR_DIF,		
+		LAR.FACILITY_ALIAS_ID as CD,
+		CASE WHEN B.VARIABLE_WEIGHT=1 THEN       
+					  
+						(LAR.EXPECTED_QUANTITY-LAR.COUNT_QUANTITY)/1000
+				 ELSE   (LAR.EXPECTED_QUANTITY-LAR.COUNT_QUANTITY)/B.EMB_FINAL
+		  END
+		 AS Erros
+		 
+	FROM
+	 
+	  LPN_AUDIT_RESULTS LAR
+	JOIN
+		LPN L 
+	ON
+		L.TC_LPN_ID=LAR.TC_LPN_ID
+	AND
+		L.INBOUND_OUTBOUND_INDICATOR=&apos;O&apos;
+	JOIN
+	((SELECT
+			LISTA.TC_LPN_ID,    
+			LISTA.ITEM_ID,
+			INVN_TYPE_AUX.INVENTORY_TYPE,
+			INVN_TYPE.FA_ALIAS,
+			ICC.UNIT_COST
+	FROM
+			((SELECT
+				L.TC_LPN_ID,
+				LD.INVENTORY_TYPE,
+				LD.ITEM_ID
+			FROM		
+				LPN_DETAIL LD        
+			JOIN
+				LPN L 
+			ON
+				L.LPN_ID=LD.LPN_ID
+			AND
+				L.INBOUND_OUTBOUND_INDICATOR=&apos;O&apos;        
+			--WHERE		
+			--	L.TC_LPN_ID=&apos;631128&apos;
+			
+			UNION
+			SELECT
+				 LAR.TC_LPN_ID,
+				 &apos;&apos; INVENTORY_TYPE,
+				 LAR.ITEM_ID
+			FROM
+				LPN_AUDIT_RESULTS LAR
+			--WHERE
+			--	LAR.TC_LPN_ID=&apos;631128&apos;
+			)LISTA)
+	JOIN
+		((SELECT
+				L.TC_LPN_ID,
+				LD.INVENTORY_TYPE         
+			FROM		
+				LPN_DETAIL LD        
+			JOIN
+				LPN L 
+			ON
+				L.LPN_ID=LD.LPN_ID
+			AND
+				L.INBOUND_OUTBOUND_INDICATOR=&apos;O&apos;        
+			--WHERE		
+			--	L.TC_LPN_ID=&apos;631128&apos;
+			GROUP BY
+				 L.TC_LPN_ID,
+				LD.INVENTORY_TYPE
+			)INVN_TYPE_AUX)
+	ON
+		INVN_TYPE_AUX.TC_LPN_ID=LISTA.TC_LPN_ID
+	JOIN
+		((SELECT
+				SC.CODE_ID AS INVENTORY_TYPE,
+				SC.SHORT_DESC AS FA_ALIAS,
+				&apos;CD &apos;||SC.SHORT_DESC AS OPERACAO
+			FROM
+				 SYS_CODE SC
+			WHERE
+				SC.REC_TYPE=&apos;B&apos;
+			AND
+				SC.CODE_TYPE=&apos;064&apos;
+			)INVN_TYPE)
+	ON
+		INVN_TYPE.INVENTORY_TYPE=INVN_TYPE_AUX.INVENTORY_TYPE
+	JOIN
+		ITEM_COST_CBO ICC
+	ON
+		LISTA.ITEM_ID=ICC.ITEM_ID
+	JOIN
+		FACILITY_ALIAS FA
+	ON
+		FA.FACILITY_ID=ICC.FACILITY_ID
+	AND
+		FA.FACILITY_ALIAS_ID=INVN_TYPE.FA_ALIAS
+	GROUP BY
+			LISTA.TC_LPN_ID,    
+			LISTA.ITEM_ID,
+			INVN_TYPE_AUX.INVENTORY_TYPE,
+			INVN_TYPE.FA_ALIAS,
+			ICC.UNIT_COST
+	)CUSTO)
+	ON
+		L.TC_LPN_ID=CUSTO.TC_LPN_ID
+	-- Busca dados do produto --
+	JOIN
+	((SELECT 
+				IC.ITEM_ID,
+				IC.ITEM_NAME,
+				IC.REF_FIELD8 as COMPRADOR,
+				IC.DESCRIPTION AS ITEM,
+				IC.PRODUCT_CLASS_ID,
+				CASE WHEN IPC.QUANTITY IS NULL THEN 1 ELSE MAX(IPC.QUANTITY) END AS EMB_FINAL,
+				--ICC.UNIT_COST,
+				IC.VARIABLE_WEIGHT,
+				IPC.IS_STD,
+				CASE 
+					WHEN IC.REF_FIELD1 IS NOT NULL THEN &apos;S&apos;
+					ELSE &apos;N&apos;
+				END	AS PAR,
+				max(IPC.QUANTITY)as QUANTITY,
+				UB.DESCRIPTION AS BASE_UOM,
+				UQ.DESCRIPTION AS QTY_UOM,
+				PC.DESCRIPTION AS &quot;CLASSE DE PRODUTO&quot;,
+				SC.CODE_DESC AS CATEGORIA,
+				IFMW.SHELF_DAYS,
+				IFMW.LPN_PER_TIER as BASE,
+				IFMW.TIER_PER_PLT as ALTURA,
+				IFMW.LPN_PER_TIER * IFMW.TIER_PER_PLT AS PALETIZACAO,
+				CASE WHEN IC.VARIABLE_WEIGHT=1 THEN 1000 ELSE 1 END AS FAT_CNV_VW
+				--,
+				--ICC.AUDIT_LAST_UPDATED_DTTM as DATA_AT	
+	FROM   
+					ITEM_CBO IC
+				LEFT JOIN
+					ITEM_PACKAGE_CBO IPC
+				ON 
+					IC.ITEM_ID=IPC.ITEM_ID
+				AND
+					IPC.IS_STD = 1
+				AND 
+					IPC.PACKAGE_UOM_ID=&apos;173&apos;
+				AND
+					IPC.MARK_FOR_DELETION=0
+				LEFT JOIN
+					SIZE_UOM UB
+				ON
+					IC.BASE_STORAGE_UOM_ID=UB.SIZE_UOM_ID
+				LEFT JOIN
+					SIZE_UOM UQ
+				ON
+					IC.DISPLAY_QTY_UOM_ID=UQ.SIZE_UOM_ID
+				LEFT JOIN
+					PRODUCT_CLASS PC
+				ON
+					PC.PRODUCT_CLASS_ID=IC.PRODUCT_CLASS_ID
+				LEFT JOIN	
+					ITEM_MASTER IM
+				ON	
+					IC.ITEM_ID=IM.ITEM_ID
+				/*LEFT JOIN
+					 ITEM_COST_CBO ICC
+				ON
+					 ICC.ITEM_ID=IC.ITEM_ID*/
+				LEFT JOIN
+					ITEM_FACILITY_MAPPING_WMS IFMW
+				ON
+					IFMW.ITEM_ID=IC.ITEM_ID
+				LEFT JOIN	
+					 SYS_CODE SC
+				ON
+					SC.CODE_ID=IM.PROD_CATGRY
+				AND            
+					SC.REC_TYPE=&apos;B&apos;
+				AND
+					SC.CODE_TYPE=&apos;060&apos;              
+	GROUP BY
+				IC.ITEM_ID,
+				IC.ITEM_NAME,
+				IC.REF_FIELD1,
+				IC.REF_FIELD8,
+				IC.DESCRIPTION,
+				IC.PRODUCT_CLASS_ID,
+				IPC.QUANTITY,
+				UB.DESCRIPTION,
+				UQ.DESCRIPTION,
+				PC.DESCRIPTION,
+				IPC.IS_STD,
+				IC. DISPLAY_QTY_UOM_ID,
+				IPC.PACKAGE_UOM_ID,
+				IC.DATABASE_QTY_UOM_ID,
+				IC.DISPLAY_QTY_UOM_ID,
+				SC.CODE_DESC,
+				IC.VARIABLE_WEIGHT,
+				--ICC.UNIT_COST,
+				IFMW.SHELF_DAYS,
+				IFMW.LPN_PER_TIER,
+				IFMW.TIER_PER_PLT,
+				IFMW.LPN_PER_TIER * IFMW.TIER_PER_PLT
+				--,
+				--ICC.AUDIT_LAST_UPDATED_DTTM
+			ORDER BY 
+				IC.ITEM_NAME
+		)B)
+
+	ON
+		B.ITEM_ID=LAR.ITEM_ID
+	AND	
+		B.ITEM_ID=CUSTO.ITEM_ID
+	LEFT JOIN
+		/*BUSCA LOCAL DE PICKIN*/
+		 ((SELECT 
+							LC.DSP_LOCN,
+							PLD.ITEM_ID,
+							LC.AISLE,
+							PLD.INVN_TYPE
+						FROM
+							LOCN_HDR LC
+						JOIN
+							PICK_LOCN_DTL PLD
+						ON
+							LC.LOCN_ID=PLD.LOCN_ID
+						WHERE SKU_DEDCTN_TYPE=&apos;P&apos;
+		)LOCN)
+	ON
+			 LAR.ITEM_ID=LOCN.ITEM_ID
+	AND
+			LOCN.INVN_TYPE=CUSTO.INVENTORY_TYPE
+	/*WHERE 
+		LAR.TC_LPN_ID=&apos;529513&apos;*/  
+
+	GROUP BY
+		LAR.TC_SHIPMENT_ID,
+		LAR.TC_LPN_ID,
+		LAR.DEST_FACILITY_ALIAS_ID,
+		CAST(LAR.CREATED_DTTM AS DATE),
+		CASE
+			WHEN CAST(TO_CHAR(LAR.CREATED_DTTM,&apos;HH24&apos;) AS FLOAT)&lt;6 THEN 3
+			WHEN CAST(TO_CHAR(LAR.CREATED_DTTM,&apos;HH24&apos;) AS FLOAT) &gt; 21 THEN 3     
+			WHEN CAST(TO_CHAR(LAR.CREATED_DTTM,&apos;HH24&apos;) AS FLOAT)&lt;14  THEN 1        
+			ELSE  2    
+		END,            
+		LAR.AUDITOR_USERID,
+		LAR.PACKER_USERID,
+		B.ITEM_NAME,
+		B.ITEM,
+		B.EMB_FINAL,
+		B.QTY_UOM,
+		B.CATEGORIA,
+		B.PAR,
+		LOCN.DSP_LOCN,
+		CUSTO.UNIT_COST,
+		--LD.QTY_UOM_ID,
+		--LD.QTY_CONV_FACTOR,
+		LAR.EXPECTED_QUANTITY,    
+		LAR.COUNT_QUANTITY,
+		B.VARIABLE_WEIGHT,
+		LAR.EXPECTED_QUANTITY,
+		--LD.QTY_CONV_FACTOR,
+		--LD.STD_PACK_QTY,
+		LAR.COUNT_QUANTITY,
+		--LD.INVENTORY_TYPE,
+		B.EMB_FINAL,
+		LAR.FACILITY_ALIAS_ID,
+		LOCN.AISLE	
+)B_FINAL)
+GROUP BY
+    B_FINAL.CD,
+    B_FINAL.DATA,
+    B_FINAL.LOJA,
+    &apos;&apos;,
+    B_FINAL.OLPN,
+    B_FINAL.ITEM_NAME,
+    B_FINAL.EMB_FINAL,
+    &apos;&apos;,
+    B_FINAL.PRODUTO,
+    B_FINAL.QTY_UOM,
+    &apos;&apos;,
+    B_FINAL.PAR,    
+    --B_FINAL.TURNO,   
+    B_FINAL.CUSTO_UNITARIO,       
+    &apos;&apos;,
+    &apos;&apos;,
+    B_FINAL.DSP_LOCN,
+    B_FINAL.TC_SHIPMENT_ID,
+    &apos; &apos;,
+    &apos; &apos;,
+    B_FINAL.CATEGORIA,
+    B_FINAL.PACKER_USERID
+)RES)
+WHERE 
+    RES.Motivo&lt;&gt;&apos;OK&apos;
+AND
+   RES.OLPN NOT IN &apos;146960&apos;</sqlText>
+					<mdProjectedItems>
+						<mdProjectedItem name="CD"/>
+						<mdProjectedItem name="Data"/>
+						<mdProjectedItem name="Nº Loja"/>
+						<mdProjectedItem name="Nº NF"/>
+						<mdProjectedItem name="OLPN"/>
+						<mdProjectedItem name="Cod Prod"/>
+						<mdProjectedItem name="Seção"/>
+						<mdProjectedItem name="Descrição"/>
+						<mdProjectedItem name="EMBALAGEM"/>
+						<mdProjectedItem name="UOM QTY"/>
+						<mdProjectedItem name="Unidade"/>
+						<mdProjectedItem name="PAR"/>
+						<mdProjectedItem name="Fat"/>
+						<mdProjectedItem name="Conf"/>
+						<mdProjectedItem name="Dif"/>
+						<mdProjectedItem name="CUSTO_UNITARIO"/>
+						<mdProjectedItem name="Total"/>
+						<mdProjectedItem name="MOTIVO"/>
+						<mdProjectedItem name="Erros"/>
+						<mdProjectedItem name="Cód Oc"/>
+						<mdProjectedItem name="Local"/>
+						<mdProjectedItem name="Embarque"/>
+						<mdProjectedItem name="ENCAIXE"/>
+						<mdProjectedItem name="OBS"/>
+						<mdProjectedItem name="CATEGORIA"/>
+						<mdProjectedItem name="Separador"/>
+					</mdProjectedItems>
+				</sqlQuery>
+			</source>
+			<selection>
+				<dataItem name="CD">
+					<expression>[SQL2].[CD]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="Data">
+					<expression>[SQL2].[Data]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="4"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="Nº Loja">
+					<expression>[SQL2].[Nº Loja]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="Nº NF">
+					<expression>[SQL2].[Nº NF]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="OLPN">
+					<expression>[SQL2].[OLPN]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="Cod Prod">
+					<expression>[SQL2].[Cod Prod]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="Seção">
+					<expression>[SQL2].[Seção]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="Descrição">
+					<expression>[SQL2].[Descrição]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="EMBALAGEM">
+					<expression>[SQL2].[EMBALAGEM]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="9"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="UOM QTY">
+					<expression>[SQL2].[UOM QTY]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="Unidade">
+					<expression>[SQL2].[Unidade]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="PAR">
+					<expression>[SQL2].[PAR]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="Fat">
+					<expression>[SQL2].[Fat]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="9"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="Conf">
+					<expression>[SQL2].[Conf]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="9"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="Dif">
+					<expression>[SQL2].[Dif]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="9"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="CUSTO_UNITARIO">
+					<expression>[SQL2].[CUSTO_UNITARIO]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="1"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="Total">
+					<expression>[SQL2].[Total]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="9"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="MOTIVO">
+					<expression>[SQL2].[MOTIVO]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="Erros">
+					<expression>[SQL2].[Erros]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="9"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="Cód Oc">
+					<expression>[SQL2].[Cód Oc]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="9"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="Local">
+					<expression>[SQL2].[Local]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="Embarque">
+					<expression>[SQL2].[Embarque]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="ENCAIXE">
+					<expression>[SQL2].[ENCAIXE]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="OBS">
+					<expression>[SQL2].[OBS]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="CATEGORIA">
+					<expression>[SQL2].[CATEGORIA]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="Separador">
+					<expression>[SQL2].[Separador]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+			</selection>
+			<detailFilters>
+				<detailFilter use="optional">
+					<filterExpression>cast([SQL2].[Data];date)BETWEEN ?p_data_in? AND ?p_data_fi?</filterExpression>
+				</detailFilter>
+				<detailFilter use="optional">
+					<filterExpression>[SQL2].[Nº Loja]=?p_loja?</filterExpression>
+				</detailFilter>
+				<detailFilter use="optional">
+					<filterExpression>[SQL2].[OLPN]=?p_olpn?</filterExpression>
+				</detailFilter>
+			</detailFilters>
+		</query>
+		<query name="ÍNDICE">
+			<source>
+				<sqlQuery name="SQL2" dataSource="WMOS">
+					<sqlText>SELECT 
+    TRUNC(BASE.DATA) AS DATA,
+    COUNT(DISTINCT BASE.OLPN) AS oLPN,
+    SUM(BASE.VALOR) AS VALOR,
+    SUM(BASE.VOLUME_ESPERADO) AS VOLUME_ESPERADO,
+    SUM(BASE.FA) AS FALTA,
+    SUM(BASE.SO) AS SOBRA,
+    SUM(BASE.FA) + SUM(BASE.SO) AS ERROS,
+    CASE 
+        WHEN SUM(BASE.VOLUME_ESPERADO) &gt; 0 
+        THEN (SUM(BASE.FA) + SUM(BASE.SO)) / SUM(BASE.VOLUME_ESPERADO)
+        ELSE 0 
+    END AS INDICE
+FROM (
+    SELECT
+        RESUMO.*,
+        L1.TC_SHIPMENT_ID
+    FROM
+    ((SELECT
+        RF.CREATED_DTTM,
+        RF.DATA,
+        RF.LOJA,
+        RF.TURNO,
+        RF.VALOR_EQUIP,
+        RF.CD,
+        RF.&quot;FA/IN&quot;,
+        RF.&quot;SO/IN&quot;,
+        RF.&quot;VL&quot;,
+        RF.&quot;VE&quot;,
+        RF.&quot;AV&quot;,
+        RF.&quot;FA/IN$&quot;,
+        RF.&quot;SO/IN$&quot;,
+        RF.&quot;VL$&quot;,
+        RF.&quot;VE$&quot;,
+        RF.&quot;AV$&quot;,
+        RF.CATEGORIA,
+        RF.ENCAIXE,
+        RF.OLPN,
+        RF.OBS,
+        SUM(RF.FA) AS FA,
+        SUM(RF.SO) AS SO,
+        SUM(RF.&quot;FA$&quot;) AS &quot;FA$&quot;,
+        SUM(RF.&quot;SO$&quot;) AS &quot;SO$&quot;,
+        SUM(RF.VALOR) AS VALOR,
+        SUM(RF.VOLUME_ESPERADO) AS VOLUME_ESPERADO,
+        SUM(RF.VOLUME_CONFERIDO) AS VOLUME_CONFERIDO
+    FROM
+    ((SELECT
+        BRESUMO_FINAL.CREATED_DTTM,
+        BRESUMO_FINAL.DATA,
+        BRESUMO_FINAL.LOJA,
+        BRESUMO_FINAL.TURNO,
+        BRESUMO_FINAL.VALOR_EQUIP,
+        BRESUMO_FINAL.CD,
+        BRESUMO_FINAL.&quot;FA/IN&quot;,
+        BRESUMO_FINAL.&quot;SO/IN&quot;,
+        BRESUMO_FINAL.&quot;VL&quot;,
+        BRESUMO_FINAL.&quot;VE&quot;,
+        BRESUMO_FINAL.&quot;AV&quot;,
+        BRESUMO_FINAL.&quot;FA/IN$&quot;,
+        BRESUMO_FINAL.&quot;SO/IN$&quot;,
+        BRESUMO_FINAL.&quot;VL$&quot;,
+        BRESUMO_FINAL.&quot;VE$&quot;,
+        BRESUMO_FINAL.&quot;AV$&quot;,
+        BRESUMO_FINAL.CATEGORIA,
+        BRESUMO_FINAL.ENCAIXE,
+        BRESUMO_FINAL.OLPN,
+        BRESUMO_FINAL.OBS,
+        SUM(BRESUMO_FINAL.FA) AS FA,
+        SUM(BRESUMO_FINAL.SO) AS SO,
+        SUM(BRESUMO_FINAL.&quot;FA$&quot;) AS &quot;FA$&quot;,
+        SUM(BRESUMO_FINAL.&quot;SO$&quot;) AS &quot;SO$&quot;,
+        SUM(BRESUMO_FINAL.VALOR) AS VALOR,
+        SUM(BRESUMO_FINAL.VOLUME_ESPERADO) AS VOLUME_ESPERADO,
+        SUM(BRESUMO_FINAL.VOLUME_CONFERIDO) AS VOLUME_CONFERIDO
+    FROM
+    ((SELECT
+        B_FINAL.ITEM_NAME,
+        B_FINAL.PRODUTO,
+        B_FINAL.CREATED_DTTM,
+        B_FINAL.DATA,
+        B_FINAL.LOJA,
+        B_FINAL.TURNO,
+        B_FINAL.VLR_GERAL_PROD AS VALOR,
+        B_FINAL.EXPECTED_QUANTITY AS VOLUME_ESPERADO,
+        B_FINAL.COUNT_QUANTITY AS VOLUME_CONFERIDO,
+        &apos; &apos; AS VALOR_EQUIP,
+        B_FINAL.CD,
+        B_FINAL.FALTA AS FA,
+        B_FINAL.SOBRA AS SO,
+        &apos; &apos; AS &quot;FA/IN&quot;,
+        &apos; &apos; AS &quot;SO/IN&quot;,
+        &apos; &apos; AS &quot;VL&quot;,
+        &apos; &apos; AS &quot;VE&quot;,
+        &apos; &apos; AS &quot;AV&quot;,
+        B_FINAL.VLR_FALTA &quot;FA$&quot;,
+        B_FINAL.VLR_SOBRA AS &quot;SO$&quot;,
+        &apos; &apos; AS &quot;FA/IN$&quot;,
+        &apos; &apos; AS &quot;SO/IN$&quot;,
+        &apos; &apos; AS &quot;VL$&quot;,
+        &apos; &apos; AS &quot;VE$&quot;,
+        &apos; &apos; AS &quot;AV$&quot;,
+        B_FINAL.CATEGORIA,
+        &apos; &apos; AS ENCAIXE,
+        B_FINAL.OLPN AS OLPN,
+        &apos; &apos; AS OBS
+    FROM
+    ((SELECT
+        LAR.CREATED_DTTM,
+        LAR.TC_SHIPMENT_ID,
+        LAR.TC_LPN_ID AS OLPN,
+        LAR.DEST_FACILITY_ALIAS_ID AS LOJA,
+        CAST(LAR.CREATED_DTTM AS DATE) AS DATA,
+        CASE
+            WHEN CAST(TO_CHAR(LAR.CREATED_DTTM,&apos;HH24&apos;) AS FLOAT)&lt;6 THEN 3
+            WHEN CAST(TO_CHAR(LAR.CREATED_DTTM,&apos;HH24&apos;) AS FLOAT) &gt; 21 THEN 3
+            WHEN CAST(TO_CHAR(LAR.CREATED_DTTM,&apos;HH24&apos;) AS FLOAT)&lt;14  THEN 1
+            ELSE  2
+        END AS TURNO,
+        LAR.AUDITOR_USERID,
+        LAR.PACKER_USERID,
+        B.ITEM_NAME,
+        B.ITEM AS PRODUTO,
+        B.EMB_FINAL,
+        B.QTY_UOM,
+        B.CATEGORIA,
+        LOCN.DSP_LOCN,
+        MAX(CASE 
+            WHEN LD.INVENTORY_TYPE IS NULL THEN 
+                (SELECT MAX(ITC.UNIT_COST) FROM ITEM_COST_CBO ITC WHERE ITC.ITEM_ID=LD.ITEM_ID)
+            ELSE
+                (SELECT MAX(ITC.UNIT_COST) FROM ITEM_COST_CBO ITC JOIN FACILITY_ALIAS FA ON FA.FACILITY_ID=ITC.FACILITY_ID WHERE FA.FACILITY_ALIAS_ID=INVN_TYPE.FA_ALIAS AND ITC.ITEM_ID=LD.ITEM_ID)
+        END) AS CUSTO_UNITARIO,
+        CASE WHEN B.VARIABLE_WEIGHT=1 THEN
+            ROUND(LAR.EXPECTED_QUANTITY/1000,2)
+        ELSE
+            CASE 
+                WHEN LD.QTY_UOM_ID=970753 THEN LAR.EXPECTED_QUANTITY/LD.QTY_CONV_FACTOR
+                ELSE LAR.EXPECTED_QUANTITY/LD.STD_PACK_QTY
+            END
+        END AS EXPECTED_QUANTITY,
+        CASE WHEN B.VARIABLE_WEIGHT=1 THEN
+            ROUND(LAR.EXPECTED_QUANTITY/1000,2)
+        ELSE
+            CASE 
+                WHEN LD.QTY_UOM_ID=970753 THEN LAR.EXPECTED_QUANTITY/LD.QTY_CONV_FACTOR
+                ELSE LAR.EXPECTED_QUANTITY/LD.STD_PACK_QTY
+            END
+        END AS &quot;Fat&quot;,
+        CASE WHEN B.VARIABLE_WEIGHT=1 THEN
+            ROUND(LAR.COUNT_QUANTITY/1000,2)
+        ELSE
+            CASE 
+                WHEN LD.QTY_UOM_ID=970753 THEN LAR.COUNT_QUANTITY/LD.QTY_CONV_FACTOR
+                ELSE LAR.COUNT_QUANTITY/LD.STD_PACK_QTY
+            END
+        END AS COUNT_QUANTITY,
+        CASE WHEN B.VARIABLE_WEIGHT=1 THEN
+            ROUND(LAR.COUNT_QUANTITY/1000,2)
+        ELSE
+            CASE WHEN LD.QTY_UOM_ID=970753 THEN LAR.COUNT_QUANTITY/LD.QTY_CONV_FACTOR
+            ELSE LAR.COUNT_QUANTITY/LD.STD_PACK_QTY
+            END
+        END AS &quot;Conf&quot;,
+        AVG(CASE WHEN B.VARIABLE_WEIGHT=1 THEN
+            CASE 
+                WHEN LD.INVENTORY_TYPE IS NULL THEN 
+                    (LAR.EXPECTED_QUANTITY/1000)*(SELECT MAX(ITC.UNIT_COST) FROM ITEM_COST_CBO ITC WHERE ITC.ITEM_ID=LD.ITEM_ID)
+                ELSE
+                    (SELECT MAX(ITC.UNIT_COST) FROM ITEM_COST_CBO ITC JOIN FACILITY_ALIAS FA ON FA.FACILITY_ID=ITC.FACILITY_ID WHERE FA.FACILITY_ALIAS_ID=INVN_TYPE.FA_ALIAS AND ITC.ITEM_ID=LD.ITEM_ID)*((LAR.EXPECTED_QUANTITY/1000))
+            END
+        ELSE
+            CASE 
+                WHEN LD.INVENTORY_TYPE IS NULL THEN 
+                    (LAR.EXPECTED_QUANTITY)*(SELECT MAX(ITC.UNIT_COST) FROM ITEM_COST_CBO ITC WHERE ITC.ITEM_ID=LD.ITEM_ID)
+                ELSE
+                    (SELECT MAX(ITC.UNIT_COST) FROM ITEM_COST_CBO ITC JOIN FACILITY_ALIAS FA ON FA.FACILITY_ID=ITC.FACILITY_ID WHERE FA.FACILITY_ALIAS_ID=INVN_TYPE.FA_ALIAS AND ITC.ITEM_ID=LD.ITEM_ID)*(LAR.EXPECTED_QUANTITY)
+            END
+        END) AS VLR_GERAL_PROD,
+        CASE
+            WHEN SUBSTR(LOCN.DSP_LOCN,2,3) IN (&apos;R51&apos;,&apos;R52&apos;,&apos;R53&apos;,&apos;R54&apos;) THEN &apos;S&apos;
+            ELSE &apos;N&apos;
+        END AS PAR,
+        AVG(CASE
+            WHEN LOCN.AISLE IN (&apos;R51&apos;,&apos;R52&apos;,&apos;R53&apos;,&apos;R54&apos;) AND B.VARIABLE_WEIGHT=1 THEN 
+                CASE
+                    WHEN LD.INVENTORY_TYPE IS NULL THEN 
+                        (LAR.COUNT_QUANTITY/1000)*(SELECT MAX(ITC.UNIT_COST) FROM ITEM_COST_CBO ITC WHERE ITC.ITEM_ID=LD.ITEM_ID)
+                    ELSE
+                        (SELECT MAX(ITC.UNIT_COST) FROM ITEM_COST_CBO ITC JOIN FACILITY_ALIAS FA ON FA.FACILITY_ID=ITC.FACILITY_ID WHERE FA.FACILITY_ALIAS_ID=INVN_TYPE.FA_ALIAS AND ITC.ITEM_ID=LD.ITEM_ID)*((LAR.COUNT_QUANTITY/1000))
+                END
+            ELSE 0
+        END) AS VLR_PAR_AUDITADO,
+        AVG(CASE
+            WHEN LOCN.AISLE IN (&apos;R51&apos;,&apos;R52&apos;,&apos;R53&apos;,&apos;R54&apos;) AND B.VARIABLE_WEIGHT=1 THEN 
+                CASE
+                    WHEN LD.INVENTORY_TYPE IS NULL THEN 
+                        (LAR.EXPECTED_QUANTITY/1000)*(SELECT MAX(ITC.UNIT_COST) FROM ITEM_COST_CBO ITC WHERE ITC.ITEM_ID=LD.ITEM_ID)
+                    ELSE
+                        (SELECT MAX(ITC.UNIT_COST) FROM ITEM_COST_CBO ITC JOIN FACILITY_ALIAS FA ON FA.FACILITY_ID=ITC.FACILITY_ID WHERE FA.FACILITY_ALIAS_ID=INVN_TYPE.FA_ALIAS AND ITC.ITEM_ID=LD.ITEM_ID)*((LAR.EXPECTED_QUANTITY/1000))
+                END
+            ELSE 0
+        END) AS VLR_PAR_ESPERADO,
+        CASE 
+            WHEN LAR.COUNT_QUANTITY &lt; LAR.EXPECTED_QUANTITY THEN
+                CASE WHEN B.VARIABLE_WEIGHT=1 THEN 
+                    (LAR.EXPECTED_QUANTITY-LAR.COUNT_QUANTITY)/ 1000
+                ELSE (LAR.EXPECTED_QUANTITY-LAR.COUNT_QUANTITY)/LD.STD_PACK_QTY
+                END
+            ELSE 0
+        END AS FALTA,
+        CASE 
+            WHEN LAR.EXPECTED_QUANTITY &lt; LAR.COUNT_QUANTITY THEN 
+                CASE WHEN B.VARIABLE_WEIGHT=1 THEN 
+                    (LAR.COUNT_QUANTITY-LAR.EXPECTED_QUANTITY)/ 1000
+                ELSE (LAR.COUNT_QUANTITY-LAR.EXPECTED_QUANTITY)/B.EMB_FINAL
+                END
+            ELSE 0
+        END AS SOBRA,
+        AVG(CASE 
+            WHEN LAR.COUNT_QUANTITY &lt; LAR.EXPECTED_QUANTITY THEN
+                CASE WHEN B.VARIABLE_WEIGHT=1 THEN 
+                    CASE
+                        WHEN LD.INVENTORY_TYPE IS NULL THEN 
+                            ((LAR.EXPECTED_QUANTITY-LAR.COUNT_QUANTITY)/ 1000)*(SELECT MAX(ITC.UNIT_COST) FROM ITEM_COST_CBO ITC WHERE ITC.ITEM_ID=LD.ITEM_ID)
+                        ELSE
+                            (SELECT MAX(ITC.UNIT_COST) FROM ITEM_COST_CBO ITC JOIN FACILITY_ALIAS FA ON FA.FACILITY_ID=ITC.FACILITY_ID WHERE FA.FACILITY_ALIAS_ID=INVN_TYPE.FA_ALIAS AND ITC.ITEM_ID=LD.ITEM_ID)*((LAR.EXPECTED_QUANTITY-LAR.COUNT_QUANTITY)/1000)
+                    END
+                ELSE
+                    CASE
+                        WHEN LD.INVENTORY_TYPE IS NULL THEN 
+                            ((LAR.EXPECTED_QUANTITY-LAR.COUNT_QUANTITY))*(SELECT MAX(ITC.UNIT_COST) FROM ITEM_COST_CBO ITC WHERE ITC.ITEM_ID=LD.ITEM_ID)
+                        ELSE
+                            (SELECT MAX(ITC.UNIT_COST) FROM ITEM_COST_CBO ITC JOIN FACILITY_ALIAS FA ON FA.FACILITY_ID=ITC.FACILITY_ID WHERE FA.FACILITY_ALIAS_ID=INVN_TYPE.FA_ALIAS AND ITC.ITEM_ID=LD.ITEM_ID)*((LAR.EXPECTED_QUANTITY-LAR.COUNT_QUANTITY))
+                    END 
+                END
+            ELSE 0
+        END) AS VLR_FALTA,
+        AVG(CASE 
+            WHEN LAR.COUNT_QUANTITY &gt; LAR.EXPECTED_QUANTITY THEN
+                CASE WHEN B.VARIABLE_WEIGHT=1 THEN 
+                    CASE
+                        WHEN LD.INVENTORY_TYPE IS NULL THEN 
+                            ((LAR.COUNT_QUANTITY-LAR.EXPECTED_QUANTITY)/ 1000)*(SELECT MAX(ITC.UNIT_COST) FROM ITEM_COST_CBO ITC WHERE ITC.ITEM_ID=LD.ITEM_ID)
+                        ELSE
+                            (SELECT MAX(ITC.UNIT_COST) FROM ITEM_COST_CBO ITC JOIN FACILITY_ALIAS FA ON FA.FACILITY_ID=ITC.FACILITY_ID WHERE FA.FACILITY_ALIAS_ID=INVN_TYPE.FA_ALIAS AND ITC.ITEM_ID=LD.ITEM_ID)*((LAR.COUNT_QUANTITY-LAR.EXPECTED_QUANTITY)/1000)
+                    END
+                ELSE
+                    CASE
+                        WHEN LD.INVENTORY_TYPE IS NULL THEN 
+                            ((LAR.COUNT_QUANTITY-LAR.EXPECTED_QUANTITY))*(SELECT MAX(ITC.UNIT_COST) FROM ITEM_COST_CBO ITC WHERE ITC.ITEM_ID=LD.ITEM_ID)
+                        ELSE
+                            (SELECT MAX(ITC.UNIT_COST) FROM ITEM_COST_CBO ITC JOIN FACILITY_ALIAS FA ON FA.FACILITY_ID=ITC.FACILITY_ID WHERE FA.FACILITY_ALIAS_ID=INVN_TYPE.FA_ALIAS AND ITC.ITEM_ID=LD.ITEM_ID)*((LAR.COUNT_QUANTITY-LAR.EXPECTED_QUANTITY))
+                    END 
+                END
+            ELSE 0
+        END) AS VLR_SOBRA,
+        AVG(CASE
+            WHEN LOCN.AISLE IN (&apos;R51&apos;,&apos;R52&apos;,&apos;R53&apos;,&apos;R54&apos;) AND B.VARIABLE_WEIGHT=1 THEN 
+                CASE
+                    WHEN LD.INVENTORY_TYPE IS NULL THEN 
+                        (LAR.EXPECTED_QUANTITY/1000)*(SELECT MAX(ITC.UNIT_COST) FROM ITEM_COST_CBO ITC WHERE ITC.ITEM_ID=LD.ITEM_ID)
+                    ELSE
+                        (SELECT MAX(ITC.UNIT_COST) FROM ITEM_COST_CBO ITC JOIN FACILITY_ALIAS FA ON FA.FACILITY_ID=ITC.FACILITY_ID WHERE FA.FACILITY_ALIAS_ID=INVN_TYPE.FA_ALIAS AND ITC.ITEM_ID=LD.ITEM_ID)*((LAR.EXPECTED_QUANTITY/100))
+                END
+            WHEN LOCN.AISLE IN (&apos;R51&apos;,&apos;R52&apos;,&apos;R53&apos;,&apos;R54&apos;) AND B.VARIABLE_WEIGHT!=1 THEN 
+                CASE
+                    WHEN LD.INVENTORY_TYPE IS NULL THEN 
+                        (LAR.EXPECTED_QUANTITY)*(SELECT MAX(ITC.UNIT_COST) FROM ITEM_COST_CBO ITC WHERE ITC.ITEM_ID=LD.ITEM_ID)
+                    ELSE
+                        (SELECT MAX(ITC.UNIT_COST) FROM ITEM_COST_CBO ITC JOIN FACILITY_ALIAS FA ON FA.FACILITY_ID=ITC.FACILITY_ID WHERE FA.FACILITY_ALIAS_ID=INVN_TYPE.FA_ALIAS AND ITC.ITEM_ID=LD.ITEM_ID)*((LAR.EXPECTED_QUANTITY))
+                END
+            ELSE 0
+        END) AS VLR_PAR_ESPERADO,
+        AVG(CASE WHEN B.VARIABLE_WEIGHT=1 THEN
+            CASE WHEN LD.INVENTORY_TYPE IS NULL THEN 
+                ((LAR.COUNT_QUANTITY-LAR.EXPECTED_QUANTITY)/1000)*(SELECT MAX(ITC.UNIT_COST) FROM ITEM_COST_CBO ITC WHERE ITC.ITEM_ID=LD.ITEM_ID)
+            ELSE
+                (SELECT MAX(ITC.UNIT_COST) FROM ITEM_COST_CBO ITC JOIN FACILITY_ALIAS FA ON FA.FACILITY_ID=ITC.FACILITY_ID WHERE FA.FACILITY_ALIAS_ID=INVN_TYPE.FA_ALIAS AND ITC.ITEM_ID=LD.ITEM_ID)*((LAR.COUNT_QUANTITY-LAR.EXPECTED_QUANTITY)/1000)
+            END
+        ELSE
+            CASE WHEN LD.INVENTORY_TYPE IS NULL THEN 
+                (LAR.COUNT_QUANTITY-LAR.EXPECTED_QUANTITY)*(SELECT MAX(ITC.UNIT_COST) FROM ITEM_COST_CBO ITC WHERE ITC.ITEM_ID=LD.ITEM_ID)
+            ELSE
+                (SELECT MAX(ITC.UNIT_COST) FROM ITEM_COST_CBO ITC JOIN FACILITY_ALIAS FA ON FA.FACILITY_ID=ITC.FACILITY_ID WHERE FA.FACILITY_ALIAS_ID=INVN_TYPE.FA_ALIAS AND ITC.ITEM_ID=LD.ITEM_ID)*(LAR.COUNT_QUANTITY-LAR.EXPECTED_QUANTITY)
+            END
+        END) AS VLR_DIF,
+        LAR.FACILITY_ALIAS_ID as CD,
+        CASE WHEN B.VARIABLE_WEIGHT=1 THEN 
+            (LAR.EXPECTED_QUANTITY-LAR.COUNT_QUANTITY)/1000
+        ELSE (LAR.EXPECTED_QUANTITY-LAR.COUNT_QUANTITY)/LD.STD_PACK_QTY
+        END AS Erros
+    FROM LPN_AUDIT_RESULTS LAR
+    JOIN LPN L ON L.TC_LPN_ID=LAR.TC_LPN_ID AND L.INBOUND_OUTBOUND_INDICATOR=&apos;O&apos;
+    JOIN LPN_DETAIL LD ON LD.LPN_ID=L.LPN_ID
+    JOIN ((SELECT 
+            IC.ITEM_ID,
+            IC.ITEM_NAME,
+            IC.REF_FIELD8 as COMPRADOR,
+            IC.DESCRIPTION AS ITEM,
+            IC.PRODUCT_CLASS_ID,
+            CASE WHEN IPC.QUANTITY IS NULL THEN 1 ELSE MAX(IPC.QUANTITY) END AS EMB_FINAL,
+            IC.VARIABLE_WEIGHT,
+            IPC.IS_STD,
+            max(IPC.QUANTITY)as QUANTITY,
+            UB.DESCRIPTION AS BASE_UOM,
+            UQ.DESCRIPTION AS QTY_UOM,
+            PC.DESCRIPTION AS &quot;CLASSE DE PRODUTO&quot;,
+            SC.CODE_DESC AS CATEGORIA,
+            IFMW.SHELF_DAYS,
+            IFMW.LPN_PER_TIER as BASE,
+            IFMW.TIER_PER_PLT as ALTURA,
+            IFMW.LPN_PER_TIER * IFMW.TIER_PER_PLT AS PALETIZACAO,
+            CASE WHEN IC.VARIABLE_WEIGHT=1 THEN 1000 ELSE 1 END AS FAT_CNV_VW
+        FROM ITEM_CBO IC
+        LEFT JOIN ITEM_PACKAGE_CBO IPC ON IC.ITEM_ID=IPC.ITEM_ID AND IPC.IS_STD = 1 AND IPC.PACKAGE_UOM_ID=&apos;173&apos; AND IPC.MARK_FOR_DELETION=0
+        LEFT JOIN SIZE_UOM UB ON IC.BASE_STORAGE_UOM_ID=UB.SIZE_UOM_ID
+        LEFT JOIN SIZE_UOM UQ ON IC.DISPLAY_QTY_UOM_ID=UQ.SIZE_UOM_ID
+        LEFT JOIN PRODUCT_CLASS PC ON PC.PRODUCT_CLASS_ID=IC.PRODUCT_CLASS_ID
+        LEFT JOIN ITEM_MASTER IM ON IC.ITEM_ID=IM.ITEM_ID
+        LEFT JOIN ITEM_FACILITY_MAPPING_WMS IFMW ON IFMW.ITEM_ID=IC.ITEM_ID
+        LEFT JOIN SYS_CODE SC ON SC.CODE_ID=IM.PROD_CATGRY AND SC.REC_TYPE=&apos;B&apos; AND SC.CODE_TYPE=&apos;060&apos;
+        GROUP BY
+            IC.ITEM_ID, IC.ITEM_NAME, IC.REF_FIELD8, IC.DESCRIPTION, IC.PRODUCT_CLASS_ID,
+            IPC.QUANTITY, UB.DESCRIPTION, UQ.DESCRIPTION, PC.DESCRIPTION, IPC.IS_STD,
+            IC.DISPLAY_QTY_UOM_ID, IPC.PACKAGE_UOM_ID, IC.DATABASE_QTY_UOM_ID,
+            SC.CODE_DESC, IC.VARIABLE_WEIGHT, IFMW.SHELF_DAYS, IFMW.LPN_PER_TIER,
+            IFMW.TIER_PER_PLT, IFMW.LPN_PER_TIER * IFMW.TIER_PER_PLT
+        ORDER BY IC.ITEM_NAME
+    )B) ON B.ITEM_ID=LAR.ITEM_ID AND LD.ITEM_ID=B.ITEM_ID
+    LEFT JOIN ((SELECT 
+            LC.DSP_LOCN, PLD.ITEM_ID, LC.AISLE
+        FROM LOCN_HDR LC
+        JOIN PICK_LOCN_DTL PLD ON LC.LOCN_ID=PLD.LOCN_ID
+        WHERE SKU_DEDCTN_TYPE=&apos;P&apos;
+    )LOCN) ON LAR.ITEM_ID=LOCN.ITEM_ID
+    LEFT JOIN ((SELECT
+            SC.CODE_ID AS INVENTORY_TYPE,
+            SC.SHORT_DESC AS FA_ALIAS,
+            &apos;CD &apos;||SC.SHORT_DESC AS OPERACAO
+        FROM SYS_CODE SC
+        WHERE SC.REC_TYPE=&apos;B&apos; AND SC.CODE_TYPE=&apos;064&apos;
+    )INVN_TYPE) ON INVN_TYPE.INVENTORY_TYPE=LD.INVENTORY_TYPE
+    WHERE LAR.CREATED_DTTM=(
+        SELECT MAX(AUD.CREATED_DTTM) 
+        FROM LPN_AUDIT_RESULTS AUD 
+        WHERE AUD.ITEM_ID=LAR.ITEM_ID
+        AND AUD.DEST_FACILITY_ALIAS_ID=LAR.DEST_FACILITY_ALIAS_ID
+        AND AUD.TC_LPN_ID=LAR.TC_LPN_ID
+        AND AUD.TC_SHIPMENT_ID=LAR.TC_SHIPMENT_ID)
+    GROUP BY
+        LAR.TC_SHIPMENT_ID, LAR.TC_LPN_ID, LAR.DEST_FACILITY_ALIAS_ID, CAST(LAR.CREATED_DTTM AS DATE),
+        CASE
+            WHEN CAST(TO_CHAR(LAR.CREATED_DTTM,&apos;HH24&apos;) AS FLOAT)&lt;6 THEN 3
+            WHEN CAST(TO_CHAR(LAR.CREATED_DTTM,&apos;HH24&apos;) AS FLOAT) &gt; 21 THEN 3
+            WHEN CAST(TO_CHAR(LAR.CREATED_DTTM,&apos;HH24&apos;) AS FLOAT)&lt;14  THEN 1
+            ELSE  2
+        END,
+        LAR.AUDITOR_USERID, LAR.PACKER_USERID, B.ITEM_NAME, B.ITEM, B.EMB_FINAL,
+        B.QTY_UOM, B.CATEGORIA, LOCN.DSP_LOCN, LD.QTY_CONV_FACTOR, LD.STD_PACK_QTY,
+        LD.QTY_UOM_ID, LAR.COUNT_QUANTITY, B.VARIABLE_WEIGHT, LAR.EXPECTED_QUANTITY,
+        LD.INVENTORY_TYPE, LAR.FACILITY_ALIAS_ID, LAR.CREATED_DTTM
+    )B_FINAL)
+    GROUP BY
+        B_FINAL.CREATED_DTTM, B_FINAL.DATA, B_FINAL.LOJA, B_FINAL.TURNO,
+        B_FINAL.VLR_GERAL_PROD, B_FINAL.EXPECTED_QUANTITY, B_FINAL.COUNT_QUANTITY,
+        &apos; &apos;, B_FINAL.CD, B_FINAL.FALTA, B_FINAL.SOBRA, &apos; &apos;, &apos; &apos;, &apos; &apos;, &apos; &apos;, &apos; &apos;,
+        B_FINAL.VLR_FALTA, B_FINAL.VLR_SOBRA, &apos; &apos;, &apos; &apos;, &apos; &apos;, &apos; &apos;, &apos; &apos;,
+        B_FINAL.CATEGORIA, &apos; &apos;, B_FINAL.OLPN, &apos; &apos;, B_FINAL.ITEM_NAME, B_FINAL.PRODUTO
+    )BRESUMO_FINAL)
+    GROUP BY
+        BRESUMO_FINAL.ITEM_NAME, BRESUMO_FINAL.PRODUTO, BRESUMO_FINAL.CREATED_DTTM,
+        BRESUMO_FINAL.DATA, BRESUMO_FINAL.LOJA, BRESUMO_FINAL.TURNO,
+        BRESUMO_FINAL.VALOR_EQUIP, BRESUMO_FINAL.CD, BRESUMO_FINAL.&quot;FA/IN&quot;,
+        BRESUMO_FINAL.&quot;SO/IN&quot;, BRESUMO_FINAL.&quot;VL&quot;, BRESUMO_FINAL.&quot;VE&quot;, BRESUMO_FINAL.&quot;AV&quot;,
+        BRESUMO_FINAL.&quot;FA/IN$&quot;, BRESUMO_FINAL.&quot;SO/IN$&quot;, BRESUMO_FINAL.&quot;VL$&quot;,
+        BRESUMO_FINAL.&quot;VE$&quot;, BRESUMO_FINAL.&quot;AV$&quot;, BRESUMO_FINAL.CATEGORIA,
+        BRESUMO_FINAL.ENCAIXE, BRESUMO_FINAL.OLPN, BRESUMO_FINAL.OBS
+    )RF)
+    GROUP BY    
+        RF.CREATED_DTTM, RF.DATA, RF.LOJA, RF.TURNO, RF.VALOR_EQUIP, RF.CD,
+        RF.&quot;FA/IN&quot;, RF.&quot;SO/IN&quot;, RF.&quot;VL&quot;, RF.&quot;VE&quot;, RF.&quot;AV&quot;, RF.&quot;FA/IN$&quot;,
+        RF.&quot;SO/IN$&quot;, RF.&quot;VL$&quot;, RF.&quot;VE$&quot;, RF.&quot;AV$&quot;, RF.CATEGORIA, RF.ENCAIXE,
+        RF.OLPN, RF.OBS
+    )RESUMO)
+    LEFT JOIN LPN L1 ON RESUMO.OLPN = L1.TC_LPN_ID
+) BASE
+GROUP BY TRUNC(BASE.DATA)
+ORDER BY TRUNC(BASE.DATA)</sqlText>
+					<mdProjectedItems>
+						<mdProjectedItem name="DATA"/>
+						<mdProjectedItem name="OLPN"/>
+						<mdProjectedItem name="VALOR"/>
+						<mdProjectedItem name="VOLUME_ESPERADO"/>
+						<mdProjectedItem name="FALTA"/>
+						<mdProjectedItem name="SOBRA"/>
+						<mdProjectedItem name="ERROS"/>
+						<mdProjectedItem name="INDICE"/>
+					</mdProjectedItems>
+				</sqlQuery>
+			</source>
+			<selection>
+				<dataItem name="CD">
+					<expression>[SQL2].[CD]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="Data">
+					<expression>[SQL2].[Data]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="4"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="Nº Loja">
+					<expression>[SQL2].[Nº Loja]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="Nº NF">
+					<expression>[SQL2].[Nº NF]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="OLPN">
+					<expression>[SQL2].[OLPN]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="Cod Prod">
+					<expression>[SQL2].[Cod Prod]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="Seção">
+					<expression>[SQL2].[Seção]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="Descrição">
+					<expression>[SQL2].[Descrição]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="EMBALAGEM">
+					<expression>[SQL2].[EMBALAGEM]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="9"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="UOM QTY">
+					<expression>[SQL2].[UOM QTY]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="Unidade">
+					<expression>[SQL2].[Unidade]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="PAR">
+					<expression>[SQL2].[PAR]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="Fat">
+					<expression>[SQL2].[Fat]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="9"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="Conf">
+					<expression>[SQL2].[Conf]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="9"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="Dif">
+					<expression>[SQL2].[Dif]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="9"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="CUSTO_UNITARIO">
+					<expression>[SQL2].[CUSTO_UNITARIO]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="1"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="Total">
+					<expression>[SQL2].[Total]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="9"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="MOTIVO">
+					<expression>[SQL2].[MOTIVO]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="Erros">
+					<expression>[SQL2].[Erros]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="9"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="Cód Oc">
+					<expression>[SQL2].[Cód Oc]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="9"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="Local">
+					<expression>[SQL2].[Local]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="Embarque">
+					<expression>[SQL2].[Embarque]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="ENCAIXE">
+					<expression>[SQL2].[ENCAIXE]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="OBS">
+					<expression>[SQL2].[OBS]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="CATEGORIA">
+					<expression>[SQL2].[CATEGORIA]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+				<dataItem name="Separador">
+					<expression>[SQL2].[Separador]</expression>
+					<XMLAttributes>
+						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
+					</XMLAttributes>
+				</dataItem>
+			</selection>
+			<detailFilters>
+				<detailFilter use="optional">
+					<filterExpression>cast([SQL2].[Data];date)BETWEEN ?p_data_in? AND ?p_data_fi?</filterExpression>
+				</detailFilter>
+				<detailFilter use="optional">
+					<filterExpression>[SQL2].[Nº Loja]=?p_loja?</filterExpression>
+				</detailFilter>
+				<detailFilter use="optional">
+					<filterExpression>[SQL2].[OLPN]=?p_olpn?</filterExpression>
+				</detailFilter>
+			</detailFilters>
+		</query>
+	</queries>
+	<reportName>Relatório - Check List Resumido - Auditoria de Carga</reportName>
+</report>
