@@ -8,6 +8,7 @@
 						<defaultStyles>
 							<defaultStyle refStyle="pg"/>
 						</defaultStyles>
+						<CSS value="background-color:#0a1929;font-family:&apos;Segoe UI&apos;,Roboto,Helvetica,sans-serif;padding:16px;"/>
 					</style>
 					<pageBody>
 						<style>
@@ -85,6 +86,102 @@
 								<style>
 									<CSS value="text-align:center;margin-top:5px;border:0.5pt solid black"/>
 								</style>
+							</block>
+							<!-- ===== PANEL HEADER ===== -->
+							<block>
+								<style><CSS value="background:linear-gradient(135deg,#0d2137 0%,#112240 100%);border-left:5px solid #3b82f6;border-radius:10px;padding:12px 18px;margin-bottom:12px;box-shadow:0 4px 16px rgba(0,0,0,0.5);"/></style>
+								<contents>
+									<block><style><CSS value="font-size:13pt;font-weight:800;color:#f1f5f9;letter-spacing:0.5px;"/></style><contents><textItem><dataSource><staticValue>&#128202;  AUDITORIA DE CARGA — VISAO GERAL</staticValue></dataSource></textItem></contents></block>
+									<block><style><CSS value="font-size:8pt;color:#64748b;margin-top:2px;"/></style><contents><textItem><dataSource><staticValue>Warehouse Management OS  •  Check List Resumido</staticValue></dataSource></textItem></contents></block>
+								</contents>
+							</block>
+							<!-- ===== KPI CARDS ===== -->
+							<singleton name="CargaKPI" refQuery="C_Check_KPI">
+								<contents>
+									<table>
+										<style><CSS value="width:100%;border-collapse:separate;border-spacing:8px 0;margin-bottom:12px;table-layout:fixed;"/></style>
+										<tableRows><tableRow><tableCells>
+													<tableCell>
+														<style><CSS value="background-color:#071a2e;border:1px solid #1e3a5f;border-top:3px solid #3b82f6;border-radius:8px;padding:10px;vertical-align:middle;text-align:center;"/></style>
+														<contents>
+															<block><style><CSS value="font-size:16pt;line-height:1;text-align:center;"/></style><contents><textItem><dataSource><staticValue>&#128220;</staticValue></dataSource></textItem></contents></block>
+															<block><style><CSS value="font-size:18pt;font-weight:800;color:#60a5fa;text-align:center;margin-top:4px;"/></style><contents><textItem><dataSource><dataItemValue refDataItem="KPI_OLPN_COUNT"/></dataSource></textItem></contents></block>
+															<block><style><CSS value="font-size:8pt;color:#94a3b8;text-transform:uppercase;letter-spacing:0.5px;text-align:center;margin-top:4px;"/></style><contents><textItem><dataSource><staticValue>Total OLPNs</staticValue></dataSource></textItem></contents></block>
+														</contents>
+													</tableCell>
+													<tableCell>
+														<style><CSS value="background-color:#071a0e;border:1px solid #14532d;border-top:3px solid #22c55e;border-radius:8px;padding:10px;vertical-align:middle;text-align:center;"/></style>
+														<contents>
+															<block><style><CSS value="font-size:16pt;line-height:1;text-align:center;"/></style><contents><textItem><dataSource><staticValue>&#128230;</staticValue></dataSource></textItem></contents></block>
+															<block><style><CSS value="font-size:18pt;font-weight:800;color:#22c55e;text-align:center;margin-top:4px;"/></style><contents><textItem><dataSource><dataItemValue refDataItem="KPI_VOL"/></dataSource><style><dataFormat><numberFormat groupingSeparator="." decimalSeparator="," maximumFractionDigits="0"/></dataFormat></style></textItem></contents></block>
+															<block><style><CSS value="font-size:8pt;color:#94a3b8;text-transform:uppercase;letter-spacing:0.5px;text-align:center;margin-top:4px;"/></style><contents><textItem><dataSource><staticValue>Vol. Esperado</staticValue></dataSource></textItem></contents></block>
+														</contents>
+													</tableCell>
+													<tableCell>
+														<style><CSS value="background-color:#071a0e;border:1px solid #14532d;border-top:3px solid #10b981;border-radius:8px;padding:10px;vertical-align:middle;text-align:center;"/></style>
+														<contents>
+															<block><style><CSS value="font-size:16pt;line-height:1;text-align:center;"/></style><contents><textItem><dataSource><staticValue>&#9989;</staticValue></dataSource></textItem></contents></block>
+															<block><style><CSS value="font-size:18pt;font-weight:800;color:#10b981;text-align:center;margin-top:4px;"/></style><contents><textItem><dataSource><dataItemValue refDataItem="KPI_VOL_CONF"/></dataSource><style><dataFormat><numberFormat groupingSeparator="." decimalSeparator="," maximumFractionDigits="0"/></dataFormat></style></textItem></contents></block>
+															<block><style><CSS value="font-size:8pt;color:#94a3b8;text-transform:uppercase;letter-spacing:0.5px;text-align:center;margin-top:4px;"/></style><contents><textItem><dataSource><staticValue>Vol. Conferido</staticValue></dataSource></textItem></contents></block>
+														</contents>
+													</tableCell>
+													<tableCell>
+														<style><CSS value="background-color:#1c0a0a;border:1px solid #7f1d1d;border-top:3px solid #ef4444;border-radius:8px;padding:10px;vertical-align:middle;text-align:center;"/></style>
+														<contents>
+															<block><style><CSS value="font-size:16pt;line-height:1;text-align:center;"/></style><contents><textItem><dataSource><staticValue>&#8681;</staticValue></dataSource></textItem></contents></block>
+															<block><style><CSS value="font-size:18pt;font-weight:800;color:#ef4444;text-align:center;margin-top:4px;"/></style><contents><textItem><dataSource><dataItemValue refDataItem="KPI_FA"/></dataSource><style><dataFormat><numberFormat groupingSeparator="." decimalSeparator="," maximumFractionDigits="2"/></dataFormat></style></textItem></contents></block>
+															<block><style><CSS value="font-size:8pt;color:#fca5a5;text-transform:uppercase;letter-spacing:0.5px;text-align:center;margin-top:4px;"/></style><contents><textItem><dataSource><staticValue>Total Faltas</staticValue></dataSource></textItem></contents></block>
+														</contents>
+													</tableCell>
+													<tableCell>
+														<style><CSS value="background-color:#1a1500;border:1px solid #854d0e;border-top:3px solid #f59e0b;border-radius:8px;padding:10px;vertical-align:middle;text-align:center;"/></style>
+														<contents>
+															<block><style><CSS value="font-size:16pt;line-height:1;text-align:center;"/></style><contents><textItem><dataSource><staticValue>&#8679;</staticValue></dataSource></textItem></contents></block>
+															<block><style><CSS value="font-size:18pt;font-weight:800;color:#f59e0b;text-align:center;margin-top:4px;"/></style><contents><textItem><dataSource><dataItemValue refDataItem="KPI_SO"/></dataSource><style><dataFormat><numberFormat groupingSeparator="." decimalSeparator="," maximumFractionDigits="2"/></dataFormat></style></textItem></contents></block>
+															<block><style><CSS value="font-size:8pt;color:#fcd34d;text-transform:uppercase;letter-spacing:0.5px;text-align:center;margin-top:4px;"/></style><contents><textItem><dataSource><staticValue>Total Sobras</staticValue></dataSource></textItem></contents></block>
+														</contents>
+													</tableCell>
+													<tableCell>
+														<style><CSS value="background-color:#071a0e;border:1px solid #14532d;border-top:3px solid #10b981;border-radius:8px;padding:10px;vertical-align:middle;text-align:center;"/></style>
+														<contents>
+															<block><style><CSS value="font-size:16pt;line-height:1;text-align:center;"/></style><contents><textItem><dataSource><staticValue>&#128176;</staticValue></dataSource></textItem></contents></block>
+															<block><style><CSS value="font-size:18pt;font-weight:800;color:#10b981;text-align:center;margin-top:4px;"/></style><contents><textItem><dataSource><dataItemValue refDataItem="KPI_VALOR"/></dataSource><style><dataFormat><numberFormat groupingSeparator="." decimalSeparator="," maximumFractionDigits="2" type="currency"/></dataFormat></style></textItem></contents></block>
+															<block><style><CSS value="font-size:8pt;color:#6ee7b7;text-transform:uppercase;letter-spacing:0.5px;text-align:center;margin-top:4px;"/></style><contents><textItem><dataSource><staticValue>Valor Total</staticValue></dataSource></textItem></contents></block>
+														</contents>
+													</tableCell>
+												</tableCells></tableRow></tableRows>
+									</table>
+								</contents>
+							</singleton>
+							<!-- ===== CHART ===== -->
+							<block>
+								<style><CSS value="background-color:#071a2e;border:1px solid #1e3a5f;border-radius:10px;padding:12px;margin-bottom:12px;"/></style>
+								<contents>
+									<block><style><CSS value="font-size:9pt;font-weight:700;color:#93c5fd;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px;"/></style><contents><textItem><dataSource><staticValue>&#128202; Evolucao por Data</staticValue></dataSource></textItem></contents></block>
+									<chart type="column" name="GraficoCargaKPI" refQuery="C_Check_List_Detalhe">
+										<style><CSS value="height:240px;width:100%;"/></style>
+										<chartBody>
+											<chartSeries><chartSeriesItems>
+													<chartNode refDataItem="FA">
+														<nodeLabel><textItem><dataSource><staticValue>Faltas</staticValue></dataSource></textItem></nodeLabel>
+														<chartNodeStyle><fillPattern><solid color="#ef4444"/></fillPattern></chartNodeStyle>
+													</chartNode>
+													<chartNode refDataItem="SO">
+														<nodeLabel><textItem><dataSource><staticValue>Sobras</staticValue></dataSource></textItem></nodeLabel>
+														<chartNodeStyle><fillPattern><solid color="#f59e0b"/></fillPattern></chartNodeStyle>
+													</chartNode>
+												</chartSeriesItems></chartSeries>
+											<chartCategories><chartCategoryItems>
+													<chartNode refDataItem="DATA"/>
+												</chartCategoryItems></chartCategories>
+										</chartBody>
+									</chart>
+								</contents>
+							</block>
+							<!-- ===== TABLE TITLE ===== -->
+							<block>
+								<style><CSS value="background-color:#071a2e;border:1px solid #1e3a5f;border-top-left-radius:8px;border-top-right-radius:8px;padding:8px 12px;"/></style>
+								<contents><block><style><CSS value="font-size:9pt;font-weight:700;color:#93c5fd;text-transform:uppercase;letter-spacing:0.5px;"/></style><contents><textItem><dataSource><staticValue>&#128203; Tabela de Dados</staticValue></dataSource></textItem></contents></block></contents>
 							</block>
 							<block>
 								<contents>
@@ -961,6 +1058,7 @@
 						<defaultStyles>
 							<defaultStyle refStyle="pg"/>
 						</defaultStyles>
+						<CSS value="background-color:#0a1929;font-family:&apos;Segoe UI&apos;,Roboto,Helvetica,sans-serif;padding:16px;"/>
 					</style>
 					<pageBody>
 						<style>
@@ -1039,17 +1137,97 @@
 									<CSS value="text-align:center;margin-top:5px;border:0.5pt solid black"/>
 								</style>
 							</block>
+							<!-- ===== PANEL HEADER ===== -->
 							<block>
-								<contents/>
-								<style>
-									<CSS value="text-align:center"/>
-								</style>
+								<style><CSS value="background:linear-gradient(135deg,#0d2137 0%,#112240 100%);border-left:5px solid #3b82f6;border-radius:10px;padding:12px 18px;margin-bottom:12px;box-shadow:0 4px 16px rgba(0,0,0,0.5);"/></style>
+								<contents>
+									<block><style><CSS value="font-size:13pt;font-weight:800;color:#f1f5f9;letter-spacing:0.5px;"/></style><contents><textItem><dataSource><staticValue>&#128202;  AUDITORIA DE CARGA DETALHADO — VISAO GERAL</staticValue></dataSource></textItem></contents></block>
+									<block><style><CSS value="font-size:8pt;color:#64748b;margin-top:2px;"/></style><contents><textItem><dataSource><staticValue>Warehouse Management OS  •  Check List Detalhado</staticValue></dataSource></textItem></contents></block>
+								</contents>
 							</block>
+							<!-- ===== KPI CARDS ===== -->
+							<singleton name="DetKPI" refQuery="Detalhado_KPI">
+								<contents>
+									<table>
+										<style><CSS value="width:100%;border-collapse:separate;border-spacing:8px 0;margin-bottom:12px;table-layout:fixed;"/></style>
+										<tableRows><tableRow><tableCells>
+													<tableCell>
+														<style><CSS value="background-color:#071a2e;border:1px solid #1e3a5f;border-top:3px solid #3b82f6;border-radius:8px;padding:10px;vertical-align:middle;text-align:center;"/></style>
+														<contents>
+															<block><style><CSS value="font-size:16pt;line-height:1;text-align:center;"/></style><contents><textItem><dataSource><staticValue>&#128220;</staticValue></dataSource></textItem></contents></block>
+															<block><style><CSS value="font-size:18pt;font-weight:800;color:#60a5fa;text-align:center;margin-top:4px;"/></style><contents><textItem><dataSource><dataItemValue refDataItem="DKP_OLPN"/></dataSource></textItem></contents></block>
+															<block><style><CSS value="font-size:8pt;color:#94a3b8;text-transform:uppercase;letter-spacing:0.5px;text-align:center;margin-top:4px;"/></style><contents><textItem><dataSource><staticValue>Total OLPNs</staticValue></dataSource></textItem></contents></block>
+														</contents>
+													</tableCell>
+													<tableCell>
+														<style><CSS value="background-color:#071a0e;border:1px solid #14532d;border-top:3px solid #22c55e;border-radius:8px;padding:10px;vertical-align:middle;text-align:center;"/></style>
+														<contents>
+															<block><style><CSS value="font-size:16pt;line-height:1;text-align:center;"/></style><contents><textItem><dataSource><staticValue>&#128230;</staticValue></dataSource></textItem></contents></block>
+															<block><style><CSS value="font-size:18pt;font-weight:800;color:#22c55e;text-align:center;margin-top:4px;"/></style><contents><textItem><dataSource><dataItemValue refDataItem="DKP_FAT"/></dataSource><style><dataFormat><numberFormat groupingSeparator="." decimalSeparator="," maximumFractionDigits="2"/></dataFormat></style></textItem></contents></block>
+															<block><style><CSS value="font-size:8pt;color:#94a3b8;text-transform:uppercase;letter-spacing:0.5px;text-align:center;margin-top:4px;"/></style><contents><textItem><dataSource><staticValue>Vol. Faturado</staticValue></dataSource></textItem></contents></block>
+														</contents>
+													</tableCell>
+													<tableCell>
+														<style><CSS value="background-color:#071a0e;border:1px solid #14532d;border-top:3px solid #10b981;border-radius:8px;padding:10px;vertical-align:middle;text-align:center;"/></style>
+														<contents>
+															<block><style><CSS value="font-size:16pt;line-height:1;text-align:center;"/></style><contents><textItem><dataSource><staticValue>&#9989;</staticValue></dataSource></textItem></contents></block>
+															<block><style><CSS value="font-size:18pt;font-weight:800;color:#10b981;text-align:center;margin-top:4px;"/></style><contents><textItem><dataSource><dataItemValue refDataItem="DKP_CONF"/></dataSource><style><dataFormat><numberFormat groupingSeparator="." decimalSeparator="," maximumFractionDigits="2"/></dataFormat></style></textItem></contents></block>
+															<block><style><CSS value="font-size:8pt;color:#94a3b8;text-transform:uppercase;letter-spacing:0.5px;text-align:center;margin-top:4px;"/></style><contents><textItem><dataSource><staticValue>Vol. Conferido</staticValue></dataSource></textItem></contents></block>
+														</contents>
+													</tableCell>
+													<tableCell>
+														<style><CSS value="background-color:#1a0d00;border:1px solid #9a3412;border-top:3px solid #f97316;border-radius:8px;padding:10px;vertical-align:middle;text-align:center;"/></style>
+														<contents>
+															<block><style><CSS value="font-size:16pt;line-height:1;text-align:center;"/></style><contents><textItem><dataSource><staticValue>&#9888;</staticValue></dataSource></textItem></contents></block>
+															<block><style><CSS value="font-size:18pt;font-weight:800;color:#f97316;text-align:center;margin-top:4px;"/></style><contents><textItem><dataSource><dataItemValue refDataItem="DKP_ERROS"/></dataSource><style><dataFormat><numberFormat groupingSeparator="." decimalSeparator="," maximumFractionDigits="2"/></dataFormat></style></textItem></contents></block>
+															<block><style><CSS value="font-size:8pt;color:#fdba74;text-transform:uppercase;letter-spacing:0.5px;text-align:center;margin-top:4px;"/></style><contents><textItem><dataSource><staticValue>Total Erros</staticValue></dataSource></textItem></contents></block>
+														</contents>
+													</tableCell>
+													<tableCell>
+														<style><CSS value="background-color:#071a0e;border:1px solid #14532d;border-top:3px solid #10b981;border-radius:8px;padding:10px;vertical-align:middle;text-align:center;"/></style>
+														<contents>
+															<block><style><CSS value="font-size:16pt;line-height:1;text-align:center;"/></style><contents><textItem><dataSource><staticValue>&#128176;</staticValue></dataSource></textItem></contents></block>
+															<block><style><CSS value="font-size:18pt;font-weight:800;color:#10b981;text-align:center;margin-top:4px;"/></style><contents><textItem><dataSource><dataItemValue refDataItem="DKP_TOTAL"/></dataSource><style><dataFormat><numberFormat groupingSeparator="." decimalSeparator="," maximumFractionDigits="2" type="currency"/></dataFormat></style></textItem></contents></block>
+															<block><style><CSS value="font-size:8pt;color:#6ee7b7;text-transform:uppercase;letter-spacing:0.5px;text-align:center;margin-top:4px;"/></style><contents><textItem><dataSource><staticValue>Valor Total</staticValue></dataSource></textItem></contents></block>
+														</contents>
+													</tableCell>
+												</tableCells></tableRow></tableRows>
+									</table>
+								</contents>
+							</singleton>
+							<!-- ===== CHART ===== -->
 							<block>
-								<contents/>
-								<style>
-									<CSS value="padding:1px;text-align:center;border:0.75pt solid black"/>
-								</style>
+								<style><CSS value="background-color:#071a2e;border:1px solid #1e3a5f;border-radius:10px;padding:12px;margin-bottom:12px;"/></style>
+								<contents>
+									<block><style><CSS value="font-size:9pt;font-weight:700;color:#93c5fd;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px;"/></style><contents><textItem><dataSource><staticValue>&#128202; Evolucao por Data</staticValue></dataSource></textItem></contents></block>
+									<chart type="column" name="GraficoDetKPI" refQuery="Auditoria de Carga Detalhado">
+										<style><CSS value="height:240px;width:100%;"/></style>
+										<chartBody>
+											<chartSeries><chartSeriesItems>
+													<chartNode refDataItem="Fat">
+														<nodeLabel><textItem><dataSource><staticValue>Faturado</staticValue></dataSource></textItem></nodeLabel>
+														<chartNodeStyle><fillPattern><solid color="#22c55e"/></fillPattern></chartNodeStyle>
+													</chartNode>
+													<chartNode refDataItem="Conf">
+														<nodeLabel><textItem><dataSource><staticValue>Conferido</staticValue></dataSource></textItem></nodeLabel>
+														<chartNodeStyle><fillPattern><solid color="#3b82f6"/></fillPattern></chartNodeStyle>
+													</chartNode>
+													<chartNode refDataItem="Erros">
+														<nodeLabel><textItem><dataSource><staticValue>Erros</staticValue></dataSource></textItem></nodeLabel>
+														<chartNodeStyle><fillPattern><solid color="#ef4444"/></fillPattern></chartNodeStyle>
+													</chartNode>
+												</chartSeriesItems></chartSeries>
+											<chartCategories><chartCategoryItems>
+													<chartNode refDataItem="Data"/>
+												</chartCategoryItems></chartCategories>
+										</chartBody>
+									</chart>
+								</contents>
+							</block>
+							<!-- ===== TABLE TITLE ===== -->
+							<block>
+								<style><CSS value="background-color:#071a2e;border:1px solid #1e3a5f;border-top-left-radius:8px;border-top-right-radius:8px;padding:8px 12px;"/></style>
+								<contents><block><style><CSS value="font-size:9pt;font-weight:700;color:#93c5fd;text-transform:uppercase;letter-spacing:0.5px;"/></style><contents><textItem><dataSource><staticValue>&#128203; Tabela de Dados</staticValue></dataSource></textItem></contents></block></contents>
 							</block>
 							<list horizontalPagination="true" name="Lista2" refQuery="Auditoria de Carga Detalhado">
 								<noDataHandler>
@@ -1860,6 +2038,285 @@
 									<sortItem refDataItem="Nº Loja"/>
 								</sortList>
 							</list>
+						</contents>
+					</pageBody>
+				</page>
+
+				<page name="ÍNDICE">
+					<style>
+						<defaultStyles><defaultStyle refStyle="pg"/></defaultStyles>
+						<CSS value="background-color:#0a1929;font-family:&apos;Segoe UI&apos;,Roboto,Helvetica,sans-serif;padding:16px;"/>
+					</style>
+					<pageBody>
+						<style><defaultStyles><defaultStyle refStyle="pb"/></defaultStyles></style>
+						<contents>
+							<!-- ===== HEADER ===== -->
+							<block>
+								<style>
+									<CSS value="background:linear-gradient(135deg,#0d2137 0%,#112240 100%);border-left:5px solid #3b82f6;border-radius:10px;padding:14px 20px;margin-bottom:14px;box-shadow:0 4px 16px rgba(0,0,0,0.5);"/>
+								</style>
+								<contents>
+									<table>
+										<style><CSS value="width:100%;border-collapse:collapse;"/></style>
+										<tableRows>
+											<tableRow>
+												<tableCells>
+													<tableCell>
+														<style><CSS value="vertical-align:middle;"/></style>
+														<contents>
+															<block>
+																<style><CSS value="font-size:16pt;font-weight:800;color:#f1f5f9;letter-spacing:0.5px;"/></style>
+																<contents><textItem><dataSource><staticValue>&#128202;  PAINEL DE ÍNDICE DE AUDITORIA DE CARGA</staticValue></dataSource></textItem></contents>
+															</block>
+															<block>
+																<style><CSS value="font-size:8pt;color:#64748b;margin-top:4px;"/></style>
+																<contents><textItem><dataSource><staticValue>Warehouse Management OS  •  Índice de Erros por Data</staticValue></dataSource></textItem></contents>
+															</block>
+														</contents>
+													</tableCell>
+													<tableCell>
+														<style><CSS value="text-align:right;vertical-align:middle;white-space:nowrap;width:1%;"/></style>
+														<contents>
+															<block>
+																<style><CSS value="font-size:9pt;color:#94a3b8;"/></style>
+																<contents>
+																	<date><style><dataFormat><dateFormat dateSeparator="/" displayOrder="DMY"/></dataFormat></style></date>
+																	<textItem><dataSource><staticValue>  </staticValue></dataSource></textItem>
+																	<time><style><dataFormat><timeFormat/></dataFormat></style></time>
+																</contents>
+															</block>
+														</contents>
+													</tableCell>
+												</tableCells>
+											</tableRow>
+										</tableRows>
+									</table>
+								</contents>
+							</block>
+							<!-- ===== KPI SECTION ===== -->
+							<singleton name="IndiceKPI" refQuery="INDICE_KPI">
+								<contents>
+									<table>
+										<style><CSS value="width:100%;border-collapse:separate;border-spacing:8px 0;margin-bottom:14px;table-layout:fixed;"/></style>
+										<tableRows>
+											<tableRow>
+												<tableCells>
+													<!-- KPI: OLPNs -->
+													<tableCell>
+														<style><CSS value="background-color:#071a2e;border:1px solid #1e3a5f;border-top:3px solid #3b82f6;border-radius:8px;padding:10px;vertical-align:middle;text-align:center;"/></style>
+														<contents>
+															<block><style><CSS value="font-size:16pt;line-height:1;text-align:center;"/></style><contents><textItem><dataSource><staticValue>&#128220;</staticValue></dataSource></textItem></contents></block>
+															<block><style><CSS value="font-size:20pt;font-weight:800;color:#60a5fa;text-align:center;margin-top:4px;"/></style><contents><textItem><dataSource><dataItemValue refDataItem="GT_OLPN"/></dataSource></textItem></contents></block>
+															<block><style><CSS value="font-size:8pt;color:#94a3b8;text-transform:uppercase;letter-spacing:0.5px;text-align:center;margin-top:4px;"/></style><contents><textItem><dataSource><staticValue>Total OLPNs</staticValue></dataSource></textItem></contents></block>
+														</contents>
+													</tableCell>
+													<!-- KPI: Volume Esperado -->
+													<tableCell>
+														<style><CSS value="background-color:#071a2e;border:1px solid #1e3a5f;border-top:3px solid #22c55e;border-radius:8px;padding:10px;vertical-align:middle;text-align:center;"/></style>
+														<contents>
+															<block><style><CSS value="font-size:16pt;line-height:1;text-align:center;"/></style><contents><textItem><dataSource><staticValue>&#128230;</staticValue></dataSource></textItem></contents></block>
+															<block><style><CSS value="font-size:20pt;font-weight:800;color:#22c55e;text-align:center;margin-top:4px;"/></style><contents><textItem><dataSource><dataItemValue refDataItem="GT_VOLUME"/></dataSource><style><dataFormat><numberFormat groupingSeparator="." decimalSeparator="," maximumFractionDigits="0"/></dataFormat></style></textItem></contents></block>
+															<block><style><CSS value="font-size:8pt;color:#94a3b8;text-transform:uppercase;letter-spacing:0.5px;text-align:center;margin-top:4px;"/></style><contents><textItem><dataSource><staticValue>Volume Esperado</staticValue></dataSource></textItem></contents></block>
+														</contents>
+													</tableCell>
+													<!-- KPI: Faltas -->
+													<tableCell>
+														<style><CSS value="background-color:#1c0a0a;border:1px solid #7f1d1d;border-top:3px solid #ef4444;border-radius:8px;padding:10px;vertical-align:middle;text-align:center;"/></style>
+														<contents>
+															<block><style><CSS value="font-size:16pt;line-height:1;text-align:center;"/></style><contents><textItem><dataSource><staticValue>&#8681;</staticValue></dataSource></textItem></contents></block>
+															<block><style><CSS value="font-size:20pt;font-weight:800;color:#ef4444;text-align:center;margin-top:4px;"/></style><contents><textItem><dataSource><dataItemValue refDataItem="GT_FALTA"/></dataSource><style><dataFormat><numberFormat groupingSeparator="." decimalSeparator="," maximumFractionDigits="2"/></dataFormat></style></textItem></contents></block>
+															<block><style><CSS value="font-size:8pt;color:#fca5a5;text-transform:uppercase;letter-spacing:0.5px;text-align:center;margin-top:4px;"/></style><contents><textItem><dataSource><staticValue>Total Faltas</staticValue></dataSource></textItem></contents></block>
+														</contents>
+													</tableCell>
+													<!-- KPI: Sobras -->
+													<tableCell>
+														<style><CSS value="background-color:#1a1500;border:1px solid #854d0e;border-top:3px solid #f59e0b;border-radius:8px;padding:10px;vertical-align:middle;text-align:center;"/></style>
+														<contents>
+															<block><style><CSS value="font-size:16pt;line-height:1;text-align:center;"/></style><contents><textItem><dataSource><staticValue>&#8679;</staticValue></dataSource></textItem></contents></block>
+															<block><style><CSS value="font-size:20pt;font-weight:800;color:#f59e0b;text-align:center;margin-top:4px;"/></style><contents><textItem><dataSource><dataItemValue refDataItem="GT_SOBRA"/></dataSource><style><dataFormat><numberFormat groupingSeparator="." decimalSeparator="," maximumFractionDigits="2"/></dataFormat></style></textItem></contents></block>
+															<block><style><CSS value="font-size:8pt;color:#fcd34d;text-transform:uppercase;letter-spacing:0.5px;text-align:center;margin-top:4px;"/></style><contents><textItem><dataSource><staticValue>Total Sobras</staticValue></dataSource></textItem></contents></block>
+														</contents>
+													</tableCell>
+													<!-- KPI: Erros -->
+													<tableCell>
+														<style><CSS value="background-color:#1a0d00;border:1px solid #9a3412;border-top:3px solid #f97316;border-radius:8px;padding:10px;vertical-align:middle;text-align:center;"/></style>
+														<contents>
+															<block><style><CSS value="font-size:16pt;line-height:1;text-align:center;"/></style><contents><textItem><dataSource><staticValue>&#9888;</staticValue></dataSource></textItem></contents></block>
+															<block><style><CSS value="font-size:20pt;font-weight:800;color:#f97316;text-align:center;margin-top:4px;"/></style><contents><textItem><dataSource><dataItemValue refDataItem="GT_ERROS"/></dataSource><style><dataFormat><numberFormat groupingSeparator="." decimalSeparator="," maximumFractionDigits="2"/></dataFormat></style></textItem></contents></block>
+															<block><style><CSS value="font-size:8pt;color:#fdba74;text-transform:uppercase;letter-spacing:0.5px;text-align:center;margin-top:4px;"/></style><contents><textItem><dataSource><staticValue>Total Erros</staticValue></dataSource></textItem></contents></block>
+														</contents>
+													</tableCell>
+													<!-- KPI: Valor -->
+													<tableCell>
+														<style><CSS value="background-color:#071a0e;border:1px solid #14532d;border-top:3px solid #10b981;border-radius:8px;padding:10px;vertical-align:middle;text-align:center;"/></style>
+														<contents>
+															<block><style><CSS value="font-size:16pt;line-height:1;text-align:center;"/></style><contents><textItem><dataSource><staticValue>&#128176;</staticValue></dataSource></textItem></contents></block>
+															<block><style><CSS value="font-size:20pt;font-weight:800;color:#10b981;text-align:center;margin-top:4px;"/></style><contents><textItem><dataSource><dataItemValue refDataItem="GT_VALOR"/></dataSource><style><dataFormat><numberFormat groupingSeparator="." decimalSeparator="," maximumFractionDigits="2" type="currency"/></dataFormat></style></textItem></contents></block>
+															<block><style><CSS value="font-size:8pt;color:#6ee7b7;text-transform:uppercase;letter-spacing:0.5px;text-align:center;margin-top:4px;"/></style><contents><textItem><dataSource><staticValue>Valor Total</staticValue></dataSource></textItem></contents></block>
+														</contents>
+													</tableCell>
+													<!-- KPI: Índice -->
+													<tableCell>
+														<style><CSS value="background-color:#0f0a1f;border:1px solid #4c1d95;border-top:3px solid #8b5cf6;border-radius:8px;padding:10px;vertical-align:middle;text-align:center;"/></style>
+														<contents>
+															<block><style><CSS value="font-size:16pt;line-height:1;text-align:center;"/></style><contents><textItem><dataSource><staticValue>&#128200;</staticValue></dataSource></textItem></contents></block>
+															<block><style><CSS value="font-size:20pt;font-weight:800;color:#a78bfa;text-align:center;margin-top:4px;"/></style><contents><textItem><dataSource><dataItemValue refDataItem="AVG_INDICE"/></dataSource><style><dataFormat><numberFormat groupingSeparator="." decimalSeparator="," maximumFractionDigits="4" percentageSymbol="%" type="percent"/></dataFormat></style></textItem></contents></block>
+															<block><style><CSS value="font-size:8pt;color:#c4b5fd;text-transform:uppercase;letter-spacing:0.5px;text-align:center;margin-top:4px;"/></style><contents><textItem><dataSource><staticValue>Índice Médio</staticValue></dataSource></textItem></contents></block>
+														</contents>
+													</tableCell>
+												</tableCells>
+											</tableRow>
+										</tableRows>
+									</table>
+								</contents>
+							</singleton>
+							<!-- ===== CHART ===== -->
+							<block>
+								<style>
+									<CSS value="background-color:#071a2e;border:1px solid #1e3a5f;border-radius:10px;padding:12px;margin-bottom:14px;"/>
+								</style>
+								<contents>
+									<block>
+										<style><CSS value="font-size:10pt;font-weight:700;color:#93c5fd;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.5px;"/></style>
+										<contents><textItem><dataSource><staticValue>&#128202; Evolução de Erros e Índice por Data</staticValue></dataSource></textItem></contents>
+									</block>
+									<chart type="column" name="GraficoErros" refQuery="ÍNDICE">
+										<style><CSS value="height:280px;width:100%;"/></style>
+										<chartBody>
+											<chartSeries>
+												<chartSeriesItems>
+													<chartNode refDataItem="ERROS">
+														<nodeLabel><textItem><dataSource><staticValue>Total Erros</staticValue></dataSource></textItem></nodeLabel>
+														<chartNodeStyle><fillPattern><solid color="#f97316"/></fillPattern></chartNodeStyle>
+													</chartNode>
+													<chartNode refDataItem="FALTA">
+														<nodeLabel><textItem><dataSource><staticValue>Faltas</staticValue></dataSource></textItem></nodeLabel>
+														<chartNodeStyle><fillPattern><solid color="#ef4444"/></fillPattern></chartNodeStyle>
+													</chartNode>
+													<chartNode refDataItem="SOBRA">
+														<nodeLabel><textItem><dataSource><staticValue>Sobras</staticValue></dataSource></textItem></nodeLabel>
+														<chartNodeStyle><fillPattern><solid color="#f59e0b"/></fillPattern></chartNodeStyle>
+													</chartNode>
+												</chartSeriesItems>
+											</chartSeries>
+											<chartCategories>
+												<chartCategoryItems>
+													<chartNode refDataItem="DATA"/>
+												</chartCategoryItems>
+											</chartCategories>
+										</chartBody>
+									</chart>
+								</contents>
+							</block>
+							<!-- ===== DATA TABLE ===== -->
+							<block>
+								<style>
+									<CSS value="background-color:#071a2e;border:1px solid #1e3a5f;border-radius:10px;padding:12px;"/>
+								</style>
+								<contents>
+									<block>
+										<style><CSS value="font-size:10pt;font-weight:700;color:#93c5fd;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.5px;"/></style>
+										<contents><textItem><dataSource><staticValue>&#128203; Detalhe por Data</staticValue></dataSource></textItem></contents>
+									</block>
+									<list horizontalPagination="true" name="ListaIndice" refQuery="ÍNDICE">
+										<noDataHandler>
+											<contents>
+												<block>
+													<contents>
+														<textItem><dataSource><staticValue>Não há dados disponíveis</staticValue></dataSource><style><CSS value="padding:10px 18px;color:#94a3b8;"/></style></textItem>
+													</contents>
+												</block>
+											</contents>
+										</noDataHandler>
+										<style>
+											<CSS value="border-collapse:collapse;font-size:8pt;width:100%;"/>
+											<defaultStyles><defaultStyle refStyle="ls"/></defaultStyles>
+										</style>
+										<listColumns>
+											<listColumn>
+												<listColumnTitle>
+													<style><defaultStyles><defaultStyle refStyle="lt"/></defaultStyles></style>
+													<contents><textItem><dataSource><dataItemLabel refDataItem="DATA"/></dataSource></textItem></contents>
+												</listColumnTitle>
+												<listColumnBody>
+													<style><defaultStyles><defaultStyle refStyle="lc"/></defaultStyles><dataFormat><dateFormat dateSeparator="/" dateStyle="short" displayOrder="DMY" showDays="2-digits" showMonths="2-digits" showYears="showCentury"/></dataFormat></style>
+													<contents><textItem><dataSource><dataItemValue refDataItem="DATA"/></dataSource></textItem></contents>
+												</listColumnBody>
+											</listColumn>
+											<listColumn>
+												<listColumnTitle>
+													<style><defaultStyles><defaultStyle refStyle="lt"/></defaultStyles></style>
+													<contents><textItem><dataSource><dataItemLabel refDataItem="OLPN"/></dataSource></textItem></contents>
+												</listColumnTitle>
+												<listColumnBody>
+													<style><defaultStyles><defaultStyle refStyle="lc"/></defaultStyles></style>
+													<contents><textItem><dataSource><dataItemValue refDataItem="OLPN"/></dataSource></textItem></contents>
+												</listColumnBody>
+											</listColumn>
+											<listColumn>
+												<listColumnTitle>
+													<style><defaultStyles><defaultStyle refStyle="lt"/></defaultStyles></style>
+													<contents><textItem><dataSource><staticValue>Volume Esperado</staticValue></dataSource></textItem></contents>
+												</listColumnTitle>
+												<listColumnBody>
+													<style><defaultStyles><defaultStyle refStyle="lc"/></defaultStyles><dataFormat><numberFormat groupingSeparator="." decimalSeparator="," maximumFractionDigits="0"/></dataFormat></style>
+													<contents><textItem><dataSource><dataItemValue refDataItem="VOLUME_ESPERADO"/></dataSource></textItem></contents>
+												</listColumnBody>
+											</listColumn>
+											<listColumn>
+												<listColumnTitle>
+													<style><defaultStyles><defaultStyle refStyle="lt"/></defaultStyles></style>
+													<contents><textItem><dataSource><staticValue>Faltas</staticValue></dataSource></textItem></contents>
+												</listColumnTitle>
+												<listColumnBody>
+													<style><defaultStyles><defaultStyle refStyle="lc"/></defaultStyles><dataFormat><numberFormat groupingSeparator="." decimalSeparator="," maximumFractionDigits="2"/></dataFormat></style>
+													<contents><textItem><dataSource><dataItemValue refDataItem="FALTA"/></dataSource></textItem></contents>
+												</listColumnBody>
+											</listColumn>
+											<listColumn>
+												<listColumnTitle>
+													<style><defaultStyles><defaultStyle refStyle="lt"/></defaultStyles></style>
+													<contents><textItem><dataSource><staticValue>Sobras</staticValue></dataSource></textItem></contents>
+												</listColumnTitle>
+												<listColumnBody>
+													<style><defaultStyles><defaultStyle refStyle="lc"/></defaultStyles><dataFormat><numberFormat groupingSeparator="." decimalSeparator="," maximumFractionDigits="2"/></dataFormat></style>
+													<contents><textItem><dataSource><dataItemValue refDataItem="SOBRA"/></dataSource></textItem></contents>
+												</listColumnBody>
+											</listColumn>
+											<listColumn>
+												<listColumnTitle>
+													<style><defaultStyles><defaultStyle refStyle="lt"/></defaultStyles></style>
+													<contents><textItem><dataSource><staticValue>Total Erros</staticValue></dataSource></textItem></contents>
+												</listColumnTitle>
+												<listColumnBody>
+													<style><defaultStyles><defaultStyle refStyle="lc"/></defaultStyles><dataFormat><numberFormat groupingSeparator="." decimalSeparator="," maximumFractionDigits="2"/></dataFormat></style>
+													<contents><textItem><dataSource><dataItemValue refDataItem="ERROS"/></dataSource></textItem></contents>
+												</listColumnBody>
+											</listColumn>
+											<listColumn>
+												<listColumnTitle>
+													<style><defaultStyles><defaultStyle refStyle="lt"/></defaultStyles></style>
+													<contents><textItem><dataSource><staticValue>Valor (R$)</staticValue></dataSource></textItem></contents>
+												</listColumnTitle>
+												<listColumnBody>
+													<style><defaultStyles><defaultStyle refStyle="lc"/></defaultStyles><dataFormat><numberFormat groupingSeparator="." decimalSeparator="," maximumFractionDigits="2" type="currency"/></dataFormat></style>
+													<contents><textItem><dataSource><dataItemValue refDataItem="VALOR"/></dataSource></textItem></contents>
+												</listColumnBody>
+											</listColumn>
+											<listColumn>
+												<listColumnTitle>
+													<style><defaultStyles><defaultStyle refStyle="lt"/></defaultStyles></style>
+													<contents><textItem><dataSource><staticValue>Índice (%)</staticValue></dataSource></textItem></contents>
+												</listColumnTitle>
+												<listColumnBody>
+													<style><defaultStyles><defaultStyle refStyle="lc"/></defaultStyles><dataFormat><numberFormat groupingSeparator="." decimalSeparator="," maximumFractionDigits="4" percentageSymbol="%" type="percent"/></dataFormat></style>
+													<contents><textItem><dataSource><dataItemValue refDataItem="INDICE"/></dataSource></textItem></contents>
+												</listColumnBody>
+											</listColumn>
+										</listColumns>
+									</list>
+								</contents>
+							</block>
 						</contents>
 					</pageBody>
 				</page>
@@ -3627,198 +4084,66 @@ AND
 				</sqlQuery>
 			</source>
 			<selection>
-				<dataItem name="CD">
-					<expression>[SQL2].[CD]</expression>
-					<XMLAttributes>
-						<XMLAttribute output="no" name="RS_dataType" value="3"/>
-						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
-					</XMLAttributes>
-				</dataItem>
-				<dataItem name="Data">
-					<expression>[SQL2].[Data]</expression>
+				<dataItem name="DATA">
+					<expression>[SQL2].[DATA]</expression>
 					<XMLAttributes>
 						<XMLAttribute output="no" name="RS_dataType" value="4"/>
-						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
-					</XMLAttributes>
-				</dataItem>
-				<dataItem name="Nº Loja">
-					<expression>[SQL2].[Nº Loja]</expression>
-					<XMLAttributes>
-						<XMLAttribute output="no" name="RS_dataType" value="3"/>
-						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
-					</XMLAttributes>
-				</dataItem>
-				<dataItem name="Nº NF">
-					<expression>[SQL2].[Nº NF]</expression>
-					<XMLAttributes>
-						<XMLAttribute output="no" name="RS_dataType" value="3"/>
 						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
 					</XMLAttributes>
 				</dataItem>
 				<dataItem name="OLPN">
 					<expression>[SQL2].[OLPN]</expression>
 					<XMLAttributes>
-						<XMLAttribute output="no" name="RS_dataType" value="3"/>
-						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
-					</XMLAttributes>
-				</dataItem>
-				<dataItem name="Cod Prod">
-					<expression>[SQL2].[Cod Prod]</expression>
-					<XMLAttributes>
-						<XMLAttribute output="no" name="RS_dataType" value="3"/>
-						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
-					</XMLAttributes>
-				</dataItem>
-				<dataItem name="Seção">
-					<expression>[SQL2].[Seção]</expression>
-					<XMLAttributes>
-						<XMLAttribute output="no" name="RS_dataType" value="3"/>
-						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
-					</XMLAttributes>
-				</dataItem>
-				<dataItem name="Descrição">
-					<expression>[SQL2].[Descrição]</expression>
-					<XMLAttributes>
-						<XMLAttribute output="no" name="RS_dataType" value="3"/>
-						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
-					</XMLAttributes>
-				</dataItem>
-				<dataItem name="EMBALAGEM">
-					<expression>[SQL2].[EMBALAGEM]</expression>
-					<XMLAttributes>
 						<XMLAttribute output="no" name="RS_dataType" value="9"/>
 						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
 					</XMLAttributes>
 				</dataItem>
-				<dataItem name="UOM QTY">
-					<expression>[SQL2].[UOM QTY]</expression>
-					<XMLAttributes>
-						<XMLAttribute output="no" name="RS_dataType" value="3"/>
-						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
-					</XMLAttributes>
-				</dataItem>
-				<dataItem name="Unidade">
-					<expression>[SQL2].[Unidade]</expression>
-					<XMLAttributes>
-						<XMLAttribute output="no" name="RS_dataType" value="3"/>
-						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
-					</XMLAttributes>
-				</dataItem>
-				<dataItem name="PAR">
-					<expression>[SQL2].[PAR]</expression>
-					<XMLAttributes>
-						<XMLAttribute output="no" name="RS_dataType" value="3"/>
-						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
-					</XMLAttributes>
-				</dataItem>
-				<dataItem name="Fat">
-					<expression>[SQL2].[Fat]</expression>
-					<XMLAttributes>
-						<XMLAttribute output="no" name="RS_dataType" value="9"/>
-						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
-					</XMLAttributes>
-				</dataItem>
-				<dataItem name="Conf">
-					<expression>[SQL2].[Conf]</expression>
-					<XMLAttributes>
-						<XMLAttribute output="no" name="RS_dataType" value="9"/>
-						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
-					</XMLAttributes>
-				</dataItem>
-				<dataItem name="Dif">
-					<expression>[SQL2].[Dif]</expression>
-					<XMLAttributes>
-						<XMLAttribute output="no" name="RS_dataType" value="9"/>
-						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
-					</XMLAttributes>
-				</dataItem>
-				<dataItem name="CUSTO_UNITARIO">
-					<expression>[SQL2].[CUSTO_UNITARIO]</expression>
+				<dataItem name="VALOR">
+					<expression>[SQL2].[VALOR]</expression>
 					<XMLAttributes>
 						<XMLAttribute output="no" name="RS_dataType" value="1"/>
 						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
 					</XMLAttributes>
 				</dataItem>
-				<dataItem name="Total">
-					<expression>[SQL2].[Total]</expression>
+				<dataItem name="VOLUME_ESPERADO">
+					<expression>[SQL2].[VOLUME_ESPERADO]</expression>
 					<XMLAttributes>
-						<XMLAttribute output="no" name="RS_dataType" value="9"/>
+						<XMLAttribute output="no" name="RS_dataType" value="1"/>
 						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
 					</XMLAttributes>
 				</dataItem>
-				<dataItem name="MOTIVO">
-					<expression>[SQL2].[MOTIVO]</expression>
+				<dataItem name="FALTA">
+					<expression>[SQL2].[FALTA]</expression>
 					<XMLAttributes>
-						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataType" value="1"/>
 						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
 					</XMLAttributes>
 				</dataItem>
-				<dataItem name="Erros">
-					<expression>[SQL2].[Erros]</expression>
+				<dataItem name="SOBRA">
+					<expression>[SQL2].[SOBRA]</expression>
 					<XMLAttributes>
-						<XMLAttribute output="no" name="RS_dataType" value="9"/>
+						<XMLAttribute output="no" name="RS_dataType" value="1"/>
 						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
 					</XMLAttributes>
 				</dataItem>
-				<dataItem name="Cód Oc">
-					<expression>[SQL2].[Cód Oc]</expression>
+				<dataItem name="ERROS">
+					<expression>[SQL2].[ERROS]</expression>
 					<XMLAttributes>
-						<XMLAttribute output="no" name="RS_dataType" value="9"/>
+						<XMLAttribute output="no" name="RS_dataType" value="1"/>
 						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
 					</XMLAttributes>
 				</dataItem>
-				<dataItem name="Local">
-					<expression>[SQL2].[Local]</expression>
+				<dataItem name="INDICE">
+					<expression>[SQL2].[INDICE]</expression>
 					<XMLAttributes>
-						<XMLAttribute output="no" name="RS_dataType" value="3"/>
-						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
-					</XMLAttributes>
-				</dataItem>
-				<dataItem name="Embarque">
-					<expression>[SQL2].[Embarque]</expression>
-					<XMLAttributes>
-						<XMLAttribute output="no" name="RS_dataType" value="3"/>
-						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
-					</XMLAttributes>
-				</dataItem>
-				<dataItem name="ENCAIXE">
-					<expression>[SQL2].[ENCAIXE]</expression>
-					<XMLAttributes>
-						<XMLAttribute output="no" name="RS_dataType" value="3"/>
-						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
-					</XMLAttributes>
-				</dataItem>
-				<dataItem name="OBS">
-					<expression>[SQL2].[OBS]</expression>
-					<XMLAttributes>
-						<XMLAttribute output="no" name="RS_dataType" value="3"/>
-						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
-					</XMLAttributes>
-				</dataItem>
-				<dataItem name="CATEGORIA">
-					<expression>[SQL2].[CATEGORIA]</expression>
-					<XMLAttributes>
-						<XMLAttribute output="no" name="RS_dataType" value="3"/>
-						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
-					</XMLAttributes>
-				</dataItem>
-				<dataItem name="Separador">
-					<expression>[SQL2].[Separador]</expression>
-					<XMLAttributes>
-						<XMLAttribute output="no" name="RS_dataType" value="3"/>
+						<XMLAttribute output="no" name="RS_dataType" value="1"/>
 						<XMLAttribute output="no" name="RS_dataUsage" value="3"/>
 					</XMLAttributes>
 				</dataItem>
 			</selection>
 			<detailFilters>
 				<detailFilter use="optional">
-					<filterExpression>cast([SQL2].[Data];date)BETWEEN ?p_data_in? AND ?p_data_fi?</filterExpression>
-				</detailFilter>
-				<detailFilter use="optional">
-					<filterExpression>[SQL2].[Nº Loja]=?p_loja?</filterExpression>
-				</detailFilter>
-				<detailFilter use="optional">
-					<filterExpression>[SQL2].[OLPN]=?p_olpn?</filterExpression>
+					<filterExpression>cast([SQL2].[DATA];date) BETWEEN ?p_data_in? AND ?p_data_fi?</filterExpression>
 				</detailFilter>
 			</detailFilters>
 		</query>
@@ -4421,6 +4746,82 @@ ORDER BY TRUNC(BASE.DATA)</sqlText>
 					<filterExpression>[SQL2].[OLPN]=?p_olpn?</filterExpression>
 				</detailFilter>
 			</detailFilters>
+		</query>
+
+		<query name="INDICE_KPI">
+			<source>
+				<queryRef refQuery="ÍNDICE"/>
+			</source>
+			<selection>
+				<dataItem name="GT_OLPN">
+					<expression>total([ÍNDICE].[OLPN] for report)</expression>
+				</dataItem>
+				<dataItem name="GT_VALOR">
+					<expression>total([ÍNDICE].[VALOR] for report)</expression>
+				</dataItem>
+				<dataItem name="GT_VOLUME">
+					<expression>total([ÍNDICE].[VOLUME_ESPERADO] for report)</expression>
+				</dataItem>
+				<dataItem name="GT_FALTA">
+					<expression>total([ÍNDICE].[FALTA] for report)</expression>
+				</dataItem>
+				<dataItem name="GT_SOBRA">
+					<expression>total([ÍNDICE].[SOBRA] for report)</expression>
+				</dataItem>
+				<dataItem name="GT_ERROS">
+					<expression>total([ÍNDICE].[ERROS] for report)</expression>
+				</dataItem>
+				<dataItem name="AVG_INDICE">
+					<expression>average([ÍNDICE].[INDICE] for report)</expression>
+				</dataItem>
+			</selection>
+		</query>
+		<query name="C_Check_KPI">
+			<source>
+				<queryRef refQuery="C_Check_List_Detalhe"/>
+			</source>
+			<selection>
+				<dataItem name="KPI_OLPN_COUNT">
+					<expression>count([C_Check_List_Detalhe].[OLPN] for report)</expression>
+				</dataItem>
+				<dataItem name="KPI_FA">
+					<expression>total([C_Check_List_Detalhe].[FA] for report)</expression>
+				</dataItem>
+				<dataItem name="KPI_SO">
+					<expression>total([C_Check_List_Detalhe].[SO] for report)</expression>
+				</dataItem>
+				<dataItem name="KPI_VALOR">
+					<expression>total([C_Check_List_Detalhe].[VALOR] for report)</expression>
+				</dataItem>
+				<dataItem name="KPI_VOL">
+					<expression>total([C_Check_List_Detalhe].[VOLUME] for report)</expression>
+				</dataItem>
+				<dataItem name="KPI_VOL_CONF">
+					<expression>total([C_Check_List_Detalhe].[VOLUME CONFERIDO] for report)</expression>
+				</dataItem>
+			</selection>
+		</query>
+		<query name="Detalhado_KPI">
+			<source>
+				<queryRef refQuery="Auditoria de Carga Detalhado"/>
+			</source>
+			<selection>
+				<dataItem name="DKP_OLPN">
+					<expression>count([Auditoria de Carga Detalhado].[OLPN] for report)</expression>
+				</dataItem>
+				<dataItem name="DKP_FAT">
+					<expression>total([Auditoria de Carga Detalhado].[Fat] for report)</expression>
+				</dataItem>
+				<dataItem name="DKP_CONF">
+					<expression>total([Auditoria de Carga Detalhado].[Conf] for report)</expression>
+				</dataItem>
+				<dataItem name="DKP_ERROS">
+					<expression>total([Auditoria de Carga Detalhado].[Erros] for report)</expression>
+				</dataItem>
+				<dataItem name="DKP_TOTAL">
+					<expression>total([Auditoria de Carga Detalhado].[Total] for report)</expression>
+				</dataItem>
+			</selection>
 		</query>
 	</queries>
 	<reportName>Relatório - Check List Resumido - Auditoria de Carga</reportName>
