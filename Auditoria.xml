@@ -259,7 +259,7 @@
 															<defaultStyle refStyle="lc"/>
 														</defaultStyles>
 														<dataFormat>
-															<numberFormat decimalDelimiter="," decimalSize="3"/>
+															<numberFormat decimalDelimiter="," decimalSize="3" groupDelimiter="."/>
 														</dataFormat>
 													</style>
 													<contents>
@@ -292,7 +292,7 @@
 															<defaultStyle refStyle="lc"/>
 														</defaultStyles>
 														<dataFormat>
-															<numberFormat decimalDelimiter="," decimalSize="3"/>
+															<numberFormat decimalDelimiter="," decimalSize="3" groupDelimiter="."/>
 														</dataFormat>
 													</style>
 													<contents>
@@ -324,6 +324,9 @@
 														<defaultStyles>
 															<defaultStyle refStyle="lc"/>
 														</defaultStyles>
+														<dataFormat>
+															<numberFormat decimalDelimiter="," decimalSize="2" groupDelimiter="."/>
+														</dataFormat>
 													</style>
 													<contents>
 														<textItem>
@@ -595,7 +598,7 @@
 															<defaultStyle refStyle="lc"/>
 														</defaultStyles>
 														<dataFormat>
-															<numberFormat decimalSize="2" groupDelimiter="."/>
+															<numberFormat decimalDelimiter="," decimalSize="2" groupDelimiter="."/>
 														</dataFormat>
 													</style>
 													<contents>
@@ -628,7 +631,7 @@
 															<defaultStyle refStyle="lc"/>
 														</defaultStyles>
 														<dataFormat>
-															<numberFormat decimalSize="2" groupDelimiter="."/>
+															<numberFormat decimalDelimiter="," decimalSize="2" groupDelimiter="."/>
 														</dataFormat>
 													</style>
 													<contents>
@@ -660,6 +663,9 @@
 														<defaultStyles>
 															<defaultStyle refStyle="lc"/>
 														</defaultStyles>
+														<dataFormat>
+															<numberFormat decimalDelimiter="," decimalSize="2" groupDelimiter="."/>
+														</dataFormat>
 													</style>
 													<contents>
 														<textItem>
@@ -690,6 +696,9 @@
 														<defaultStyles>
 															<defaultStyle refStyle="lc"/>
 														</defaultStyles>
+														<dataFormat>
+															<numberFormat decimalDelimiter="," decimalSize="2" groupDelimiter="."/>
+														</dataFormat>
 													</style>
 													<contents>
 														<textItem>
@@ -720,6 +729,9 @@
 														<defaultStyles>
 															<defaultStyle refStyle="lc"/>
 														</defaultStyles>
+														<dataFormat>
+															<numberFormat decimalDelimiter="," decimalSize="2" groupDelimiter="."/>
+														</dataFormat>
 													</style>
 													<contents>
 														<textItem>
@@ -750,6 +762,9 @@
 														<defaultStyles>
 															<defaultStyle refStyle="lc"/>
 														</defaultStyles>
+														<dataFormat>
+															<numberFormat decimalDelimiter="," decimalSize="2" groupDelimiter="."/>
+														</dataFormat>
 													</style>
 													<contents>
 														<textItem>
@@ -780,6 +795,9 @@
 														<defaultStyles>
 															<defaultStyle refStyle="lc"/>
 														</defaultStyles>
+														<dataFormat>
+															<numberFormat decimalDelimiter="," decimalSize="2" groupDelimiter="."/>
+														</dataFormat>
 													</style>
 													<contents>
 														<textItem>
@@ -1545,6 +1563,9 @@
 												<defaultStyles>
 													<defaultStyle refStyle="lm"/>
 												</defaultStyles>
+												<dataFormat>
+													<numberFormat decimalDelimiter="," decimalSize="2" groupDelimiter="."/>
+												</dataFormat>
 											</style>
 											<contents>
 												<textItem>
@@ -1575,6 +1596,9 @@
 												<defaultStyles>
 													<defaultStyle refStyle="lm"/>
 												</defaultStyles>
+												<dataFormat>
+													<numberFormat decimalDelimiter="," decimalSize="2" groupDelimiter="."/>
+												</dataFormat>
 											</style>
 											<contents>
 												<textItem>
