@@ -226,7 +226,7 @@
 															<defaultStyle refStyle="lc"/>
 														</defaultStyles>
 														<dataFormat>
-															<numberFormat decimalDelimiter="," decimalSize="2" groupDelimiter="." useGrouping="true"/>
+															<numberFormat decimalDelimiter="," decimalSize="2" groupDelimiter="."/>
 														</dataFormat>
 													</style>
 													<contents>
@@ -595,7 +595,7 @@
 															<defaultStyle refStyle="lc"/>
 														</defaultStyles>
 														<dataFormat>
-															<numberFormat decimalSize="2" groupDelimiter="." useGrouping="true"/>
+															<numberFormat decimalSize="2" groupDelimiter="."/>
 														</dataFormat>
 													</style>
 													<contents>
@@ -628,7 +628,7 @@
 															<defaultStyle refStyle="lc"/>
 														</defaultStyles>
 														<dataFormat>
-															<numberFormat decimalSize="2" groupDelimiter="." useGrouping="true"/>
+															<numberFormat decimalSize="2" groupDelimiter="."/>
 														</dataFormat>
 													</style>
 													<contents>
