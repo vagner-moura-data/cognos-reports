@@ -1691,6 +1691,11 @@ END</expression>
 					<expression>[PROD_HORA_NOVA]/[META_HORA]</expression>
 				</dataItem>
 			<dataItem name="HORARIO"><expression>[SQL1].[HORARIO]</expression></dataItem></selection>
+			<detailFilters>
+				<detailFilter>
+					<filterExpression>[OPERACAO] in ?Parâmetro1?</filterExpression>
+				</detailFilter>
+			</detailFilters>
 			<queryHints>
 				<localCache value="false"/>
 			<queryProcessing value="databaseOnly"/></queryHints>
