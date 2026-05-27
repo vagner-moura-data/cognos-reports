@@ -1,0 +1,681 @@
+<report xmlns="http://developer.cognos.com/schemas/report/14.3/"
+        useStyleVersion="11.4" expressionLocale="pt-br" viewPagesAsTabs="topLeft">
+	<drillBehavior/>
+	<layouts>
+		<layout>
+			<reportPages>
+				<page name="Visão BI">
+					<style>
+						<defaultStyles><defaultStyle refStyle="pg"/></defaultStyles>
+						<CSS value="background-color: #0a0f1e; font-family: &apos;Segoe UI&apos;, Roboto, Helvetica, sans-serif; padding: 20px; overflow: hidden;"/>
+					</style>
+					<pageBody>
+						<style>
+							<defaultStyles><defaultStyle refStyle="pb"/></defaultStyles>
+						</style>
+						<contents>
+
+							<!-- ═══════════ CABEÇALHO ═══════════ -->
+							<block>
+								<style>
+									<CSS value="background: linear-gradient(135deg, #0d2137 0%, #112240 100%); border-left: 5px solid #3b82f6; border-radius: 12px; padding: 16px 22px 14px 22px; margin-bottom: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.6);"/>
+								</style>
+								<contents>
+									<HTMLItem>
+										<dataSource>
+											<staticValue>&lt;script&gt;
+   var zxzx = { };
+   zxzx.sendFinishAction = function()
+   {
+      var oCR = cognos.Report.getReport(&apos;_THIS_&apos;);
+      oCR.sendRequest(cognos.Report.Action.FINISH);
+   }
+   setTimeout(zxzx.sendFinishAction, 120000);
+&lt;/script&gt;</staticValue>
+										</dataSource>
+									</HTMLItem>
+									<table>
+										<style><CSS value="width: 100%; border-collapse: collapse;"/></style>
+										<tableRows>
+											<tableRow>
+												<tableCells>
+													<tableCell>
+														<style><CSS value="vertical-align: middle; padding-right: 20px;"/></style>
+														<contents>
+															<block>
+																<style><CSS value="font-size: 18pt; font-weight: 800; color: #f1f5f9; letter-spacing: 0.5px;"/></style>
+																<contents>
+																	<textItem><dataSource><staticValue>📊  VISÃO BI — PAINEL OPERACIONAL</staticValue></dataSource></textItem>
+																</contents>
+															</block>
+															<HTMLItem>
+																<dataSource>
+																	<staticValue>&lt;style&gt;
+    .tooltip-container { float: right; margin-top: 2px; margin-left: 10px; position: relative; display: inline-block; font-family: &apos;Segoe UI&apos;, Tahoma, sans-serif; }
+    .tooltip-icon { background-color: #3b82f6; color: white; width: 34px; height: 34px; border-radius: 50%; text-align: center; line-height: 34px; font-weight: bold; font-style: italic; font-size: 18px; cursor: help; box-shadow: 0 2px 4px rgba(0,0,0,0.2); border: 2px solid transparent; transition: 0.3s; }
+    .tooltip-icon:hover { background-color: #2563eb; border-color: white; }
+    .tooltip-text { visibility: hidden; opacity: 0; width: 380px; background-color: #1e293b !important; color: #f8fafc !important; text-align: left; border-radius: 8px; padding: 15px; position: absolute; z-index: 9999; top: 130%; right: 0; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.5); transition: opacity 0.3s, visibility 0.3s; font-size: 10pt; line-height: 1.5; border: 1px solid #3b82f6; }
+    .tooltip-text::after { content: &quot;&quot;; position: absolute; bottom: 100%; right: 12px; border-width: 8px; border-style: solid; border-color: transparent transparent #3b82f6 transparent; }
+    .tooltip-container:hover .tooltip-text { visibility: visible; opacity: 1; }
+&lt;/style&gt;
+
+&lt;div class=&quot;tooltip-container&quot;&gt;
+    &lt;div class=&quot;tooltip-icon&quot;&gt;i&lt;/div&gt;
+    &lt;div class=&quot;tooltip-text&quot;&gt;
+        &lt;span style=&quot;font-size: 11pt; font-weight: bold; color: #60a5fa !important;&quot;&gt;ℹ️ Sobre o Painel&lt;/span&gt;
+        &lt;hr style=&quot;border: 0; border-bottom: 1px solid #334155; margin: 8px 0;&quot;/&gt;
+        Relatório desenvolvido por:&lt;br/&gt;
+        • &lt;b&gt;roberlan.santiago@gpabr.com&lt;/b&gt;&lt;br/&gt;
+        • &lt;b&gt;vagner.moura@gpabr.com&lt;/b&gt;&lt;br/&gt;&lt;br/&gt;
+        Em caso de problemas ou inconsistências, abrir uma &lt;b&gt;RITM&lt;/b&gt; e encaminhar para a equipe responsável.
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;button type=&quot;button&quot; onclick=&quot;var d=document,e=d.documentElement,f=d.fullscreenElement||d.webkitFullscreenElement;if(!f){if(e.requestFullscreen)e.requestFullscreen();else if(e.webkitRequestFullscreen)e.webkitRequestFullscreen();}else{if(d.exitFullscreen)d.exitFullscreen();else if(d.webkitExitFullscreen)d.webkitExitFullscreen();}&quot; style=&quot;float: right; margin-top: 2px; margin-left: 10px; padding: 8px 15px; background-color: #3b82f6; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; font-family: &apos;Segoe UI&apos;, Tahoma, sans-serif; box-shadow: 0 2px 4px rgba(0,0,0,0.2);&quot;&gt;
+    📺 TELA CHEIA
+&lt;/button&gt;</staticValue>
+																</dataSource>
+															</HTMLItem>
+															<block>
+																<style><CSS value="font-size: 8.5pt; color: #475569; margin-top: 3px;"/></style>
+																<contents>
+																	<textItem><dataSource><staticValue>Warehouse Management OS  •  Monitoramento em Tempo Real</staticValue></dataSource></textItem>
+																</contents>
+															</block>
+														</contents>
+													</tableCell>
+													<tableCell>
+														<style><CSS value="text-align: right; vertical-align: middle; white-space: nowrap; width: 1%;"/></style>
+														<contents>
+															<block>
+																<style><CSS value="background-color: #0a1929; border: 1px solid #1e3a5f; border-radius: 8px; padding: 8px 14px; display: inline-block;"/></style>
+																<contents>
+																	<block>
+																		<style><CSS value="font-size: 7pt; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; text-align: center;"/></style>
+																		<contents><textItem><dataSource><staticValue>Última Atualização</staticValue></dataSource><style><CSS value="color:white"/></style></textItem></contents>
+																	</block>
+																	<block>
+																		<style><CSS value="font-size: 11pt; font-weight: 700; color: #38bdf8; text-align: center;"/></style>
+																		<contents>
+																			<textItem>
+																				<dataSource><reportExpression>AsOfTime()</reportExpression></dataSource>
+																			</textItem>
+																		</contents>
+																	</block>
+																</contents>
+															</block>
+														</contents>
+													</tableCell>
+												</tableCells>
+											</tableRow>
+										</tableRows>
+									</table>
+								</contents>
+							</block>
+
+							<!-- ═══════════ LINHA DE KPIs ═══════════ -->
+							<block>
+								<style><CSS value="border-top: 1px solid #1e3a5f; margin: 12px 0 10px 0;"/></style>
+								<contents/>
+							</block>
+
+							<singleton name="KPISummary" refQuery="Consulta_KPI">
+								<contents>
+									<table>
+										<style><CSS value="width: 100%; border-collapse: separate; border-spacing: 8px 0; table-layout: fixed;"/></style>
+										<tableRows>
+											<tableRow>
+												<tableCells>
+													<!-- KPI 1 - Total Registros -->
+													<tableCell>
+														<style><CSS value="background-color: #071a2e; border: 1px solid #166534; border-top: 3px solid #22c55e; border-radius: 8px; padding: 8px; vertical-align: middle;"/></style>
+														<contents>
+															<block><style><CSS value="font-size: 6pt; color: #fca5a5; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; text-align: center;"/></style>
+																<contents><textItem><dataSource><staticValue> </staticValue></dataSource></textItem></contents>
+															</block>
+															<table><style><CSS value="width: 100%; border-collapse: collapse;"/></style>
+																<tableRows><tableRow><tableCells>
+																	<tableCell><style><CSS value="width: 28px; text-align: center; vertical-align: middle;"/></style>
+																		<contents><block><style><CSS value="font-size: 17pt; line-height: 1;"/></style>
+																			<contents><textItem><dataSource><staticValue>📋</staticValue></dataSource></textItem></contents>
+																		</block></contents>
+																	</tableCell>
+																	<tableCell><style><CSS value="vertical-align:top;padding-left:4px;text-align:center"/></style>
+																		<contents>
+																			<block><style><CSS value="font-size:17pt;font-weight:800;color:#22c55e;line-height:1.2;margin-bottom:3px;text-align:center"/></style>
+																				<contents><textItem><dataSource><dataItemValue refDataItem="TOTAL_REGISTROS"/></dataSource><style><CSS value="font-size:20pt"/></style></textItem></contents>
+																			</block>
+																		</contents>
+																	</tableCell>
+																</tableCells></tableRow></tableRows>
+															</table>
+															<block><style><CSS value="font-size:10pt;color:#86efac;text-transform:uppercase;letter-spacing:0.5px;font-weight:700;text-align:center"/></style>
+																<contents><textItem><dataSource><staticValue>Total Registros</staticValue></dataSource></textItem></contents>
+															</block>
+														</contents>
+													</tableCell>
+
+													<!-- KPI 2 - Concluídos -->
+													<tableCell>
+														<style><CSS value="background-color: #071a2e; border: 1px solid #166534; border-top: 3px solid #22c55e; border-radius: 8px; padding: 8px; vertical-align: middle;"/></style>
+														<contents>
+															<block><style><CSS value="font-size: 6pt; color: #fca5a5; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; text-align: center;"/></style>
+																<contents><textItem><dataSource><staticValue> </staticValue></dataSource></textItem></contents>
+															</block>
+															<table><style><CSS value="width: 100%; border-collapse: collapse;"/></style>
+																<tableRows><tableRow><tableCells>
+																	<tableCell><style><CSS value="width: 28px; text-align: center; vertical-align: middle;"/></style>
+																		<contents><block><style><CSS value="font-size: 17pt; line-height: 1;"/></style>
+																			<contents><textItem><dataSource><staticValue>✅</staticValue></dataSource></textItem></contents>
+																		</block></contents>
+																	</tableCell>
+																	<tableCell><style><CSS value="vertical-align:top;padding-left:4px;text-align:center"/></style>
+																		<contents>
+																			<block><style><CSS value="font-size:17pt;font-weight:800;color:#22c55e;line-height:1.2;margin-bottom:3px;text-align:center"/></style>
+																				<contents><textItem><dataSource><dataItemValue refDataItem="TOTAL_CONCLUIDOS"/></dataSource><style><CSS value="font-size:20pt"/></style></textItem></contents>
+																			</block>
+																		</contents>
+																	</tableCell>
+																</tableCells></tableRow></tableRows>
+															</table>
+															<block><style><CSS value="font-size:10pt;color:#86efac;text-transform:uppercase;letter-spacing:0.5px;font-weight:700;text-align:center"/></style>
+																<contents><textItem><dataSource><staticValue>Concluídos</staticValue></dataSource></textItem></contents>
+															</block>
+														</contents>
+													</tableCell>
+
+													<!-- KPI 3 - Em Andamento -->
+													<tableCell>
+														<style><CSS value="background-color: #1c0a0a; border: 1px solid #7f1d1d; border-top: 3px solid #ef4444; border-radius: 8px; padding: 8px; vertical-align: middle;"/></style>
+														<contents>
+															<block><style><CSS value="font-size: 6pt; color: #fca5a5; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; text-align: center;"/></style>
+																<contents><textItem><dataSource><staticValue> </staticValue></dataSource></textItem></contents>
+															</block>
+															<table><style><CSS value="width: 100%; border-collapse: collapse;"/></style>
+																<tableRows><tableRow><tableCells>
+																	<tableCell><style><CSS value="width: 28px; text-align: center; vertical-align: middle;"/></style>
+																		<contents><block><style><CSS value="font-size: 17pt; line-height: 1;"/></style>
+																			<contents><textItem><dataSource><staticValue>⏳</staticValue></dataSource></textItem></contents>
+																		</block></contents>
+																	</tableCell>
+																	<tableCell><style><CSS value="text-align: center; vertical-align: top; padding-left: 4px;"/></style>
+																		<contents>
+																			<block><style><CSS value="font-size:17pt;font-weight:800;color:#ef4444;text-align:center;line-height:1.2;margin-bottom:3px;"/></style>
+																				<contents><textItem><dataSource><dataItemValue refDataItem="TOTAL_EM_ANDAMENTO"/></dataSource><style><CSS value="font-size:20pt"/></style></textItem></contents>
+																			</block>
+																		</contents>
+																	</tableCell>
+																</tableCells></tableRow></tableRows>
+															</table>
+															<block><style><CSS value="font-size:10pt;color:#fca5a5;text-transform:uppercase;letter-spacing:0.5px;font-weight:700;text-align:center"/></style>
+																<contents><textItem><dataSource><staticValue>Em Andamento</staticValue></dataSource></textItem></contents>
+															</block>
+														</contents>
+													</tableCell>
+
+													<!-- KPI 4 - Pendentes -->
+													<tableCell>
+														<style><CSS value="background-color: #1a1500; border: 1px solid #854d0e; border-top: 3px solid #eab308; border-radius: 8px; padding: 8px; vertical-align: middle;"/></style>
+														<contents>
+															<block><style><CSS value="font-size: 6pt; color: #fde047; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700; text-align: center;"/></style>
+																<contents><textItem><dataSource><staticValue> </staticValue></dataSource></textItem></contents>
+															</block>
+															<table><style><CSS value="width: 100%; border-collapse: collapse;"/></style>
+																<tableRows><tableRow><tableCells>
+																	<tableCell><style><CSS value="width: 28px; text-align: center; vertical-align: middle;"/></style>
+																		<contents><block><style><CSS value="font-size: 17pt; line-height: 1;"/></style>
+																			<contents><textItem><dataSource><staticValue>⚠️</staticValue></dataSource></textItem></contents>
+																		</block></contents>
+																	</tableCell>
+																	<tableCell><style><CSS value="text-align: center; vertical-align: top; padding-left: 4px;"/></style>
+																		<contents>
+																			<block><style><CSS value="font-size:17pt;font-weight:800;color:#eab308;text-align:center;line-height:1.2;margin-bottom:3px;"/></style>
+																				<contents><textItem><dataSource><dataItemValue refDataItem="TOTAL_PENDENTES"/></dataSource><style><CSS value="font-size:20pt"/></style></textItem></contents>
+																			</block>
+																		</contents>
+																	</tableCell>
+																</tableCells></tableRow></tableRows>
+															</table>
+															<block><style><CSS value="font-size:10pt;color:#fde047;text-transform:uppercase;letter-spacing:0.5px;font-weight:700;text-align:center"/></style>
+																<contents><textItem><dataSource><staticValue>Pendentes</staticValue></dataSource></textItem></contents>
+															</block>
+														</contents>
+													</tableCell>
+												</tableCells>
+											</tableRow>
+										</tableRows>
+									</table>
+								</contents>
+							</singleton>
+
+							<!-- ═══════════ TABELA DE DADOS ═══════════ -->
+							<block>
+								<style><CSS value="margin-top: 16px;"/></style>
+								<contents>
+									<list name="Lista_Dados" refQuery="Consulta_Dados">
+										<style>
+											<defaultStyles><defaultStyle refStyle="ls"/></defaultStyles>
+											<CSS value="width: 100%; border-collapse: collapse; font-size: 9pt;"/>
+										</style>
+										<listColumns>
+											<listColumn>
+												<listColumnTitle>
+													<style><CSS value="background-color: #1e293b; color: #38bdf8; font-weight: 700; padding: 8px 10px; border-bottom: 2px solid #3b82f6; font-size: 9pt; text-align: center;"/></style>
+													<contents><textItem><dataSource><staticValue>CD</staticValue></dataSource></textItem></contents>
+												</listColumnTitle>
+												<listColumnBody>
+													<style><CSS value="background-color: #0f172a; color: #e2e8f0; padding: 6px 10px; border-bottom: 1px solid #1e293b; text-align: center;"/></style>
+													<contents><textItem><dataSource><dataItemValue refDataItem="CD"/></dataSource></textItem></contents>
+												</listColumnBody>
+											</listColumn>
+											<listColumn>
+												<listColumnTitle>
+													<style><CSS value="background-color: #1e293b; color: #38bdf8; font-weight: 700; padding: 8px 10px; border-bottom: 2px solid #3b82f6; font-size: 9pt; text-align: center;"/></style>
+													<contents><textItem><dataSource><staticValue>DATA</staticValue></dataSource></textItem></contents>
+												</listColumnTitle>
+												<listColumnBody>
+													<style><CSS value="background-color: #0f172a; color: #e2e8f0; padding: 6px 10px; border-bottom: 1px solid #1e293b; text-align: center;"/></style>
+													<contents><textItem><dataSource><dataItemValue refDataItem="DATA"/></dataSource></textItem></contents>
+												</listColumnBody>
+											</listColumn>
+											<listColumn>
+												<listColumnTitle>
+													<style><CSS value="background-color: #1e293b; color: #38bdf8; font-weight: 700; padding: 8px 10px; border-bottom: 2px solid #3b82f6; font-size: 9pt; text-align: center;"/></style>
+													<contents><textItem><dataSource><staticValue>OPERAÇÃO</staticValue></dataSource></textItem></contents>
+												</listColumnTitle>
+												<listColumnBody>
+													<style><CSS value="background-color: #0f172a; color: #e2e8f0; padding: 6px 10px; border-bottom: 1px solid #1e293b; text-align: center;"/></style>
+													<contents><textItem><dataSource><dataItemValue refDataItem="OPERACAO"/></dataSource></textItem></contents>
+												</listColumnBody>
+											</listColumn>
+											<listColumn>
+												<listColumnTitle>
+													<style><CSS value="background-color: #1e293b; color: #38bdf8; font-weight: 700; padding: 8px 10px; border-bottom: 2px solid #3b82f6; font-size: 9pt; text-align: center;"/></style>
+													<contents><textItem><dataSource><staticValue>STATUS</staticValue></dataSource></textItem></contents>
+												</listColumnTitle>
+												<listColumnBody>
+													<style><CSS value="background-color: #0f172a; color: #e2e8f0; padding: 6px 10px; border-bottom: 1px solid #1e293b; text-align: center;"/></style>
+													<contents><textItem><dataSource><dataItemValue refDataItem="STATUS"/></dataSource></textItem></contents>
+												</listColumnBody>
+											</listColumn>
+											<listColumn>
+												<listColumnTitle>
+													<style><CSS value="background-color: #1e293b; color: #38bdf8; font-weight: 700; padding: 8px 10px; border-bottom: 2px solid #3b82f6; font-size: 9pt; text-align: center;"/></style>
+													<contents><textItem><dataSource><staticValue>QUANTIDADE</staticValue></dataSource></textItem></contents>
+												</listColumnTitle>
+												<listColumnBody>
+													<style><CSS value="background-color: #0f172a; color: #e2e8f0; padding: 6px 10px; border-bottom: 1px solid #1e293b; text-align: right;"/></style>
+													<contents><textItem><dataSource><dataItemValue refDataItem="QUANTIDADE"/></dataSource></textItem></contents>
+												</listColumnBody>
+											</listColumn>
+											<listColumn>
+												<listColumnTitle>
+													<style><CSS value="background-color: #1e293b; color: #38bdf8; font-weight: 700; padding: 8px 10px; border-bottom: 2px solid #3b82f6; font-size: 9pt; text-align: center;"/></style>
+													<contents><textItem><dataSource><staticValue>VALOR</staticValue></dataSource></textItem></contents>
+												</listColumnTitle>
+												<listColumnBody>
+													<style><CSS value="background-color: #0f172a; color: #e2e8f0; padding: 6px 10px; border-bottom: 1px solid #1e293b; text-align: right;"/></style>
+													<contents><textItem><dataSource><dataItemValue refDataItem="VALOR"/></dataSource></textItem></contents>
+												</listColumnBody>
+											</listColumn>
+										</listColumns>
+									</list>
+								</contents>
+							</block>
+
+							<!-- ═══════════ RODAPÉ ═══════════ -->
+							<block>
+								<style><CSS value="margin-top: 12px; padding: 8px 16px; background-color: #0d2137; border-radius: 8px; border: 1px solid #1e3a5f;"/></style>
+								<contents>
+									<table>
+										<style><CSS value="width: 100%; border-collapse: collapse;"/></style>
+										<tableRows>
+											<tableRow>
+												<tableCells>
+													<tableCell>
+														<style><CSS value="text-align: left; vertical-align: middle;"/></style>
+														<contents>
+															<textItem>
+																<dataSource><staticValue>📊 Visão BI — Dados Operacionais</staticValue></dataSource>
+																<style><CSS value="font-size: 8pt; color: #64748b;"/></style>
+															</textItem>
+														</contents>
+													</tableCell>
+													<tableCell>
+														<style><CSS value="text-align: right; vertical-align: middle;"/></style>
+														<contents>
+															<textItem>
+																<dataSource><reportExpression>AsOfTime()</reportExpression></dataSource>
+																<style><CSS value="font-size: 8pt; color: #64748b;"/></style>
+															</textItem>
+														</contents>
+													</tableCell>
+												</tableCells>
+											</tableRow>
+										</tableRows>
+									</table>
+								</contents>
+							</block>
+
+						</contents>
+					</pageBody>
+				</page>
+			</reportPages>
+
+			<pageSetup orientation="landscape"/>
+
+			<!-- ═══════════════════════════════════════════════════ -->
+			<!--  PÁGINA DE FILTROS (PROMPT PAGE) — NÃO OBRIGATÓRIA  -->
+			<!-- ═══════════════════════════════════════════════════ -->
+			<promptPages>
+				<page name="Filtros">
+					<style>
+						<defaultStyles><defaultStyle refStyle="pp"/></defaultStyles>
+						<CSS value="background-color: #0a0f1e; font-family: &apos;Segoe UI&apos;, Roboto, Helvetica, sans-serif; padding: 40px;"/>
+					</style>
+					<pageHeader>
+						<style>
+							<defaultStyles><defaultStyle refStyle="hp"/></defaultStyles>
+						</style>
+						<contents>
+							<block>
+								<style>
+									<CSS value="background: linear-gradient(135deg, #0d2137 0%, #112240 100%); border-left: 5px solid #3b82f6; border-radius: 12px; padding: 16px 22px; margin-bottom: 20px; box-shadow: 0 4px 20px rgba(0,0,0,0.6);"/>
+								</style>
+								<contents>
+									<textItem>
+										<dataSource>
+											<staticValue>📊  VISÃO BI — FILTROS DO RELATÓRIO</staticValue>
+										</dataSource>
+										<style>
+											<CSS value="font-size: 18pt; font-weight: 800; color: #f1f5f9; letter-spacing: 0.5px;"/>
+										</style>
+									</textItem>
+									<block>
+										<style><CSS value="font-size: 9pt; color: #94a3b8; margin-top: 4px;"/></style>
+										<contents>
+											<textItem><dataSource><staticValue>Todos os filtros são opcionais. Clique em "Concluir" para executar sem filtros.</staticValue></dataSource></textItem>
+										</contents>
+									</block>
+								</contents>
+							</block>
+						</contents>
+					</pageHeader>
+
+					<pageBody>
+						<style>
+							<defaultStyles><defaultStyle refStyle="py"/></defaultStyles>
+						</style>
+						<contents>
+							<table>
+								<style>
+									<CSS value="width: 600px; margin: 0 auto; border-collapse: separate; border-spacing: 0 12px;"/>
+								</style>
+								<tableRows>
+
+									<!-- ── Filtro: CD / Operação ── -->
+									<tableRow>
+										<tableCells>
+											<tableCell>
+												<style><CSS value="background-color: #112240; border: 1px solid #1e3a5f; border-radius: 8px; padding: 16px;"/></style>
+												<contents>
+													<block>
+														<style><CSS value="margin-bottom: 8px;"/></style>
+														<contents>
+															<textItem>
+																<dataSource><staticValue>🏢  CD / OPERAÇÃO</staticValue></dataSource>
+																<style><CSS value="font-size: 12pt; font-weight: 700; color: #38bdf8;"/></style>
+															</textItem>
+														</contents>
+													</block>
+													<block>
+														<style><CSS value="margin-bottom: 4px;"/></style>
+														<contents>
+															<textItem>
+																<dataSource><staticValue>Selecione o centro de distribuição (opcional)</staticValue></dataSource>
+																<style><CSS value="font-size: 8pt; color: #64748b;"/></style>
+															</textItem>
+														</contents>
+													</block>
+													<selectValue name="p_CD" parameter="p_CD" required="false">
+														<style><CSS value="padding: 8px; font-size: 10pt; border-radius: 6px; background-color: #1e293b; color: #f8fafc; width: 100%; border: 1px solid #334155;"/></style>
+														<defaultSelections><defaultSimpleSelection>TODOS</defaultSimpleSelection></defaultSelections>
+														<selectOptions>
+															<selectOption useValue="TODOS"><displayValue>-- TODOS --</displayValue></selectOption>
+															<selectOption useValue="07801"><displayValue>07801</displayValue></selectOption>
+															<selectOption useValue="1942"><displayValue>1942</displayValue></selectOption>
+															<selectOption useValue="930"><displayValue>930</displayValue></selectOption>
+														</selectOptions>
+													</selectValue>
+												</contents>
+											</tableCell>
+										</tableCells>
+									</tableRow>
+
+									<!-- ── Filtro: Data Inicial ── -->
+									<tableRow>
+										<tableCells>
+											<tableCell>
+												<style><CSS value="background-color: #112240; border: 1px solid #1e3a5f; border-radius: 8px; padding: 16px;"/></style>
+												<contents>
+													<block>
+														<style><CSS value="margin-bottom: 8px;"/></style>
+														<contents>
+															<textItem>
+																<dataSource><staticValue>📅  DATA INICIAL</staticValue></dataSource>
+																<style><CSS value="font-size: 12pt; font-weight: 700; color: #38bdf8;"/></style>
+															</textItem>
+														</contents>
+													</block>
+													<block>
+														<style><CSS value="margin-bottom: 4px;"/></style>
+														<contents>
+															<textItem>
+																<dataSource><staticValue>Informe a data de início do período (opcional)</staticValue></dataSource>
+																<style><CSS value="font-size: 8pt; color: #64748b;"/></style>
+															</textItem>
+														</contents>
+													</block>
+													<selectDate parameter="p_data_inicio" selectDateUI="editBox" required="false">
+														<style><CSS value="font-size: 10pt; padding: 8px; border-radius: 6px; background-color: #1e293b; color: #f8fafc; border: 1px solid #334155; width: 100%;"/></style>
+													</selectDate>
+												</contents>
+											</tableCell>
+										</tableCells>
+									</tableRow>
+
+									<!-- ── Filtro: Data Final ── -->
+									<tableRow>
+										<tableCells>
+											<tableCell>
+												<style><CSS value="background-color: #112240; border: 1px solid #1e3a5f; border-radius: 8px; padding: 16px;"/></style>
+												<contents>
+													<block>
+														<style><CSS value="margin-bottom: 8px;"/></style>
+														<contents>
+															<textItem>
+																<dataSource><staticValue>📅  DATA FINAL</staticValue></dataSource>
+																<style><CSS value="font-size: 12pt; font-weight: 700; color: #38bdf8;"/></style>
+															</textItem>
+														</contents>
+													</block>
+													<block>
+														<style><CSS value="margin-bottom: 4px;"/></style>
+														<contents>
+															<textItem>
+																<dataSource><staticValue>Informe a data de fim do período (opcional)</staticValue></dataSource>
+																<style><CSS value="font-size: 8pt; color: #64748b;"/></style>
+															</textItem>
+														</contents>
+													</block>
+													<selectDate parameter="p_data_fim" selectDateUI="editBox" required="false">
+														<style><CSS value="font-size: 10pt; padding: 8px; border-radius: 6px; background-color: #1e293b; color: #f8fafc; border: 1px solid #334155; width: 100%;"/></style>
+													</selectDate>
+												</contents>
+											</tableCell>
+										</tableCells>
+									</tableRow>
+
+									<!-- ── Filtro: Status ── -->
+									<tableRow>
+										<tableCells>
+											<tableCell>
+												<style><CSS value="background-color: #112240; border: 1px solid #1e3a5f; border-radius: 8px; padding: 16px;"/></style>
+												<contents>
+													<block>
+														<style><CSS value="margin-bottom: 8px;"/></style>
+														<contents>
+															<textItem>
+																<dataSource><staticValue>🔖  STATUS</staticValue></dataSource>
+																<style><CSS value="font-size: 12pt; font-weight: 700; color: #38bdf8;"/></style>
+															</textItem>
+														</contents>
+													</block>
+													<block>
+														<style><CSS value="margin-bottom: 4px;"/></style>
+														<contents>
+															<textItem>
+																<dataSource><staticValue>Filtre por status da operação (opcional)</staticValue></dataSource>
+																<style><CSS value="font-size: 8pt; color: #64748b;"/></style>
+															</textItem>
+														</contents>
+													</block>
+													<selectValue name="p_Status" parameter="p_Status" required="false">
+														<style><CSS value="padding: 8px; font-size: 10pt; border-radius: 6px; background-color: #1e293b; color: #f8fafc; width: 100%; border: 1px solid #334155;"/></style>
+														<defaultSelections><defaultSimpleSelection>TODOS</defaultSimpleSelection></defaultSelections>
+														<selectOptions>
+															<selectOption useValue="TODOS"><displayValue>-- TODOS --</displayValue></selectOption>
+															<selectOption useValue="CONCLUIDO"><displayValue>CONCLUÍDO</displayValue></selectOption>
+															<selectOption useValue="EM_ANDAMENTO"><displayValue>EM ANDAMENTO</displayValue></selectOption>
+															<selectOption useValue="PENDENTE"><displayValue>PENDENTE</displayValue></selectOption>
+														</selectOptions>
+													</selectValue>
+												</contents>
+											</tableCell>
+										</tableCells>
+									</tableRow>
+
+								</tableRows>
+							</table>
+						</contents>
+					</pageBody>
+
+					<pageFooter>
+						<style>
+							<defaultStyles><defaultStyle refStyle="fp"/></defaultStyles>
+							<CSS value="text-align: center; padding: 20px;"/>
+						</style>
+						<contents>
+							<promptButton type="cancel">
+								<contents/>
+								<style>
+									<defaultStyles><defaultStyle refStyle="bp"/></defaultStyles>
+									<CSS value="margin: 0 6px; padding: 10px 24px; background-color: #334155; color: #f8fafc; border: 1px solid #475569; border-radius: 6px; font-size: 10pt; font-weight: 600; cursor: pointer;"/>
+								</style>
+							</promptButton>
+							<promptButton type="back">
+								<contents/>
+								<style>
+									<defaultStyles><defaultStyle refStyle="bp"/></defaultStyles>
+									<CSS value="margin: 0 6px; padding: 10px 24px; background-color: #334155; color: #f8fafc; border: 1px solid #475569; border-radius: 6px; font-size: 10pt; font-weight: 600; cursor: pointer;"/>
+								</style>
+							</promptButton>
+							<promptButton type="next">
+								<contents/>
+								<style>
+									<defaultStyles><defaultStyle refStyle="bp"/></defaultStyles>
+									<CSS value="margin: 0 6px; padding: 10px 24px; background-color: #2563eb; color: white; border: none; border-radius: 6px; font-size: 10pt; font-weight: 600; cursor: pointer;"/>
+								</style>
+							</promptButton>
+							<promptButton type="finish">
+								<contents/>
+								<style>
+									<defaultStyles><defaultStyle refStyle="bp"/></defaultStyles>
+									<CSS value="margin: 0 6px; padding: 10px 24px; background-color: #16a34a; color: white; border: none; border-radius: 6px; font-size: 10pt; font-weight: 700; cursor: pointer;"/>
+								</style>
+							</promptButton>
+						</contents>
+					</pageFooter>
+				</page>
+			</promptPages>
+
+		</layout>
+	</layouts>
+
+	<XMLAttributes>
+		<XMLAttribute output="no" name="RS_CreateExtendedDataItems" value="false"/>
+		<XMLAttribute output="no" name="listSeparator" value=";"/>
+	</XMLAttributes>
+
+	<!-- ═══════════════════════════════════ -->
+	<!--  MODEL PATH — Ajuste conforme necessário  -->
+	<!-- ═══════════════════════════════════ -->
+	<modelPath>/content/folder[@name=&apos;SCI Data Packages&apos;]/folder[@name=&apos;Operational Packages&apos;]/folder[@name=&apos;Warehouse Management OS&apos;]/package[@name=&apos;MVGPA_Shipping&apos;]/model[@name=&apos;model&apos;]</modelPath>
+
+	<!-- ═══════════════════════════════════ -->
+	<!--  QUERIES — Ajuste o SQL conforme XLSX  -->
+	<!-- ═══════════════════════════════════ -->
+	<queries>
+		<query name="Consulta_Dados">
+			<source>
+				<sqlQuery name="SQL1" dataSource="WMOS" type="passThrough">
+					<sqlText>SELECT
+    FACILITY_ALIAS_ID AS CD,
+    CAST(CREATED_DTTM AS DATE) AS DATA,
+    CASE
+        WHEN STAT_CODE &gt;= 90 THEN &apos;CONCLUIDO&apos;
+        WHEN STAT_CODE &gt;= 30 THEN &apos;EM_ANDAMENTO&apos;
+        ELSE &apos;PENDENTE&apos;
+    END AS STATUS,
+    &apos;OPERACAO&apos; AS OPERACAO,
+    COUNT(*) AS QUANTIDADE,
+    SUM(TOTAL_VALUE) AS VALOR
+FROM SHIPMENT
+WHERE 1=1
+  #prompt(&apos;p_CD&apos;, &apos;string&apos;, &apos;TODOS&apos;)# &lt;&gt; &apos;TODOS&apos;
+  AND (#prompt(&apos;p_CD&apos;, &apos;string&apos;, &apos;TODOS&apos;)# = &apos;TODOS&apos; OR FACILITY_ALIAS_ID = #prompt(&apos;p_CD&apos;, &apos;string&apos;, &apos;TODOS&apos;)#)
+  AND (#prompt(&apos;p_data_inicio&apos;, &apos;date&apos;, &apos;&apos;)# IS NULL OR CAST(CREATED_DTTM AS DATE) &gt;= #prompt(&apos;p_data_inicio&apos;, &apos;date&apos;, &apos;&apos;)#)
+  AND (#prompt(&apos;p_data_fim&apos;, &apos;date&apos;, &apos;&apos;)# IS NULL OR CAST(CREATED_DTTM AS DATE) &lt;= #prompt(&apos;p_data_fim&apos;, &apos;date&apos;, &apos;&apos;)#)
+  AND (#prompt(&apos;p_Status&apos;, &apos;string&apos;, &apos;TODOS&apos;)# = &apos;TODOS&apos; OR
+       CASE
+           WHEN STAT_CODE &gt;= 90 THEN &apos;CONCLUIDO&apos;
+           WHEN STAT_CODE &gt;= 30 THEN &apos;EM_ANDAMENTO&apos;
+           ELSE &apos;PENDENTE&apos;
+       END = #prompt(&apos;p_Status&apos;, &apos;string&apos;, &apos;TODOS&apos;)#)
+GROUP BY FACILITY_ALIAS_ID, CAST(CREATED_DTTM AS DATE), STAT_CODE
+ORDER BY DATA DESC, CD</sqlText>
+				</sqlQuery>
+			</source>
+			<selection>
+				<dataItem name="CD"><expression>[SQL1].[CD]</expression></dataItem>
+				<dataItem name="DATA"><expression>[SQL1].[DATA]</expression></dataItem>
+				<dataItem name="OPERACAO"><expression>[SQL1].[OPERACAO]</expression></dataItem>
+				<dataItem name="STATUS"><expression>[SQL1].[STATUS]</expression></dataItem>
+				<dataItem name="QUANTIDADE"><expression>[SQL1].[QUANTIDADE]</expression></dataItem>
+				<dataItem name="VALOR"><expression>[SQL1].[VALOR]</expression></dataItem>
+			</selection>
+			<queryHints><localCache value="false"/><queryProcessing value="databaseOnly"/></queryHints>
+		</query>
+
+		<query name="Consulta_KPI">
+			<source><queryRef refQuery="Consulta_Dados"/></source>
+			<selection>
+				<dataItem name="TOTAL_REGISTROS" aggregate="total" rollupAggregate="none">
+					<expression>total([Consulta_Dados].[QUANTIDADE] for report)</expression>
+				</dataItem>
+				<dataItem name="TOTAL_CONCLUIDOS" aggregate="total" rollupAggregate="none">
+					<expression>total(case when [Consulta_Dados].[STATUS] = &apos;CONCLUIDO&apos; then [Consulta_Dados].[QUANTIDADE] else 0 end for report)</expression>
+				</dataItem>
+				<dataItem name="TOTAL_EM_ANDAMENTO" aggregate="total" rollupAggregate="none">
+					<expression>total(case when [Consulta_Dados].[STATUS] = &apos;EM_ANDAMENTO&apos; then [Consulta_Dados].[QUANTIDADE] else 0 end for report)</expression>
+				</dataItem>
+				<dataItem name="TOTAL_PENDENTES" aggregate="total" rollupAggregate="none">
+					<expression>total(case when [Consulta_Dados].[STATUS] = &apos;PENDENTE&apos; then [Consulta_Dados].[QUANTIDADE] else 0 end for report)</expression>
+				</dataItem>
+			</selection>
+			<queryHints><localCache value="false"/><queryProcessing value="databaseOnly"/></queryHints>
+		</query>
+	</queries>
+
+	<reportName>📊 VISÃO BI — PAINEL OPERACIONAL</reportName>
+</report>
